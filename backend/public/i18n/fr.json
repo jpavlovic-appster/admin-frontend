@@ -1,0 +1,1164 @@
+{
+  "TRADER_ID": "ID de trafic",
+  "TRADER_PREFERENCE": "Préférence des trafics",
+  "MINIMUM_MULTIPLIER": "Multiplicateur minimal",
+  "EXPIRY_AFTER_CLAIM": "Expiration après réclamation (en heures)",
+  "PROMOTION_NAME": "Nom de la promotion",
+  "FREE_BET_RAIN": "Pluie de pari gratuite",
+  "OLD_PASSWORD": "ancien mot de passe",
+  "END_TIME": "Heure de fin",
+  "RAIN_START_TIME": "Heure de début de la pluie",
+  "RAIN_END_TIME": "Temps de fin de pluie",
+  "COMMISSION": "Commission",
+  "FREEBETS": "Paris gratuits",
+  "ACCOUNTS": "Comptes",
+  "ACTIVITY": "activité",
+  "START_ANIMATION_JSON": "Démarrer l'animation JSON",
+  "START_ANIMATION_PNG": "Démarrer l'animation PNG",
+  "CRASH_ANIMATION_JSON": "Animation de crash json",
+  "CRASH_ANIMATION_PNG": "Animation de crash png",
+  "GRAPH_COLOUR": "Couleur graphique",
+  "LOADER_COLOUR": "Couleur de chargeur",
+  "START_ANIMATION": "Démarrer l'animation",
+  "CRASH_ANIMATION": "Animation de crash",
+  "TOTAL_SUBSCRIBERS": "Abonnés totaux",
+  "TOTAL_PLAYERS": "Total des joueurs",
+  "RESET_PASSWORD": "réinitialiser le mot de passe",
+  "BACK_TO_LOGIN": "Retour connexion",
+  "FORGOT_PASSWORD": "Mot de passe oublié",
+  "REPORTS": "Rapports",
+  "BET_REPORT": "Reportage de pari",
+  "MIN_WIN_AMOUNT": "Min de victoire",
+  "AUTO_BET": "Pari automatique",
+  "DATA_RANGE": "Plage de données",
+  "CONFIRM_PASSWORD": "Confirmez le mot de passe",
+  "SOUND": "Du son",
+  "BG_SOUND": "Son de fond",
+  "START_SOUND": "Commencer son",
+  "FLEW_AWAY_SOUND": "Sound à l'avion",
+  "AUTO_RATE": "Tarif automatique",
+  "ESCAPE_RATE": "Taux d'évasion",
+  "GRAPH": "Graphique",
+  "CALLBACK_APIS": "API de rappel",
+  "ONLINE": "En ligne",
+  "AWAY": "Une façon",
+  "LAST_BET_PLACED": "Le dernier pari placé",
+  "HAVE_FREEBETS": "Avoir des gratuits",
+  "HERO_IMG": "Image du héros",
+  "HERO_JSON": "Fichier Hero JSON",
+  "BG_IMG": "Image de fond",
+  "BG_JSON": "Fichier JSON en arrière-plan",
+  "AUTH_API": "API AUTH",
+  "DEBIT_API": "API de débit",
+  "CREDIT_API": "API de crédit",
+  "ROLLBACK_API": "API Rollback",
+  "GET_BALANCE_API": "Obtenez une API d'équilibre",
+  "ACE_GAMING": "Backoffice",
+  "DASHBOARD": "Tableau de bord",
+  "POWERED_BY": "Alimenté par",
+  "TENANTS": "Locataires",
+  "TENANT": "Locataire",
+  "THEMES": "Thèmes",
+  "THEME": "Thème",
+  "USER_ID": "Identifiant d'utilisateur",
+  "THEME_PREVIEW": "Aperçu du thème",
+  "CURRENCIES": "Devises",
+  "CURRENCY": "Devise",
+  "FREE_BETS": "Paris gratuits",
+  "FREE_BET": "Pari gratuit",
+  "GRANT_FREE_BET": "Accorder le pari gratuit",
+  "BET_AMOUNT": "Montant de pari",
+  "NUMBER_OF_FREE_BETS": "Nombre de paris gratuits",
+  "CONFIGURATIONS": "Configurations",
+  "CONFIGURATION": "Configuration",
+  "REVENUE": "Revenu",
+  "GLOBAL_SETTINGS": "Paramètres globaux",
+  "GAME_SETTINGS": "Paramètres de jeu",
+  "BETTING_SETTINGS": "Paramètres de paris",
+  "ADMINS": "Administrateurs",
+  "ADMIN": "Administrer",
+  "SHOW_ALL_USERS": "Afficher tous les utilisateurs",
+  "PREVIEW_ROLE_TREE": "Aperçu des rôles",
+  "AFFILIATES": "Affiliés",
+  "AFFILIATE": "Affilier",
+  "CMS": "Système de gestion de contenu",
+  "CRM": "Gestion de la fidélisation de la clientèle",
+  "USERS": "Utilisateurs",
+  "USER": "Utilisateur",
+  "TRANSACTIONS": "Banque de transactions",
+  "SPORT_TRANSACTIONS": "Transactions",
+  "CURRENCY_CODE": "Code de devise",
+  "NON_CASH_AMOUNT": "Montant non en espèces",
+  "PAYMENT_FOR": "Paiement pour",
+  "IS_PROCESSED": "Est traité",
+  "TRANSACTION": "Transaction",
+  "ADVERTISEMENTS": "Annonces",
+  "ADVERTISEMENT": "Publicité",
+  "SPORTS_BOOK": "Livre de sport",
+  "SPORT_SETTINGS": "Décors sportifs",
+  "DFS_MANAGEMENT": "Gestion du DFS",
+  "BET_MANAGEMENT": "Gestion des paris",
+  "LANGUAGES": "Langues",
+  "LANGUAGE": "Langue",
+  "SIZE": "Taille",
+  "NAME": "Nom",
+  "DOMAIN": "Domaine",
+  "FILTERS": "Filtres",
+  "FILTER": "Filtre",
+  "ID": "IDENTIFIANT",
+  "STATUS": "Statut",
+  "ACTION": "Action",
+  "HOME": "Maison",
+  "ALLOWED_CURRENCIES": "Devises autorisées",
+  "LOGO": "Logo",
+  "PACKAGES": "Paquets",
+  "PACKAGE": "Forfait",
+  "DFS": "Sports fantastiques quotidiens",
+  "SLOT_GAMES": "Jeux de machines à sous",
+  "SPORTS_BETTING": "Les paris sportifs",
+  "DAILY": "du quotidien",
+  "WEEKLY": "Hebdomadaire",
+  "MONTHLY": "Mensuel",
+  "YEARLY": "Annuel",
+  "THEME_MODE": "Mode thème",
+  "CUSTOM": "Personnalisé",
+  "DARK": "Sombre",
+  "LIGHT": "Lumière",
+  "PRIMARY_COLOR": "Couleur primaire",
+  "SECONDRY_COLOR": "Couleur secondry",
+  "FONT_FAMILY": "Famille de polices",
+  "DETAILS": "Détails",
+  "PARENT": "Parent",
+  "CODE": "Code",
+  "CODES": "Codes",
+  "EXCHANGE_RATE": "Taux de change",
+  "PRIMARY": "Primaire",
+  "EXCHANGE_RATES": "Taux d'échange",
+  "NOTE": "Noter",
+  "NOTES": "REMARQUES",
+  "ADMIN_CODE": "Code d'administration",
+  "CREDENTIALS": "Identifiants",
+  "SEARCH": "Chercher",
+  "FULL_NAME": "Nom et prénom",
+  "PHONE_NUMBER": "Numéro de téléphone",
+  "EMAIL": "E-mail",
+  "FIRST_NAME": "Prénom",
+  "LAST_NAME": "Nom de famille",
+  "PASSWORD": "Mot de passe",
+  "KEY": "Clé",
+  "VALUE": "Évaluer",
+  "SUB_ADMINS": "Sous-administrateurs",
+  "COMMISSION_PERCENTAGE": "Pourcentage de commission",
+  "ROLE": "Rôle",
+  "ROLES": "Les rôles",
+  "DEPOSIT": "Verser",
+  "WITHDRAWAL": "Retrait",
+  "LOGIN": "Connexion",
+  "PREVIEW": "Aperçu",
+  "BET_HISTORY": "Parie History",
+  "TENANT_CONFIGURATIONS": "Configurations des locataires",
+  "TENANT_CREDENTIALS": "Titres d'identification des locataires",
+  "TENANT_SETTINGS": "Paramètres des locataires",
+  "TENANT_THEME_SETTINGS": "Paramètres du thème du locataire",
+  "TENANT_PACKAGES": "Forfaits locataires",
+  "THEME_SETTINGS": "Réglage des thèmes",
+  "SUBSCRIBER_SETTINGS": "Paramètres de l'abonné",
+  "SUBSCRIBER_PACKAGES": "Packages d'abonné",
+  "SUBSCRIBER_CONFIGURATIONS": "Configurations d'abonné",
+  "SUBSCRIBER_CREDENTIALS": "Paramètres de l'abonné",
+  "SUBSCRIBER_THEME_SETTINGS": "Paramètres du thème de l'abonné",
+  "SUBSCRIBERS": "Les abonnés",
+  "SUBSCRIBER": "Abonné",
+  "URL": "URL",
+  "USERNAME": "Nom d'utilisateur",
+  "DATE_OF_BIRTH": "Date de naissance",
+  "UNIQUE_NAME": "Nom uniqe",
+  "PAYOUT_PERCENTAGE": "Pourcentage de paiement",
+  "TEMPLATE": "Modèle",
+  "TEMPLATES": "Modèles",
+  "SUBJECT": "Matière",
+  "CATEGORY": "Catégorie",
+  "SCHEDULED_AT": "Programmé à",
+  "BANNER": "Bannière",
+  "BANNERS": "Bannières",
+  "PAGES": "Pages",
+  "PAGE": "Page",
+  "TITLE": "Titre",
+  "SLUG": "Limace",
+  "SETTINGS": "Réglages",
+  "TOTAL_BALANCE": "Solde total",
+  "COUNTRY_CODE": "Code postal",
+  "EMAIL_VERIFIED": "Email verifié",
+  "RETAILER": "Détaillant",
+  "ACTION_TYPE": "type d'action",
+  "TIME_PERIOD": "Période de temps",
+  "CREATED_AT": "Créé à",
+  "UPDATED_AT": "Mis à jour à",
+  "START_DATE": "Date de début",
+  "END_DATE": "Date de fin",
+  "WALLET": "Porte monnaie",
+  "WALLETS": "Portefeuilles",
+  "LAST_DEPOSITED_AMOUNT": "Dernier montant déposé",
+  "AMOUNT": "Montant",
+  "CURRENCY_RATE": "Cours des devises",
+  "ACTION_BY": "Action",
+  "COMMENTS": "commentaires",
+  "SOURCE_TYPE": "Type de Source",
+  "SOURCE_EMAIL": "E-mail de source",
+  "TARGET_CURRENCY": "Devise cible",
+  "BONUS": "Prime",
+  "BONUSES": "Bonus",
+  "KIND": "Gentil",
+  "ENABLED": "Activé",
+  "ENABLE": "Activer",
+  "EVENT_LIABLITY": "Liabrité de l'événement",
+  "FLAT": "Appartement",
+  "PERCENTAGE": "Pourcentage",
+  "VALID_FROM": "Valide à partir de",
+  "VALID_UPTO": "Valable jusqu'au",
+  "VALID_PERIOD": "Période de validité",
+  "IMAGE": "Image",
+  "TERMS_AND_CONDITIONS": "Termes et conditions",
+  "LOYALTY_BONUS_USERS": "Utilisateurs de bonus de fidélité",
+  "WEB_IMAGE": "Image Web",
+  "MOBILE_IMAGE": "Image mobile",
+  "TOTAL_INCOME": "Revenu total",
+  "VISITS": "Visites",
+  "PER_CLICK_COST": "Coût par clic",
+  "SPORT": "sport",
+  "SPORTS": "Des sports",
+  "COUNTRIES": "Des pays",
+  "PLAYER": "Joueur",
+  "PLAYERS": "Joueurs",
+  "TEAM": "Équipe",
+  "TEAMS": "Équipes",
+  "START": "Commencer",
+  "END": "Fin",
+  "ALL": "Tout",
+  "UNIQUE_ID": "Identifiant unique",
+  "REWARDS": "Récompenses",
+  "FEATURED": "Mis en exergue",
+  "SELECT_ALL": "Tout sélectionner",
+  "DATE": "Date",
+  "DATES": "Rendez-vous",
+  "TYPE": "Taper",
+  "MULTIPLE_ENTRY": "Entrée multiple",
+  "EXTRA_REWARDS": "Récompenses supplémentaires",
+  "COMMENT": "Commentaire",
+  "AUTO_REPEAT": "Répétition automatique",
+  "DESCRIPTION": "La description",
+  "RESULT": "Résultat",
+  "RESULTS": "Résultats",
+  "STATS": "Statistiques",
+  "STATS_DETAILS": "Détails des statistiques",
+  "OUTCOME": "Résultat",
+  "SELECT": "Sélectionner",
+  "POSITION": "Position",
+  "POSITIONS": "Positions",
+  "PLAYER_NAME": "Nom de joueur",
+  "SALARY": "Un salaire",
+  "SINGLE_BET": "Pari unique",
+  "MULTI_BET": "Multiple",
+  "GAME_HERO": "Héros de jeu",
+  "GAME_BACKGROUND": "Contexte du jeu",
+  "ODDS": "Chances",
+  "STAKE": "Pieu",
+  "WIN_AMOUNT": "Gagner du montant",
+  "BET_TYPE": "Type de pari",
+  "PERMISSION": "Autorisation",
+  "PERMISSIONS": "Autorisation",
+  "KYC": "Connaissez votre client",
+  "RETRY": "Recommencez",
+  "EVENT_LIABILITY": "Responsabilité de l'événement",
+  "DEPOSIT_LIMIT": "Limite de dépôt",
+  "MAX_WIN_AMOUNT": "Montant maximum de la victoire",
+  "MAX_ODD": "Max bizarre",
+  "MIN_WITHDRAWAL_AMOUNT": "Mont de retrait",
+  "MAX_SINGLE_BET": "Pari unique maximum",
+  "MAX_BET_ON_EVENT": "Parié maximum sur l'événement",
+  "MIN_BET": "Petit pari",
+  "MAX_MULTIPLE_BET": "Pari plusieurs max",
+  "MAX_DAILY_BET_AMOUNT": "Montant quotidien maximum",
+  "MAX_WEEKLY_BET_AMOUNT": "Montant hebdomadaire maximum",
+  "MAX_MONTHLY_BET_AMOUNT": "Montant mensuel maximum",
+  "CASHOUT_PERCENTAGE": "Pourcentage de retrait",
+  "MAX_BONUS_WIN_AMOUNT": "Montage de gagnant maximum",
+  "OVERVIEW": "Aperçu",
+  "FINANCIAL": "Financier",
+  "MINIMUM_THRESHOLD": "Seuil minimum",
+  "MAXIMUM_THRESHOLD": "Seuil maximum",
+  "YES": "Oui",
+  "NO": "Non",
+  "VIEW_HERE": "Voir ici",
+  "LAST_LOGIN": "Dernière connexion",
+  "USER_SETTINGS": "Paramètres utilisateur",
+  "DURATION": "Durée",
+  "USER_DOCUMENTS": "Documents utilisateur",
+  "VIEW": "Voir",
+  "VERIFIED": "Vérifié",
+  "REASON": "Raison",
+  "UPLOADED_AT": "Téléchargé à",
+  "BET": "Pari",
+  "WIN": "Gagner",
+  "REFUND": "Remboursement",
+  "WITHDRAW": "Se désister",
+  "NON_CASH_GRANTED_BY_ADMIN": "Non en espèces accordé par l'administrateur",
+  "NON_CASH_WITHDRAW_BY_ADMIN": "Non-espèces de retrait par l'administrateur",
+  "TIP": "Pointe",
+  "BET_NON_CASH": "Parie non espèces",
+  "EXPIRED": "Expiré",
+  "USAGE_COUNT": "Nombre d'utilisation",
+  "WIN_NON_CASH": "Gagnez sans espèces",
+  "REFUND_NON_CASH": "Rembourser la non-espèces",
+  "NON_CASH_BONUS_CLAIM": "Réclamation de bonus sans espèces",
+  "DEPOSIT_BONUS_CLAIM": "Réclamation de bonus sans espèces",
+  "TIP_NON_CASH": "Pourboire non espèces",
+  "SINGLE": "Seul",
+  "MULTI": "Multi",
+  "WITHDRAW_CANCEL": "Retirer l'annulation",
+  "CONVERSION_RATE": "Taux de conversion",
+  "TOTAL_CLICKS": "Nombre total de clics",
+  "PER_VISITS": "Par visites",
+  "GAME_NAME": "Nom de jeu",
+  "THEME_NAME": "Nom de thème",
+  "COLUMN_COUNT": "Comptage des colonnes",
+  "ROW_COUNT": "Décompte des lignes",
+  "SYMBOL": "Symbole",
+  "SYMBOLS": "Symboles",
+  "LINE": "Ligne",
+  "LINES": "Lignes",
+  "GIF": "Gif",
+  "WILD": "Sauvage",
+  "MATRIX": "Matrice",
+  "LINE_1": "Ligne 1",
+  "LINE_2": "Ligne 2",
+  "LINE_3": "Ligne 3",
+  "LINE_4": "Ligne 4",
+  "LINE_5": "Ligne 5",
+  "LINE_6": "Ligne 6",
+  "LINE_7": "Ligne 7",
+  "LINE_8": "Ligne 8",
+  "LINE_9": "Ligne 9",
+  "ROW_1": "Rangée 1",
+  "ROW_2": "Rangée 2",
+  "ROW_3": "Ligne 3",
+  "REEL_1": "Bobine 1",
+  "REEL_2": "Bobine 2",
+  "REEL_3": "Bobine 3",
+  "REEL_4": "Bobine 4",
+  "REEL_5": "Bobine 5",
+  "BOTTOM": "Fond",
+  "TOP": "Haut",
+  "STATISTICS": "Statistiques",
+  "PUBLIC_KEY": "Clé publique",
+  "SECRET_KEY": "Clef secrète",
+  "WON": "A gagné",
+  "LOST": "Perdu",
+  "CASHOUT": "Retrait",
+  "NOT_STARTED": "Pas commencé",
+  "IN_PROGRESS": "En cours",
+  "FINISHED": "Achevé",
+  "CANCELLED": "Annulé",
+  "POSTPONED": "Reporté",
+  "INTERRUPTED": "Interrompu",
+  "ABANDONED": "Abandonné",
+  "START_TIME": "Heure de début",
+  "EVENT_STATUS": "État de l'événement",
+  "MATCH_TYPE": "Type de match",
+  "REG": "Habituel",
+  "ABBRIVIATION": "Abbriviation",
+  "PRIMARY_CURRENCY": "Densité primaire",
+  "SPORT_BETTING": "Paris sportifs",
+  "COPYRIGHT": "droits d'auteur",
+  "VERSION": "Version",
+  "REMEMBER_ME": "Souviens-toi de moi",
+  "ORGANIZATION": "Organisme",
+  "ORGANIZATIONS": "Organisations",
+  "CANCELS":"Annule",
+  "NET_SALES":"Ventes nettes",
+  "VALIDATION_MSGS": {
+    "TRADER_ID": {
+      "REQUIRED": "L'ID de trader est requis"
+    },
+    "TRADER_PREFERENCE": {
+      "REQUIRED": "La préférence du trader est requise"
+    },
+    "START_TIME": {
+      "REQUIRED": "L'heure de début est requise"
+    },
+    "END_TIME": {
+      "REQUIRED": "Une heure de fin est requise",
+      "MORE_THAN": "Devrait être plus que l'heure de début"
+    },
+    "RAIN_START_TIME": {
+      "REQUIRED": "Une heure de début de pluie est requise",
+      "IN_BETWEEN": "Doit être entre l'heure de début et l'heure de fin"
+    },
+    "RAIN_END_TIME": {
+      "REQUIRED": "Des temps de fin de pluie sont nécessaires",
+      "MORE_THAN": "Devrait être plus que l'heure de début de la pluie",
+      "LESS_THAN": "Devrait être moins que l'heure de fin"
+    },
+    "VIP_LEVEL": {
+      "REQUIRED": "Le niveau VIP est requis"
+    },
+    "DATE_OF_BIRTH": {
+      "REQUIRED": "La date de naissance est requise"
+    },
+    "USER_ID": {
+      "REQUIRED": "L'ID utilisateur est requis"
+    },
+    "OPTIONS": {
+      "REQUIRED": "Des options sont requises"
+    },
+    "EXCHAANGE_RATE": {
+      "REQUIRED": "Le taux de change est requis"
+    },
+    "MATCHES": {
+      "REQUIRED": "Les correspondances sont requises"
+    },
+    "SLUG": {
+      "REQUIRED": "La limace est requise"
+    },
+    "THEME": {
+      "REQUIRED": "Le thème est requis"
+    },
+    "VALID_FROM": {
+      "REQUIRED": "VALIDE DE est requis"
+    },
+    "VALID_UPTO": {
+      "REQUIRED": "Valable jusqu'à est requis"
+    },
+    "MIN_THRESHOLD": {
+      "REQUIRED": "Le seuil min est requis"
+    },
+    "MAX_THRESHOLD": {
+      "REQUIRED": "Le seuil maximum est requis"
+    },
+    "BANNER": {
+      "REQUIRED": "La bannière est requise"
+    },
+    "START_DATE": {
+      "REQUIRED": "La date de début est requise"
+    },
+    "END_DATE": {
+      "REQUIRED": "La date de fin est requise"
+    },
+    "ADVERTISEMENT_PAGE_ID": {
+      "REQUIRED": "ID est requis",
+      "EXISTS": "Id existe déjà"
+    },
+    "WEB_AD_IMAGE": {
+      "REQUIRED": "L'image de publicité Web est requierd"
+    },
+    "MOBILE_AD_IMAGE": {
+      "REQUIRED": "L'image de publicité mobile est requierd"
+    },
+    "PHONE_VERIFIED": {
+      "REQUIRED": "Le téléphone vérifié est requierd"
+    },
+    "ADMIN_ID": {
+      "REQUIRED": "L'ID d'administration est requis"
+    },
+    "TENANT_ID": {
+      "REQUIRED": "L'identification du locataire est requise"
+    },
+    "SUBSCRIBER_ID": {
+      "REQUIRED": "L'identification de l'abonné est requise"
+    },
+    "ID": {
+      "REQUIRED": "ID est requis"
+    },
+    "PACKAGE": {
+      "REQUIRED": "Un package est requis"
+    },
+    "TYPE": {
+      "REQUIRED": "Le type est requis"
+    },
+    "STATUS": {
+      "REQUIRED": "Le statut est requis"
+    },
+    "LANGUAGE": {
+      "REQUIRED": "La langue est requise"
+    },
+    "EMAIL": {
+      "REQUIRED": "Un e-mail est requis",
+      "VALID": "L'email doit être valide",
+      "UNIQUE": "Le courrier électronique doit être unique"
+    },
+    "PASSWORD": {
+      "REQUIRED": "Mot de passe requis",
+      "VALID": "Le mot de passe doit être 1 en haut, 1 en minuscules et 1 charbon spécial min 8 char"
+    },
+    "FIRST_NAME": {
+      "REQUIRED": "Le prénom est requis"
+    },
+    "LAST_NAME": {
+      "REQUIRED": "Le nom de famille est requis"
+    },
+    "ADMIN_CODE": {
+      "REQUIRED": "Le code d'administration est requis"
+    },
+    "CODE": {
+      "REQUIRED": "Le code est requis",
+      "UNIQUE": "Le code doit être unique",
+      "ALPHA_NUM": "Le code doit être alpha numérique"
+    },
+    "PHONE_NUMBER": {
+      "REQUIRED": "Le numéro de téléphone est requierd",
+      "VALID": "Le téléphone doit être valide",
+      "MIN_LENGTH": "Le numéro de téléphone doit être supérieur à 5 chiffres"
+    },
+    "UNIQUE_NAME": {
+      "REQUIRED": "Un nom unique est requis",
+      "VALID": "Doit commencer par l'alphabet, ne contient aucun caractère sauf le soulignement"
+    },
+    "USERNAME_NAME": {
+      "REQUIRED": "Nom d'utilisateur est nécessaire",
+      "VALID": "Doit commencer par l'alphabet, ne contient aucun caractère sauf le soulignement",
+      "UNIQUE": "Un nom unique a déjà été pris"
+    },
+    "ROLE": {
+      "REQUIRED": "Le rôle est requierd"
+    },
+    "ADMIN": {
+      "REQUIRED": "L'administrateur est requierd"
+    },
+    "SUPER_SENIOR": {
+      "REQUIRED": "Super senior est requierd"
+    },
+    "SENIOR_MASTER": {
+      "REQUIRED": "Le maître senior est requierd"
+    },
+    "MASTER_AGENT": {
+      "REQUIRED": "L'agent principal est requierd"
+    },
+    "CURRENCY": {
+      "REQUIRED": "La monnaie est requise"
+    },
+    "NUMBER_OF_FREE_BETS": {
+      "REQUIRED": "Le nombre de paris gratuits est requise",
+      "MIN": "Le nombre de paris gratuits ne peut pas être inférieur à 1"
+    },
+    "BET_AMOUNT": {
+      "REQUIRED": "Le montant du pari est requierd",
+      "MIN": "Le montant du pari ne peut pas être inférieur à 1"
+    },
+    "PERMISSION": {
+      "REQUIRED": "Veuillez sélectionner au moins 1 autorisation",
+      "READ_REQUIRED": "Veuillez sélectionner l'autorisation de lecture avant de sélectionner d'autres autorisations pour ce module"
+    },
+    "KEY": {
+      "REQUIRED": "La clé est requise"
+    },
+    "VALUE": {
+      "REQUIRED": "Valeur est requise",
+      "BETWEEN": "La valeur doit être comprise entre 1 et 100",
+      "MIN": "La valeur ne peut pas être inférieure à 1",
+      "VALID_URL": "La valeur doit être une URL valide"
+    },
+    "DURATION": {
+      "REQUIRED": "La durée est requise",
+      "MIN": "La durée ne peut pas être inférieure à 1"
+    },
+    "PAYOUT_PERCENTAGE": {
+      "REQUIRED": "Le pourcentage de paiement est requis",
+      "BETWEEN": "Le pourcentage de paiement doit être compris entre 0 et 100",
+      "VALID": "Pourcentage de paiement Entrez uniquement les chiffres"
+    },
+    "FILE": {
+      "REQUIRED": "Le fichier est requis",
+      "IMAGE_TYPE": "Le fichier doit être une image"
+    },
+    "SUBJECT": {
+      "REQUIRED": "Le sujet est requis"
+    },
+    "CATEGORY": {
+      "REQUIRED": "La catégorie est requise"
+    },
+    "CONTENT": {
+      "REQUIRED": "Le contenu est requis"
+    },
+    "TITLE": {
+      "REQUIRED": "Le titre est requis"
+    },
+    "DESCRIPTION": {
+      "REQUIRED": "Description est requise"
+    },
+    "EVENT_LIABILITY": {
+      "REQUIRED": "La responsabilité de l'événement est requise"
+    },
+    "DEPOSIT_LIMIT": {
+      "REQUIRED": "La limite de dépôt est requise"
+    },
+    "MAX_WIN_AMOUNT": {
+      "REQUIRED": "Le montant de la victoire maximale est requis"
+    },
+    "MAX_ODD": {
+      "REQUIRED": "Max bizarre est requis",
+      "MIN": "Max Odd ne peut pas être inférieur à 1,01"
+    },
+    "MIN_WITHDRAWAL_AMOUNT": {
+      "REQUIRED": "Le montant du retrait min est requis"
+    },
+    "MAX_SINGLE_BET": {
+      "REQUIRED": "Un pari unique maximum est requis"
+    },
+    "MAX_BET_ON_EVENT": {
+      "REQUIRED": "Un pari maximum sur l'événement est requis"
+    },
+    "MIN_BET": {
+      "REQUIRED": "Min Bet est requis"
+    },
+    "MAX_MULTIPLE_BET": {
+      "REQUIRED": "Un pari multiple maximum est requis"
+    },
+    "MAX_DAILY_BET_AMOUNT": {
+      "REQUIRED": "Le montant du pari quotidien maximum est requis"
+    },
+    "MAX_WEEKLY_BET_AMOUNT": {
+      "REQUIRED": "Le montant du pari hebdomadaire maximum est requis"
+    },
+    "MAX_MONTHLY_BET_AMOUNT": {
+      "REQUIRED": "Le montant du pari mensuel maximum est requis"
+    },
+    "CASHOUT_PERCENTAGE": {
+      "REQUIRED": "Le pourcentage de retrait est requis"
+    },
+    "MAX_BONUS_WIN_AMOUNT": {
+      "REQUIRED": "Le montant de la victoire bonus maximum est requis"
+    },
+    "DOB": {
+      "REQUIRED": "La date de naissance est requise"
+    },
+    "COUNTRY_CODE": {
+      "REQUIRED": "Le code de pays est requis"
+    },
+    "REASON": {
+      "REQUIRED": "La raison est requise"
+    },
+    "TARGET_TYPE": {
+      "REQUIRED": "Le type cible est requis"
+    },
+    "SOURCE_TYPE": {
+      "REQUIRED": "Le type de source est requis"
+    },
+    "TARGET_EMAIL": {
+      "REQUIRED": "Un e-mail cible est requis"
+    },
+    "SOURCE_EMAIL": {
+      "REQUIRED": "Un e-mail cible est requis"
+    },
+    "TARGET_CURRENCY": {
+      "REQUIRED": "La monnaie cible est requise"
+    },
+    "AMOUNT": {
+      "REQUIRED": "Le montant est requis",
+      "MIN": "Le montant ne peut pas être inférieur à 1"
+    },
+    "SOURCE_CURRENCY": {
+      "REQUIRED": "La monnaie source est requise",
+      "SOURCE_TARGET_SAME": "Le portefeuille source et le portefeuille cible ne peuvent pas être les mêmes"
+    },
+    "COMMENT": {
+      "REQUIRED": "Un commentaire est requis",
+      "MAX": "Max 50 caractères autorisés"
+    },
+    "FLAT": {
+      "REQUIRED": "Une quantité plate est requise",
+      "MIN": "La quantité plate ne peut pas être inférieure à 1"
+    },
+    "KIND": {
+      "REQUIRED": "Le genre est requis"
+    },
+    "PERCENTAGE": {
+      "REQUIRED": "Pourcentage requis",
+      "MIN": "Le pourcentage ne peut pas être inférieur à 1"
+    },
+    "USAGE_COUNT": {
+      "REQUIRED": "Compte d'utilisation requis",
+      "MIN": "Le nombre d'utilisation ne peut pas être inférieur à 1"
+    },
+    "USERS": {
+      "REQUIRED": "Les utilisateurs sont requis"
+    },
+    "URL": {
+      "REQUIRED": "L'URL est requise",
+      "VALID": "L'URL doit être valide"
+    },
+    "VALID_PERIOD": {
+      "REQUIRED": "Une période valide est requise"
+    },
+    "ADVERTISEMENT_PAGE": {
+      "REQUIRED": "La page de publicité est requise"
+    },
+    "NAME": {
+      "REQUIRED": "Le nom est requis",
+      "VALID": "Le nom doit être valide",
+      "MIN": "Le nom doit être supérieur à 3 caractères"
+    },
+    "DOMAIN": {
+      "REQUIRED": "Le domaine est requis",
+      "VALID": "Le domaine doit être valide pour ex https://www.example.com ou https://example.com",
+      "UNIQUE": "Le domaine doit être unique"
+    },
+    "PRIMARY_CURRENCY": {
+      "REQUIRED": "La monnaie primaire est requise"
+    },
+    "MINIMUM_THRESHOLD": {
+      "REQUIRED": "Seuil minimum requis",
+      "MIN": "Le seuil minimum ne peut pas être inférieur à 1",
+      "VALID": "Seuil minimum non valide"
+    },
+    "MAXIMUM_THRESHOLD": {
+      "REQUIRED": "Seuil maximum requis",
+      "MIN": "Le seuil maximum ne peut pas être inférieur à 1",
+      "VALID": "Seuil maximum non valide"
+    },
+    "TERMS_AND_CONDITIONS": {
+      "REQUIRED": "Conditions générales requises",
+      "MAX": "Termes et conditions Les mots devraient être inférieurs à 300"
+    },
+    "PER_CLICK_COST": {
+      "REQUIRED": "Par clic coût requis",
+      "MIN": "Le coût par clic doit être Greter puis 0"
+    },
+    "CURRENCY_CODE": {
+      "REQUIRED": "Le code de devise est requis",
+      "VALID": "Entrez des lettres majuscules sans espace, ne souligne que _ peut être utilisé"
+    },
+    "CURRENCY_SYMBOL": {
+      "REQUIRED": "Le symbole de devise est requis"
+    },
+    "EXCHANGE_RATE": {
+      "REQUIRED": "Le taux de change est requis",
+      "MIN": "Le taux de change doit être plus élevé alors 0"
+    },
+    "CONTEST_MATCHES": {
+      "RESOURCES": "Sélectionnez le sport, la ligue et les dates pour récupérer les matchs"
+    },
+    "CONTEST_PRIZE_PAYOUT": {
+      "REQUIRED": "Le paiement du prix est requis"
+    },
+    "CONTEST_MULTI_ENTRY": {
+      "MAX": "L'entrée multiple ne peut pas dépasser la taille du concours"
+    },
+    "CONTEST_NAME": {
+      "REQUIRED": "Le nom du concours est requis",
+      "MAX": "Le nom du concours maximum est de 50"
+    },
+    "SPORT": {
+      "REQUIRED": "Le sport est requis"
+    },
+    "LEAGUE": {
+      "REQUIRED": "La ligue est requise"
+    },
+    "DATES": {
+      "REQUIRED": "Les dates sont requises"
+    },
+    "SALARY_CAP": {
+      "REQUIRED": "Plafond salarial requis"
+    },
+    "CONTEST_TYPE": {
+      "REQUIRED": "Le type de concours est requis"
+    },
+    "CONTEST_FEE": {
+      "REQUIRED": "Frais de concours requis",
+      "RANGE": "Les frais de concours varient de 0 à 5000"
+    },
+    "CONTEST_SIZE": {
+      "REQUIRED": "La taille du concours est requise",
+      "RANGE": "La taille du concours varie de 2 à 10000",
+      "PATTERN": "La taille du concours accepte uniquement le nombre"
+    },
+    "SITE_RAKE": {
+      "REQUIRED": "Râteau du site requis",
+      "RANGE": "Le râteau du site varie de 0 à 100"
+    },
+    "PRIZE_PAYOUT": {
+      "REQUIRED": "Paiement du prix requis"
+    },
+    "MULTIPLE_ENTRY": {
+      "REQUIRED": "Entrée multiple requise",
+      "MIN": "Le minimum d'entrée multiple est 1"
+    },
+    "MIN_ODD": {
+      "REQUIRED": "Min est nécessaire"
+    },
+    "MIN_AUTO_RATE": {
+      "REQUIRED": "Le taux automatique min est requis",
+      "MIN": "Le débit automatique Min ne peut pas être inférieur à 1,01"
+    },
+    "BETTING_PERIOD": {
+      "REQUIRED": "Betting Period is required",
+      "INTEGER": "Betting Period must be a number",
+      "BETWEEN": "Betting Period must be in range between 4 and 20"
+    },
+    "LANGUAGE_CODE": {
+      "REQUIRED": "Le code linguistique est requis",
+      "UNIQUE": "Le code linguistique doit être unique",
+      "PATTERN": "Le code linguistique doit être en minuscules et a deux lettres"
+    },
+    "JSON_FILE": {
+      "REQUIRED": "Le fichier JSON est requis"
+    }
+  },
+  "FRONTEND": "L'extrémité avant",
+  "AUTH": "Authentifier",
+  "SENTENCES": {
+    "TRADER_PREFERENCE_EXIST": "Le commerçant ID et la combinaison de préférences Trader existent déjà. Veuillez essayer une autre combinaison",
+    "ORGANIZATION_404": "Aucune organisation trouvée",
+    "WARNING_LANGUAGE_JSON": "Important! Veuillez ne pas traduire le texte entre '{{}}', considérez-les comme un numéro variable et maintenez la traduction aussi courte que possible",
+    "POINTER_DESCRIPTION": "Veuillez indiquer ce domaine vers l'adresse IP suivante ici domaine.com fait référence à votre domaine",
+    "SDK_DESCRIPTION": "Veuillez ajouter le script suivant à votre projet",
+    "PACKAGES_INFO": "En cliquant sur Soumettre, les packages expirés sélectionnés seront à nouveau activés",
+    "WARNING_HERO": "Important! Les fichiers doivent être dans le même format que les exemples de fichiers et le nom du fichier PNG dans JSON doivent être plane.png sinon le jeu ne fonctionnera pas.",
+    "WARNING_BG": "Important! Les fichiers doivent être dans le même format que les exemples de fichiers et le nom du fichier PNG dans JSON doivent être bg.png sinon le jeu ne fonctionnera pas.",
+    "TENANT_INACTIVE": "Votre locataire est in-activé, veuillez contacter avec votre administrateur pour activer votre locataire",
+    "SUBSCRIBER_INACTIVE": "Votre abonné est in-activé, veuillez contacter avec votre administrateur pour activer votre abonné",
+    "ADMIN_INACTIVE": "Votre compte est in-activé, veuillez contacter à l'administrateur sur le compte activé",
+    "CREDENTIAL_TENANT_ACTIVE": "Veuillez saisir Operator_Debit_API, Operator_Credit_API pour activer votre locataire",
+    "CREDENTIAL_SUBSCRIBER_ACTIVE": "Veuillez saisir Operator_Debit_API, Operator_Credit_API, Operator_Profile_API, Operator_Success_API pour activer votre abonné",
+    "THEME_PREVIEW": "Les modifications ci-dessous ne seront pas appliquées avant la soumission. Veuillez cliquer sur Aperçu pour voir une page de démonstration",
+    "CURRENCY_CONVERSION": "{{CRN}} est la monnaie primaire. Toute conversion de la monnaie A en devise B considérera {{CRN}} comme base.",
+    "CURRENCY_EXAMPLE_1": "Devise un montant * taux de change de la devise a = monnaie primaire ({{CRN}})",
+    "CURRENCY_EXAMPLE_2": "Devise A Montant * (taux de change de la monnaie A / taux de change de la monnaie b) = monnaie b Montant",
+    "ADMIN_404": "Aucun administrateur trouvé",
+    "CURRENCY_404": "Aucune devise trouvée",
+    "TENANT_404": "Aucun locataire trouvé",
+    "THEME_404": "Aucun thème trouvé",
+    "AFFILIATE_404": "Aucun affilié trouvé",
+    "CRM_404": "Aucun modèle trouvé",
+    "CMS_404": "Aucune page trouvée",
+    "CREDENTIALS_404": "Aucune références trouvées",
+    "USER_404": "Aucun utilisateur trouvé",
+    "BONUS_404": "Aucun bonus trouvé",
+    "TRANSACTION_404": "Aucune transaction trouvée",
+    "ADVERTISEMENT_404": "Aucune publicité trouvée",
+    "ADMIN_TREE_404": "Pas de sous-admines présents pour cet administrateur",
+    "SETTING_404": "Aucun réglage trouvé",
+    "DOCUMENT_404": "Aucun document trouvé",
+    "SLOT_404": "Aucun jeu trouvé",
+    "PACKAGE_404": "Aucun paquet trouvé",
+    "SYMBOLS_MASTER_404": "Aucun thème maître symbole trouvé",
+    "LINE_MASTER_404": "Ligne Master 404",
+    "SPORT_404": "Aucun sport trouvé",
+    "COUNTRY_404": "Aucun pays trouvé",
+    "TOURNAMENT_404": "Aucun tournoi trouvé",
+    "MARKET_404": "Aucun marché trouvé",
+    "MATCH_404": "Pas de résultat trouvé",
+    "STATS_404": "Aucune statistique trouvée",
+    "PLAYER_404": "Aucun joueur trouvé",
+    "TEAM_404": "Aucune équipe trouvée",
+    "SPORT_SETTINGS_404": "Aucun cadre sportif trouvé",
+    "BET_HISTORY_404": "Aucune histoire de paris trouvé",
+    "SUBSCRIBER_404": "Aucun abonné trouvé",
+    "LANGUAGE_404": "Aucune langue trouvée",
+    "SELECT_LANGUAGE": "Sélectionnez une langue",
+    "SELECT_ORGANIZATION": "Sélectionnez une organisation",
+    "NUMBER_OF_MATCHES": "Nombre de matchs",
+    "JOINING_AND_REFER_BOUNS": "Rejoindre et référer un bonus d'ami",
+    "SELECT_MATCH_CONTEST": "La liste des matchs sera affichée ici après la sélection de sport, de ligue et de dates",
+    "LOGIN_SUCCESS": "Connectez-vous avec succès",
+    "UNAUTHORIZED": "non autorisé",
+    "LOGOUT_SUCCESS": "Déconnexion avec succès",
+    "SESSION_EXPIRED": "Votre session a expiré. Veuillez vous connecter à nouveau!",
+    "SELECT_IMAGE_HEIGHT_WIDTH": "Image de sélection de Plaese avec hauteur: {{hauteur}} et largeur: {{largeur}}",
+    "CREATED_SUCCESS": "Créé avec succès",
+    "UPDATED_SUCCESS": "Mis à jour avec succés",
+    "DELETED_SUCCESS": "Supprimé avec succès.",
+    "CREATED_FAIL": "Créé sans succès",
+    "UPDATED_FAIL": "Mis à jour sans succès",
+    "NOT_FOUND": "Pas trouvé",
+    "CODE_EXIST": "Code déjà utilisé. Veuillez essayer un autre code",
+    "EMAIL_EXIST": "L'adresse e-mail existe déjà. Veuillez essayer une autre adresse e-mail",
+    "BONUS_KIND_EXIST": "Genre déjà utilisé. Veuillez essayer un autre type",
+    "STATUS_CHANGE": "Le statut a changé avec succès",
+    "ADMIN_TREE": "Arbre pour admin",
+    "NO_PERMISSION_CREATE_ADMIN": "Vous n'avez pas assez d'autorisations pour créer des administrateurs",
+    "NO_PERMISSION_UPDATE_ADMIN": "Vous n'avez pas assez d'autorisations pour mettre à jour les administrateurs",
+    "NO_PERMISSION_CREATE_PAGE": "Vous n'avez pas assez d'autorisations pour créer des pages",
+    "NO_PERMISSION_UPDATE_PAGE": "Vous n'avez pas assez d'autorisations pour mettre à jour les pages",
+    "NO_PERMISSION_CREATE_TENANT": "Vous n'avez pas assez d'autorisations pour créer un locataire",
+    "NO_PERMISSION_UPDATE_TENANT": "Vous n'avez pas assez d'autorisations pour mettre à jour le locataire",
+    "NO_PERMISSION_CREATE_SUBSCRIBER": "Vous n'avez pas assez d'autorisations pour créer un abonné",
+    "NO_PERMISSION_UPDATE_SUBSCRIBER": "Vous n'avez pas suffisamment d'autorisations pour mettre à jour l'abonné",
+    "NO_PERMISSION_CREATE_CURRENCIES": "Vous n'avez pas suffisamment d'autorisations pour créer des devises",
+    "NO_PERMISSION_UPDATE_CURRENCIES": "Vous n'avez pas suffisamment d'autorisations pour mettre à jour les devises",
+    "NO_PERMISSION_UPDATE_SETTINGS": "Vous n'avez pas suffisamment d'autorisations pour mettre à jour les paramètres",
+    "NO_PERMISSION_CREATE_USER": "Vous n'avez pas suffisamment d'autorisations pour créer des utilisateurs",
+    "NO_PERMISSION_UPDATE_USER": "Vous n'avez pas suffisamment d'autorisations pour mettre à jour les utilisateurs",
+    "NO_PERMISSION_CREATE_BONUS": "Vous n'avez pas assez d'autorisations pour créer un bonus",
+    "NO_PERMISSION_UPDATE_BONUS": "Vous n'avez pas assez d'autorisations pour mettre à jour le bonus",
+    "SELECT_READ_PERMISSION": "Veuillez sélectionner l'autorisation de lecture avant de sélectionner d'autres autorisations pour ce module",
+    "CURRENCY_CANNOT_REMOVED": "Les devises déjà ajoutées ne peuvent pas être supprimées",
+    "DOMAIN_EXIST": "Le domaine existe déjà. Veuillez essayer un autre domaine",
+    "SELECT_SETTLEMENT": "Veuillez sélectionner le règlement.",
+    "EMAIL_SEND_SUCCESS": "Emails envoyés avec succès",
+    "CONTEST_NAME_REQUIRED": "Le nom du concours est requis",
+    "TEMPLATE_REQUIRED": "Le modèle est requis",
+    "IMAGE_REQUIRED": "L'image est requise",
+    "VIDEO_REQUIRED": "La vidéo est requise",
+    "MAX_FILE_SIZE": "La taille du fichier max est {{size}}",
+    "SELECT_WALLET_BALANCE": "Le portefeuille sélectionné n'a pas assez d'équilibre, veuillez sélectionner un autre portefeuille",
+    "DOB_18": "La date de naissance doit être de 18 ans ou plus.",
+    "USE_VARS_CRM": "Les variables énumérées ci-dessous peuvent être utilisées dans la zone de texte ci-dessus:",
+    "VAR_FIRST_NAME": "Cette variable sera remplacée par le prénom de l'utilisateur dans le modèle",
+    "VAR_LAST_NAME": "Cette variable sera remplacée par le nom de famille de l'utilisateur dans le modèle",
+    "VAR_USERNAME": "Cette variable sera remplacée par le nom d'utilisateur de l'utilisateur dans le modèle",
+    "VAR_MATCH_NAME": "Cette variable sera remplacée par le nom du match, c'est-à-dire Raiders vs 49ers du prochain match préféré dans le modèle",
+    "VAR_START_DATE": "Cette variable sera remplacée par la date de début du prochain match préféré dans le modèle",
+    "SEND_PROMO_NOTIFICATIONS": "Envoyer des notifications promotionnelles",
+    "CONFIRMATION": {
+      "DOCUMENT_REJECT": "Êtes-vous sûr de vouloir rejeter ce document?"
+    },
+    "EXCHANGE_RATE": "Taux d'échange (avec monnaie de base {{primaire_currency}})",
+    "COPYRIGHT": "Tous les droits sont réservés",
+    "CONFIRM_ARE_YOU_SURE": "Êtes-vous sûr?",
+    "CONFIRM_DELETE": "Vous voulez le supprimer!",
+    "CONFIRM_LEAVE_PAGE": "Vous voulez quitter cette page!",
+    "CONFIRM_ACTIVE": "Vous voulez l'activer!",
+    "CONFIRM_IN_ACTIVE": "Vous voulez le désactiver!",
+    "CONFIRM_TOP": "Vous voulez le surpasser!",
+    "CONFIRM_BOTTOM": "Vous voulez le fond!",
+    "CONFIRM_APPROVE": "Vous voulez l'approuver!",
+    "CONFIRM_EMAIL_SEND": "Vous voulez l'envoyer!",
+    "CONFIRM_YES": "Oui fais le!",
+    "LOGIN": "Connectez-vous pour démarrer votre session",
+    "TENANT_SETTING_ALERT1": "Entrez tous les nombres ci-dessous dans Curreny primaire",
+    "TENANT_SETTING_ALERT2": "de ce locataire"
+  },
+  "PLACEHOLDERS": {
+    "ENTER_TRADER_ID": "Entrez l'ID de trader",
+    "ENTER_TRADER_PREFERENCE": "Entrez les préférences du trader",
+    "SEARCH_MIN_WINNING": "Rechercher Min gagnant",
+    "SEARCH_MAX_WINNING": "Rechercher Max Gagner",
+    "SEARCH_DATA_RANGE": "Plage de données de recherche",
+    "SEARCH_BET_ID": "ID de pari de recherche",
+    "SEARCH_NAME_CODE": "Recherche par nom, code",
+    "ENTER_PASSWORD_AGAIN": "Entrez à nouveau le mot de passe",
+    "ENTER_NAME": "Entrez le nom",
+    "ENTER_KEY": "La touche Entrée",
+    "SELECT_CURRENCIES": "Sélectionner des devises",
+    "CHOOSE_FILE": "Choisir le fichier",
+    "BROWSE": "Parcourir",
+    "SEARCH_ADMIN": "Rechercher un e-mail, nom",
+    "SEARCH_NAME_DOMAIN": "Recherche par nom, domaine",
+    "SEARCH_NAME": "Recherche par nom",
+    "ENTER_PHONE_NUMBER": "Entrez le numéro de téléphone",
+    "ENTER_EMAIL": "Entrez le courrier électronique",
+    "ENTER_PASSWORD": "Entrer le mot de passe",
+    "ENTER_FIRST_NAME": "Entrez votre prénom",
+    "ENTER_LAST_NAME": "Entrer le nom de famille",
+    "ENTER_CODE": "Entrez le code",
+    "SELECT_ROLE": "Sélectionner un rôle",
+    "SELECT_ADMIN": "Sélectionner l'administrateur",
+    "SELECT_SUPER_SENIOR": "Sélectionnez Super Senior",
+    "SELECT_SENIOR_MASTER": "Sélectionnez le maître senior",
+    "SELECT_MASTER_AGENT": "Sélectionnez l'agent principal",
+    "ENTER_UNIQUE_NAME": "Entrez le nom unique",
+    "ENTER_PAYOUT_PERCENTAGE": "Entrez le pourcentage de paiement",
+    "SEARCH_CRM": "Sujet de recherche, contenu",
+    "SEARCH_CMS": "Titre de recherche, limace, contenu",
+    "SEARCH_CAMPAIGN": "Recherche par période de campagne",
+    "ENTER_USERNAME": "Saisissez votre nom d'utilisateur",
+    "ENTER_DOB": "Entrer date de naissance",
+    "SELECT_CURRENCY": "Sélectionnez une devise",
+    "SELECT_TIME_PERIOD": "Sélectionnez la période de temps",
+    "SELECT_PRIMARY_CURRENCY": "Sélectionnez la monnaie primaire",
+    "SEARCH": "Chercher",
+    "ENTER_AMOUNT": "Entrer le montant",
+    "ENTER_COMMENTS": "Entrer des commentaires",
+    "SEARCH_BONUS": "Recherche par titre / code",
+    "SEARCH_BY_EMAIL": "Rechercher par e-mail",
+    "ENTER_PER_CLICK_COST": "Entrez par CLOC COST",
+    "SELECT_AD_PAGE": "Sélectionner la page publicitaire",
+    "SELECT_TENANT": "Sélectionner le locataire",
+    "SELECT_SUBSCRIBER": "Sélectionner le locataire",
+    "ENTER_VALUE": "Entrer la valeur",
+    "ENTER_SUBJECT": "Entrer le sujet",
+    "SELECT_CATEGORY": "Choisir une catégorie",
+    "SELECT_SCHEDULED_AT": "Sélectionnez planifié à",
+    "ENTER_TITLE": "Entrer le titre",
+    "ENTER_DESCRIPTION": "Entrez description",
+    "ENTER_EVENT_LIABILITY": "Entrez la responsabilité de l'événement",
+    "ENTER_DEPOSIT_LIMIT": "Entrez la limite de dépôt",
+    "ENTER_MAX_WIN_AMOUNT": "Entrez le montant max de la victoire",
+    "ENTER_MAX_ODD": "Entrez max bizarre",
+    "ENTER_MIN_WITHDRAWAL_AMOUNT": "Entrez le montant du retrait min",
+    "ENTER_MAX_SINGLE_BET": "Entrez un pari unique max",
+    "ENTER_MAX_BET_ON_EVENT": "Entrez Max Bet sur l'événement",
+    "ENTER_MIN_BET": "Entrez Min Bet",
+    "ENTER_MAX_MULTIPLE_BET": "Entrez max multiple pari",
+    "ENTER_MAX_DAILY_BET_AMOUNT": "Entrez le montant du pari quotidien maximum",
+    "ENTER_MAX_WEEKLY_BET_AMOUNT": "Entrez le montant du pari hebdomadaire maximum",
+    "ENTER_MAX_MONTHLY_BET_AMOUNT": "Entrez le montant du pari mensuel maximum",
+    "ENTER_CASHOUT_PERCENTAGE": "Entrez le pourcentage de cashout",
+    "ENTER_MAX_BONUS_WIN_AMOUNT": "Entrez le montant du bonus maximum",
+    "SELECT_TEMPLATE": "Sélectionner le modèle",
+    "ENTER_DURATION": "Entrez la durée en jours",
+    "SELECT_ACTION_TYPE": "Sélectionner le type d'action",
+    "SELECT_SOURCE_CURRENCY": "Sélectionnez la monnaie source",
+    "ENTER_COMMENT": "Entrez le commentaire",
+    "SELECT_KIND": "Sélectionner un type",
+    "ENTER_FLAT": "Entrer à plat",
+    "ENTER_PERCENTAGE": "Entreprendre",
+    "ENTER_USAGE_COUNT": "Entrez le nombre d'utilisation",
+    "ENTER_MINIMUM_THRESHOLD": "Entrez le seuil minimum",
+    "ENTER_MAXIMUM_THRESHOLD": "Entrez le seuil maximum",
+    "ENTER_VALID_PERIOD": "Entrez une période valide",
+    "SELECT_USERS": "Sélectionner les utilisateurs",
+    "SELECT_ADVERTISEMENT_PAGE": "Sélectionner la page publicitaire",
+    "SELECT_BET_TYPE": "Sélectionner le type de pari",
+    "ENTER_CONTEST_NAME": "Entrez le nom du concours",
+    "ENTER_EXTRA_REWARDS": "Entrez des récompenses supplémentaires",
+    "SELECT_PRIZE_PAYOUT": "Sélectionnez le paiement du prix",
+    "ENTER_FROM_DATE": "Entre la date",
+    "ENTER_CONTEST_FEE": "Entrer les frais de concours",
+    "ENTER_CONTEST_SIZE": "Entrez la taille du concours",
+    "ENTER_SITE_RAKE": "Entrez le râteau du site",
+    "ENTER_MULTIPLE_ENTRY": "Entrée de Mulitple",
+    "ENTER_IS_FEATURED_CONTEST": "Entrée est concours de fonctionnalités",
+    "ENTER_IS_AUTO_REPEAT": "Entrée est une répétition automatique",
+    "ENTER_CURRENCY_CODE": "Entrez le code de devise",
+    "ENTER_CURRENCY_SYMBOL": "Entrez le symbole html intime",
+    "ENTER_EXCHANGE_RATE": "Entrez le taux de change",
+    "ENTER_MIN_ODD": "Entrez min bizarre",
+    "ENTER_MIN_AUTO_RATE": "Entrez le débit automatique"
+  },
+  "ROLES_DROPDOWN": {
+    "ADMIN": "Administrer",
+    "SUPER_SENIOR": "Super senior",
+    "SENIOR_MASTER": "Maître principal",
+    "MASTER_AGENT": "Agent principal",
+    "AGENT": "Agent",
+    "SUPER_ADMIN": "Super administrateur",
+    "SUPPORT_STAFF": "Le personnel de soutien"
+  },
+  "ACTION_BUTTON": {
+    "DOWNLOAD_SOUND": "Télécharger le son actuel",
+    "SET_DEFAULT": "Définir par defaut",
+    "APPROVE": "Approuver",
+    "REJECT": "Rejeter",
+    "CREATE": "Créer",
+    "READ": "Lis",
+    "EDIT": "Éditer",
+    "UPDATE": "Mise à jour",
+    "DELETE": "Effacer",
+    "DISABLE": "Désactiver",
+    "DISABLED": "Handicapé",
+    "SEND_EMAILS": "Envoyer des emails",
+    "RESET": "Réinitialiser",
+    "SUBMIT": "Soumettre",
+    "CANCEL": "Annuler",
+    "ACTIVE": "Actif",
+    "IN_ACTIVE": "Inactif",
+    "LOGOUT": "Se déconnecter",
+    "BULK_UPLOAD": "Transfert groupé",
+    "DOWNLOAD_XLSX": "Télécharger un exemple de fichier xlsx",
+    "RESET_FILTER": "Réinitialiser les filtres",
+    "MARK_PRIMARY": "Faire la primaire",
+    "PREVIOUS": "Précédent",
+    "NEXT": "Prochain",
+    "BET_SETTLEMENT": "Règlement de pari",
+    "TOP_SPORTS": "Top sports",
+    "TOP": "Haut",
+    "BOTTOM": "Fond",
+    "ADMIN_TREE": "Arbre administratif",
+    "SAVE": "sauvegarder",
+    "BACK": "Retour",
+    "CLOSE": "proche",
+    "SEND": "Envoyer",
+    "YES_DO_IT": "Oui fais le",
+    "DOWNLOAD_ADMIN_JSON": "Télécharger Admin JSON",
+    "SEE_USER_JSON": "Voir l'utilisateur JSON",
+    "UPLOAD_ADMIN_JSON": "Télécharger un nouvel administrateur JSON",
+    "UPLOAD_USER_JSON": "Télécharger un nouvel utilisateur JSON",
+    "DOWNLOAD_HERO_JSON": "Télécharger Hero JSON",
+    "DOWNLOAD_HERO_IMG": "Télécharger l'image du héros",
+    "DOWNLOAD_BG_JSON": "Télécharger le fond JSON",
+    "DOWNLOAD_BG_IMG": "Télécharger l'image d'arrière-plan",
+    "UPLOAD_USER_BACKEND_JSON": "Télécharger un nouveau backend json",
+    "SEE_USER_BACKEND_JSON": "Voir User Backend JSON",
+    "SET_ALL_DEFAULT": "Définir toute la valeur par défaut",
+    "EXPORT_REPORT": "Rapport d'exportation",
+    "SEND_MAIL": "Envoyer un mail",
+    "DOWNLOAD_CRASH_ANIM_IMG": "Télécharger l'image de l'animation de crash",
+    "DOWNLOAD_CRASH_ANIM_JSON": "Télécharger Crash Animation JSON",
+    "DOWNLOAD_START_ANIM_IMG": "Télécharger l'image de début d'animation",
+    "DOWNLOAD_START_ANIM_JSON": "Télécharger Start Animation JSON"
+  },
+  "MANAGE_CONTEST": "Gérer le concours",
+  "CREATE_CONTEST": "Créer un concours",
+  "UPCOMING": "A venir",
+  "LIVE": "Vivre",
+  "PARTIAL": "Partiel",
+  "COMPLETED": "Complété",
+  "GAME": "Jeu",
+  "ENTRANTS": "Participants",
+  "SERVICE": "Service",
+  "FEE": "Frais",
+  "FEES": "Frais",
+  "MULTI_USER": "Utilisateur de mutli",
+  "SITE_RAKE": "Râteau de site",
+  "PRIZE_PAYOUT": "Paiement du prix",
+  "IS_FEATURED_CONTEST": "Est concours en vedette",
+  "PRIZE_STRUCTRE": "Structure de prix",
+  "IS_AUTO_REPEAT": "Est une répétition automatique",
+  "PRIZING": "Prix",
+  "CREATED_BY": "Créé par",
+  "LINEUP": "S'aligner",
+  "USER_CODE": "Code d'utilisateur",
+  "ALL_TIME": "Tout le temps",
+  "TODAY": "Aujourd'hui",
+  "YESTERDAY": "Hier",
+  "THIS_WEEK": "Cette semaine",
+  "LAST_WEEK": "La semaine dernière",
+  "THIS_MONTH": "Ce mois-ci",
+  "LAST_MONTH": "Le mois dernier",
+  "SEARCH_TIME_PERIOD": "Période de recherche",
+  "TOTAL_OF_DEPOSITS": "Total des dépôts",
+  "TOTAL_OF_WITHDRAWALS": "Total des retraits",
+  "PLAYERS_LOGGED_IN": "Joueurs connectés",
+  "PLAYERS_REGISTERED": "Joueurs inscrits",
+  "PLAYERS_BALANCE": "Balance des joueurs",
+  "PLAYERS_MAKING_DEPOSIT": "Les joueurs effectuent un dépôt",
+  "PLAYERS_MAKING_WITHDRAWALS": "Les joueurs effectuent des retraits",
+  "PROFIT": "Profit",
+  "BET_SPORT": "Parier le sport",
+  "WIN_SPORT": "Gagner du sport",
+  "BET_FANTASY": "Pariter la fantaisie",
+  "WIN_FANTASY": "Gagner la fantaisie",
+  "PREMATCH": "Pré-match",
+  "TOTAL": "Total",
+  "TURNOVER": "Chiffre d'affaires",
+  "WINNING": "Gagnant",
+  "OPEN_BETS_SINGLE":"Open Bets (Single)",
+  "OPEN_BETS_COMBO": "Paris ouverts (combo)",
+  "NUMBER_OF_BETS_SINGLE": "Nombre de paris (simple)",
+  "NUMBER_OF_BETS_COMBO": "Nombre de paris (combo)",
+  "AVERAGE_BET": "Pari moyen",
+  "BET_PER_PLAYER": "Pari par joueur",
+  "NUMBER_OF_PLAYERS": "Nombre de joueurs",
+  "PROFITABILITY": "Rentabilité",
+  "LIVE_CONTESTS": "Concours en direct",
+  "OPEN_CONTESTS": "Concours ouverts",
+  "AVERAGE_ENTRY_FEES": "Frais d'entrée moyens",
+  "ENTRY_FEES_PER_PLAYER": "Frais d'entrée par joueur",
+  "TOP_5_SPORTS": "Top 5 sports",
+  "BETS": "Paris",
+  "No_RECORDS_FOUND": "Aucun enregistrement trouvé",
+  "PLAYERS_PLAYING": "Joueurs jouant",
+  "ADVANCED" : "Avancé",
+  "COMPONENT" : "Composant",
+  "FULL_PAGE_VIEW" : "Vue pleine page",
+  "BET_SETTING": "Réglage de pari",
+  "BET_CURRENCY_WISE_SETTING": "Paramètre de pari sur les devises",
+  "MIN_ODD": "Min bizarre",
+  "MIN_AUTO_RATE": "Taux automatique Min",
+  "MIN_BET_AMOUNT": "Mont de pari min",
+  "MAX_BET_AMOUNT": "Montant de pari maximum",
+  "MAX_PROFIT_AMOUNT": "Montant de profit maximum",
+  "JSON_FILE": "Fichier JSON"
+
+}

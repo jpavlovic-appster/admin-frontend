@@ -1,0 +1,95 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{ 'GAME_BACKGROUND' | translate }}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> {{ title | translate }} </h3>
+              <span style="float: right;">
+                <a class="btn btn-success fnt-left" download="filename" target="_blank" href="/assets/dist/img/dummyBg.png">
+                  {{'ACTION_BUTTON.DOWNLOAD_BG_IMG' | translate}}
+                 </a>
+                 &nbsp;
+                 <a class="btn btn-success fnt-left" download="filename" target="_blank" href="/assets/dist/json/dummyBg.json">
+                  {{'ACTION_BUTTON.DOWNLOAD_BG_JSON' | translate}}
+                  </a>
+
+              <!-- <button class="btn btn-success fnt-left" (click)="download()">Download Sample json</button> -->
+
+              </span></div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+              <div class="card-body">
+
+
+
+
+
+                <div class="form-group">
+                  <label for="bgPngFile">{{'BG_IMG' | translate}} <span class="text-danger">*</span></label>
+                  <input type="file" (change)="selectFile2(file.files)" #file formControlName="bgPngFile" accept=".png" class="form-control" id="bgPngFile"
+                    placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.bgPngFile.errors">
+                    <div *ngIf="f.bgPngFile.errors.required">{{'SENTENCES.IMAGE_REQUIRED' | translate}}</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="bgJsonFile">{{'BG_JSON' | translate}}<span class="text-danger">*</span></label>
+                  <input type="file" (change)="selectFile(file1.files)" #file1 formControlName="bgJsonFile" accept=".json" class="form-control" id="bgJsonFile"
+                    placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.bgJsonFile.errors">
+                    <div *ngIf="f.bgJsonFile.errors.required">{{'VALIDATION_MSGS.JSON_FILE.REQUIRED' | translate}}</div>
+                  </div>
+                  &nbsp;
+                  <div
+                  class="alert alert-warning">
+                  {{'SENTENCES.WARNING_BG' | translate}}                 </div>
+                </div>
+
+
+
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <div class="alert alert-danger" *ngIf="(id == 0 && !canCreate)">
+                  {{'SENTENCES.NO_PERMISSION_CREATE_CURRENCIES' | translate}}</div>
+
+                <div class="alert alert-danger" *ngIf="(id > 0 && !canEdit)">
+                  {{'SENTENCES.NO_PERMISSION_UPDATE_CURRENCIES' | translate}}</div>
+
+                <ng-container *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)">
+                  <button type="submit" [disabled]="currencyLoader" class="btn btn-primary"> <span
+                      *ngIf="currencyLoader" class="spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span> {{'ACTION_BUTTON.SUBMIT' | translate}} </button>
+                  &nbsp;
+                </ng-container>
+                <a routerLink="/super-admin/subscribers/list/0" class="btn btn-warning"> {{'ACTION_BUTTON.CANCEL' | translate}}
+                </a>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+</div>
+
+
+

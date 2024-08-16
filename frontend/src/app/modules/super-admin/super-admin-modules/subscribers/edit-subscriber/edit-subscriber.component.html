@@ -1,0 +1,889 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{ 'SUBSCRIBERS' | translate }}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+                <ng-container *ngIf="id>0; else disSub">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="subscriber_t" href="#subscriber" data-toggle="tab">
+                      {{ "SUBSCRIBER" | translate }}
+                    </a>
+                  </li>
+                </ng-container>
+                <ng-template #disSub>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ "SUBSCRIBER" | translate
+                    }}</a>
+                </ng-template>
+
+                <!-- <ng-container *ngIf="packageBool; else disPack">
+                  <li class="nav-item disabled"><a class="nav-link" id="packages_t" href="#packages"
+                      data-toggle="tab">{{'PACKAGES' | translate}}</a>
+                  </li>
+                </ng-container>
+                <ng-template #disPack>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{'PACKAGES' |
+                    translate}}</a>
+                </ng-template> -->
+
+                <ng-container *ngIf="id>0; else disCreds">
+                  <li class="nav-item">
+                    <a class="nav-link" id="credentials_t" href="#credentials" data-toggle="tab">{{ "CALLBACK_APIS" |
+                      translate }}</a>
+                  </li>
+                </ng-container>
+                <ng-template #disCreds>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ "CALLBACK_APIS" | translate
+                    }}</a>
+                </ng-template>
+
+                <!-- <ng-container *ngIf="themeBool; else disTheme">
+                  <li class="nav-item"><a class="nav-link" id="theme_t" href="#theme" data-toggle="tab">{{'THEME' |
+                      translate}}</a>
+                  </li>
+                </ng-container> -->
+                <ng-template #disTheme>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ "THEME" | translate }}</a>
+                </ng-template>
+
+                <ng-container *ngIf="id > 0">
+                  <!-- <ng-container *ngIf="sportSettingBool; else disSportSetting">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="sport_setting_t"
+                        href="#sport_setting"
+                        data-toggle="tab"
+                        >Crash Game Settings
+                      </a>
+                    </li>
+                  </ng-container>
+                  <ng-template #disSportSetting>
+                    <a
+                      class="nav-link disabled"
+                      href="#"
+                      tabindex="-1"
+                      aria-disabled="true"
+                      >Crash Game Settings</a
+                    >
+                  </ng-template> -->
+
+                  <ng-container >
+                    <li class="nav-item">
+                      <a class="nav-link" id="configurations_t" href="#configurations" data-toggle="tab">{{
+                        "CONFIGURATIONS" | translate }}</a>
+                    </li>
+                  </ng-container>
+                  <!-- <ng-template #disConfig>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ "CONFIGURATIONS" |
+                      translate }}</a>
+                  </ng-template> -->
+
+                  <ng-container>
+                    <li class="nav-item">
+                      <a class="nav-link" id="admins_t" href="#admins" data-toggle="tab">{{ "ADMINS" | translate }}</a>
+                    </li>
+                  </ng-container>
+                  <!-- <ng-template #disAdmin>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ "ADMINS" | translate
+                      }}</a>
+                  </ng-template> -->
+                </ng-container>
+              </ul>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="active tab-pane" id="subscriber">
+                  <form [formGroup]="editForm" (ngSubmit)="subscriberSubmit()">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="name">{{ "NAME" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <input type="text" formControlName="subscriber_name" class="form-control" id="name"
+                            maxlength="50" placeholder="{{
+                              'PLACEHOLDERS.ENTER_NAME' | translate
+                            }}" />
+                          <div class="invalid-feedback" *ngIf="submitted && f.subscriber_name.errors">
+                            <div *ngIf="f.subscriber_name.errors.required">
+                              {{ "VALIDATION_MSGS.NAME.REQUIRED" | translate }}
+                            </div>
+                            <div *ngIf="
+                                !f.subscriber_name.errors.pattern &&
+                                f.subscriber_name.errors.minlength
+                              ">
+                              {{ "VALIDATION_MSGS.NAME.MIN" | translate }}
+                            </div>
+                            <div *ngIf="f.subscriber_name.errors.pattern">
+                              {{ "VALIDATION_MSGS.NAME.VALID" | translate }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="domain">{{ "DOMAIN" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <input type="text" formControlName="domain" class="form-control" id="domain" maxlength="100"
+                            placeholder="http://example.com" />
+                          <div class="invalid-feedback" *ngIf="submitted && f.domain.errors">
+                            <div *ngIf="f.domain.errors.required">
+                              {{
+                              "VALIDATION_MSGS.DOMAIN.REQUIRED" | translate
+                              }}
+                            </div>
+                            <div *ngIf="f.domain.errors.pattern">
+                              {{ "VALIDATION_MSGS.DOMAIN.VALID" | translate }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="organization">{{ "ORGANIZATION" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control" formControlName="organization" id="organization">
+                            <option value="">
+                              {{ "SENTENCES.SELECT_ORGANIZATION" | translate }}
+                            <option *ngFor="let organization of organizations" [value]="organization.id">
+                              {{ organization.name }}
+                            </option>
+                          </select>
+                          <div class="invalid-feedback" *ngIf="submitted && f.organization.errors">
+                            <div *ngIf="f.organization.errors.required">
+                              {{ "VALIDATION_MSGS.ORGANIZATION.REQUIRED" | translate }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="language">{{ "LANGUAGE" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control" formControlName="language" id="language">
+                            <option value="">
+                              {{ "SENTENCES.SELECT_LANGUAGE" | translate }}
+                            </option>
+                            <option *ngFor="let lang of langs" [value]="lang.code">
+                              {{ lang.name }}
+                            </option>
+                          </select>
+                          <div class="invalid-feedback" *ngIf="submitted && f.language.errors">
+                            <div *ngIf="f.language.errors.required">
+                              {{ "VALIDATION_MSGS.LANGUAGE.REQUIRED" | translate }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="currencies">{{ "ALLOWED_CURRENCIES" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control" select2 (onSelect)="selectCurrencies($event)" id="currencies"
+                            multiple="multiple" data-placeholder="Select a Currencies" style="width: 100%">
+                            <option *ngFor="let currency of currencies" [value]="currency.id">
+                              {{ currency.name }}
+                            </option>
+                          </select>
+
+                          <div class="invalid-feedback" *ngIf="submitted && f.currencies.errors">
+                            <div *ngIf="f.currencies.errors.required">
+                              {{
+                              "VALIDATION_MSGS.CURRENCY.REQUIRED" | translate
+                              }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- <div class="col-md-6">
+
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="exampleInputFile">Hero Image <span *ngIf="id == 0" class="text-danger">*</span></label>
+                                <div class="input-group">
+                                  <div class="custom-file">
+                                    <input (change)="selectImage(file.files)" #file formControlName="logo" accept="image/*"
+                                      type="file" class="custom-file-input" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                  </div>
+
+                                </div>
+                                <div class="invalid-feedback" *ngIf="submitted && f.logo.errors">
+                                  <div *ngIf="f.logo.errors.required">Hero image is required</div>
+                                  <div *ngIf="f.logo.errors.requiredFileType">Hero Image must be image</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6" *ngIf="imgURL">
+                              <img [src]="imgURL" class="imshow" id="tenantLogo" />
+                            </div>
+
+                          </div>
+
+                        </div> -->
+
+                      <div class="col-md-6" *ngIf="
+                          f.currencies.value && f.currencies.value.length > 0
+                        ">
+                        <div class="form-group">
+                          <label for="pcny">{{ "PRIMARY_CURRENCY" | translate }}
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control" formControlName="primary_currency" id="pcny">
+                            <option value="">
+                              {{
+                              "PLACEHOLDERS.SELECT_PRIMARY_CURRENCY"
+                              | translate
+                              }}
+                            </option>
+                            <option *ngFor="let currency of selectedCurrencies" [value]="currency.code">
+                              {{ currency.name }}
+                            </option>
+                          </select>
+                          <div class="invalid-feedback" *ngIf="submitted && f.primary_currency.errors">
+                            <div *ngIf="f.primary_currency.errors.required">
+                              {{
+                              "VALIDATION_MSGS.PRIMARY_CURRENCY.REQUIRED"
+                              | translate
+                              }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" *ngIf="id == 0">
+                        <div class="form-group">
+                            <label for="domain">{{ "SECRET_KEY" | translate }}
+                            </label>
+                            <input type="text" formControlName="secret_key" class="form-control" id="secret_key" maxlength="100" placeholder="Enter secret key"/>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" >
+                        <div class="form-group">
+                            <label for="trader_id">{{ "TRADER_ID" | translate }}
+                            <span class="text-danger">*</span></label>
+                            <input type="number" formControlName="trader_id" class="form-control" placeholder="{{'PLACEHOLDERS.ENTER_TRADER_ID' | translate
+                            }}" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="trader_id" placeholder="Enter trader id"/>
+                            <div class="invalid-feedback" *ngIf="submitted && f.trader_id.errors">
+                              <div *ngIf="f.trader_id.errors.required">
+                                {{
+                                "VALIDATION_MSGS.TRADER_ID.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6" >
+                        <div class="form-group">
+                            <label for="trader_preference">{{ "TRADER_PREFERENCE" | translate }}
+                              <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" formControlName="trader_preference" class="form-control" maxlength="100" id="trader_preference" placeholder="{{'PLACEHOLDERS.ENTER_TRADER_PREFERENCE' | translate
+                          }}"/>
+                            <div class="invalid-feedback" *ngIf="submitted && f.trader_preference.errors">
+                              <div *ngIf="f.trader_preference.errors.required">
+                                {{
+                                "VALIDATION_MSGS.TRADER_PREFERENCE.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+        
+                      <!-- <div class="col-md-6" *ngIf="id > 0">
+                        <div class="form-group">
+                          <label for="status"> {{'STATUS' | translate}} <span class="text-danger">*</span></label>
+                          <select class="form-control" formControlName="status" id="status">
+                            <option value="0"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}} </option>
+                            <option value="1"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                          </select>
+                          <div class="invalid-feedback" *ngIf="submitted && f.status.errors">
+                            <div *ngIf="f.status.errors.required">{{'VALIDATION_MSGS.STATUS.REQUIRED' |
+                              translate}}</div>
+                          </div>
+                        </div>
+                      </div> -->
+
+                      <div class="col-md-12 mgt">
+                        <a routerLink="/super-admin/subscribers/list/0" class="btn btn-warning">
+                          {{ "ACTION_BUTTON.CANCEL" | translate }}
+                        </a>
+
+                        <div class="alert alert-danger" *ngIf="id == 0 && !canCreate">
+                          {{
+                          "SENTENCES.NO_PERMISSION_CREATE_SUBSCRIBER"
+                          | translate
+                          }}
+                        </div>
+
+                        <div class="alert alert-danger" *ngIf="id > 0 && !canEdit">
+                          {{
+                          "SENTENCES.NO_PERMISSION_UPDATE_SUBSCRIBER"
+                          | translate
+                          }}
+                        </div>
+
+                        &nbsp;
+                        <button *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)" type="submit"
+                          class="f-right btn btn-primary">
+                          {{ "ACTION_BUTTON.NEXT" | translate }}
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="tab-pane" id="credentials">
+                  <!-- <div
+                    *ngIf="id == 0 || subscriber?.status == 3"
+                    class="alert alert-info"
+                  >
+                    {{ "SENTENCES.CREDENTIAL_SUBSCRIBER_ACTIVE" | translate }}
+                  </div> -->
+
+                  <form [formGroup]="editForm" (ngSubmit)="credSubmit()">
+                    <div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            {{ "AUTH_API" | translate }}
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <!-- <label for="key_{{i}}"> Key </label> -->
+                            <input type="text" formControlName="auth_api" class="form-control" id="auth_api"
+                              placeholder="{{
+                                'PLACEHOLDERS.ENTER_VALUE' | translate
+                              }}" />
+                            <div class="invalid-feedback" *ngIf="
+                                submitted1 &&
+                                f.auth_api.errors
+                              ">
+                              <div *ngIf="
+                                  f.auth_api.errors
+                                    .required
+                                ">
+                                {{
+                                "VALIDATION_MSGS.VALUE.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            {{ "CREDIT_API" | translate }}
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <!-- <label for="key_{{i}}"> Key </label> -->
+                            <input type="text" formControlName="credit_api" class="form-control" id="credit_api"
+                              placeholder="{{
+                                'PLACEHOLDERS.ENTER_VALUE' | translate
+                              }}" />
+                            <div class="invalid-feedback" *ngIf="
+                                submitted1 &&
+                                f.credit_api.errors
+                              ">
+                              <div *ngIf="
+                                  f.credit_api.errors
+                                    .required
+                                ">
+                                {{
+                                "VALIDATION_MSGS.VALUE.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            {{ "DEBIT_API" | translate }}
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <!-- <label for="key_{{i}}"> Key </label> -->
+                            <input type="text" formControlName="debit_api" class="form-control" id="debit_api"
+                              placeholder="{{
+                                'PLACEHOLDERS.ENTER_VALUE' | translate
+                              }}" />
+                            <div class="invalid-feedback" *ngIf="
+                                submitted1 &&
+                                f.debit_api.errors
+                              ">
+                              <div *ngIf="
+                                  f.debit_api.errors
+                                    .required
+                                ">
+                                {{
+                                "VALIDATION_MSGS.VALUE.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            {{ "ROLLBACK_API" | translate }}
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <!-- <label for="key_{{i}}"> Key </label> -->
+                            <input type="text" formControlName="rollback_api" class="form-control" id="rollback_api"
+                              placeholder="{{
+                                'PLACEHOLDERS.ENTER_VALUE' | translate
+                              }}" />
+                            <div class="invalid-feedback" *ngIf="
+                                submitted1 &&
+                                f.rollback_api.errors
+                              ">
+                              <div *ngIf="
+                                  f.rollback_api.errors
+                                    .required
+                                ">
+                                {{
+                                "VALIDATION_MSGS.VALUE.REQUIRED" | translate
+                                }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <br />
+                    </div>
+                    <div class="f-left">
+                      <button *ngIf="
+                          (id == 0 && canCreate) ||
+                          (id > 0 && canEdit) ||
+                          credentialBool
+                        " type="button" (click)="goBackSubscriber()" class="btn btn-primary">
+                        {{ "ACTION_BUTTON.PREVIOUS" | translate }}
+                      </button>
+                    </div>
+                    <div class="f-right">
+                      <!-- <button *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)" type="submit"
+                      class="btn btn-primary"> {{'ACTION_BUTTON.NEXT' |
+                      translate}} </button> -->
+
+                      <button *ngIf="id == 0 && canCreate" [disabled]="loader" type="button" (click)="onSubmit()"
+                        class="btn btn-success">
+                        <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                          aria-hidden="true"></span>
+                        {{ "ACTION_BUTTON.SUBMIT" | translate }}
+                      </button>
+                      <button *ngIf="id > 0 && canEdit" [disabled]="loader" type="button"
+                        (click)="onSubmit(); nextSportSetting()" class="btn btn-success">
+                        <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                          aria-hidden="true"></span>
+                        {{ "ACTION_BUTTON.SUBMIT" | translate }} & Next
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="tab-pane" id="theme">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header">
+                        {{ "PLACEHOLDERS.SELECT_THEME" | translate }}
+                      </div>
+                    
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="f-right">
+                    &nbsp;
+
+                    <!-- <button *ngIf="id > 0 && canEdit" type="button" (click)="nextSportSetting()"
+                      class="btn btn-primary"> {{'ACTION_BUTTON.NEXT' |
+                      translate}} </button> -->
+                    <button *ngIf="id == 0 && canCreate" [disabled]="loader" type="button" (click)="onSubmit()"
+                      class="btn btn-success">
+                      <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span>
+                      {{ "ACTION_BUTTON.SUBMIT" | translate }}
+                    </button>
+                    <button *ngIf="id > 0 && canEdit" [disabled]="loader" type="button"
+                      (click)="onSubmit(); nextSportSetting()" class="btn btn-success">
+                      <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span>
+                      {{ "ACTION_BUTTON.SUBMIT" | translate }} & Next
+                    </button>
+                    &nbsp;
+                  </div>
+                  <button *ngIf="
+                      (id == 0 && canCreate) || (id > 0 && canEdit) || themeBool
+                    " type="button" (click)="goToCredential()" class="btn btn-primary">
+                    {{ "ACTION_BUTTON.PREVIOUS" | translate }}
+                  </button>
+                </div>
+
+                <div class="tab-pane" id="sport_setting">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "MIN_ODD" | translate }}</th>
+                        <th>{{ "MAX_ODD" | translate }}</th>
+                        <th>{{ "MIN_AUTO_RATE" | translate }}</th>
+                        <th *ngIf="canEditSportSettings">
+                          {{ "ACTION" | translate }}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="crashGameSetting?.id">
+                        <td>{{ crashGameSetting?.min_odds | number }}</td>
+                        <td>{{ crashGameSetting?.max_odds | number }}</td>
+                        <td>{{ crashGameSetting?.min_auto_rate | number }}</td>
+                        <!-- <td>
+                          <span [ngClass]="sportsSetting?.bet_disabled ? 'text-danger' : 'text-success'">
+                            {{(sportsSetting?.bet_disabled ? 'ACTION_BUTTON.DISABLED' : 'ENABLED') | translate}}
+                          </span>
+                        </td> -->
+                        <td *ngIf="canEditSportSettings">
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/settings/crash-game/super-admin',
+                              crashGameSetting?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr *ngIf="!sportsSetting?.id">
+                        <td colspan="10" class="tnodata">
+                          {{ "SENTENCES.SPORT_SETTING_404" | translate }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="f-right">
+                    <button *ngIf="
+                        (id == 0 && canCreate) ||
+                        (id > 0 && canEdit) ||
+                        sportSettingBool
+                      " type="button" (click)="goToCredential()" class="btn btn-primary">
+                      {{ "ACTION_BUTTON.PREVIOUS" | translate }}
+                    </button>
+                    &nbsp;
+                    <button *ngIf="
+                        (id == 0 && canCreate) ||
+                        (id > 0 && canEdit) ||
+                        sportSettingBool
+                      " type="button" (click)="nextConfig()" class="btn btn-primary">
+                      {{ "ACTION_BUTTON.NEXT" | translate }}
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="tab-pane" id="configurations">
+                  <div class="card-body f-right">
+                    <button type="button" (click)="setDefault(10)"
+                          class="btn btn-success fnt-12"> <i></i>{{'ACTION_BUTTON.SET_ALL_DEFAULT'
+                          | translate}}</button>          
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "CONFIGURATION" | translate }}</th>
+                        <th>{{ "VALUE" | translate }}</th>
+                        <th>
+                          {{ "ACTION" | translate }}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ "MULTI_BET" | translate }}</td>
+                        <td><input type="number" step="any" class="form-control" [(ngModel)]="multi_bet"
+                            onkeypress="return event.charCode >= 49 && event.charCode <= 51 && (this.value.length<1)"
+                            min="1" max="3">
+
+                        </td>
+                        <td>
+                          <a (click)="updateMutiBet()" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-save"></i>
+                            {{ "ACTION_BUTTON.SAVE" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{ "GRAPH" | translate }}</td>
+                        <td *ngIf="graph==1">{{ "ENABLED" | translate }}
+                        </td>
+                        <td *ngIf="graph==0">{{ "ACTION_BUTTON.DISABLED" | translate }}
+                        </td>
+                        <td *ngIf="graph==1">
+                          <button type="button" title="{{ 'ACTION_BUTTON.DISABLE'  | translate }}"
+                            class="btn btn-danger fnt-12" (click)="updateGraph(2)"> <i class="fa fa-remove"></i>
+                          </button>
+                        </td>
+                        <td *ngIf="graph==0">
+                          <button type="button" title="{{ 'ENABLE'  | translate }}" (click)="updateGraph(1)"
+                            class="btn btn-success fnt-12"> <i class="fa fa-check"></i> </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{'GRAPH_COLOUR' | translate}}</td>
+                        <td><input type="color" class="form-control" [(ngModel)]="graph_colour">
+                        </td>
+                        <td>
+                          <a (click)="updateColour(1)" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-save"></i>
+                            {{ "ACTION_BUTTON.SAVE" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="graph_colour!='#3586EF'" type="button" (click)="setDefault(6)"
+                          class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{'LOADER_COLOUR' | translate}}</td>
+                        <td><input type="color" class="form-control" [(ngModel)]="loader_colour">
+                        </td>
+                        <td>
+                          <a (click)="updateColour(2)" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-save"></i>
+                            {{ "ACTION_BUTTON.SAVE" | translate }}
+                          </a>
+                          &nbsp;
+                          <button *ngIf="loader_colour!='#3586EF'" type="button" (click)="setDefault(7)"
+                          class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+
+                      <!-- <tr *ngIf="!sportsSetting?.id">
+                        <td colspan="10" class="tnodata">
+                          {{ "SENTENCES.SPORT_SETTING_404" | translate }}
+                        </td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "CONFIGURATION" | translate }}</th>
+                        <th>
+                          {{ "ACTION" | translate }}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ "GAME_HERO" | translate }}</td>
+                        <td>
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/super-admin/configurations/hero',
+                              config?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="config?.hero_json!=null" type="button" (click)="setDefault(1)"
+                            class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{ "GAME_BACKGROUND" | translate }}</td>
+                        <td>
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/super-admin/configurations/background',
+                              config?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="config?.bg_json!=null" type="button" (click)="setDefault(2)"
+                            class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                      <!-- <tr *ngIf="!sportsSetting?.id">
+                        <td colspan="10" class="tnodata">
+                          {{ "SENTENCES.SPORT_SETTING_404" | translate }}
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <td>{{ "SOUND" | translate }}</td>
+                        <td>
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/super-admin/configurations/sound',
+                              config?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="config?.bg_sound!=null && !config?.bg_sound.includes('sounds')" type="button" (click)="setDefault(3)"
+                            class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{'START_ANIMATION' | translate}}</td>
+                        <td>
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/super-admin/configurations/start-animation',
+                              config?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="config?.start_anim_json!=null" type="button" (click)="setDefault(4)"
+                            class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{'CRASH_ANIMATION' | translate}}</td>
+                        <td>
+                          <a (click)="goEdit()" [routerLink]="[
+                              '/super-admin/configurations/crash-animation',
+                              config?.id
+                            ]" class="fnt-12 btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a> &nbsp;
+                          <button *ngIf="config?.crash_anim_json!=null" type="button" (click)="setDefault(5)"
+                            class="btn btn-success fnt-12"> <i></i> {{ "ACTION_BUTTON.SET_DEFAULT" | translate }}</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+                  <div class="f-right">
+                    <button *ngIf="
+                        (id == 0 && canCreate) ||
+                        (id > 0 && canEdit) ||
+                        sportSettingBool
+                      " type="button" (click)="goToCredential()" class="btn btn-primary">
+                      {{ "ACTION_BUTTON.PREVIOUS" | translate }}
+                    </button>
+                    &nbsp;
+                    <button *ngIf="
+                        (id == 0 && canCreate) ||
+                        (id > 0 && canEdit) ||
+                        sportSettingBool
+                      " type="button" (click)="nextAdmins()" class="btn btn-primary">
+                      {{ "ACTION_BUTTON.NEXT" | translate }}
+                    </button>
+                  </div>
+                </div>
+
+
+                <div class="tab-pane" id="admins">
+                <div> <a
+                  [routerLink]="['/agents/subscriber', id, 0]"
+                  class="fnt-12 f-right btn btn-success"
+                >
+                  {{ "ACTION_BUTTON.CREATE" | translate }}
+                </a></div> 
+                <br><br>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "ID" | translate }}</th>
+                        <th>{{ "EMAIL" | translate }}</th>
+                        <th>{{ "ADMIN_CODE" | translate }}</th>
+                        <th>{{ "FULL_NAME" | translate }}</th>
+                        <th>{{ "PHONE_NUMBER" | translate }}</th>
+                        <th>{{ "STATUS" | translate }}</th>
+                        <th>{{ "ACTION" | translate }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="
+                          let user of users
+                            | paginate
+                              : {
+                                  itemsPerPage: params.size,
+                                  currentPage: p,
+                                  totalItems: total
+                                }
+                        ">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.agent_name }}</td>
+                        <td>{{ user.first_name + " " + user.last_name }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>
+                          <span [ngClass]="
+                              user.active ? 'text-success' : 'text-danger'
+                            ">
+                            {{
+                            (user.active
+                            ? "ACTION_BUTTON.ACTIVE"
+                            : "ACTION_BUTTON.IN_ACTIVE"
+                            ) | translate
+                            }}
+                          </span>
+                        </td>
+
+                        <td>
+                          <a (click)="goEdit()" class="btn btn-warning fnt-12"
+                            [routerLink]="['/agents/subscriber', id, user.id]">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr *ngIf="users && users.length === 0">
+                        <td colspan="9" class="tnodata">
+                          {{ "SENTENCES.ADMIN_404" | translate }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event">
+                  </pagination-controls>
+
+                  <button *ngIf="
+                      (id == 0 && canCreate) || (id > 0 && canEdit) || adminBool
+                    " type="button" (click)="goBackConfig()" class="f-right btn btn-primary">
+                    {{ "ACTION_BUTTON.PREVIOUS" | translate }}
+                  </button>
+                </div>
+
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,6665 @@
+{
+	"info": {
+		"_postman_id": "c8adc907-c18c-4e57-b0cb-5288f9d85901",
+		"name": "backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/logout/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@tenant1.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "MTIzNDU2Nzg5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get User by id and list of all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/super",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@ezugi.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "MTIzNDU2Nzg5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login/super",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"super"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout/admin/super",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{supertoken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/logout/admin/super",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout",
+								"admin",
+								"super"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "agent_user",
+					"item": [
+						{
+							"name": "user list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get User Profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin Agents with filter",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Roo",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/usersadmin/agent",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"usersadmin",
+										"agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "fresh_agent@yopmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "parent_id",
+											"value": "31",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "agent_name",
+											"value": "ch",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/78",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"78"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id tree",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/agent/tree/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"agent",
+										"tree",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id deactivated",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "fresh_agent@yopmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "parent_id",
+											"value": "31",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "agent_name",
+											"value": "ch",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/deactive/18",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"deactive",
+										"18"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id activated",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/active/18",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"active",
+										"18"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin users setting add/update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "value",
+											"value": "ewewewewewewewewewewe",
+											"type": "text"
+										},
+										{
+											"key": "admin_user_id",
+											"value": "78222221",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "76\n",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/setting",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin users setting update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "value",
+											"value": "ewewewewewewewewewewe",
+											"type": "text"
+										},
+										{
+											"key": "admin_user_id",
+											"value": "78222221",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/player/setting/edit/3548",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"player",
+										"setting",
+										"edit",
+										"3548"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin users setting deleted",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "value",
+											"value": "ewewewewewewewewewewe",
+											"type": "text"
+										},
+										{
+											"key": "admin_user_id",
+											"value": "78222221",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/setting",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenanat Admin User Add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "fresh_agent+10000@yopmail.com",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "23423423423",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "agent_name",
+											"value": "ch admin",
+											"type": "text"
+										},
+										{
+											"key": "currency_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "encrypted_password",
+											"value": "MTIzNDU2Nzg5",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "[\"2\"]",
+											"type": "text"
+										},
+										{
+											"key": "phone_verified",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/usersadmin/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"usersadmin",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tenants",
+					"item": [
+						{
+							"name": "Tenants get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants get credentials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/credentials",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"credentials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants set credentials",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "key",
+											"value": "APP_TWILIO_ACCOUNT_SID",
+											"type": "text"
+										},
+										{
+											"key": "keyvalue",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sdfgfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/credentials",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"credentials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants delete credentials",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "key",
+											"value": "APP_TWILIO_ACCOUNT_SID",
+											"type": "text"
+										},
+										{
+											"key": "keyvalue",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sdfgfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/credentials/6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"credentials",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants edit credentials",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "key",
+											"value": "APP_TWILIO_ACCOUNT_SID",
+											"type": "text"
+										},
+										{
+											"key": "keyvalue",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sdfgfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/credentials/edit/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"credentials",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin user add owner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Tenant Two",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "dev",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ashishtest@test.com",
+											"type": "text"
+										},
+										{
+											"key": "encrypted_password",
+											"value": "MTIzNDU2",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "23123123123",
+											"type": "text"
+										},
+										{
+											"key": "phone_verified",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "Agent",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "agent_name",
+											"value": "sdfsdf",
+											"type": "text"
+										},
+										{
+											"key": "currency_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/usersadmin/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"usersadmin",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin user Edit owner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tenant Two",
+											"type": "text"
+										},
+										{
+											"key": "domain",
+											"value": "ezugitenanttwo.com",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/usersadmin/edit/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"usersadmin",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tenants banners",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "dfasdfasd",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/rails/Downloads/images/jeffery-erhunse-Z9lbmEjyYjU-unsplash.jpg"
+										},
+										{
+											"key": "redirect_url",
+											"value": "https://admin.ezugitenantone.tk/tenants/page_banners",
+											"type": "text"
+										},
+										{
+											"key": "banner_type",
+											"value": "magei",
+											"type": "text"
+										},
+										{
+											"key": "order",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "enabled",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/banner/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"banner",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tenants theme update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "layout_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "language_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "theme",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "allowed_currencies",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/theme/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"theme",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PageBanners list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/banners/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"banners",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PageBanners DELETE",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/banners/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"banners",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "themes get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/themes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"themes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "languages get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/languages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "layout get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/currencies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tenants currencies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/tenants/currencies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"tenants",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "transactions by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions user wallets by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/users/wallets/14",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"users",
+										"wallets",
+										"14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions by email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "owner_email",
+											"value": "jo",
+											"type": "text"
+										},
+										{
+											"key": "owner_type",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/users/new",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"users",
+										"new"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "owner_email",
+											"value": "jo",
+											"type": "text"
+										},
+										{
+											"key": "owner_type",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/users/new",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"users",
+										"new"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions create No cash deposit",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wallet_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "non_cash_amount",
+											"value": "1500",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/no-cash/deposit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"no-cash",
+										"deposit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions create No cash withdraw",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wallet_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "non_cash_amount",
+											"value": "1500",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/no-cash/deposit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"no-cash",
+										"deposit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions filter with pagnination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "currency_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/transactions",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions /transfer-fund/new",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "transaction_amount",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "transaction_comments",
+											"value": "sdfgsd fgsdfg sdfg sdfg sdfgsdfg",
+											"type": "text"
+										},
+										{
+											"key": "target_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "target_wallete_id",
+											"value": "17177",
+											"type": "text"
+										},
+										{
+											"key": "source_wallete_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "target_currency_id",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/transfer-fund/new",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"transfer-fund",
+										"new"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "withdrawal with pagnination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "search",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "pending",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/transactions/withdrawal/lists",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"transactions",
+										"withdrawal",
+										"lists"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "player",
+					"item": [
+						{
+							"name": "users admin payer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Rob",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/usersadmin/player",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"usersadmin",
+										"player"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user payer by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Rob",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/player/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"player",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users active inactive payer",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Rob",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/player/status/2/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"player",
+										"status",
+										"2",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "player Add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "encrypted_password",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "phone_verified",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "currency_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country_code",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date_of_birth",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "vip_level",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/player/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"player",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "player setting document status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"user_id\":\"643\",\"document_id\":\"2\",\"status\":\"rejected\",\"reason\":\"asdfasdfasdf\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/player/setting/document/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"player",
+										"setting",
+										"document",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "player update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/player/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"player",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "get notification",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Rob",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/notification",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Casino",
+					"item": [
+						{
+							"name": "manus",
+							"item": [
+								{
+									"name": "casino manus update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "menu_type",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "menu_order",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "image_url",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/katie-gerrard-TuZ4Tbq9sWk-unsplash.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus/update/3",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus",
+												"update",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino manus get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino manus get all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino manus get all for dropdown",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus/list/all",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus",
+												"list",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino manus delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus/2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino manus add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "menu_type",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/jeffery-erhunse-Z9lbmEjyYjU-unsplash.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/menus/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"menus",
+												"add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "pages",
+							"item": [
+								{
+									"name": "pages get",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "pages manu items get",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/record/page_menu/item?page_menu_id=1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"record",
+												"page_menu",
+												"item"
+											],
+											"query": [
+												{
+													"key": "page_menu_id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "pages get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/12",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"12"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\":\"1ssssss\",\n    \"enabled\":1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/edit/5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"edit",
+												"5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages update-order",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/update-order/5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"update-order",
+												"5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages update-menu-order",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/update-menu-order/5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"update-menu-order",
+												"5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/record/page_menu/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"record",
+												"page_menu",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "1ssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/record/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"record",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages manu add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1ssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "page_id",
+													"value": "12",
+													"type": "text"
+												},
+												{
+													"key": "casino_menu_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/record/page_menu/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"record",
+												"page_menu",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino pages manu update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1ssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "page_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "casino_menu_id",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/pages/record/page_menu/update/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"pages",
+												"record",
+												"page_menu",
+												"update",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "items",
+							"item": [
+								{
+									"name": "casino item update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "uuid",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "active",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/karl-magnuson-85J99sGggnw-unsplash.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items/edit/46",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items",
+												"edit",
+												"46"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino item add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "uuid",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "active",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/jeffery-erhunse-Z9lbmEjyYjU-unsplash.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino Items get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino casino Items get all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino items delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items/46",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items",
+												"46"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get dropdown item",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/casino/items/tables",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"casino",
+												"items",
+												"tables"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "bones",
+					"item": [
+						{
+							"name": "deposit",
+							"item": [
+								{
+									"name": "add bones/deposit",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "code",
+													"value": "avb",
+													"type": "text"
+												},
+												{
+													"key": "percentage",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/miguel-bruna-TzVN0xQhWaQ-unsplash.jpg"
+												},
+												{
+													"key": "campaign_period",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												},
+												{
+													"key": "currency_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "promotion_title",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "terms_and_conditions",
+													"value": "teaeate g asdgasdfasdfasdfa sd",
+													"type": "text"
+												},
+												{
+													"key": "vip_levels",
+													"value": "{1,2,3}",
+													"type": "text"
+												},
+												{
+													"key": "min_deposit",
+													"value": "100",
+													"type": "text"
+												},
+												{
+													"key": "max_bonus",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "rollover_multiplier",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "max_rollover_per_bet",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "valid_for_days",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_from']",
+													"value": "2021-06-21 00:00:00",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_upto']",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/deposit/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"deposit",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update bones/deposit",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "code",
+													"value": "avb",
+													"type": "text"
+												},
+												{
+													"key": "percentage",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/jonathan-cosens-photography-v-YiCIbDjOQ-unsplash.jpg"
+												},
+												{
+													"key": "campaign_period",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												},
+												{
+													"key": "currency_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "promotion_title",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "terms_and_conditions",
+													"value": "teaeate g asdgasdfasdfasdfa sd",
+													"type": "text"
+												},
+												{
+													"key": "vip_levels",
+													"value": "{1,2,3}",
+													"type": "text"
+												},
+												{
+													"key": "min_deposit",
+													"value": "100",
+													"type": "text"
+												},
+												{
+													"key": "max_bonus",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "rollover_multiplier",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "max_rollover_per_bet",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "valid_for_days",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_from']",
+													"value": "2021-06-21 00:00:00",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_upto']",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/deposit/edit/13",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"deposit",
+												"edit",
+												"13"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "list with pagination bones/deposit",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "page",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/deposit",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"deposit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get by id bones/deposit",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/deposit/13",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"deposit",
+												"13"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete  by id bones",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/deposit/5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"deposit",
+												"5"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Losing",
+							"item": [
+								{
+									"name": "get list Losing",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/losing",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"losing"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete list Losing",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/losing/2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"losing",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get by id Losing losing",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/losing/7",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"losing",
+												"7"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add losing bonus",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "code",
+													"value": "avb",
+													"type": "text"
+												},
+												{
+													"key": "claim_days",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												},
+												{
+													"key": "currency_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "promotion_title",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "terms_and_conditions",
+													"value": "teaeate g asdgasdfasdfasdfa sd",
+													"type": "text"
+												},
+												{
+													"key": "vip_levels",
+													"value": "{1,2,3}",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_from']",
+													"value": "2021-06-21 00:00:00",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_upto']",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												},
+												{
+													"key": "tiers[0]['min_losing_amount']",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "tiers[0]['percentage']",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "tiers[1]['min_losing_amount']",
+													"value": "22",
+													"type": "text"
+												},
+												{
+													"key": "tiers[1]['percentage']",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/miguel-bruna-TzVN0xQhWaQ-unsplash.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/losing/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"losing",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update losing bonus",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "code",
+													"value": "avb",
+													"type": "text"
+												},
+												{
+													"key": "percentage",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "enabled",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/rails/Downloads/images/miguel-bruna-TzVN0xQhWaQ-unsplash.jpg"
+												},
+												{
+													"key": "campaign_period",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												},
+												{
+													"key": "currency_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "promotion_title",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "terms_and_conditions",
+													"value": "teaeate g asdgasdfasdfasdfa sd",
+													"type": "text"
+												},
+												{
+													"key": "vip_levels",
+													"value": "{1,2,3}",
+													"type": "text"
+												},
+												{
+													"key": "min_deposit",
+													"value": "100",
+													"type": "text"
+												},
+												{
+													"key": "max_bonus",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "rollover_multiplier",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "max_rollover_per_bet",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "valid_for_days",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_from']",
+													"value": "2021-06-21 00:00:00",
+													"type": "text"
+												},
+												{
+													"key": "campaign_period['valid_upto']",
+													"value": "2021-06-30 23:59:59",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/bones/losing/edit/13",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"bones",
+												"losing",
+												"edit",
+												"13"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get sign AWS URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{supertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyname",
+									"value": "tenants/1/items/261f1cc6-b752-4087-963b-3807bc3d58ab____jeffery-erhunse-Z9lbmEjyYjU-unsplash.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/aws/get/url",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"aws",
+								"get",
+								"url"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "superadmin",
+			"item": [
+				{
+					"name": "admin_user",
+					"item": [
+						{
+							"name": "admin user list Agents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "fresh_agent@yopmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "parent_id",
+											"value": "31",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "agent_name",
+											"value": "ch",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenanat Admin User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "fresh_agent@yopmail.com",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "agent_name",
+											"value": "ch",
+											"type": "text"
+										},
+										{
+											"key": "currency_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/usersadmin/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"usersadmin",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "fresh_agent@yopmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Fresh",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "parent_id",
+											"value": "31",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "agent_name",
+											"value": "ch",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/users/78",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"users",
+										"78"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin user by id get ajents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Roo",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adminId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/usersadmin/agent",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"usersadmin",
+										"agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users admin payer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Rob",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "adminId",
+											"value": "11",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/usersadmin/player",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"usersadmin",
+										"player"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleted users",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Customew",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "INRq",
+											"type": "text"
+										},
+										{
+											"key": "primary",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "exchange_rate",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/users/9",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"users",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "currencies",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/currencies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get  Currencies by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/currencies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create Currencies",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "q",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "INRq",
+											"type": "text"
+										},
+										{
+											"key": "primary",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "exchange_rate",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/currency",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"currency"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Currencies",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Customew",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "INRq",
+											"type": "text"
+										},
+										{
+											"key": "primary",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "exchange_rate",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/currency/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"currency",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleted Currencies",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Customew",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "INRq",
+											"type": "text"
+										},
+										{
+											"key": "primary",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "exchange_rate",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/currency/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"currency",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "layout",
+					"item": [
+						{
+							"name": "layout get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/layout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"layout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "layout get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/layout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"layout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "languages",
+					"item": [
+						{
+							"name": "languages get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/languages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "languages get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/languages/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"languages",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Themes",
+					"item": [
+						{
+							"name": "themes get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/themes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"themes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "themes get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/themes/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"themes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tenants",
+					"item": [
+						{
+							"name": "Tenants get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants get credentials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/credentials/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"credentials",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants set credentials",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "key",
+											"value": "APP_TWILIO_ACCOUNT_SID",
+											"type": "text"
+										},
+										{
+											"key": "keyvalue",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sdfgfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/credentials",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"credentials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants edit credentials",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "key",
+											"value": "APP_TWILIO_ACCOUNT_SID",
+											"type": "text"
+										},
+										{
+											"key": "keyvalue",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sdfgfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/credentials/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"credentials",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tenant Two",
+											"type": "text"
+										},
+										{
+											"key": "domain",
+											"value": "ezugitenanttwo.com",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin user add owner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Tenant Two",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "dev",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ashishtest@test.com",
+											"type": "text"
+										},
+										{
+											"key": "encrypted_password",
+											"value": "MTIzNDU2",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "23123123123",
+											"type": "text"
+										},
+										{
+											"key": "phone_verified",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "tenant_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "agent_name",
+											"value": "sdfsdf",
+											"type": "text"
+										},
+										{
+											"key": "currency_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/usersadmin/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"usersadmin",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin user Edit owner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tenant Two",
+											"type": "text"
+										},
+										{
+											"key": "domain",
+											"value": "ezugitenanttwo.com",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/usersadmin/edit/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"usersadmin",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants soft delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post pagination tenants/lists",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "domain",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "f",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/lists",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"lists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tenants get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/tenants/26",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"tenants",
+										"26"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "transactions by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/transactions/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"transactions",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions filter with pagnination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{supertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "tenant_id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "currency_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/transactions",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transactions /transfer-fund/new",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source_currency_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_amount",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "transaction_comments",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "target_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "target_wallete_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "source_wallete_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "target_currency_id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/super/admin/transactions/transfer-fund/new",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"super",
+										"admin",
+										"transactions",
+										"transfer-fund",
+										"new"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Casino",
+					"item": [
+						{
+							"name": "Game",
+							"item": [
+								{
+									"name": "casino game update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"1sssssssssssssssssssssssssssssssssss\",\n\"game_id\":\"20\",\n\"casino_provider_id\":3\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games/edit/46",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games",
+												"edit",
+												"46"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino game get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games/47",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games",
+												"47"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino game get all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games/list/all/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games",
+												"list",
+												"all",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino game delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games/46",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games",
+												"46"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino game with pagination",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "page",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "provider_id",
+													"value": "2",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino game add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "game_id",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "casino_provider_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/games/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"games",
+												"add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Provider",
+							"item": [
+								{
+									"name": "casino provider",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "page",
+													"value": "6",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "size",
+													"value": "100",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "search",
+													"value": "Rob",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "adminId",
+													"value": "11",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/providers/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"providers",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino provider update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"1ssssss\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/providers/edit/6",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"providers",
+												"edit",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino provider get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/providers/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"providers",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino provider delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/providers/6",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"providers",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino provider add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "game_id",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "casino_provider_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/providers/record/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"providers",
+												"record",
+												"add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "table",
+							"item": [
+								{
+									"name": "casino tables update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"1ssssswwwwwwwwwwwwwwssssss\",\n\"game_id\":\"20\",\n\"table_id\":3,\n\"is_lobby\":1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/tables/edit/195",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"tables",
+												"edit",
+												"195"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino tables add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "1sssssssssssssssssssssssssssssssssss",
+													"type": "text"
+												},
+												{
+													"key": "game_id",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "table_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "is_lobby",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/tables/add",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"tables",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino table get by id",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/tables/195",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"tables",
+												"195"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino tables delete by ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/tables/46",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"tables",
+												"46"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "casino table with pagination Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{supertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "page",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "game_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/super/admin/casino/tables",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"super",
+												"admin",
+												"casino",
+												"tables"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "loged User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{supertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/super/admin/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"super",
+								"admin",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sign AWS URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{supertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyname",
+									"value": "tenants/1/items/261f1cc6-b752-4087-963b-3807bc3d58ab____jeffery-erhunse-Z9lbmEjyYjU-unsplash.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/super/admin/aws/get/url",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"super",
+								"admin",
+								"aws",
+								"get",
+								"url"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

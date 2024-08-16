@@ -1,0 +1,490 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'PLAYER' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link active" id="overviewl" href="#overview"
+                    data-toggle="tab">{{'OVERVIEW' | translate}}</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#sport-betting" data-toggle="tab">Sport Betting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fantasy-sport" data-toggle="tab">Fantasy Sport</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" id="financiall" href="#financial"
+                    data-toggle="tab">{{'SESSION_HISTORY' | translate}}</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" id="settingsl" href="#settings" data-toggle="tab">{{'SETTINGS'
+                    | translate}}</a>
+                </li> -->
+              </ul>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="active tab-pane" id="overview">
+
+                  <table class="table table-bordered">
+
+                    <tbody>
+                      <tr>
+                        <th> {{'ID' | translate}} </th>
+                        <td>{{ player?.id }}</td>
+                      </tr>
+
+                      <tr>
+                        <th> {{'NAME' | translate}} </th>
+                        <td> {{ player?.name }} </td>
+                      </tr>
+
+
+                      <tr>
+                        <th> Nick Name </th>
+                        <td> {{ player?.nick_name }} </td>
+                      </tr>
+
+                      <!-- <tr>
+                        <th> {{'EMAIL' | translate}} </th>
+                        <td> {{ player?.email }} </td>
+                      </tr> -->
+                      <!-- <tr>
+                        <th>{{'EMAIL_VERIFIED' | translate}}</th>
+                        <td>
+                          <span [ngClass]="player?.email_verified ? 'text-success' : 'text-danger'"> {{
+                            (player?.email_verified ? 'YES' : 'NO') | translate }} </span>
+                        </td>
+                      </tr> -->
+                      <tr> 
+                        <th>{{'USER_CODE' | translate}}</th>
+                        <td>{{ player?.user_code }}</td>
+                      </tr>
+                      <tr> 
+                        <th>{{'CURRENCY' | translate}}</th>
+                        <td>{{ player?.currency_code }}</td>
+                      </tr>
+                      <tr>
+                        <th>{{'STATUS' | translate}}</th>
+                        <td>
+                          <span [ngClass]="player?.status ? 'text-success':'text-danger'">{{ (player?.status ?
+                            'ACTION_BUTTON.ACTIVE' :
+                            'ACTION_BUTTON.IN_ACTIVE') | translate }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Activity Status</th>
+                        <td *ngIf="player.online_status==0">{{'AWAY' | translate}}</td>
+                        <td *ngIf="player.online_status==1">{{'ONLINE' | translate}}</td>
+                      </tr>
+                      <tr>
+                        <th>{{'LAST_LOGIN' | translate}}</th>
+                        <td>{{ (player.last_active==0 ? 'While Ago' : player.last_active ) }}</td>
+                      </tr>
+                      <tr *ngIf="canEdit">
+                        <th>{{'ACTION' | translate}}</th>
+                        <td>
+                          <a [routerLink]="['/users', player?.id]" class="btn btn-warning fnt-12">{{'ACTION_BUTTON.EDIT'
+                            | translate}}</a>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- <div class="tab-pane" id="sport-betting">
+
+                  <app-sport-betting [playerId]="playerId"></app-sport-betting>
+
+                </div> -->
+
+                <!-- <div class="tab-pane" id="fantasy-sport">
+
+                  <app-contest [playerId]="playerId"></app-contest>
+
+                </div> -->
+
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="financial">
+
+                  <div class="row">
+
+                    <div class="col-md-12">
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">{{'SESSION_HISTORY' | translate}}</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <table class="table table-bordered">
+                            <tbody>
+
+                              <tr>
+                                <td>{{'SESSION_COUNT' | translate}}</td>
+                                <td> {{ player?.currency_code }} </td>
+                              </tr>
+                              <!-- <tr>
+                                <td>{{'AMOUNT' | translate}}</td>
+                                <td>{{ player?.amount | currency : player?.currency_code }}</td>
+                              </tr>
+                              <tr>
+                                <td>{{'NON_CASH_AMOUNT' | translate}}</td>
+                                <td>{{ player?.non_cash_amount | currency : player?.currency_code }}</td>
+                              </tr>
+                              <tr>
+                                <td>{{'LAST_DEPOSITED_AMOUNT' | translate}}</td>
+                                <td>{{ player?.last_deposited_amount | currency : player?.currency_code  }}</td>
+                              </tr>
+                              <tr>
+                                <td>{{'UPDATED_AT' | translate}}</td>
+                                <td> {{ player?.wallet_updated_at | date:'dd-MM-YYYY h:m:s'}} </td>
+                              </tr>
+
+                              <tr *ngIf="canDeposit || canWithdraw">
+                                <td>{{'ACTION' | translate}}</td>
+                                <td>
+                                  <a *ngIf="canDeposit" class="btn btn-success fnt-12"
+                                    [routerLink]="['/transactions/transfer-fund']"
+                                    [queryParams]="{ owner_id: player?.id, email: player?.email, owner_type: 'User', wallet_id: player?.wallet_id, type: 'Deposit'}">
+                                    {{'DEPOSIT' | translate}} </a>
+                                  &nbsp;
+                                  <a *ngIf="canWithdraw" class="btn btn-danger fnt-12"
+                                    [routerLink]="['/transactions/withdraw-fund']"
+                                    [queryParams]="{ owner_id: player?.id, email: player?.email, owner_type: 'User', type: 'Withdraw'}">
+                                    {{'WITHDRAWAL' | translate}} </a>
+                                </td>
+                              </tr> -->
+
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- /.card -->
+
+                  </div>
+
+                </div>
+
+                <div class="tab-pane" id="settings">
+
+                  <section class="content">
+                    <div class="container-fluid">
+
+                      <div class="row">
+
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-header">
+                              <h3 class="card-title">{{'USER_SETTINGS' | translate}}</h3>
+                              <button *ngIf="canEdit" class="btn btn-success fnt-12 f-right" data-toggle="modal"
+                                data-target="#modal-setting" (click)="createNew()"> {{'ACTION_BUTTON.CREATE' |
+                                translate}}
+                              </button>
+                            </div>
+
+                            <div class="card-body">
+
+                              <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th  >{{'ID' | translate}}</th>
+                                    <th>{{'KEY' | translate}}</th>
+                                    <th>{{'VALUE' | translate}}</th>
+                                    <th>{{'DURATION' | translate}}</th>
+                                    <th style="width: 140px">{{'ACTION' | translate}}</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let setting of player?.setting">
+                                    <td> {{ setting.id }} </td>
+                                    <td>{{ setting.key }}</td>
+                                    <td>{{ setting.value }}</td>
+                                    <td>{{ setting.duration }} days</td>
+                                    <td>
+                                      <button *ngIf="canEdit" class="btn btn-warning fnt-12"
+                                        (click)="setSetting(setting)" data-toggle="modal" data-target="#modal-setting">
+                                        {{'ACTION_BUTTON.EDIT' | translate}} </button>
+                                      &nbsp;
+                                      <button *ngIf="canEdit" class="btn btn-danger fnt-12" type="button"
+                                        (click)="deleteSetting(setting)"> {{'ACTION_BUTTON.DELETE' | translate}}
+                                      </button>
+                                    </td>
+                                  </tr>
+
+                                  <tr *ngIf="player?.setting && player?.setting.length === 0">
+                                    <td [attr.colspan]="7" class="tnodata"> {{'SENTENCES.SETTING_404' | translate}}
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </section>
+
+                  <section class="content">
+                    <div class="container-fluid">
+
+                      <div class="row">
+
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-header">
+                              <h3 class="card-title">{{'USER_DOCUMENTS' | translate}}</h3>
+                            </div>
+
+                            <div class="card-body">
+
+                              <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th  >{{'ID' | translate}}</th>
+                                    <th>{{'NAME' | translate}}</th>
+                                    <th>{{'VIEW' | translate}}</th>
+                                    <th>{{'VERIFIED' | translate}}?</th>
+                                    <th>{{'STATUS' | translate}}</th>
+                                    <th>{{'REASON' | translate}}</th>
+                                    <th>{{'UPLOADED_AT' | translate}}</th>
+                                    <th> {{'ACTION' | translate}} </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let document of player?.user_documents">
+                                    <td> {{ document.id }} </td>
+                                    <td> {{ document.document_name }} </td>
+                                    <td> <a [href]="document.document_url" target="_blank"> {{'VIEW_HERE' | translate}}
+                                      </a> </td>
+                                    <td> <span [ngClass]="document.is_verified ? 'text-success' : 'text-danger'"> {{
+                                        (document.is_verified ? 'YES' : 'NO') | translate }} </span></td>
+                                    <td>
+                                      <ng-container [ngSwitch]="document.status">
+                                        <button class="btn btn-info fnt-12" *ngSwitchCase="'pending'">{{ document.status
+                                          }}</button>
+                                        <button class="btn btn-success fnt-12" *ngSwitchCase="'approved'">{{
+                                          document.status }}</button>
+                                        <button class="btn btn-danger fnt-12" *ngSwitchCase="'rejected'">{{
+                                          document.status }}</button>
+                                        <button class="btn btn-info fnt-12" *ngSwitchDefault>{{ document.status
+                                          }}</button>
+                                      </ng-container>
+                                    </td>
+                                    <td>{{ document.reason || '--' }}</td>
+                                    <td>{{ document.updated_at | date: 'dd-MM-YYYY' }}</td>
+                                    <td>
+                                      <ng-container *ngIf="canEdit && document.status == 'pending'; else docStatus">
+                                        <button class="btn btn-success fnt-12"
+                                          (click)="updatePlayerDocStatus(document, 'approved')" type="button">
+                                          {{'ACTION_BUTTON.APPROVE' | translate}}
+                                        </button>
+                                        &nbsp;
+                                        <button class="btn btn-danger fnt-12" data-toggle="modal"
+                                          data-target="#modal-rej" (click)="setPlayerDoc(document)" type="button">
+                                          {{'ACTION_BUTTON.REJECT' | translate}} </button>
+                                      </ng-container>
+                                      <ng-template #docStatus>
+                                        <ng-container [ngSwitch]="document.status">
+                                          <span class="text-success" *ngSwitchCase="'approved'">{{ document.status
+                                            }}</span>
+                                          <span class="text-danger" *ngSwitchCase="'rejected'">{{ document.status
+                                            }}</span>
+                                          <span class="text-info" *ngSwitchDefault>{{ document.status }}</span>
+                                        </ng-container>
+                                      </ng-template>
+                                    </td>
+                                  </tr>
+
+                                  <tr *ngIf="player?.user_documents && player?.user_documents.length === 0">
+                                    <td colspan="9" class="tnodata"> {{'SENTENCES.DOCUMENT_404' | translate}} </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </section>
+
+                </div>
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div><!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+</div>
+
+
+
+<div class="modal fade" id="modal-setting" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> {{'SETTINGS' | translate}} </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form [formGroup]="settingForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="skey">{{'KEY' | translate}} <span class="text-danger">*</span></label>
+            <select formControlName="key" id="skey" class="form-control">
+              <option *ngFor="let key of keys" [value]="key.value"> {{ key.name }} </option>
+            </select>
+            <div *ngIf="submitted && f.key.errors" class="invalid-feedback">
+              <div *ngIf="f.key.errors.required">{{'VALIDATION_MSGS.KEY.REQUIRED' | translate}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="svalue">{{'VALUE' | translate}} <span class="text-danger">*</span></label>
+            <input formControlName="value" type="number" placeholder="{{'PLACEHOLDERS.ENTER_VALUE' | translate}}"
+              class="form-control" id="svalue" />
+            <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+              <div *ngIf="f.value.errors.required">{{'VALIDATION_MSGS.VALUE.REQUIRED' | translate}}</div>
+              <div *ngIf="f.value.errors.min">{{'VALIDATION_MSGS.VALUE.MIN' | translate}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="duration">{{'DURATION' | translate}} <span class="text-danger">*</span></label>
+            <input formControlName="duration" type="number" class="form-control"
+              placeholder="{{'PLACEHOLDERS.ENTER_DURATION' | translate}}" id="duration" />
+            <div *ngIf="submitted && f.duration.errors" class="invalid-feedback">
+              <div *ngIf="f.duration.errors.required">{{'VALIDATION_MSGS.DURATION.REQUIRED' | translate}}</div>
+              <div *ngIf="f.duration.errors.min">{{'VALIDATION_MSGS.DURATION.MIN' | translate}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">{{'DESCRIPTION' | translate}} <span class="text-danger">*</span></label>
+            <input formControlName="description" type="text" maxlength="200" class="form-control"
+              placeholder="{{'PLACEHOLDERS.ENTER_DESCRIPTION' | translate}}" id="description" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+              <div *ngIf="f.description.errors.required">{{'VALIDATION_MSGS.DESCRIPTION.REQUIRED' | translate}}</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{'ACTION_BUTTON.CLOSE' |
+            translate}}</button>
+          <button type="submit" [disabled]="settingLoader" class="btn btn-primary">
+            <span *ngIf="settingLoader" class="spinner-border spinner-border-sm" role="status"
+              aria-hidden="true"></span> {{'ACTION_BUTTON.SAVE' | translate}} </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="modal fade" id="modal-ncb" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> Non Cash Bonus </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form [formGroup]="ncbForm" (ngSubmit)="onNCBSubmit()">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="non_cash_amount">Enter Non Cash Amount <span class="text-danger">*</span></label>
+            <input formControlName="non_cash_amount" type="number" placeholder="Enter Non Cash Amount"
+              class="form-control" id="non_cash_amount" />
+            <div *ngIf="ncbSubmitted && ncb.non_cash_amount.errors" class="invalid-feedback">
+              <div *ngIf="ncb.non_cash_amount.errors.required">Non Cash Amount is required</div>
+              <div *ngIf="ncb.non_cash_amount.errors.min">Non Cash Amount cannot be less than 1</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" [disabled]="ncbLoader" class="btn"
+            [ngClass]="{ 'btn-success' : ncbType === 'Deposit', 'btn-danger' : ncbType === 'Withdraw'}">
+            <span *ngIf="ncbLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> {{
+            ncbType || 'Save changes' }} </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="modal fade" id="modal-rej" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> {{'SENTENCES.CONFIRMATION.DOCUMENT_REJECT' | translate}} </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form [formGroup]="rejForm" (ngSubmit)="onSubmitPlayerDoc()">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="reason">{{'REASON' | translate}} <span class="text-danger">*</span></label>
+            <textarea id="reason" class="form-control" formControlName="reason"></textarea>
+            <div *ngIf="rejSubmitted && rejf.reason.errors" class="invalid-feedback">
+              <div *ngIf="rejf.reason.errors.required">{{'VALIDATION_MSGS.REASON.REQUIRED' | translate}}</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{'ACTION_BUTTON.CLOSE' |
+            translate}}</button>
+          <button type="submit" [disabled]="rejLoader" class="btn btn-danger">
+            <span *ngIf="rejLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            {{'ACTION_BUTTON.YES_DO_IT' | translate}}! </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

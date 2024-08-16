@@ -1,0 +1,129 @@
+
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'CONFIGURATIONS' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'NAME' | translate}}</th>
+                    <th>{{'PRIMARY' | translate}}</th>
+                    <th>{{'VALUE' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{'ALLOWED_CURRENCIES' | translate}}</td>
+                    <td> {{ primaryCurrency }} </td>
+                    <td>
+                      <ng-container *ngFor="let conf of configurationsCurrencies; let i = index;"> {{
+                        authService.adminTypeValue === adminType.Subscriber ? conf.code : conf.currency_code }}
+                        <ng-container *ngIf="i < configurationsCurrencies.length-1">,</ng-container>
+                      </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br><br>
+              <table class="table table-bordered" *ngIf="adminAuthService.adminTokenValue && adminAuthService.adminTokenValue.length > 0;">
+                <thead>
+                <tr>
+                  <td  colspan="3">
+                    {{ configDataResult?.tenant?.pointers?.description | translate }}
+                  </td>
+                </tr>
+                  <tr>
+                    <th>{{'API' | translate}} {{'TYPE' | translate}}</th>
+                    <th>{{'DOMAIN' | translate}}</th>
+                    <th>{{'IP' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr 
+                  *ngFor="let domain of configDataResult?.tenant?.pointers?.domains  "
+                  >
+                  <td>{{ domain.apitype | translate }}  </td>
+                  <td>{{ domain.subDomain }}{{ hostname }}</td>
+                    <td>{{ domain.ip }}  </td>
+                    
+
+                  <tr *ngIf="">
+                    <td colspan="9" class="tnodata"> {{'SENTENCES.ADMIN_404' | translate}} </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div *ngIf="subscriberAuthService.subscriberAdminTokenValue && subscriberAuthService.subscriberAdminTokenValue.length > 0;">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td colspan="3">
+                        {{
+                          configDataResult?.subscriber?.pointers?.description
+                            | translate
+                        }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        {{ "DOMAIN" | translate }} {{ "TYPE" | translate }}
+                      </th>
+                      <th>{{ "DOMAIN" | translate }}</th>
+                      <th>{{ "IP" | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let domain of configDataResult?.subscriber?.pointers
+                          ?.domains
+                      "
+                    >
+                      <td>{{ domain.apitype | translate }}</td>
+                      <td>{{ domain.subDomain }}{{ hostname }}</td>
+                      <td>{{ domain.ip }}</td>
+                    </tr>
+
+                    <tr *ngIf="">
+                      <td colspan="9" class="tnodata">
+                        {{ "SENTENCES.ADMIN_404" | translate }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br /><br />
+                {{
+                  configDataResult?.subscriber?.sdk?.description
+                    | translate
+                }}
+                <br>
+                <br>
+<pre>
+<code>
+{{ scriptData }}
+</code>
+</pre>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+</div>

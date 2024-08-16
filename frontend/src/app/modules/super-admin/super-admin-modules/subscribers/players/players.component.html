@@ -1,0 +1,116 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="search"> {{'SEARCH' | translate}} </label>
+              <input type="text" class="form-control" id="search" (keyup)="filterPlayers($event)"
+                onkeydown="javascript: return (event.keyCode == 53 || event.keyCode == 55 || event.keyCode == 189) ? false : true"
+                [(ngModel)]="playerParams.search" placeholder="Search by name or code" />
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="status">{{'STATUS' | translate}}</label>
+              <select class="form-control" id="status" (change)="filterPlayers($event)"
+                [(ngModel)]="playerParams.status">
+                <option value="">{{'ALL' | translate}}</option>
+                <option value="Yes">{{'ACTION_BUTTON.ACTIVE' | translate}}</option>
+                <option value="No">{{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="online_status">{{'ACTIVITY' | translate}}</label>
+              <select class="form-control" id="online_status" (change)="filterPlayers($event)"
+                [(ngModel)]="playerParams.online_status">
+                <option value="">{{'ALL' | translate}}</option>
+                <option value="Yes">{{'ONLINE' | translate}}</option>
+                <option value="No">{{'AWAY' | translate}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="size2">{{'SIZE' | translate}}</label>
+              <select class="form-control" id="size2" (change)="filterPlayers($event)"
+                [(ngModel)]="playerParams.size">
+                <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">{{pageSize.name}}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <button type="button" class="mgt btn btn-warning fnt-12" (click)="playerResetFilter()">
+              {{'ACTION_BUTTON.RESET_FILTER' | translate}}
+            </button>
+          </div>
+
+        </div>
+
+        &nbsp;
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="sort-column" [ngClass]="playerParams.sort_by=='id' ? playerParams.order :''"
+                (click)="setOrder('id')"> {{'ID' | translate}} </th>
+              <th class="sort-column" [ngClass]="playerParams.sort_by=='name' ? playerParams.order :''"
+                (click)="setOrder('name')">{{'NAME' | translate}}</th>
+              <th class="sort-column"
+                [ngClass]="playerParams.sort_by=='user_code' ? playerParams.order :''"
+                (click)="setOrder('user_code')">{{'USER_CODE' | translate}}</th>
+              <th>{{'CURRENCY_CODE' | translate}}</th>
+              <th class="sort-column"
+                [ngClass]="playerParams.sort_by=='user_bets_count' ? playerParams.order :''"
+                (click)="setOrder('user_bets_count')">{{'BETS' | translate}}</th>
+                <th>{{'FREEBETS' | translate}}</th>
+              <th>{{'STATUS' | translate}}</th>
+              <th>Activity Status</th>
+              <th>Last Active</th>
+              <th class="sort-column"
+                [ngClass]="playerParams.sort_by=='last_bet' ? playerParams.order :''"
+                (click)="setOrder('last_bet')">{{'LAST_BET_PLACED' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let user of players | paginate: { itemsPerPage: playerParams.size, currentPage: playerP, totalItems: playerTotal, id: 'playerpid' }">
+
+
+
+              <td> {{ user.id }} </td>
+              <td><a [routerLink]="['/users/detail', user.id]">{{
+                user.name }}</a></td>
+              <td>{{
+                user.user_code }}</td>
+              <td>{{ user.currency_code }}</td>
+              <td><a [routerLink]="['/crash-game/bet-history', user.id]"> {{ user.user_bets_count }}</a>
+              </td>
+              <td> {{ (user.free_bet.length>0 ? 'YES' : 'NO' )| translate}}</td>
+              <td> <span [ngClass]="user.status ? 'text-success':'text-danger'">{{ (user.status ?
+                  'ACTION_BUTTON.ACTIVE' :
+                  'ACTION_BUTTON.IN_ACTIVE') | translate }}</span> </td>
+              <td *ngIf="user.online_status==0">{{'AWAY' | translate}}</td>
+              <td *ngIf="user.online_status==1">{{'ONLINE' | translate}}</td>
+              <td>{{ (user.last_active==0 ? 'While Ago' : user.last_active ) }}</td>
+              <td> {{ (user?.last_bet ? user.last_bet : '-') | translate}}</td>
+            </tr>
+            <tr *ngIf="players && players.length === 0">
+              <td class="tnodata"> {{'SENTENCES.USER_404' | translate}} </td>
+            </tr>
+          </tbody>
+        </table>
+        &nbsp;
+        <pagination-controls (pageChange)="pageChange($event)" id="playerpid"
+          (pageChange)="playerP = $event">
+        </pagination-controls>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,453 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{ 'SUBSCRIBER' | translate }}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" id="subscriber_t" (click)="tab='subscriber'" href="#subscriber" data-toggle="tab">
+                    {{ "SUBSCRIBER" | translate }}
+                  </a>
+                </li>
+                <!-- <li *ngIf="canReadPackages" class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="packages_t"
+                    href="#packages"
+                    data-toggle="tab"
+                    >{{ "PACKAGES" | translate }}</a
+                  >
+                </li> -->
+                <li *ngIf="canReadCredentials" class="nav-item">
+                  <a class="nav-link" id="credentials_t" href="#credentials" (click)="tab='credentials'" data-toggle="tab">{{ "CALLBACK_APIS" |
+                    translate }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="admins_t" href="#admins" (click)="tab='admins'" data-toggle="tab">{{ "ADMINS" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="players_t" href="#players" (click)="tab='players'" data-toggle="tab">{{ "PLAYERS" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="accounts_t" href="#accounts" (click)="tab='accounts'" data-toggle="tab">{{ "ACCOUNTS" | translate
+                    }}</a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="active tab-pane table-responsive" id="subscriber" *ngIf="tab=='subscriber'">
+                  <table class="table table-bordered">
+                    <thead>
+                      <!-- <tr>
+                        <th>{{ "ID" | translate }}</th>
+                        <th>{{ "NAME" | translate }}</th>
+                        <th>{{ "DOMAIN" | translate }}</th>
+                        <th>{{ "PUBLIC_KEY" | translate }}</th>
+                        <th>{{ "STATUS" | translate }}</th>
+                        <th style="width: 40px">{{ "ACTION" | translate }}</th>
+                        <th>{{ "KEY" | translate }}</th>
+                        <th>{{ "VALUE" | translate }}</th>
+                      </tr> -->
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ "ID" | translate }}</td>
+                        <td>{{ subscriber?.id }}</td>
+                        <!-- <td>{{ subscriber?.id }}</td>
+                        <td>{{ subscriber?.subscriber_name }}</td>
+                        <td>
+                          <a [href]="subscriber?.domain" target="_blank">
+                            {{ subscriber?.domain }}
+                          </a>
+                        </td>
+                        <td>{{ subscriber?.public_key }}</td>
+                        <td>
+                          <ng-container [ngSwitch]="subscriber?.status">
+                            <ng-container *ngSwitchCase="'0'">
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'1'">
+                              <span class="text-success">
+                                {{ "ACTION_BUTTON.ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'2'">
+                              <span class="text-warning">
+                                {{ "EXPIRED" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchDefault>
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+                          </ng-container>
+                        </td>
+                        <td *ngIf="canEditSubscriber">
+                          <a
+                            class="btn btn-warning fnt-12"
+                            [routerLink]="[
+                              '/super-admin/subscribers',
+                              subscriber?.id
+                            ]"
+                          >
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td> -->
+                      </tr>
+                      <tr>
+                        <td>{{ "NAME" | translate }}</td>
+                        <td>{{ subscriber?.subscriber_name }}</td>
+                      </tr>
+                      <tr>
+                        <td>{{ "DOMAIN" | translate }}</td>
+                        <td>
+                          <a [href]="subscriber?.domain" target="_blank">
+                            {{ subscriber?.domain }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{ "TRADER_ID" | translate }}</td>
+                        <td>{{ subscriber?.trader_id ?? '-'}}</td>
+                      </tr>
+                      <tr>
+                        <td>{{ "TRADER_PREFERENCE" | translate }}</td>
+                        <td>{{ subscriber?.trader_preference ?? '-' }}</td>
+                      </tr>
+                      <tr>
+                        <td>{{ "SECRET_KEY" | translate }}</td>
+                        <td>{{ subscriber?.secret_key }}</td>
+                      </tr>
+                      <tr>
+                        <td>{{ "STATUS" | translate }}</td>
+                        <td>
+                          <ng-container [ngSwitch]="subscriber?.status">
+                            <ng-container *ngSwitchCase="'0'">
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'1'">
+                              <span class="text-success">
+                                {{ "ACTION_BUTTON.ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'2'">
+                              <span class="text-warning">
+                                {{ "EXPIRED" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchDefault>
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+                          </ng-container>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>{{ "ACTION" | translate }}</td>
+                        <td *ngIf="canEditSubscriber">
+                          <a class="btn btn-warning fnt-12" [routerLink]="[
+                              '/super-admin/subscribers',
+                              subscriber?.id
+                            ]">
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "NAME" | translate }}</th>
+                        <th>{{ "PRIMARY" | translate }}</th>
+                        <th>{{ "VALUE" | translate }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ "ALLOWED_CURRENCIES" | translate }}</td>
+                        <td>{{ getPrimary(subscriber?.primary_currency) }}</td>
+                        <td>
+                          <ng-container *ngFor="let conf of configurationsCurrencies">
+                            {{ conf.name }},
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <!-- <table
+                    class="table table-bordered"
+                    *ngIf="canReadSportSettings"
+                  >
+                    <thead>
+                      <tr>
+                        <th>{{'MIN_ODD' | translate}}</th>
+                        <th>{{'MAX_ODD' | translate}}</th>
+                        <th>{{'MIN_AUTO_RATE' | translate}}</th>
+                        <th *ngIf="canEditSportSettings">
+                          {{ "ACTION" | translate }}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="crashGameSetting?.id">
+                        <td>{{crashGameSetting?.min_odds|number}}</td>
+                        <td>{{crashGameSetting?.max_odds|number}}</td>
+                        <td>{{crashGameSetting?.min_auto_rate|number}}</td>
+                        <td *ngIf="canEditSportSettings">
+                          <a
+                            [routerLink]="[
+                              '/settings/crash-game/super-admin',
+                              crashGameSetting?.id
+                            ]"
+                            class="fnt-12 btn btn-warning"
+                          >
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr *ngIf="!sportsSetting?.id">
+                        <td
+                          [attr.colspan]="canEditSportSettings ? 10 : 9"
+                          class="tnodata"
+                        >
+                          {{ "SENTENCES.SPORT_SETTING_404" | translate }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table> -->
+                </div>
+
+                <!-- <div
+                  class="tab-pane table-responsive"
+                  id="packages"
+                  *ngIf="canReadPackages"
+                >
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>{{ "ACTION" | translate }}</th>
+                        <td colspan="3">
+                          <a
+                            *ngIf="canEditPackages"
+                            [routerLink]="[
+                              '/settings/subscribers/packages',
+                              id
+                            ]"
+                            class="fnt-12 f-right btn btn-warning"
+                          >
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>{{ "NAME" | translate }}</th>
+                        <th>{{ "START_DATE" | translate }}</th>
+                        <th>{{ "END_DATE" | translate }}</th>
+                        <th>{{ "STATUS" | translate }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let package of packages">
+                        <td>{{ package.abbr | uppercase | translate }}</td>
+                        <td>{{ package.start_date | date: "yyyy-MM-dd" }}</td>
+                        <td>{{ package.end_date | date: "yyyy-MM-dd" }}</td>
+                        <td>
+                          <ng-container [ngSwitch]="package.status">
+                            <ng-container *ngSwitchCase="'0'">
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'1'">
+                              <span class="text-success">
+                                {{ "ACTION_BUTTON.ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'2'">
+                              <span class="text-warning">
+                                {{ "EXPIRED" | translate }}
+                              </span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchDefault>
+                              <span class="text-danger">
+                                {{ "ACTION_BUTTON.IN_ACTIVE" | translate }}
+                              </span>
+                            </ng-container>
+                          </ng-container>
+                        </td>
+                      </tr>
+                      <tr *ngIf="packages.length === 0">
+                        <td colspan="4" class="tnodata">
+                          {{ "SENTENCES.PACKAGE_404" | translate }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> -->
+
+                <div class="tab-pane" *ngIf="tab=='credentials' && canReadCredentials" id="credentials">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr *ngIf="
+                          remainingCredentials &&
+                          remainingCredentials.length > 0
+                        ">
+                        <!-- <th>{{ "ACTION" | translate }}</th>
+                        <td colspan="4">
+                          <a
+                            [routerLink]="[
+                              '/settings/subscribers/credentials',
+                              0
+                            ]"
+                            [state]="{
+                              tenant: subscriber,
+                              remcreds: remainingCredentials
+                            }"
+                            class="fnt-12 f-right btn btn-success"
+                            >{{ "ACTION_BUTTON.CREATE" | translate }}</a
+                          >
+                        </td> -->
+                      </tr>
+                      <tr>
+
+                        <th>{{ "KEY" | translate }}</th>
+                        <th>{{ "VALUE" | translate }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Auth Api</td>
+                        <td>{{ subscriber?.auth }}</td>
+                      </tr>
+                      <tr>
+                        <td>Credit Api</td>
+                        <td>{{ subscriber?.credit }}</td>
+                      </tr>
+                      <tr>
+                        <td>Debit Api</td>
+                        <td>{{ subscriber?.debit }}</td>
+                      </tr>
+                      <tr>
+                        <td>Rollback Api</td>
+                        <td>{{ subscriber?.rollback }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="tab-pane" *ngIf="tab=='admins'" id="admins">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr *ngIf="canEditSubscriber">
+                        <!-- <th></th> -->
+                        <td colspan="7">
+                          <a [routerLink]="['/agents/subscriber', id, 0]" class="fnt-12 f-right btn btn-success">
+                            {{ "ACTION_BUTTON.CREATE" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>{{ "ID" | translate }}</th>
+                        <th>{{ "EMAIL" | translate }}</th>
+                        <th>{{ "ADMIN_CODE" | translate }}</th>
+                        <th>{{ "FULL_NAME" | translate }}</th>
+                        <th>{{ "PHONE_NUMBER" | translate }}</th>
+                        <th>{{ "STATUS" | translate }}</th>
+                        <th>{{ "ACTION" | translate }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="
+                          let user of users
+                            | paginate
+                              : {
+                                  itemsPerPage: params.size,
+                                  currentPage: p,
+                                  totalItems: total
+                                }
+                        ">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.agent_name }}</td>
+                        <td>{{ user.first_name + " " + user.last_name }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>
+                          <span [ngClass]="
+                              user.active ? 'text-success' : 'text-danger'
+                            ">
+                            {{
+                            (user.active
+                            ? "ACTION_BUTTON.ACTIVE"
+                            : "ACTION_BUTTON.IN_ACTIVE"
+                            ) | translate
+                            }}
+                          </span>
+                        </td>
+
+                        <td *ngIf="canEditSubscriber">
+                          <a class="btn btn-warning fnt-12" [routerLink]="['/agents/subscriber', id, user.id]">
+                            <i class="fa fa-edit"></i>
+                            {{ "ACTION_BUTTON.EDIT" | translate }}
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr *ngIf="users && users.length === 0">
+                        <td colspan="9" class="tnodata">
+                          {{ "SENTENCES.ADMIN_404" | translate }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event">
+                  </pagination-controls>
+                </div>
+                <ng-container *ngIf="tab=='players'" class="tab-pane" id="players">
+                  <app-players></app-players>
+              </ng-container>
+                <div class="tab-pane" *ngIf="tab=='accounts'" id="accounts">
+                  <app-accounts></app-accounts>
+                </div>
+
+
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

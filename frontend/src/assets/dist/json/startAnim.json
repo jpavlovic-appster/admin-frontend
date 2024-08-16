@@ -1,0 +1,215 @@
+{
+  "frames": {
+    "smoke (9)": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 463,
+        "h": 449
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 11,
+        "w": 463,
+        "h": 449
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (6)": {
+      "frame": {
+        "x": 463,
+        "y": 0,
+        "w": 456,
+        "h": 383
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 18,
+        "w": 456,
+        "h": 383
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (7)": {
+      "frame": {
+        "x": 919,
+        "y": 0,
+        "w": 442,
+        "h": 424
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 28,
+        "w": 442,
+        "h": 424
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (1)": {
+      "frame": {
+        "x": 1361,
+        "y": 0,
+        "w": 130,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 44,
+        "w": 130,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (8)": {
+      "frame": {
+        "x": 463,
+        "y": 383,
+        "w": 441,
+        "h": 428
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 31,
+        "w": 441,
+        "h": 428
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (5)": {
+      "frame": {
+        "x": 0,
+        "y": 449,
+        "w": 359,
+        "h": 389
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 57,
+        "y": 35,
+        "w": 359,
+        "h": 389
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (4)": {
+      "frame": {
+        "x": 0,
+        "y": 808,
+        "w": 363,
+        "h": 302
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 60,
+        "w": 363,
+        "h": 302
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (3)": {
+      "frame": {
+        "x": 0,
+        "y": 1110,
+        "w": 271,
+        "h": 226
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 55,
+        "y": 84,
+        "w": 271,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (2)": {
+      "frame": {
+        "x": 226,
+        "y": 1110,
+        "w": 184,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 60,
+        "w": 184,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 480,
+        "h": 480
+      }
+    },
+    "smoke (10)": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "sourceSize": {
+        "w": 0,
+        "h": 0
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "startAnim.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1500,
+      "h": 1500
+    },
+    "scale": 1
+  }
+}

@@ -1,0 +1,500 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'ADMIN' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div [ngClass]="isAdmin ? 'col-md-6' : 'col-md-12'">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td> {{'ID' | translate}} </td>
+                    <td>{{ admin?.id }}</td>
+                  </tr>
+                  <td> {{'EMAIL' | translate}} </td>
+                  <td> {{ admin?.email }} </td>
+                  <tr>
+                    <td> {{'ADMIN_CODE' | translate}} </td>
+                    <td> {{ admin?.agent_name }} </td>
+                  </tr>
+                  <tr>
+                    <td>{{'FIRST_NAME' | translate}}</td>
+                    <td>{{ admin?.first_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'LAST_NAME' | translate}}</td>
+                    <td>{{ admin?.last_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'PHONE_NUMBER' | translate}}</td>
+                    <td>{{ admin?.phone }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'PARENT' | translate}}</td>
+                    <td>
+                      <!-- <a [routerLink]="['/agents/details', admin?.tenant_id || 0, admin?.parent?.id]">
+                        {{ admin?.parent?.email }}
+                      </a> -->
+                      {{ admin?.parent?.email }}
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{'CREATED_AT' | translate}}</td>
+                    <td>{{ admin?.created_at | date:'dd-MM-YYYY h:m:s' }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'UPDATED_AT' | translate}}</td>
+                    <td>{{ admin?.updated_at | date:'dd-MM-YYYY h:m:s' }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'ROLES' | translate}}</td>
+                    <td>
+                      <ng-container> {{ 'ROLES_DROPDOWN.' + role?.abbr | uppercase | translate }} </ng-container>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> {{'STATUS' | translate}} </td>
+                    <td> {{ (admin?.active ? 'ACTION_BUTTON.ACTIVE' : 'ACTION_BUTTON.IN_ACTIVE') | translate}} </td>
+                  </tr>
+
+                  <tr>
+                    <td>{{'ACTION' | translate}}</td>
+                    <td><a class="btn btn-warning fnt-12" [routerLink]="['/agents', tenantId, adminId]"
+                        [state]="{ tenant: admin?.tenant }"> {{'ACTION_BUTTON.EDIT' | translate}} </a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <a class="btn btn-info fnt-12" [routerLink]="['/agents/tree', tenantId, admin?.id]"> <i
+                  class="fa fa-sitemap"></i> {{'ACTION_BUTTON.ADMIN_TREE' | translate}} </a>
+
+            </div>
+
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+        <div class="col-md-6" *ngIf="isAdmin && admin">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{'WALLETS' | translate}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body" *ngFor="let wallet of admin.wallets">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>{{'CURRENCY' | translate}}</td>
+                    <td> {{ wallet.currency_code }} </td>
+                  </tr>
+                  <tr>
+                    <td>{{'AMOUNT' | translate}}</td>
+                    <td>{{ wallet.amount }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'LAST_DEPOSITED_AMOUNT' | translate}}</td>
+                    <td>{{ wallet.last_deposited_amount || '-' }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'UPDATED_AT' | translate}}</td>
+                    <td>{{ (wallet.last_updated_at | date:'dd-MM-YYYY h:m:s') || '-' }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{'ACTION' | translate}}</td>
+                    <td>
+                      <a class="btn btn-success fnt-12" [routerLink]="['/transactions/transfer-fund']"
+                        [queryParams]="{ owner_id: admin?.id, email: admin?.email, owner_type: 'AdminUser', type: 'Deposit', tenant_id: tenantId || 0, wallet_id: wallet.id}">
+                        {{'DEPOSIT' | translate}} </a>
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+
+  <section class="content" *ngIf="adminAuthService.adminTokenValue && adminAuthService.adminTokenValue.length > 0">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{'PERMISSIONS' | translate}} </h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <table class="table table-borderless">
+                <tbody>
+                  <ng-container *ngFor="let header of admin?.permissions | keyvalue">
+                    <div class="per-data" *ngIf="getPermissionsFromValue(header.value).length > 0">
+                      <h5>{{parsePermissionHeader(header.key) | translate}}</h5>
+                      <div class="permission-group">
+                        <span *ngFor="let permission of getPermissionsFromValue(header.value)"
+                          class="permission-cells active">
+                          {{ (permissionTitles ? permissionTitles[permission] : permission) | translate}}
+                        </span>
+                      </div>
+                    </div>
+                  </ng-container>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{'SETTINGS' | translate}}</h3>
+              <button (click)="createSetting()" class="btn btn-success fnt-12 f-right" data-toggle="modal"
+                data-target="#modal-setting" *ngIf="admin?.setting && admin?.setting.length === 0">
+                {{'ACTION_BUTTON.CREATE' | translate}} </button>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'ID' | translate}}</th>
+                    <th>{{'KEY' | translate}}</th>
+                    <th>{{'VALUE' | translate}}</th>
+                    <th>{{'CREATED_AT' | translate}}</th>
+                    <th>{{'UPDATED_AT' | translate}}</th>
+                    <th style="width: 140px">{{'ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let setting of admin?.setting">
+                    <td> {{ setting.id }} </td>
+                    <td>{{ setting.key }}</td>
+                    <td>{{ setting.value }}</td>
+                    <td>{{ setting.created_at | date:'dd-MM-YYYY h:m:s' }}</td>
+                    <td>{{ setting.updated_at | date:'dd-MM-YYYY h:m:s' }}</td>
+                    <td>
+                      <button class="btn btn-warning fnt-12" (click)="setSetting(setting)" data-toggle="modal"
+                        data-target="#modal-setting"> {{'ACTION_BUTTON.EDIT' | translate}} </button>
+                      &nbsp;
+                      <button class="btn btn-danger fnt-12" type="button" (click)="deleteSetting(setting)">
+                        {{'ACTION_BUTTON.DELETE' | translate}}
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr *ngIf="admin?.setting && admin?.setting.length === 0">
+                    <td colspan="6" class="tnodata"> {{'SENTENCES.SETTING_404' | translate}} </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{'SUB_ADMINS' | translate}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="search">{{'SEARCH' | translate}}</label>
+                    <input type="text" class="form-control" id="search" (keyup)="filterSubAdmins($event)"
+                      [(ngModel)]="subAdminParams.search" placeholder="{{'PLACEHOLDERS.SEARCH_ADMIN' | translate}}" />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="size">{{'SIZE' | translate}}</label>
+                    <select class="form-control" id="size" (change)="filterSubAdmins($event)"
+                      [(ngModel)]="subAdminParams.size">
+                      <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">{{pageSize.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <button type="button" class="mgt btn btn-warning fnt-12" (click)="subAdminResetFilter()">
+                    {{'ACTION_BUTTON.RESET_FILTER' | translate}}
+                  </button>
+                </div>
+
+              </div>
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'ID' | translate}}</th>
+                    <th>{{'EMAIL' | translate}}</th>
+                    <th>{{'ADMIN_CODE' | translate}}</th>
+                    <th>{{'FULL_NAME' | translate}}</th>
+                    <th>{{'PHONE_NUMBER' | translate}}</th>
+                    <th>{{'ROLES' | translate}}</th>
+                    <th>{{'STATUS' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let user of subAdmins | paginate: { itemsPerPage: subAdminParams.size, currentPage: subAdminP, totalItems: subAdminTotal, id: 'subadminpid' }">
+                    <td> {{ user.id }} </td>
+                    <td><a [routerLink]="['/agents/details', admin?.tenant_id || 0, user.id]"
+                        (click)="setAdminId(user.id)">
+                        {{ user.email }} </a></td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.agent_name }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>
+                      <ng-container>  {{ 'ROLES_DROPDOWN.' + user.role[0].abbr | uppercase | translate }} </ng-container>
+                    </td>
+                    <td><span [ngClass]="user.active ? 'text-success':'text-danger'">{{ (user.active ?
+                        'ACTION_BUTTON.ACTIVE' :
+                        'ACTION_BUTTON.IN_ACTIVE') | translate}}</span></td>
+
+
+                  </tr>
+                  <tr *ngIf="subAdmins && subAdmins.length === 0">
+                    <td colspan="9" class="tnodata"> {{'SENTENCES.ADMIN_404' | translate}} </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <pagination-controls id="subadminpid" (pageChange)="subAdminPageChanged($event)"
+              (pageChange)="subAdminP = $event"></pagination-controls>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+  <section class="content" *ngIf="adminType === 'tenant' && canUserRead">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{'USERS' | translate}}</h3>
+              &nbsp;
+              <a *ngIf="canUserCreate" class="f-right fnt-12 btn btn-success" routerLink="/users/0"
+                [queryParams]="{ agent_id: adminId, tenant_id: tenantId || 0 }"> {{'ACTION_BUTTON.CREATE' | translate}}
+              </a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="search2">{{'SEARCH' | translate}}</label>
+                    <input type="text" class="form-control" id="search2" (keyup)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.search" placeholder="{{'PLACEHOLDERS.SEARCH_ADMIN' | translate}}" />
+                  </div>
+                </div>
+
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="status">{{'STATUS' | translate}}</label>
+                    <select class="form-control" id="status" (change)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.status">
+                      <option value="">{{'ALL' | translate}}</option>
+                      <option value="true">{{'ACTION_BUTTON.ACTIVE' | translate}}</option>
+                      <option value="false">{{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="size2">{{'SIZE' | translate}}</label>
+                    <select class="form-control" id="size2" (change)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.size">
+                      <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">{{pageSize.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <button type="button" class="mgt btn btn-warning fnt-12" (click)="playerResetFilter()">
+                    {{'ACTION_BUTTON.RESET_FILTER' | translate}}
+                  </button>
+                </div>
+
+              </div>
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'ID' | translate}}</th>
+                    <th>{{'USERNAME' | translate}}</th>
+                    <!-- <th>Nick Name</th> -->
+                    <th>{{'EMAIL' | translate}}</th>
+                    <th>{{'FIRST_NAME' | translate}}</th>
+                    <th>{{'LAST_NAME' | translate}}</th>
+                    <th>{{'TOTAL_BALANCE' | translate}}</th>
+                    <th>{{'STATUS' | translate}}</th>
+                    <th>{{'ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let user of players | paginate: { itemsPerPage: playerParams.size, currentPage: playerP, totalItems: playerTotal, id: 'playerpid' }">
+                    <td> {{ user.id }} </td>
+                    <td> <a [routerLink]="['/users/details', user.id]"> {{ user.user_name }} </a></td>
+                    <!-- <td>{{ user.nick_name }}</td> -->
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td> {{ user.amount }} </td>
+                    <td> <span [ngClass]="user.active ? 'text-success':'text-danger'">{{ (user.active ?
+                        'ACTION_BUTTON.ACTIVE' :
+                        'ACTION_BUTTON.IN_ACTIVE') | translate }}</span> </td>
+                    <td>
+                      <a *ngIf="canUserEdit" class="btn btn-warning fnt-12" [routerLink]="['/users', user.id]"
+                        [queryParams]="{ agent_id: adminId, tenant_id: tenantId || 0 }"> <i class="fa fa-edit"></i> </a>
+                      &nbsp;
+                      <a *ngIf="canUserRead" class="btn btn-info fnt-12" [routerLink]="['/users/details', user.id]"> <i
+                          class="fa fa-eye"></i> </a>
+                      &nbsp;
+                      <ng-container *ngIf="canUserDelete">
+                        <ng-container *ngIf="user.active; else activeUser">
+                          <button type="button" (click)="updatePlayerStatus(user, 0)" class="btn btn-danger fnt-12"> <i
+                              class="fa fa-remove"></i> </button>
+                        </ng-container>
+                        <ng-template #activeUser>
+                          <button type="button" (click)="updatePlayerStatus(user, 1)" class="btn btn-success fnt-12"> <i
+                              class="fa fa-check"></i> </button>
+                        </ng-template>
+                      </ng-container>
+                    </td>
+                  </tr>
+                  <tr *ngIf="players && players.length === 0">
+                    <td colspan="8" class="tnodata"> {{'SENTENCES.USER_404' | translate}} </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <pagination-controls id="playerpid" (pageChange)="playerPageChanged($event)"
+              (pageChange)="playerP = $event"></pagination-controls>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+</div>
+
+
+
+<div class="modal fade" id="modal-setting" aria-hidden="true" style="display: none;"
+  *ngIf="adminAuthService.adminTokenValue && adminAuthService.adminTokenValue.length > 0">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> {{'SETTINGS' | translate}} </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form [formGroup]="settingForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="skey">{{'KEY' | translate}} <span class="text-danger">*</span></label>
+            <select formControlName="key" id="skey" class="form-control">
+              <option value="commission_percentage">{{'COMMISION_PERCENTAGE' | translate}}</option>
+            </select>
+            <div *ngIf="submitted && f.key.errors" class="invalid-feedback">
+              <div *ngIf="f.key.errors.required">{{'VALIDATION_MSGS.KEY.REQUIRED' | translate}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="svalue">{{'VALUE' | translate}} <span class="text-danger">*</span></label>
+            <input formControlName="value" type="number" placeholder="{{'PLACEHOLDERS.ENTER_VALUE' | translate}}"
+              class="form-control" id="svalue" />
+            <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+              <div *ngIf="f.value.errors.required">{{'VALIDATION_MSGS.VALUE.REQUIRED'}}</div>
+              <div *ngIf="f.value.errors.min || f.value.errors.max">'VALIDATION_MSGS.VALUE.BETWEEN'</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{'ACTION_BUTTON.CLOSE' |
+            translate}}</button>
+          <button type="submit" [disabled]="settingLoader" class="btn btn-primary">
+            <span *ngIf="settingLoader" class="spinner-border spinner-border-sm" role="status"
+              aria-hidden="true"></span> {{'ACTION_BUTTON.SAVE' | translate}} </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

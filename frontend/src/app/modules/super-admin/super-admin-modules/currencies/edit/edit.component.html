@@ -1,0 +1,96 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'CURRENCY' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> {{ title | translate }} </h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label for="name">{{'NAME' | translate}} <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="name" class="form-control" id="name"
+                    placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                    <div *ngIf="f.name.errors.required">{{'VALIDATION_MSGS.NAME.REQUIRED' | translate}}</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="code">{{'CODE' | translate}} <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="code" class="form-control" id="code"
+                    placeholder="{{'PLACEHOLDERS.ENTER_CURRENCY_CODE' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.code.errors">
+                    <div *ngIf="f.code.errors.required">{{'VALIDATION_MSGS.CURRENCY_CODE.REQUIRED' | translate}}</div>
+                    <div *ngIf="f.code.errors.pattern">{{'VALIDATION_MSGS.CURRENCY_CODE.VALID' | translate}}</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="symbol">{{'SYMBOL' | translate}} <span class="text-danger">*</span> (<span
+                      [innerHTML]="(f.symbol.value) ? f.symbol.value : 'Symbol you enter below will appear here'"></span>)</label>
+                  <input type="text" formControlName="symbol" class="form-control" id="symbol"
+                    placeholder="{{'PLACEHOLDERS.ENTER_CURRENCY_SYMBOL' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.symbol.errors">
+                    <div *ngIf="f.symbol.errors.required">{{'VALIDATION_MSGS.CURRENCY_SYMBOL.REQUIRED' | translate}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="exchange_rate">{{'SENTENCES.EXCHANGE_RATE' | translate: { primary_currency: primary.name }
+                    }}
+                    <span class="text-danger">*</span></label>
+                  <input type="number" formControlName="exchange_rate" class="form-control" maxlength="15"
+                    id="exchange_rate" placeholder="{{'PLACEHOLDERS.ENTER_EXCHANGE_RATE' | translate}}" />
+                  <div class="invalid-feedback" *ngIf="submitted && f.exchange_rate.errors">
+                    <div *ngIf="f.exchange_rate.errors.required">{{'VALIDATION_MSGS.EXCHANGE_RATE.REQUIRED' |
+                      translate}}</div>
+                    <div *ngIf="f.exchange_rate.errors.min">{{'VALIDATION_MSGS.EXCHANGE_RATE.MIN' | translate}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <div class="alert alert-danger" *ngIf="(id == 0 && !canCreate)">
+                  {{'SENTENCES.NO_PERMISSION_CREATE_CURRENCIES' | translate}}</div>
+
+                <div class="alert alert-danger" *ngIf="(id > 0 && !canEdit)">
+                  {{'SENTENCES.NO_PERMISSION_UPDATE_CURRENCIES' | translate}}</div>
+
+                <ng-container *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)">
+                  <button type="submit" [disabled]="currencyLoader" class="btn btn-primary"> <span
+                      *ngIf="currencyLoader" class="spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span> {{'ACTION_BUTTON.SUBMIT' | translate}} </button>
+                  &nbsp;
+                </ng-container>
+                <a routerLink="/super-admin/currencies" class="btn btn-warning"> {{'ACTION_BUTTON.CANCEL' | translate}}
+                </a>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+</div>

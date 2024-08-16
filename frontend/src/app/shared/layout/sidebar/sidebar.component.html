@@ -1,0 +1,290 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a  class="brand-link">
+    <img [src]="adminType === 'tenant' ? adminAuthService?.adminUserValue?.tenant?.logo_url : './assets/dist/img/AdminLTELogo.png'" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">
+      {{
+      adminType === 'tenant' ?
+      adminAuthService?.adminUserValue?.tenant?.name
+      : adminType === 'subscriber' ? subscriberAuthService?.subscriberAdminUserValue?.subscriber?.subscriber_name  : 'ACE_GAMING' | translate
+    }} </span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <!-- <div class="image">
+        <img [src]="(adminType === 'super' || adminType === 'subscriber') ? './assets/dist/img/user2-160x160.jpg'
+          : (adminType === 'tenant') ? adminAuthService?.adminUserValue?.tenant?.logo_url
+          : ''"
+          class="img-circle elevation-2" alt="User Image">
+      </div> -->
+      <div class="image">
+        <img [src]="'./assets/dist/img/user2-160x160.jpg'"
+          class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="javascript:void(0);" class="d-block">
+
+          <!-- <ng-container *ngIf="adminType === 'affiliate'">
+            {{ affiliateAuthService?.affiliateUserValue?.first_name + ' ' +
+            affiliateAuthService?.affiliateUserValue?.last_name }}
+          </ng-container> -->
+
+          <ng-container *ngIf="adminType === 'subscriber'">
+            {{ subscriberAuthService?.subscriberAdminUserValue?.first_name + ' ' +
+            subscriberAuthService?.subscriberAdminUserValue?.last_name }}
+          </ng-container>
+
+          <ng-container *ngIf="adminType === 'tenant'">
+            {{ adminAuthService?.adminUserValue?.tenant?.domain || '' | truncate_string: 20 }} <br /> {{
+            adminAuthService?.adminUserValue?.email || '' | truncate_string: 20 }}
+          </ng-container>
+
+          <ng-container *ngIf="adminType === 'super'">
+            {{ superAdminAuthService?.superAdminUserValue?.first_name + ' ' +
+            superAdminAuthService?.superAdminUserValue?.last_name }}
+          </ng-container>
+
+        </a>
+      </div>
+    </div>
+
+    <div class="form-inline" >
+      <div class="input-group" data-widget="sidebar-search">
+
+        <!-- <ul class="wallets" *ngIf="layoutService.sidebarToggle | async">
+          <li *ngFor="let w of adminAuthService?.adminUserValue?.wallets"> {{ w.amount | currency : w.currency_code }}
+          </li>
+        </ul>
+        <ul class="wallets" *ngIf="layoutService.sidebarToggle | async">
+          <li *ngFor="let t of superAdminAuthService?.superAdminUserValue?.wallets"> {{ t.amount | currency : t.currency_code }}
+          </li>
+        </ul> -->
+
+      </div>
+    </div>
+
+    <!-- SidebarSearch Form -->
+    <!-- <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+        <ng-container *ngIf="adminType === 'super'">
+         
+          <li class="nav-item" *ngIf="canAccess.includes('subscribers')">
+            <a routerLinkActive="active" routerLink="/super-admin/subscriber-dashboard" class="nav-link">
+              <i class="fa fa-th-large nav-icon"></i>
+              <p>
+                {{'DASHBOARD' | translate}} 
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" [routerLink]="['/super-admin/change-password']" class="nav-link">
+              <i class="nav-icon fas fa-unlock"></i>
+              <p>
+                {{'RESET_PASSWORD' | translate}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="canAccess.includes('subscribers')">
+            <a routerLinkActive="active" routerLink="/super-admin/subscribers/list/0" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>
+                {{'SUBSCRIBERS' | translate}}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item" >
+            <a routerLinkActive="active" [routerLink]="['/settings/crash-game/super-admin/1']" class="nav-link">
+              <i class="fa fa-cog nav-icon"></i>
+              <p>
+                {{'SETTINGS' | translate}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/super-admin/currencies" class="nav-link">
+              <i class="nav-icon fas fa-money"></i>
+              <p>
+                {{'CURRENCIES' | translate}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/super-admin/languages" class="nav-link">
+              <i class="nav-icon fas fa-language"></i>
+              <p>
+                {{'LANGUAGES' | translate}}
+              </p>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/super-admin/organizations" class="nav-link">
+              <i class="nav-icon fas fa-industry"></i>
+              <p>
+                {{ "ORGANIZATIONS" | translate }}
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item" *ngIf="canAccess.includes('transactions')">
+            <a routerLinkActive="active" routerLink="/transactions" class="nav-link">
+              <i class="nav-icon fas fa-dollar"></i>
+              <p>
+                {{'TRANSACTIONS' | translate}}
+              </p>
+            </a>
+          </li> -->
+
+          <!-- <li class="nav-item" *ngIf="canAccess.includes('sport_transactions')">
+            <a routerLinkActive="active" routerLink="/sport-transactions" class="nav-link">
+              <i class="nav-icon fas fa-dollar"></i>
+              <p>
+                {{'SPORT_TRANSACTIONS' | translate}}
+              </p>
+            </a>
+          </li> -->
+
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link nav-main-item">
+              <i class="nav-icon fa fa-list"></i>
+              <p>
+                {{'REPORTS' | translate}}
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+             
+              <li class=" nav-item">
+                <a  routerLinkActive="active"  [routerLink]="'/reports/bet-report'"
+                  class="nav-link">
+                  <i class="fa fa-file nav-icon"></i>
+                  <p>   {{'BET_REPORT' | translate}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ng-container>
+
+        <ng-container *ngIf="adminType === 'subscriber'">
+
+          <li class="nav-item">
+            <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" [routerLink]="'/sub-dashboard'" class="nav-link">
+              <i class="nav-icon fas fa-th-large"></i>
+              <p>
+                {{'DASHBOARD' | translate}}
+              </p>
+            </a>
+          </li>
+
+
+         
+          <li class="nav-item">
+            <a routerLinkActive="active" [routerLink]="['/agents/subscriber/change-password', subscriberAuthService?.subscriberAdminUserValue?.subscriber_id,subscriberAuthService?.subscriberAdminUserValue?.id]" class="nav-link">
+              <i class="nav-icon fas fa-unlock"></i>
+              <p>
+                {{'RESET_PASSWORD' | translate}}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item" *ngIf="canAccess.includes('users')">
+            <a routerLinkActive="active" routerLink="/users" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                {{'PLAYERS' | translate}}
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link nav-main-item">
+              <i class="nav-icon fa fa-cog"></i>
+              <p>
+                {{'SETTINGS' | translate}}
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" *ngIf="canAccess.includes('subscriber_settings')">
+                <a routerLinkActive="active"
+                  [routerLink]="['/settings/subscribers/game-settings', subscriberAuthService?.subscriberAdminUserValue?.subscriber_id, subscriberAuthService?.subscriberAdminUserValue?.subscriber?.sports_bet_setting_id]"
+                  class="nav-link">
+                  <i class="fa fa-cog nav-icon"></i>
+                  <p> {{'GAME_SETTINGS' | translate}} </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link nav-main-item">
+              <i class="nav-icon fa fa-gift"></i>
+              <p>
+                {{'FREE_BETS' | translate}}
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLinkActive="active" routerLink="/crash-game/free-bets" class="nav-link">
+                  <i class="fa fa-gift nav-icon"></i>
+                  <p> {{'FREE_BET' | translate}} </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLinkActive="active" routerLink="/crash-game/free-bet-rain" class="nav-link">
+                  <i class="fa fa-gift nav-icon"></i>
+                  <p> {{'FREE_BET_RAIN' | translate}} </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link nav-main-item">
+                       <i class="nav-icon fa fa-list"></i>
+              <p>
+                {{'REPORTS' | translate}}
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+             
+              <li class=" nav-item">
+                <a  routerLinkActive="active"  [routerLink]="'/reports/bet-report'"
+                  class="nav-link">
+                  <i class="fa fa-file nav-icon"></i>
+                  <p>   {{'BET_REPORT' | translate}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ng-container>
+
+        <ng-container *ngIf="adminType === 'affiliate'"></ng-container>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

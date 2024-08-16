@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+public/storage
+storage
+vendor
+.env.backup
+.env
+.phpunit.result.cache
+storage/*.key
+composer.lock
+docker_volumes_data
+.editorconfig

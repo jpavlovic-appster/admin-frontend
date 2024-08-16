@@ -1,0 +1,336 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'ADMIN' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+  <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+    <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"> {{ title | translate }} </h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">{{'EMAIL' | translate}} <span class="text-danger">*</span> </label>
+                      <input type="text" formControlName="email" class="form-control" id="email"
+                        placeholder="{{'PLACEHOLDERS.ENTER_EMAIL' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+                        <div *ngIf="f.email.errors.required">{{'VALIDATION_MSGS.EMAIL.REQUIRED' | translate}}</div>
+                        <div *ngIf="f.email.errors.pattern">{{'VALIDATION_MSGS.EMAIL.VALID' | translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="password">{{'PASSWORD' | translate}} <span *ngIf="adminId == 0"
+                          class="text-danger">*</span></label>
+                      <input type="password" formControlName="encrypted_password" class="form-control" maxlength="30"
+                        id="password" placeholder="{{'PLACEHOLDERS.ENTER_PASSWORD' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.encrypted_password.errors">
+                        <div *ngIf="f.encrypted_password.errors.required">{{'VALIDATION_MSGS.PASSWORD.REQUIRED' |
+                          translate}}</div>
+                        <div *ngIf="f.encrypted_password.errors.pattern">{{'VALIDATION_MSGS.PASSWORD.VALID' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="fname">{{'FIRST_NAME' | translate}} <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="first_name" class="form-control" id="fname"
+                        placeholder="{{'PLACEHOLDERS.ENTER_FIRST_NAME' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.first_name.errors">
+                        <div *ngIf="f.first_name.errors.required">{{'VALIDATION_MSGS.FIRST_NAME.REQUIRED' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="last_name">{{'LAST_NAME' | translate}} <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="last_name" class="form-control" id="last_name"
+                        placeholder="{{'PLACEHOLDERS.ENTER_LAST_NAME' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.last_name.errors">
+                        <div *ngIf="f.last_name.errors.required">{{'VALIDATION_MSGS.LAST_NAME.REQUIRED' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">{{'ADMIN_CODE' | translate}} <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="agent_name" class="form-control" id="name"
+                        placeholder="{{'PLACEHOLDERS.ENTER_CODE' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.agent_name.errors">
+                        <div *ngIf="f.agent_name.errors.required">{{'VALIDATION_MSGS.ADMIN_CODE.REQUIRED' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone">{{'PHONE_NUMBER' | translate}} <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="phone" class="form-control" maxlength="15" id="phone"
+                        placeholder="{{'PLACEHOLDERS.ENTER_PHONE_NUMBER' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.phone.errors">
+                        <div *ngIf="f.phone.errors.required">{{'VALIDATION_MSGS.PHONE_NUMBER.REQUIRED' | translate}}
+                        </div>
+                        <div *ngIf="!f.phone.errors.pattern && f.phone.errors.minlength">
+                          {{'VALIDATION_MSGS.PHONE_NUMBER.MIN_LENGTH' | translate}}</div>
+                        <div *ngIf="f.phone.errors.pattern">{{'VALIDATION_MSGS.PHONE_NUMBER.VALID' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="roles">{{'ROLE' | translate}} <span class="text-danger">*</span></label>
+                      <select select2 (onSelect)="changeRoles($event)" class="form-control" id="roles"
+                        style="width: 100%;">
+                        <option value="">{{'PLACEHOLDERS.SELECT_ROLE' | translate}}</option>
+                        <option *ngFor="let role of roles" [value]="role.id"> {{ 'ROLES_DROPDOWN.' + role.abbr | uppercase | translate }} </option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.role.errors">
+                        <div *ngIf="f.role.errors.required">{{'VALIDATION_MSGS.ROLE.REQUIRED' | translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6" *ngIf="f.admin_type.value === 'super' && levelThreeBool && adminId == 0">
+                    <div class="form-group">
+                      <label for="super_admin_id"> {{'ROLES_DROPDOWN.ADMIN' | translate}} <span
+                          class="text-danger">*</span></label>
+                      <select formControlName="super_admin_id" (change)="setRolePermissions($event.target)"
+                        class="form-control" id="select-admin" style="width: 100%;">
+                        <option value="">{{'PLACEHOLDERS.SELECT_ADMIN' | translate}}</option>
+                        <option *ngFor="let admin of levelThreeAdmins" [value]="admin.id">{{ admin.first_name + ' ' +
+                          admin.last_name }}</option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.super_admin_id.errors">
+                        <div *ngIf="f.super_admin_id.errors.required">{{'VALIDATION_MSGS.ADMIN.REQUIRED' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6" *ngIf="f.admin_type.value === 'tenant' && levelThreeBool && adminId == 0">
+                    <div class="form-group">
+                      <label for="super_senior_id"> {{'ROLES_DROPDOWN.SUPER_SENIOR' | translate}} <span
+                          class="text-danger">*</span></label>
+                      <select formControlName="super_senior_id" (change)="selectAdmin($event.target, 3)"
+                        class="form-control" id="select-super-senior" style="width: 100%;">
+                        <option value="">{{'PLACEHOLDERS.SELECT_SUPER_SENIOR' | translate}}</option>
+                        <option *ngFor="let admin of levelThreeAdmins" [value]="admin.id">{{ admin.first_name + ' ' +
+                          admin.last_name }}</option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.super_senior_id.errors">
+                        <div *ngIf="f.super_senior_id.errors.required">{{'VALIDATION_MSGS.SUPER_SENIOR.REQUIRED' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6" *ngIf="f.admin_type.value === 'tenant' && levelFourBool && adminId == 0">
+                    <div class="form-group">
+                      <label for="senior_master_id"> {{'ROLES_DROPDOWN.SENIOR_MASTER' | translate}} <span
+                          class="text-danger">*</span></label>
+                      <select formControlName="senior_master_id" (change)="selectAdmin($event.target, 4)"
+                        class="form-control" id="select-senior-master" style="width: 100%;">
+                        <option value="">{{'PLACEHOLDERS.SELECT_SENIOR_MASTER' | translate}}</option>
+                        <option *ngFor="let admin of levelFourAdmins" [value]="admin.id">{{ admin.first_name + ' ' +
+                          admin.last_name }}</option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.senior_master_id.errors">
+                        <div *ngIf="f.senior_master_id.errors.required">{{'VALIDATION_MSGS.SENIOR_MASTER.REQUIRED' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6" *ngIf="f.admin_type.value === 'tenant' && levelFiveBool && adminId == 0">
+                    <div class="form-group">
+                      <label for="master_agent_id"> {{'ROLES_DROPDOWN.MASTER_AGENT' | translate}} <span
+                          class="text-danger">*</span></label>
+                      <select formControlName="master_agent_id" (change)="getCurrencies($event.target)"
+                        class="form-control" id="select-master-agent" style="width: 100%;">
+                        <option value="">{{'PLACEHOLDERS.SELECT_MASTER_AGENT' | translate}}</option>
+                        <option *ngFor="let admin of levelFiveAdmins" [value]="admin.id">{{ admin.first_name + ' ' +
+                          admin.last_name }}</option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.master_agent_id.errors">
+                        <div *ngIf="f.master_agent_id.errors.required">{{'VALIDATION_MSGS.MASTER_AGENT.REQUIRED' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6">
+
+                    <div class="form-group"
+                      *ngIf="f.admin_type.value !== 'super' && (currencyBool || f.role.value == roles[0]?.id || f.role.value == roles[1]?.id)">
+                      <label for="currency">{{'CURRENCIES' | translate}} <span class="text-danger">*</span></label>
+                      <select multiple="true" select2 (onSelect)="changeCurrency($event)" class="form-control"
+                        id="currency" style="width: 100%;">
+
+                        <option *ngFor="let currency of currencies" [value]="currency.currency.code"> {{
+                          currency.currency.name
+                          }}
+                        </option>
+
+                      </select>
+                      <div class="invalid-feedback" *ngIf="submitted && f.currency_code.errors">
+                        <div *ngIf="f.currency_code.errors.required">{{'VALIDATION_MSGS.CURRENCY.REQUIRED' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                    <!-- <div class="form-group" [hidden]="f.role.value != 1">
+                      <label for="currency">Currencies <span class="text-danger">*</span></label>
+                      <br>
+                      <label><em>All the allowed currencies of tenant will be assigned to owner
+                          automatically</em></label>
+
+                    </div> -->
+                  </div>
+                </div>
+
+                <!-- <div class="icheck-primary d-inline">
+                  <input type="checkbox" formControlName="status" id="checkboxPrimary1">
+                  <label for="checkboxPrimary1">
+                    Active
+                  </label>
+                </div> -->
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content" *ngIf="f.role.value">
+      <div class="container-fluid">
+
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"> {{'PERMISSIONS' | translate}} </h3>
+                <button type="button" *ngIf="isTree && adminId == 0" class="f-right fnt-12 btn btn-warning"
+                  (click)="roletree()" data-toggle="modal" data-target="#modal-tree">
+                  {{'PREVIEW_ROLE_TREE' | translate}}
+                </button>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <div class="card-body">
+                <table class="table table-borderless">
+                  <tbody>
+                    <ng-container *ngFor="let header of permissions | keyvalue">
+                      <div class="per-data" *ngIf="isEmptyPermission(header.value)">
+                        <h5>{{parsePermissionHeader(header.key) | translate}}</h5>
+                        <div class="permission-group">
+                          <span *ngFor="let permission of getPermissionsFromValue(header.value)"
+                            class="permission-cells" [ngClass]="{active: isPermissionSelected(header.key, permission)}"
+                            (click)="togglePermission(header.key, permission)">
+                            {{permissionTitles[permission] | translate}}
+                          </span>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="invalid-feedback" *ngIf="submitted && f.permissions.errors">
+                <div *ngIf="f.permissions.errors.required">{{f.permissions.errors.required}}</div>
+              </div>
+
+              <div class="card-footer">
+                <div class="alert alert-danger" *ngIf="(adminId == 0 && !canCreate)">
+                  {{'SENTENCES.NO_PERMISSION_CREATE_ADMIN' | translate}}</div>
+
+                <div class="alert alert-danger" *ngIf="(adminId > 0 && !canEdit)">
+                  {{'SENTENCES.NO_PERMISSION_UPDATE_ADMIN' | translate}}</div>
+
+                <ng-container *ngIf="(adminId == 0 && canCreate) || (adminId > 0 && canEdit)">
+                  <button type="submit" [disabled]="adminLoader" class="btn btn-primary"> <span *ngIf="adminLoader"
+                      class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    {{'ACTION_BUTTON.SUBMIT' | translate}}</button>
+                </ng-container>
+                &nbsp;
+                <ng-container
+                  *ngIf="superAdminAuthService.superAdminTokenValue && superAdminAuthService.superAdminTokenValue.length > 0; else adminCancelTemp">
+                  <a class="btn btn-warning" [routerLink]="['/agents',]"> {{'ACTION_BUTTON.CANCEL' | translate}} </a>
+                </ng-container>
+                <ng-template #adminCancelTemp>
+                  <a class="btn btn-warning" [routerLink]="['/agents']"> {{'ACTION_BUTTON.CANCEL' | translate}} </a>
+                </ng-template>
+              </div>
+            </div>
+            <!-- /.card -->
+
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </section>
+  </form>
+
+</div>
+
+
+<div class="modal fade" id="modal-tree" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> {{'PREVIEW_ROLE_TREE' | translate}} </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div id="agent_tree"></div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

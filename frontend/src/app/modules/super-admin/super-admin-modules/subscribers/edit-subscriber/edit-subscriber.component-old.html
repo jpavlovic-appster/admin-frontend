@@ -1,0 +1,198 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="Subscribers" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <!-- left column -->
+
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> {{ title }} Subscriber </h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+              <div class="card-body">
+
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">Name <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="subscriber_name" class="form-control" id="name"
+                        placeholder="Enter Name" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.subscriber_name.errors">
+                        <div *ngIf="f.subscriber_name.errors.required">Name is required</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="domain">Domain <span class="text-danger">*</span></label>
+                      <input type="text" formControlName="domain" class="form-control" id="domain"
+                        placeholder="http://example.com" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.domain.errors">
+                        <div *ngIf="f.domain.errors.required">Domain is required</div>
+                        <div *ngIf="f.domain.errors.pattern">Domain must be valid</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="currencies">Allowed currencies <span class="text-danger">*</span></label>
+                      <select class="form-control" select2 (onSelect)="selectCurrencies($event)" id="currencies"
+                        multiple="multiple" data-placeholder="Select a Currencies" style="width: 100%;">
+                        <option *ngFor="let currency of currencies" [value]="currency.id"> {{ currency.name }} </option>
+                      </select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.currencies.errors">
+                        <div *ngIf="f.currencies.errors.required">Currencies is required</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6">
+
+                    <div class="row">
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="exampleInputFile">Logo <span *ngIf="id == 0" class="text-danger">*</span></label>
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input (change)="selectImage(file.files)" #file formControlName="logo" accept="image/*"
+                                type="file" class="custom-file-input" id="exampleInputFile">
+                              <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+
+                          </div>
+                          <div class="invalid-feedback" *ngIf="submitted && f.logo.errors">
+                            <div *ngIf="f.logo.errors.required">Logo is required</div>
+                            <div *ngIf="f.logo.errors.requiredFileType">Logo must be image</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6" *ngIf="imgURL">
+                        <img [src]="imgURL" class="imshow" id="tenantLogo" />
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-6" *ngIf="id > 0">
+                    <div class="form-group">
+                      <label for="status"> Status <span class="text-danger">*</span></label>
+                      <select class="form-control" formControlName="status" id="status">
+                        <option value="0"> In-Active </option>
+                        <option value="1"> Active </option>
+                        <!-- <option value="2"> Expired </option> -->
+                      </select>
+                      <div class="invalid-feedback" *ngIf="submitted && f.status.errors">
+                        <div *ngIf="f.status.errors.required">Status is required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- /.card-body -->
+
+              <div class="card-footer" *ngIf="id > 0">
+                <ng-container *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)">
+                  <button type="submit" [disabled]="loader" class="btn btn-primary">
+                    <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span> Submit</button>
+                </ng-container>
+                &nbsp;
+                <a routerLink="/super-admin/subscribers/list/0" class="btn btn-warning"> Cancel </a>
+              </div>
+            
+            </div>
+            
+          </div>
+
+          <div *ngIf="id == 0" class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> Packages </h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+              <div class="card-body">
+
+                <div formArrayName="packages" *ngFor="let package of editForm.get('packages').value; let i = index;">
+
+                  <div class="row" [formGroupName]="i">
+
+                    <div class="col-md-4">
+                      
+                        <div class="icheck-primary d-inline">
+                          <input type="checkbox" formControlName="active" id="checkboxPrimary_{{i}}">
+                          <label for="checkboxPrimary_{{i}}"> {{ package.name }} ( <span [ngClass]="package.active ? 'text-success' : 'text-danger'"> {{ package.active ? 'Active' : 'In-Active' }} </span> ) </label>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                      
+                        <select formControlName="package_id" class="form-control">
+                          <option *ngFor="let p of package.plans" [value]="p.id" > {{ p.type | package_type }} - ({{ p.amount | currency : primaryCurrency.code }}) </option>
+                        </select>
+
+                    </div>
+
+                    <!-- <div class="col-md-4">
+                      
+                        <div class="icheck-primary d-inline">
+                          <input type="checkbox" formControlName="status" id="status_{{i}}">
+                          <label for="status_{{i}}"> <span [ngClass]="package.status ? 'text-success' : 'text-danger'"> {{ package.status ? 'Active' : 'In-Active' }} </span> </label>
+                        </div>
+
+                    </div> -->
+
+                  </div>
+
+                  <br/>
+
+                </div>
+
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <ng-container *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)">
+                  <button type="submit" [disabled]="loader" class="btn btn-primary">
+                    <span *ngIf="loader" class="spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span> Submit</button>
+                </ng-container>
+                &nbsp;
+                <a routerLink="/super-admin/subscribers/list/0" class="btn btn-warning"> Cancel </a>
+              </div>
+
+            </div>
+            
+          </div>
+      
+        </div>
+      </form>
+      <!-- /.row -->
+
+      <app-theme [theme]="theme" (changeTheme)="changeTheme($event)"></app-theme>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+</div>

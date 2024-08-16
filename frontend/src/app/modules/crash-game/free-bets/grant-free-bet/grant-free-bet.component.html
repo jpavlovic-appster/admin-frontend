@@ -1,0 +1,164 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="{{'GRANT_FREE_BET' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+    <form [formGroup]="freeBetFrom" (ngSubmit)="onSubmit()">
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title"> {{'GRANT_FREE_BET' | translate}} </h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-md-6" *ngIf="id==0">
+                                        <div class="form-group">
+                                            <label for="user_id">{{'USER_ID' | translate}}<span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="number" formControlName="user_id" class="form-control"
+                                                id="user_id" placeholder="Enter User Id" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.user_id.errors">
+                                                <div *ngIf="f.user_id.errors.required">
+                                                    {{'VALIDATION_MSGS.USER_ID.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" *ngIf="id>0">
+                                        <div class="form-group">
+                                            <label for="user_id">{{'USER_ID' | translate}} <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="number" formControlName="user_id" class="form-control"
+                                                id="user_id" placeholder="Enter User Id" [readonly]=true />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.user_id.errors">
+                                                <div *ngIf="f.user_id.errors.required">
+                                                    {{'VALIDATION_MSGS.USER_ID.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="currency">{{'CURRENCY_CODE' | translate}}<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" formControlName="currency" id="currency">
+                                                <option value="">
+                                                    {{'PLACEHOLDERS.SELECT_CURRENCY' | translate}}
+                                                <option *ngFor="let currency of currencies" [value]="currency.code">
+                                                    {{ currency.code }}
+                                                </option>
+                                            </select>
+                                            <div class="invalid-feedback" *ngIf="submitted && f.currency.errors">
+                                                <div *ngIf="f.currency.errors.required">
+                                                    {{'VALIDATION_MSGS.CURRENCY.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="password">Password <span *ngIf="adminId == 0"
+                                                    class="text-danger">*</span></label>
+                                            <input type="password" formControlName="password" class="form-control"
+                                                maxlength="30" id="password" placeholder="Enter Password" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.password.errors">
+                                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                                <div *ngIf="f.password.errors.pattern">Password must be 1 upper case, 1
+                                                    lower case and
+                                                    1 special char min 8 char.</div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="bet_amount">{{'BET_AMOUNT' | translate}}<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="bet_amount" class="form-control"
+                                                id="bet_amount" placeholder="Enter bet amount"
+                                                onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.bet_amount.errors">
+
+                                                <div *ngIf="f.bet_amount.errors.required">
+                                                    {{'VALIDATION_MSGS.BET_AMOUNT.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.bet_amount.errors.min">{{'VALIDATION_MSGS.BET_AMOUNT.MIN'
+                                                    | translate}}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="num_free_bets">{{'NUMBER_OF_FREE_BETS' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="num_free_bets" class="form-control"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                id="num_free_bets" placeholder="Enter no. of free bets" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.num_free_bets.errors">
+                                                <div *ngIf="f.num_free_bets.errors.required">
+                                                    {{'VALIDATION_MSGS.NUMBER_OF_FREE_BETS.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.num_free_bets.errors.min">
+                                                    {{'VALIDATION_MSGS.NUMBER_OF_FREE_BETS.MIN' | translate}}</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="end_date">{{'END_DATE' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="date" formControlName="end_date" class="form-control"
+                                                id="site-rake" (blur)="checkDate($event)" [min]="today"
+                                                placeholder="Enter End Date" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.end_date.errors">
+                                                <div *ngIf="f.end_date.errors.required">
+                                                    {{'VALIDATION_MSGS.END_DATE.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div *ngIf="adminId > 0" class="icheck-primary d-inline">
+                                    <input type="checkbox" formControlName="active" id="checkboxPrimary1">
+                                    <label for="checkboxPrimary1">
+                                        Active
+                                    </label>
+                                </div> -->
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" [disabled]="adminLoader" class="btn btn-primary"> <span
+                                        *ngIf="adminLoader" class="spinner-border spinner-border-sm" role="status"
+                                        aria-hidden="true"></span> {{'ACTION_BUTTON.SUBMIT' | translate}}</button>
+                                &nbsp;
+                                <a class="btn btn-warning"
+                                    [routerLink]=" authService.adminTypeValue === adminType.Super ? ['/super-admin/subscribers/details', subscriberId] : ['/crash-game/free-bets']">
+                                    {{'ACTION_BUTTON.CANCEL' | translate}} </a>
+                            </div>
+
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+        </section>
+    </form>
+
+</div>

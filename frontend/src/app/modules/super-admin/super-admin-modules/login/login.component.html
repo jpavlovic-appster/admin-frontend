@@ -1,0 +1,77 @@
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="javascript:void(0);" class="h1"><b>{{'ROLES_DROPDOWN.SUPER_ADMIN' | translate}}</b></a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">{{'SENTENCES.LOGIN' | translate}}</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="{{'EMAIL' | translate}}" formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">{{'VALIDATION_MSGS.EMAIL.REQUIRED' | translate}}</div>
+            <div *ngIf="f.email.errors.pattern">{{'VALIDATION_MSGS.EMAIL.VALID' | translate}}</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input  [type]="show ? 'text' : 'password'"  class="form-control" placeholder="{{'PASSWORD' | translate}}"
+            formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div class="input-group-append">
+              <a class="input-group-text">
+                <span [class]="show ? 'fas fa-eye-slash' : 'fas fa-eye'" (click)="password()"></span>
+              </a>
+            </div>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">{{'VALIDATION_MSGS.PASSWORD.REQUIRED' | translate}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember" formControlName="remember_me" />
+              <label for="remember">
+                {{'REMEMBER_ME' | translate}}
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button [disabled]="loginLoader" type="submit" class="btn btn-primary btn-block">
+              <span *ngIf="loginLoader" class="spinner-border spinner-border-sm" role="status"
+                aria-hidden="true"></span> {{'LOGIN' | translate}}
+            </button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 f-right" id="lang-selector">
+      <select (change)="switchLang($event)" class="form-control">
+        <option *ngFor="let lang of langs" [value]="lang.code" [selected]="lang.code === currentLang">
+          {{lang.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>

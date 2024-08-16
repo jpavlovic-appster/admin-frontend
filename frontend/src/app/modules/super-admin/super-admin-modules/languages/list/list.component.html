@@ -1,0 +1,111 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="{{'LANGUAGES' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="status"> {{'SEARCH' | translate}} </label>
+                      <input type="text" class="form-control" id="search" (keyup)="filter($event)" onkeydown="javascript: return (event.keyCode == 53 || event.keyCode == 55) ? false : true"
+                        [(ngModel)]="langParams.search" placeholder="{{'PLACEHOLDERS.SEARCH_NAME_CODE' | translate}}" />
+                    </div>
+                  </div>
+  
+                  <div class="col-md-1">
+                    <div class="form-group">
+                      <label for="status"> {{'SIZE' | translate}} </label>
+                      <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="langParams.size">
+                        <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+                      </select>
+                    </div>
+                  </div>
+  
+  
+                  <div class="col-md-2">
+                    <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                      | translate}} </button>
+                  </div>
+                  
+                  <div class="col-md-6" *ngIf="canCreate">
+                    <a class="mgt btn btn-success f-right" routerLink="/super-admin/languages/0/2"> {{'ACTION_BUTTON.CREATE'
+                      |
+                      translate}} </a>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>{{'NAME' | translate}}</th>
+                      <th>{{'CODE' | translate}}</th>
+                      <th>{{'ACTION' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let language of languages | paginate: { itemsPerPage: langParams.size, currentPage: p, totalItems: langTotal }">
+
+                      <td> {{ language.name }} </td>
+                      <td> {{ language.code }} </td>
+                      <td>
+                        <!-- <a class="fnt-12 btn btn-info" (click)="markPrimary(currency)"
+                          *ngIf="canMarkPrimary && !currency.primary"> Mark
+                          Primary </a>&nbsp; -->
+                          <button type="button" (click)="download(language.code)" class="fnt-12 mr-2 btn btn-primary"> {{'ACTION_BUTTON.DOWNLOAD_ADMIN_JSON' | translate}}</button>
+                          <a [routerLink]="['/super-admin/languages', language.id,1]"
+                          class="fnt-12 btn btn-warning"> {{'ACTION_BUTTON.UPLOAD_ADMIN_JSON' | translate}}
+                        </a> &nbsp;
+                          <button type="button" (click)="downloadUserJson(language.id,1)" class="fnt-12 mr-2 btn btn-primary"> {{'ACTION_BUTTON.SEE_USER_JSON' | translate}} </button>
+
+                        <a [routerLink]="['/super-admin/languages', language.id,0]"
+                          class="fnt-12 btn btn-warning"> {{'ACTION_BUTTON.UPLOAD_USER_JSON' | translate}}
+                        </a>
+                        &nbsp;
+                          <button type="button" (click)="downloadUserJson(language.id,2)" class="fnt-12 mr-2 btn btn-primary"> {{'ACTION_BUTTON.SEE_USER_BACKEND_JSON' | translate}}</button>
+
+                        <a [routerLink]="['/super-admin/languages', language.id,3]"
+                          class="fnt-12 btn btn-warning"> {{'ACTION_BUTTON.UPLOAD_USER_BACKEND_JSON' | translate}}
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr *ngIf="languages && languages.length === 0">
+                      <td [attr.colspan]="canEdit ? 5 : 4" class="tnodata"> {{'SENTENCES.LANGUAGE_404' | translate}} </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event"></pagination-controls>
+              <!-- <div class="card-body">
+                <strong>NOTE - {{primary.code}} is primary currency. Any conversion from currency A to currency B will
+                  consider {{primary.code}} as
+                  base.</strong><br />
+                e.g. Currency A amount * Exchange Rate of Currency A = Primary Currency({{primary.code}}) amount<br />
+                e.g. Currency A amount * (Exchange Rate of Currency A / Exchange Rate of Currency B) = Currency B amount
+              </div> -->
+            </div>
+            <!-- /.card -->
+
+
+          </div>
+
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+

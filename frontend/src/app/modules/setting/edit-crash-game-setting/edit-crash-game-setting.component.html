@@ -1,0 +1,328 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'SETTINGS' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+
+  <section class="content" *ngIf="superAdminAuthService.superAdminTokenValue.length > 0">
+    <div class="container-fluid">
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <!-- <div class="alert alert-primary"> {{ 'SENTENCES.MISSING_TENANT_CREDENTIALS' | translate}} </div> -->
+            <!-- <div class="alert alert-warning" role="alert"> {{ 'SENTENCES.TENANT_SETTING_ALERT1' | translate}}
+                  ({{primary_currency}}) {{ 'SENTENCES.TENANT_SETTING_ALERT2' | translate}} </div> -->
+            <div class="card-header">
+              <h3 class="card-title"> {{'BET_SETTING' | translate}} </h3>
+            </div>
+
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="settingForm" (ngSubmit)="onSubmit()">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="min_odd">{{'MIN_ODD' | translate}} <span class="text-danger">*</span></label>
+                      <input type="number" formControlName="min_odd" class="form-control"
+                        onkeydown="javascript: return event.keyCode == 69 ? false : true" id="min_odd"
+                        placeholder="{{'PLACEHOLDERS.ENTER_MIN_ODD' | translate}}" [readonly]=true />
+                      <div class="invalid-feedback" *ngIf="submitted && f.min_odd.errors">
+                        <div *ngIf="f.min_odd.errors.required">
+                          {{'VALIDATION_MSGS.MIN_ODD.REQUIRED' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="max_odd"> {{'MAX_ODD' | translate}} <span class="text-danger">*</span></label>
+                      <input type="number" formControlName="max_odd" class="form-control" id="max_odd"
+                        onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                        placeholder="{{'PLACEHOLDERS.ENTER_MAX_ODD' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.max_odd.errors">
+                        <div *ngIf="f.max_odd.errors.required">{{'VALIDATION_MSGS.MAX_ODD.REQUIRED' |
+                          translate}}</div>
+                        <div *ngIf="f.max_odd.errors.min">{{'VALIDATION_MSGS.MAX_ODD.MIN' |
+                          translate}}</div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="min_auto_rate">{{'MIN_AUTO_RATE' | translate}} <span
+                          class="text-danger">*</span></label>
+                      <input type="number" step=0.01 formControlName="min_auto_rate" class="form-control"
+                        id="min_auto_rate" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                        placeholder="{{'PLACEHOLDERS.ENTER_MIN_AUTO_RATE' | translate}}" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.min_auto_rate.errors">
+                        <div *ngIf="f.min_auto_rate.errors.required">{{'VALIDATION_MSGS.MIN_AUTO_RATE.REQUIRED' |
+                          translate}}</div>
+                        <div *ngIf="f.min_auto_rate.errors.min">{{'VALIDATION_MSGS.MIN_AUTO_RATE.MIN' |
+                          translate}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="house_edge"> House Edge <span class="text-danger">*</span></label>
+                      <input type="number" formControlName="house_edge" class="form-control" id="house_edge"
+                        placeholder="Enter House Edge" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.house_edge.errors">
+                        <div *ngIf="f.house_edge.errors.required">House Edge is required</div>
+                        <div *ngIf="f.house_edge.errors.min">Cannot be less than 1%</div>
+                        <div *ngIf="f.house_edge.errors.max">Cannot be greater than 100%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="betting_period"> Betting Period <span class="text-danger">*</span></label>
+                      <input type="number" formControlName="betting_period" class="form-control" id="betting_period"
+                        placeholder="Enter Betting Period" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.betting_period.errors">
+                        <div *ngIf="f.betting_period.errors.required">Betting Period is required</div>
+                        <div *ngIf="f.betting_period.errors.min">Cannot be less than 4</div>
+                        <div *ngIf="f.betting_period.errors.max">Cannot be greater than 20</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+
+                <div class="alert alert-danger" *ngIf="(settingId > 0 && !canEdit)">
+                  {{'SENTENCES.NO_PERMISSION_UPDATE_SETTINGS' |
+                  translate}}</div>
+
+                <ng-container>
+                  <button type="submit" [disabled]="adminLoader" class="btn btn-primary">
+                    <span *ngIf="adminLoader" class="spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span>
+                    {{'ACTION_BUTTON.SAVE' | translate}}
+                  </button>
+                </ng-container>
+                &nbsp;
+
+                <!-- <a class="btn btn-warning" *ngIf="superAdminAuthService.superAdminTokenValue.length > 0"
+                    [routerLink]="subscriber ? ['/super-admin/subscribers/details', stId] : ['/super-admin/tenants/details', stId]">
+                    {{'ACTION_BUTTON.CANCEL' | translate}} </a> -->
+
+              </div>
+            </form>
+            <!-- <form [formGroup]="betSettingForm" (ngSubmit)="editForm()" *ngIf="edit==true">
+                <div class="card-body">
+                  <div class="row"> -->
+            <!-- <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="house_edge"> House Edge <span class="text-danger">*</span></label>
+                        <input type="number" formControlName="house_edge" class="form-control" id="house_edge"
+                          placeholder="Enter House Edge" />
+                        <div class="invalid-feedback" *ngIf="submitted && f.house_edge.errors">
+                          <div *ngIf="f.house_edge.errors.required">House Edge is required</div>
+                        </div>
+                      </div>
+                    </div> -->
+            <!-- <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="min_odd">Min Odd <span
+                            class="text-danger">*</span></label>
+                        <input  type="number" formControlName="min_odd" class="form-control"
+                          id="min_odd" placeholder="Enter Min Odd" [readonly] = true/>
+                        <div class="invalid-feedback" *ngIf="submitted && f.min_odd.errors">
+                          <div *ngIf="f.min_odd.errors.required">
+                            Min Odd is required</div>
+                        </div>
+                      </div>
+                    </div> -->
+            <!-- <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="max_odd"> {{'MAX_ODD' | translate}} <span class="text-danger">*</span></label>
+                          <input type="number" formControlName="max_odd" class="form-control" id="max_odd"
+                            placeholder="{{'PLACEHOLDERS.ENTER_MAX_ODD' | translate}}" [readonly] = true/>
+                          <div class="invalid-feedback" *ngIf="submitted && f.max_odd.errors">
+                            <div *ngIf="f.max_odd.errors.required">{{'VALIDATION_MSGS.MAX_ODD.REQUIRED' |
+                              translate}}</div>
+                          </div>
+                        </div>
+                      </div> -->
+            <!-- <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="min_auto_rate"> Min Auto Rate <span class="text-danger">*</span></label>
+                          <input type="number" step=0.01 formControlName="min_auto_rate" class="form-control" id="min_auto_rate"
+                            placeholder="Enter Min Auto Rate"  max="1.01" [readonly] = true/>
+                          <div class="invalid-feedback" *ngIf="submitted && f.min_auto_rate.errors">
+                            <div *ngIf="f.min_auto_rate.errors.required">Min Auto Rate is required</div>
+                            <div *ngIf="f.min_auto_rate.errors.max">Min Auto Rate cannot exceed 1.01</div>
+                          </div>
+                        </div>
+                      </div> -->
+            <!-- </div> -->
+            <!-- <div class="icheck-primary d-inline">
+                      <input type="checkbox" formControlName="bet_disabled" id="checkboxPrimary2">
+                      <label for="checkboxPrimary2">
+                        Disabled
+                      </label>
+                    </div> -->
+
+            <!-- </div> -->
+            <!-- <div class="card-footer"> -->
+
+            <!-- <div class="alert alert-danger" *ngIf="(settingId > 0 && !canEdit)">{{'SENTENCES.NO_PERMISSION_UPDATE_SETTINGS' |
+                    translate}}</div> -->
+
+            <!-- <ng-container>
+                    <button type="submit" [disabled]="adminLoader" class="btn btn-primary">
+                      <span *ngIf="adminLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      {{'ACTION_BUTTON.EDIT' | translate}}
+                    </button>
+                  </ng-container> -->
+            <!-- &nbsp; -->
+
+            <!-- <a class="btn btn-warning" *ngIf="superAdminAuthService.superAdminTokenValue.length > 0"
+                    [routerLink]="subscriber ? ['/super-admin/subscribers/details', stId] : ['/super-admin/tenants/details', stId]">
+                    {{'ACTION_BUTTON.CANCEL' | translate}} </a> -->
+
+            <!-- </div>
+              </form> -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content" *ngIf="superAdminAuthService.superAdminTokenValue.length <= 0">
+    <div class="container-fluid">
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> {{'BET_CURRENCY_WISE_SETTING' | translate}} </h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-3">
+
+                  <ul class="list-group" id="list-tab" role="tablist">
+
+                    <li (click)="getTenantCurrencies('min_bet')" class="list-group-item list-group-item-action"
+                      [ngClass]="tab_name == 'min_bet' ? 'active' : '' ">
+                      <label for="min_bet">{{'MIN_BET_AMOUNT' | translate}}</label>
+                    </li>
+                    <li (click)="getTenantCurrencies('max_bet')" class="list-group-item list-group-item-action"
+                      [ngClass]="tab_name == 'max_bet' ? 'active' : '' ">
+                      <label for="max_bet">{{'MAX_BET_AMOUNT' | translate}} </label>
+                    </li>
+                    <li (click)="getTenantCurrencies('max_profit')" class="list-group-item list-group-item-action"
+                      [ngClass]="tab_name == 'max_profit' ? 'active' : '' ">
+                      <label for="max_profit">{{'MAX_PROFIT_AMOUNT' | translate}}
+                      </label>
+                    </li>
+
+                  </ul>
+
+
+
+                </div>
+                <div class="col-9 showInputField">
+                  <div *ngIf="currencies">
+                    <div class="row" *ngFor="let cur of currencies">
+                      <div class="col-2">
+                        <label style="float: right;">{{cur[0]}}</label>
+                      </div>
+                      <div class="col-6" *ngIf="editCurrency==false">
+                        <input type="number" step="any" class="form-control" value="{{cur[1]}}"
+                          (blur)="onChangeSetting($event, cur[0])"
+                          onkeydown="javascript: return event.keyCode == 69 ? false : true">
+                      </div>
+                      <div class="col-6" *ngIf="editCurrency==true">
+                        <input type="number" [readonly]=true step="any" class="form-control" value="{{cur[1]}}"
+                          (blur)="onChangeSetting($event, cur[0])">
+                      </div>
+                      <br><br>
+                    </div>
+
+                    <div style="text-align: center;margin-left: -200px;">
+                      <span class="text-danger" *ngIf="isErrorMsg">Please fill all fields</span><br>
+                      <input *ngIf="editCurrency==false" type="button" value="{{'ACTION_BUTTON.SAVE' | translate}}"
+                        (click)="onSaveCurrencySetting()" class="btn btn-primary">
+                      <input *ngIf="editCurrency==true" type="button" value="{{'ACTION_BUTTON.EDIT' | translate}}"
+                        (click)="editCurrencyForm()" class="btn btn-primary">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> Free Bet Rain Setting </h3>
+            </div> -->
+            <!-- /.card-header -->
+            <!-- form start -->
+            <!-- <form [formGroup]="freeBetSettingForm" (ngSubmit)="freeBetSubmitForm()" *ngIf="edit==true">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="check_bet_amount_before_claim"> Minimum Bet Amount to claim free bet rain<span class="text-danger">*</span></label>
+                      <input type="number" formControlName="check_bet_amount_before_claim" class="form-control"
+                        id="check_bet_amount_before_claim" placeholder="Enter Minimum Multiplier"
+                        onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+                      <div class="invalid-feedback" *ngIf="submitted_rain && g.check_bet_amount_before_claim.errors">
+                        <div *ngIf="g.check_bet_amount_before_claim.errors.required">Minimum bet Amount is required</div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="check_bet_time_before_claim">Time in which the bet amount should lie<span
+                          class="text-danger">*</span></label>
+                      <input type="number" formControlName="check_bet_time_before_claim" class="form-control"
+                        id="check_bet_time_before_claim" placeholder="Enter Free Bet Rain Expiry"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                      <div class="invalid-feedback" *ngIf="submitted_rain && g.check_bet_time_before_claim.errors">
+                        <div *ngIf="g.check_bet_time_before_claim.errors.required">Time is Required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <button type="submit" [disabled]="adminLoader" class="btn btn-primary mgt">
+                      <span *ngIf="adminLoader" class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                      {{'ACTION_BUTTON.EDIT' | translate}}
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </form> -->
+
+          <!-- </div> -->
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+</div>

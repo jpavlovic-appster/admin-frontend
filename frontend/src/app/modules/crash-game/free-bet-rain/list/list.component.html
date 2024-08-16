@@ -1,0 +1,130 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="Free Bet Rain" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="size2">{{'SIZE' | translate}}</label>
+                                        <select class="form-control" id="size2" (change)="filterPlayers($event)"
+                                            [(ngModel)]="playerParams.size">
+                                            <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">
+                                                {{pageSize.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="mgt btn btn-warning fnt-12"
+                                        (click)="playerResetFilter()">
+                                        {{'ACTION_BUTTON.RESET_FILTER' | translate}}
+                                    </button>
+                                </div>
+                                <div class="col-md-8">
+                                    <a [routerLink]="['/crash-game/free-bet-rain/edit', 0]"
+                                        class="btn f-right btn-success fnt-12 mgt">
+                                        {{'ACTION_BUTTON.CREATE' |
+                                        translate}} </a>
+                                </div>
+
+                            </div>
+
+                            &nbsp;
+
+                            <table class="table table-bordered">
+                                <thead
+                                    *ngIf="this.subscriberAuthService.subscriberAdminTokenValue && this.subscriberAuthService.subscriberAdminTokenValue.length > 0">
+                                    <tr>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='id' ? playerParams.order :''"
+                                            (click)="setOrder('id')"> {{'ID' | translate}}</th>
+                                            <th class="sort-column" [ngClass]="playerParams.sort_by=='promotion_name' ? playerParams.order :''"
+                                            (click)="setOrder('promotion_name')">{{'PROMOTION_NAME' | translate}}</th>
+                                        <th>{{'CURRENCY_CODE' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='bet_amount' ? playerParams.order :''"
+                                        (click)="setOrder('bet_amount')">{{'BET_AMOUNT' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='num_of_free_bets' ? playerParams.order :''"
+                                        (click)="setOrder('num_of_free_bets')">{{'NUMBER_OF_FREE_BETS' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='minimum_multiplier' ? playerParams.order :''"
+                                        (click)="setOrder('minimum_multiplier')">{{'MINIMUM_MULTIPLIER' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='expiry_after_claim' ? playerParams.order :''"
+                                        (click)="setOrder('expiry_after_claim')">{{'EXPIRY_AFTER_CLAIM' | translate}}</th>
+                                        <th>Time Check for bet claim (In Minutes)</th>
+                                        <th>Bet Amount Check for bet claim</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='start_time' ? playerParams.order :''"
+                                        (click)="setOrder('start_time')">{{'START_TIME' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='end_time' ? playerParams.order :''"
+                                        (click)="setOrder('end_time')">{{'END_TIME' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='rain_start_time' ? playerParams.order :''"
+                                        (click)="setOrder('rain_start_time')">{{'RAIN_START_TIME' | translate}}</th>
+                                        <th class="sort-column" [ngClass]="playerParams.sort_by=='rain_end_time' ? playerParams.order :''"
+                                        (click)="setOrder('rain_end_time')">{{'RAIN_END_TIME' | translate}}</th>
+                                        <th>{{'ACTION' | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody
+                                    *ngIf="this.subscriberAuthService.subscriberAdminTokenValue && this.subscriberAuthService.subscriberAdminTokenValue.length > 0">
+                                    <tr
+                                        *ngFor="let free of freeBets | paginate: { itemsPerPage: playerParams.size, currentPage: playerP, totalItems: playerTotal, id: 'playerpid' }">
+
+                                        <ng-container *ngIf="free">
+                                            <td>{{ free.id }}</td>
+                                            <td>{{free.promotion_name }}</td>
+                                            <td>{{  free.currency_code }}</td>
+                                            <td>{{ free.bet_amount }}</td>
+                                            <td>{{ free.num_of_free_bets }}</td>
+                                            <td>{{ free.minimum_multiplier }}</td>
+                                            <td>{{ free.expiry_after_claim }}</td>
+                                            <td>{{ free.check_bet_time_before_claim_in_minutes }}</td>
+                                            <td>{{ free.check_bet_amount_before_claim }}</td>
+                                            <td>{{ free.start_time }}</td>
+                                            <td>{{ free.end_time }}</td>
+                                            <td>{{ free.rain_start_time }}</td>
+                                            <td>{{ free.rain_end_time }}</td>
+                                            <td class="d-flex">
+                                                <button type="button" class="btn btn-warning fnt-12 mr-2"
+                                                    title="{{ 'ACTION_BUTTON.EDIT'  | translate }}"
+                                                    [routerLink]="['/crash-game/free-bet-rain/edit', free.id]"> <i
+                                                        class="fa fa-edit"></i>
+                                            </button>
+                                       
+                                    
+                                                        <button type="button"
+                                                            title="{{ 'ACTION_BUTTON.DELETE'  | translate }}"
+                                                            (click)="deleteEntry(free.id)"
+                                                            class="btn btn-danger fnt-12"> <i class="fa fa-remove"></i>
+                                                        </button>
+                                        
+                                            </td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr *ngIf="freeBets.free_bet && freeBets.free_bet.length === 0">
+                                        <td [attr.colspan]=9 class="tnodata"> No data found </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <pagination-controls id="playerpid" (pageChange)="playerPageChanged($event)"
+                            (pageChange)="playerP = $event"></pagination-controls>
+
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+
+            </div>
+
+        </div><!-- /.container-fluid -->
+    </section>
+
+</div>

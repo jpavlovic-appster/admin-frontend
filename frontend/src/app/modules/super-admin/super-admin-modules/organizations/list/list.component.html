@@ -1,0 +1,124 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{ 'ORGANIZATIONS' | translate }}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="status"> {{'SEARCH' | translate}} </label>
+                    <input type="text" class="form-control" id="search" (keyup)="filter($event)" onkeydown="javascript: return (event.keyCode == 53 || event.keyCode == 55) ? false : true"
+                      [(ngModel)]="params.search" placeholder="{{'PLACEHOLDERS.SEARCH_NAME' | translate}}" />
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <label for="status"> {{'STATUS' | translate}} </label>
+                  <select class="form-control" id="status" (change)="filter($event)" [(ngModel)]="params.status">
+                    <option value=""> {{'ALL' | translate}}</option>
+                    <option value="Yes"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                    <option value="No"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                  </select>
+                </div>
+
+                <div class="col-md-1">
+                  <div class="form-group">
+                    <label for="status"> {{'SIZE' | translate}} </label>
+                    <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="params.size">
+                      <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                    | translate}} </button>
+                </div>
+                
+                <div class="col-md-4" *ngIf="canCreate">
+                  <a class="mgt btn btn-success f-right" routerLink="/super-admin/organizations/0"> {{'ACTION_BUTTON.CREATE'
+                    |
+                    translate}} </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="sort-column" [ngClass]="params.sort_by=='id' ? params.order :''" (click)="setOrder('id')">{{'ID' | translate}} </th>
+                    <th class="sort-column" [ngClass]="params.sort_by=='name' ? params.order :''" (click)="setOrder('name')">{{'NAME' | translate}}</th>
+                    <th class="sort-column" [ngClass]="params.sort_by=='subscribers_count' ? params.order :''" (click)="setOrder('subscribers_count')"> {{'SUBSCRIBERS' | translate}}</th>
+                    <th>{{'STATUS' | translate}}</th>
+                    <th>{{'ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let organization of organizations | paginate: { itemsPerPage: params.size, currentPage: p, totalItems: total }">
+
+                    <td> {{ organization.id }} </td>
+                    <td> {{ organization.name }} </td>
+                    <td> <a [routerLink]="['/super-admin/subscribers/list/', organization.id]"> {{
+                        organization.subscribers_count }} </a> </td>
+                    <td *ngIf="organization.status == 1"> <span class="text-success"> {{'ACTION_BUTTON.ACTIVE' |
+                        translate}} </span> </td>
+                    <td *ngIf="organization.status == 0"> <span class="text-danger"> {{'ACTION_BUTTON.IN_ACTIVE' |
+                        translate}} </span> </td>
+
+                    <td>
+                      
+                      <a [routerLink]="['/super-admin/organizations', organization.id]"
+                        title="{{ 'ACTION_BUTTON.EDIT' | translate }}" class="fnt-12 btn btn-warning"> <i
+                          class="fas fa-edit"></i>
+                      </a> &nbsp;
+                      <a class="btn btn-info fnt-12" title="{{ 'DETAILS' | translate }}"
+                      [routerLink]="['/super-admin/organizations/details', organization.id]"> <i class="fas fa-eye"></i>
+                    </a> &nbsp;
+                      <ng-container *ngIf="(organization.status == 1); else activeSubscriber">
+                        <button type="button"
+                          title="{{ 'ACTION_BUTTON.DISABLE'  | translate }}  {{ 'ORGANIZATION' | translate }}"
+                          (click)="changeStatus(organization)" class="btn btn-danger fnt-12"> <i
+                            class="fa fa-remove"></i> </button>
+                      </ng-container>
+                      <ng-template #activeSubscriber>
+                        <button type="button" title="{{ 'ENABLE'  | translate }} {{ 'ORGANIZATION' | translate }}"
+                          (click)="changeStatus(organization)" class="btn btn-success fnt-12"> <i
+                            class="fa fa-check"></i> </button>
+                      </ng-template>
+                    </td>
+                  </tr>
+
+                  <tr *ngIf="organizations && organizations.length === 0">
+                    <td [attr.colspan]="canEdit ? 5 : 4" class="tnodata"> {{'SENTENCES.ORGANIZATION_404' | translate}}
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event"></pagination-controls>
+          </div>
+          <!-- /.card -->
+
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

@@ -1,0 +1,1177 @@
+{
+  "TRADER_ID": "Trader Id",
+  "TRADER_PREFERENCE": "Trader Preference",
+  "MINIMUM_MULTIPLIER": "Minimum Multiplier",
+  "EXPIRY_AFTER_CLAIM": "Expiry After Claim (In Hours)",
+  "PROMOTION_NAME": "Promotion Name",
+  "FREE_BET_RAIN": "Free Bet Rain",
+  "OLD_PASSWORD": "Old Password",
+  "END_TIME":"End Time",
+  "RAIN_START_TIME":"Rain Start Time",
+  "RAIN_END_TIME":"Rain End Time",
+  "COMMISSION": "Commission",
+  "FREEBETS": "Freebets",
+  "ACCOUNTS": "Accounts",
+  "ACTIVITY": "Activity",
+  "START_ANIMATION_JSON": "Start Animation Json",
+  "START_ANIMATION_PNG": "Start Animation PNG",
+  "CRASH_ANIMATION_JSON": "Crash Animation Json",
+  "CRASH_ANIMATION_PNG": "Crash Animation PNG",
+  "GRAPH_COLOUR": "Graph Colour",
+  "LOADER_COLOUR": "Loader Colour",
+  "START_ANIMATION": "Start Animation",
+  "CRASH_ANIMATION": "Crash Animation",
+  "TOTAL_SUBSCRIBERS": "Total Subscribers",
+  "TOTAL_PLAYERS": "Total Players",
+  "RESET_PASSWORD": "Reset Password",
+  "BACK_TO_LOGIN": "Back To Login",
+  "FORGOT_PASSWORD": "Forgot Password",
+  "REPORTS": "Reports",
+  "BET_REPORT": "Bet Report",
+  "MIN_WIN_AMOUNT": "Min Win Amount",
+  "AUTO_BET": "Auto Bet",
+  "DATA_RANGE": "Data Range",
+  "CONFIRM_PASSWORD": "Confirm Password",
+  "SOUND": "Sound",
+  "BG_SOUND": "Background Sound",
+  "START_SOUND": "Start Sound",
+  "FLEW_AWAY_SOUND": "Flew Away Sound",
+  "AUTO_RATE": "Auto Rate",
+  "ESCAPE_RATE": "Escape Rate",
+  "GRAPH": "Graph",
+  "CALLBACK_APIS": "Callback Apis",
+  "ONLINE": "Online",
+  "AWAY": "Away",
+  "LAST_BET_PLACED": "Last Bet Placed",
+  "HAVE_FREEBETS": "Have Freebets",
+  "HERO_IMG": "Hero Image",
+  "HERO_JSON": "Hero Json File",
+  "BG_IMG": "Background Image",
+  "BG_JSON": "Background Json File",
+  "AUTH_API": "Auth Api",
+  "DEBIT_API": "Debit Api",
+  "CREDIT_API": "Credit Api",
+  "ROLLBACK_API": "Rollback Api",
+  "GET_BALANCE_API": "Get Balance Api",
+  "ACE_GAMING": "BackOffice",
+  "DASHBOARD": "Dashboard",
+  "POWERED_BY": "Powered By",
+  "TENANTS": "Tenants",
+  "TENANT": "Tenant",
+  "THEMES": "Themes",
+  "THEME": "Theme",
+  "USER_ID": "User Id",
+  "THEME_PREVIEW": "Theme Preview",
+  "CURRENCIES": "Currencies",
+  "CURRENCY": "Currency",
+  "FREE_BETS": "Free Bets",
+  "FREE_BET": "Free Bet",
+  "GRANT_FREE_BET": "Grant Free Bet",
+  "BET_AMOUNT": "Bet Amount",
+  "NUMBER_OF_FREE_BETS": "Number of Free Bets",
+  "CONFIGURATIONS": "Configurations",
+  "CONFIGURATION": "Configuration",
+  "REVENUE": "Revenue",
+  "GLOBAL_SETTINGS": "Global Settings",
+  "GAME_SETTINGS": "Game Settings",
+  "BETTING_SETTINGS": "Betting Settings",
+  "ADMINS": "Admins",
+  "ADMIN": "Admin",
+  "SHOW_ALL_USERS": "Show All Users",
+  "PREVIEW_ROLE_TREE": "Preview Role Tree",
+  "AFFILIATES": "Affiliates",
+  "AFFILIATE": "Affiliate",
+  "CMS": "Content Management System",
+  "CRM": "Customer Retention Management",
+  "USERS": "Users",
+  "USER": "User",
+  "TRANSACTIONS": "Transactions Banking",
+  "SPORT_TRANSACTIONS": "Transactions",
+  "CURRENCY_CODE": "Currency Code",
+  "NON_CASH_AMOUNT": "Non Cash Amount",
+  "PAYMENT_FOR": "Payment For",
+  "IS_PROCESSED": "Is Processed",
+  "TRANSACTION": "Transaction",
+  "ADVERTISEMENTS": "Advertisements",
+  "ADVERTISEMENT": "Advertisement",
+  "SPORTS_BOOK": "Sports Book",
+  "SPORT_SETTINGS": "Sport Settings",
+  "DFS_MANAGEMENT": "DFS Management",
+  "BET_MANAGEMENT": "Bet Management",
+  "LANGUAGES": "Languages",
+  "LANGUAGE": "Language",
+  "SIZE": "Size",
+  "NAME": "Name",
+  "DOMAIN": "Domain",
+  "FILTERS": "Filters",
+  "FILTER": "Filter",
+  "ID": "ID",
+  "STATUS": "Status",
+  "ACTION": "Action",
+  "HOME": "Home",
+  "ALLOWED_CURRENCIES": "Allowed Currencies",
+  "LOGO": "Logo",
+  "PACKAGES": "Packages",
+  "PACKAGE": "Package",
+  "DFS": "Daily Fantasy Sports",
+  "SLOT_GAMES": "Slot Games",
+  "SPORTS_BETTING": "Sports Betting",
+  "DAILY": "Daily",
+  "WEEKLY": "Weekly",
+  "MONTHLY": "Monthly",
+  "YEARLY": "Yearly",
+  "THEME_MODE": "Theme Mode",
+  "CUSTOM": "Custom",
+  "DARK": "Dark",
+  "LIGHT": "Light",
+  "PRIMARY_COLOR": "Primary Color",
+  "SECONDRY_COLOR": "Secondry Color",
+  "FONT_FAMILY": "Font Family",
+  "DETAILS": "Details",
+  "PARENT": "Parent",
+  "CODE": "Code",
+  "CODES": "Codes",
+  "EXCHANGE_RATE": "Exchange Rate",
+  "PRIMARY": "Primary",
+  "EXCHANGE_RATES": "Exchange Rates",
+  "NOTE": "Note",
+  "NOTES": "NOTES",
+  "ADMIN_CODE": "Admin Code",
+  "CREDENTIALS": "Credentials",
+  "SEARCH": "Search",
+  "FULL_NAME": "Full name",
+  "PHONE_NUMBER": "Phone Number",
+  "EMAIL": "Email",
+  "FIRST_NAME": "First Name",
+  "LAST_NAME": "Last Name",
+  "PASSWORD": "Password",
+  "KEY": "Key",
+  "VALUE": "Value",
+  "SUB_ADMINS": "Sub Admins",
+  "COMMISSION_PERCENTAGE": "Commission Percentage",
+  "ROLE": "Role",
+  "ROLES": "Roles",
+  "DEPOSIT": "Deposit",
+  "WITHDRAWAL": "Withdrawal",
+  "LOGIN": "Login",
+  "PREVIEW": "Preview",
+  "BET_HISTORY": "Bet History",
+  "TENANT_CONFIGURATIONS": "Tenant Configurations",
+  "TENANT_CREDENTIALS": "Tenant Credentials",
+  "TENANT_SETTINGS": "Tenant Settings",
+  "TENANT_THEME_SETTINGS": "Tenant Theme Settings",
+  "TENANT_PACKAGES": "Tenant Packages",
+  "THEME_SETTINGS": "Theme Settings",
+  "SUBSCRIBER_SETTINGS": "Subscriber Settings",
+  "SUBSCRIBER_PACKAGES": "Subscriber Packages",
+  "SUBSCRIBER_CONFIGURATIONS": "Subscriber Configurations",
+  "SUBSCRIBER_CREDENTIALS": "Subscriber Settings",
+  "SUBSCRIBER_THEME_SETTINGS": "Subscriber Theme Settings",
+  "SUBSCRIBERS": "Subscribers",
+  "SUBSCRIBER": "Subscriber",
+  "URL": "URL",
+  "USERNAME": "Username",
+  "DATE_OF_BIRTH": "Date of birth",
+  "UNIQUE_NAME": "Uniqe Name",
+  "PAYOUT_PERCENTAGE": "Payout Percentage",
+  "TEMPLATE": "Template",
+  "TEMPLATES": "Templates",
+  "SUBJECT": "Subject",
+  "CATEGORY": "Category",
+  "SCHEDULED_AT": "Scheduled at",
+  "BANNER": "Banner",
+  "BANNERS": "Banners",
+  "PAGES": "Pages",
+  "PAGE": "Page",
+  "TITLE": "Title",
+  "SLUG": "Slug",
+  "SETTINGS": "Settings",
+  "TOTAL_BALANCE": "Total Balance",
+  "COUNTRY_CODE": "Country Code",
+  "EMAIL_VERIFIED": "Email Verified",
+  "RETAILER": "Retailer",
+  "ACTION_TYPE": "Action Type",
+  "TIME_PERIOD": "Time Period",
+  "CREATED_AT": "Created at",
+  "UPDATED_AT": "Updated at",
+  "START_DATE": "Start Date",
+  "END_DATE": "End Date",
+  "WALLET": "Wallet",
+  "WALLETS": "Wallets",
+  "LAST_DEPOSITED_AMOUNT": "Last Deposited Amount",
+  "AMOUNT": "Amount",
+  "CURRENCY_RATE": "Currency Rate",
+  "ACTION_BY": "Action by",
+  "COMMENTS": "Comments",
+  "SOURCE_TYPE": "Source Type",
+  "SOURCE_EMAIL": "Source Email",
+  "TARGET_CURRENCY": "Target Currency",
+  "BONUS": "Bonus",
+  "BONUSES": "Bonuses",
+  "KIND": "Kind",
+  "ENABLED": "Enabled",
+  "ENABLE": "Enable",
+  "EVENT_LIABLITY": "Event Liablity",
+  "FLAT": "Flat",
+  "PERCENTAGE": "Percentage",
+  "VALID_FROM": "Valid From",
+  "VALID_UPTO": "Valid Upto",
+  "VALID_PERIOD": "Valid Period",
+  "IMAGE": "Image",
+  "TERMS_AND_CONDITIONS": "Terms and Conditions",
+  "LOYALTY_BONUS_USERS": "Loyalty Bonus Users",
+  "WEB_IMAGE": "Web Image",
+  "MOBILE_IMAGE": "Mobile Image",
+  "TOTAL_INCOME": "Total Income",
+  "VISITS": "Visits",
+  "PER_CLICK_COST": "Per Click Cost",
+  "SPORT": "Sport",
+  "SPORTS": "Sports",
+  "COUNTRIES": "Countries",
+  "PLAYER": "Player",
+  "PLAYERS": "Players",
+  "TEAM": "Team",
+  "TEAMS": "Teams",
+  "START": "Start",
+  "END": "End",
+  "ALL": "All",
+  "UNIQUE_ID": "Unique ID",
+  "REWARDS": "Rewards",
+  "FEATURED": "Featured",
+  "SELECT_ALL": "Select All",
+  "DATE": "Date",
+  "DATES": "Dates",
+  "TYPE": "Type",
+  "MULTIPLE_ENTRY": "Multiple Entry",
+  "EXTRA_REWARDS": "Extra Rewards",
+  "COMMENT": "Comment",
+  "AUTO_REPEAT": "Auto Repeat",
+  "DESCRIPTION": "Description",
+  "RESULT": "Result",
+  "RESULTS": "Results",
+  "STATS": "Stats",
+  "STATS_DETAILS": "Stats Details",
+  "OUTCOME": "OutCome",
+  "SELECT": "Select",
+  "POSITION": "Position",
+  "POSITIONS": "Positions",
+  "PLAYER_NAME": "Player Name",
+  "SALARY": "Salary",
+  "SINGLE_BET": "Single Bet",
+  "MULTI_BET": "Multi Bet",
+  "GAME_HERO": "Game Hero",
+  "GAME_BACKGROUND": "Game Background",
+  "ODDS": "Odds",
+  "STAKE": "Stake",
+  "WIN_AMOUNT": "Win Amount",
+  "BET_TYPE": "Bet Type",
+  "PERMISSION": "Permission",
+  "PERMISSIONS": "Permissions",
+  "KYC": "Know Your Customer",
+  "RETRY": "Retry",
+  "EVENT_LIABILITY": "Event Liability",
+  "DEPOSIT_LIMIT": "Deposit Limit",
+  "MAX_WIN_AMOUNT": "Max Win Amount",
+  "MAX_ODD": "Max Odd",
+  "MIN_WITHDRAWAL_AMOUNT": "Min Withdrawal Amount",
+  "MAX_SINGLE_BET": "Max Single Bet",
+  "MAX_BET_ON_EVENT": "Max Bet On Event",
+  "MIN_BET": "Min Bet",
+  "MAX_MULTIPLE_BET": "Max Multiple Bet",
+  "MAX_DAILY_BET_AMOUNT": "Max Daily Bet Amount",
+  "MAX_WEEKLY_BET_AMOUNT": "Max Weekly Bet Amount",
+  "MAX_MONTHLY_BET_AMOUNT": "Max Monthly Bet Amount",
+  "CASHOUT_PERCENTAGE": "Cashout Percentage",
+  "MAX_BONUS_WIN_AMOUNT": "Max Bonus Win Amount",
+  "OVERVIEW": "Overview",
+  "FINANCIAL": "Financial",
+  "MINIMUM_THRESHOLD": "Minimum Threshold",
+  "MAXIMUM_THRESHOLD": "Maximum Threshold",
+  "YES": "Yes",
+  "NO": "No",
+  "VIEW_HERE": "View Here",
+  "LAST_LOGIN": "Last Login",
+  "USER_SETTINGS": "User Settings",
+  "DURATION": "Duration",
+  "USER_DOCUMENTS": "User Documents",
+  "VIEW": "View",
+  "VERIFIED": "Verified",
+  "REASON": "Reason",
+  "UPLOADED_AT": "Uploaded At",
+  "BET": "Bet",
+  "WIN": "Win",
+  "REFUND": "Refund",
+  "WITHDRAW": "Withdraw",
+  "NON_CASH_GRANTED_BY_ADMIN": "Non Cash Granted By Admin",
+  "NON_CASH_WITHDRAW_BY_ADMIN": "Non Cash Withdraw By Admin",
+  "TIP": "Tip",
+  "BET_NON_CASH": "Bet Non Cash",
+  "EXPIRED": "Expired",
+  "USAGE_COUNT": "Usage Count",
+  "WIN_NON_CASH": "Win Non Cash",
+  "REFUND_NON_CASH": "Refund Non Cash",
+  "NON_CASH_BONUS_CLAIM": "Non Cash Bonus Claim",
+  "DEPOSIT_BONUS_CLAIM": "Non Cash Bonus Claim",
+  "TIP_NON_CASH": "Tip Non Cash",
+  "SINGLE": "Single",
+  "MULTI": "Multi",
+  "WITHDRAW_CANCEL": "Withdraw Cancel",
+  "CONVERSION_RATE": "Conversion Rate",
+  "TOTAL_CLICKS": "Total Clicks",
+  "PER_VISITS": "Per Visits",
+  "GAME_NAME": "Game Name",
+  "THEME_NAME": "Theme Name",
+  "COLUMN_COUNT": "Column Count",
+  "ROW_COUNT": "Row Count",
+  "SYMBOL": "Symbol",
+  "SYMBOLS": "Symbols",
+  "LINE": "Line",
+  "LINES": "Lines",
+  "GIF": "Gif",
+  "WILD": "Wild",
+  "MATRIX": "Matrix",
+  "LINE_1": "Line 1",
+  "LINE_2": "Line 2",
+  "LINE_3": "Line 3",
+  "LINE_4": "Line 4",
+  "LINE_5": "Line 5",
+  "LINE_6": "Line 6",
+  "LINE_7": "Line 7",
+  "LINE_8": "Line 8",
+  "LINE_9": "Line 9",
+  "ROW_1": "Row 1",
+  "ROW_2": "Row 2",
+  "ROW_3": "Row 3",
+  "REEL_1": "Reel 1",
+  "REEL_2": "Reel 2",
+  "REEL_3": "Reel 3",
+  "REEL_4": "Reel 4",
+  "REEL_5": "Reel 5",
+  "BOTTOM": "Bottom",
+  "TOP": "Top",
+  "STATISTICS": "Statistics",
+  "PUBLIC_KEY": "Public Key",
+  "SECRET_KEY": "Secret Key",
+  "WON": "Won",
+  "LOST": "Lost",
+  "CASHOUT": "Cashout",
+  "NOT_STARTED": "Not Started",
+  "IN_PROGRESS": "In Progress",
+  "FINISHED": "Finished",
+  "CANCELLED": "Cancelled",
+  "POSTPONED": "Postponed",
+  "INTERRUPTED": "Interrupted",
+  "ABANDONED": "Abandoned",
+  "START_TIME": "Start Time",
+  "EVENT_STATUS": "Event Status",
+  "MATCH_TYPE": "Match Type",
+  "REG": "Regular",
+  "ABBRIVIATION": "Abbriviation",
+  "PRIMARY_CURRENCY": "Primary Currency",
+  "SPORT_BETTING": "Sport Betting",
+  "COPYRIGHT": "Copyright",
+  "VERSION": "Version",
+  "REMEMBER_ME": "Remember Me",
+  "ORGANIZATION": "Organization",
+  "ORGANIZATIONS": "Organizations",
+  "CANCELS":"Cancels",
+  "NET_SALES":"Net Sales",
+  "VALIDATION_MSGS": {
+    "TRADER_ID": {
+      "REQUIRED": "Trader Id is required"
+    },
+    "TRADER_PREFERENCE": {
+      "REQUIRED": "Trader Preference is required"
+    },
+    "MINIMUM_MULTIPLIER": {
+      "REQUIRED": "Minimum Multiplier is required",
+      "MIN": "Mimimum Multiplier cannot be less than 1.01"
+    },
+    "EXPIRY_AFTER_CLAIM": {
+      "REQUIRED": "Expiry After Claim is required",
+      "MIN": "Expiry cannot be less than 1 Hour"
+    },
+    "START_TIME": {
+      "REQUIRED": "Start Time is required"
+    },
+    "END_TIME": {
+      "REQUIRED": "End Time is required",
+      "MORE_THAN": "Should be more than Start Time"
+    },
+    "RAIN_START_TIME": {
+      "REQUIRED": "Rain Start Time is required",
+      "IN_BETWEEN": "Should be in between Start Time and End Time"
+    },
+    "RAIN_END_TIME": {
+      "REQUIRED": "Rain End Time is required",
+      "MORE_THAN": "Should be more than Rain Start Time",
+      "LESS_THAN": "Should be less than End Time"
+    },
+    "VIP_LEVEL": {
+      "REQUIRED": "Vip Level is required"
+    },
+    "DATE_OF_BIRTH": {
+      "REQUIRED": "Date of Birth is required"
+    },
+    "USER_ID": {
+      "REQUIRED": "User Id is required"
+    },
+    "OPTIONS": {
+      "REQUIRED": "Options is required"
+    },
+    "EXCHAANGE_RATE": {
+      "REQUIRED": "Exchange Rate is required"
+    },
+    "MATCHES": {
+      "REQUIRED": "Matches is required"
+    },
+    "SLUG": {
+      "REQUIRED": "Slug is required"
+    },
+    "THEME": {
+      "REQUIRED": "Theme is required"
+    },
+    "VALID_FROM": {
+      "REQUIRED": "Valid From is required"
+    },
+    "VALID_UPTO": {
+      "REQUIRED": "Valid Upto is required"
+    },
+    "MIN_THRESHOLD": {
+      "REQUIRED": "Min threshold is required"
+    },
+    "MAX_THRESHOLD": {
+      "REQUIRED": "Max threshold is required"
+    },
+    "BANNER": {
+      "REQUIRED": "Banner is required"
+    },
+    "START_DATE": {
+      "REQUIRED": "Start Date is required"
+    },
+    "END_DATE": {
+      "REQUIRED": "End Date is required"
+    },
+    "ADVERTISEMENT_PAGE_ID": {
+      "REQUIRED": "Id is required",
+      "EXISTS": "Id already exists"
+    },
+    "WEB_AD_IMAGE": {
+      "REQUIRED": "Web advertisement image is requierd"
+    },
+    "MOBILE_AD_IMAGE": {
+      "REQUIRED": "Mobile advertisement image is requierd"
+    },
+    "PHONE_VERIFIED": {
+      "REQUIRED": "Phone Verified is requierd"
+    },
+    "ADMIN_ID": {
+      "REQUIRED": "Admin Id is required"
+    },
+    "TENANT_ID": {
+      "REQUIRED": "Tenant Id is required"
+    },
+    "SUBSCRIBER_ID": {
+      "REQUIRED": "Subscriber Id is required"
+    },
+    "ID": {
+      "REQUIRED": "Id is required"
+    },
+    "PACKAGE": {
+      "REQUIRED": "Package is required"
+    },
+    "TYPE": {
+      "REQUIRED": "Type is required"
+    },
+    "STATUS": {
+      "REQUIRED": "Status is required"
+    },
+    "LANGUAGE": {
+      "REQUIRED": "Language is required"
+    },
+    "EMAIL": {
+      "REQUIRED": "Email is required",
+      "VALID": "Email must be valid",
+      "UNIQUE": "Email must be unique"
+    },
+    "PASSWORD": {
+      "REQUIRED": "Password is required",
+      "VALID": "Password must be 1 upper case, 1 lower case and 1 special char min 8 char"
+    },
+    "FIRST_NAME": {
+      "REQUIRED": "First Name is required"
+    },
+    "LAST_NAME": {
+      "REQUIRED": "Last Name is required"
+    },
+    "ADMIN_CODE": {
+      "REQUIRED": "Admin Code is required"
+    },
+    "CODE": {
+      "REQUIRED": "Code is required",
+      "UNIQUE": "Code must be unique",
+      "ALPHA_NUM": "Code must be alpha numeric"
+    },
+    "PHONE_NUMBER": {
+      "REQUIRED": "Phone number is requierd",
+      "VALID": "Phone must be valid",
+      "MIN_LENGTH": "Phone Number must be greater then 5 digits"
+    },
+    "UNIQUE_NAME": {
+      "REQUIRED": "Unique Name is required",
+      "VALID": "Must start with alphabet, does not contain any character except underscore"
+    },
+    "USERNAME_NAME": {
+      "REQUIRED": "Username is required",
+      "VALID": "Must start with alphabet, does not contain any character except underscore",
+      "UNIQUE": "unique name has already been taken"
+    },
+    "ROLE": {
+      "REQUIRED": "Role is requierd"
+    },
+    "ADMIN": {
+      "REQUIRED": "Admin is requierd"
+    },
+    "SUPER_SENIOR": {
+      "REQUIRED": "Super Senior is requierd"
+    },
+    "SENIOR_MASTER": {
+      "REQUIRED": "Senior Master is requierd"
+    },
+    "MASTER_AGENT": {
+      "REQUIRED": "Master Agent is requierd"
+    },
+    "CURRENCY": {
+      "REQUIRED": "Currency is requierd"
+    },
+    "NUMBER_OF_FREE_BETS": {
+      "REQUIRED": "Number of free bets is requierd",
+      "MIN": "Number of Free Bets cannot be less than 1"
+    },
+    "BET_AMOUNT": {
+      "REQUIRED": "Bet Amount is requierd",
+      "MIN": "Bet amount cannot be less than 1"
+    },
+    "PERMISSION": {
+      "REQUIRED": "Please Select atleast 1 Permission",
+      "READ_REQUIRED": "Please select Read permission before selecting any other permissions for this module"
+    },
+    "KEY": {
+      "REQUIRED": "Key is required"
+    },
+    "VALUE": {
+      "REQUIRED": "Value is required",
+      "BETWEEN": "Value must be between 1 to 100",
+      "MIN": "Value Cannot be less then 1",
+      "VALID_URL": "Value must be valid Url"
+    },
+    "DURATION": {
+      "REQUIRED": "Duration is required",
+      "MIN": "Duration Cannot be less then 1"
+    },
+    "PAYOUT_PERCENTAGE": {
+      "REQUIRED": "Payout Percentage is required",
+      "BETWEEN": "Payout Percentage must be between 0 to 100",
+      "VALID": "Payout Percentage Enter only numbers"
+    },
+    "FILE": {
+      "REQUIRED": "File is required",
+      "IMAGE_TYPE": "File must be an image"
+    },
+    "SUBJECT": {
+      "REQUIRED": "Subject is required"
+    },
+    "CATEGORY": {
+      "REQUIRED": "Category is required"
+    },
+    "CONTENT": {
+      "REQUIRED": "Content is required"
+    },
+    "TITLE": {
+      "REQUIRED": "Title is required"
+    },
+    "DESCRIPTION": {
+      "REQUIRED": "Description is required"
+    },
+    "EVENT_LIABILITY": {
+      "REQUIRED": "Event Liability is required"
+    },
+    "DEPOSIT_LIMIT": {
+      "REQUIRED": "Deposit Limit is required"
+    },
+    "MAX_WIN_AMOUNT": {
+      "REQUIRED": "Max Win Amount is required"
+    },
+    "MAX_ODD": {
+      "REQUIRED": "Max Odd is required",
+      "MIN": "Max Odd cannot be less than 1.01"
+    },
+    "MIN_WITHDRAWAL_AMOUNT": {
+      "REQUIRED": "Min Withdrawal Amount is required"
+    },
+    "MAX_SINGLE_BET": {
+      "REQUIRED": "Max Single Bet is required"
+    },
+    "MAX_BET_ON_EVENT": {
+      "REQUIRED": "Max Bet On Event is required"
+    },
+    "MIN_BET": {
+      "REQUIRED": "Min Bet is required"
+    },
+    "MAX_MULTIPLE_BET": {
+      "REQUIRED": "Max Multiple Bet is required"
+    },
+    "MAX_DAILY_BET_AMOUNT": {
+      "REQUIRED": "Max Daily Bet Amount is required"
+    },
+    "MAX_WEEKLY_BET_AMOUNT": {
+      "REQUIRED": "Max Weekly Bet Amount is required"
+    },
+    "MAX_MONTHLY_BET_AMOUNT": {
+      "REQUIRED": "Max Monthly Bet Amount is required"
+    },
+    "CASHOUT_PERCENTAGE": {
+      "REQUIRED": "Cashout Percentage is required"
+    },
+    "MAX_BONUS_WIN_AMOUNT": {
+      "REQUIRED": "Max Bonus Win Amount is required"
+    },
+    "DOB": {
+      "REQUIRED": "Date of Birth is required"
+    },
+    "COUNTRY_CODE": {
+      "REQUIRED": "Country Code is required"
+    },
+    "REASON": {
+      "REQUIRED": "Reason is required"
+    },
+    "TARGET_TYPE": {
+      "REQUIRED": "Target Type is required"
+    },
+    "SOURCE_TYPE": {
+      "REQUIRED": "Source Type is required"
+    },
+    "TARGET_EMAIL": {
+      "REQUIRED": "Target Email is required"
+    },
+    "SOURCE_EMAIL": {
+      "REQUIRED": "Target Email is required"
+    },
+    "TARGET_CURRENCY": {
+      "REQUIRED": "Target Currency is required"
+    },
+    "AMOUNT": {
+      "REQUIRED": "Amount is required",
+      "MIN": "Amount Cannot be less then 1"
+    },
+    "SOURCE_CURRENCY": {
+      "REQUIRED": "Source Currency is required",
+      "SOURCE_TARGET_SAME": "Source Wallet and Target Wallet cannot be same"
+    },
+    "COMMENT": {
+      "REQUIRED": "Comment is required",
+      "MAX": "Max 50 characters allowed"
+    },
+    "FLAT": {
+      "REQUIRED": "Flat Amount is required",
+      "MIN": "Flat Amount Cannot be less then 1"
+    },
+    "KIND": {
+      "REQUIRED": "Kind is required"
+    },
+    "PERCENTAGE": {
+      "REQUIRED": "Percentage required",
+      "MIN": "Percentage Cannot be less then 1"
+    },
+    "USAGE_COUNT": {
+      "REQUIRED": "Usage Count required",
+      "MIN": "Usage Count Cannot be less then 1"
+    },
+    "USERS": {
+      "REQUIRED": "Users is required"
+    },
+    "URL": {
+      "REQUIRED": "URL is required",
+      "VALID": "URL must be valid"
+    },
+    "VALID_PERIOD": {
+      "REQUIRED": "Valid Period is required"
+    },
+    "ADVERTISEMENT_PAGE": {
+      "REQUIRED": "Advertisement Page is required"
+    },
+    "NAME": {
+      "REQUIRED": "Name is required",
+      "VALID": "Name must be valid",
+      "MIN": "Name must be greater than 3 characters"
+    },
+    "DOMAIN": {
+      "REQUIRED": "Domain is required",
+      "VALID": "Domain is must be Valid For ex https://www.example.com or https://example.com",
+      "UNIQUE": "Domain is must be Unique"
+    },
+    "PRIMARY_CURRENCY": {
+      "REQUIRED": "Primary Currency is required"
+    },
+    "MINIMUM_THRESHOLD": {
+      "REQUIRED": "Minimum Threshold required",
+      "MIN": "Minimum Threshold Cannot be less then 1",
+      "VALID": "Invalid Minimum Threshold"
+    },
+    "MAXIMUM_THRESHOLD": {
+      "REQUIRED": "Maximum Threshold required",
+      "MIN": "Maximum Threshold Cannot be less then 1",
+      "VALID": "Invalid Maximum Threshold"
+    },
+    "TERMS_AND_CONDITIONS": {
+      "REQUIRED": "Terms and Conditions required",
+      "MAX": "Terms and Conditions words should be less than 300"
+    },
+    "PER_CLICK_COST": {
+      "REQUIRED": "Per Click Cost required",
+      "MIN": "Per Click Cost must be greter then 0"
+    },
+    "CURRENCY_CODE": {
+      "REQUIRED": "Currency Code is required",
+      "VALID": "Enter Capital letters without space, only underscore _ can be used"
+    },
+    "CURRENCY_SYMBOL": {
+      "REQUIRED": "Currency Symbol is required"
+    },
+    "EXCHANGE_RATE": {
+      "REQUIRED": "Exchange Rate is required",
+      "MIN": "Exchange Rate must be greater then 0"
+    },
+    "CONTEST_MATCHES": {
+      "RESOURCES": "Select Sport, League and Dates to fetch matches"
+    },
+    "CONTEST_PRIZE_PAYOUT": {
+      "REQUIRED": "Prize Payout is required"
+    },
+    "CONTEST_MULTI_ENTRY": {
+      "MAX": "Multiple Entry cannot exceed Contest Size"
+    },
+    "CONTEST_NAME": {
+      "REQUIRED": "Contest name is required",
+      "MAX": "The contest name max Length is 50"
+    },
+    "SPORT": {
+      "REQUIRED": "sport is required"
+    },
+    "LEAGUE": {
+      "REQUIRED": "League is required"
+    },
+    "DATES": {
+      "REQUIRED": "Dates is required"
+    },
+    "SALARY_CAP": {
+      "REQUIRED": "Salary cap required"
+    },
+    "CONTEST_TYPE": {
+      "REQUIRED": "The type of contest is required"
+    },
+    "CONTEST_FEE": {
+      "REQUIRED": "Contest fee required",
+      "RANGE": "The contest fee varies from 0 to 5000"
+    },
+    "CONTEST_SIZE": {
+      "REQUIRED": "Contest size is required",
+      "RANGE": "Contest size varies from 2 to 10000",
+      "PATTERN": "The size of the contest accepts only the number"
+    },
+    "SITE_RAKE": {
+      "REQUIRED": "Site Rake Required",
+      "RANGE": "Site Rake ranges from 0 to 100"
+    },
+    "PRIZE_PAYOUT": {
+      "REQUIRED": "Prize payment required"
+    },
+    "MULTIPLE_ENTRY": {
+      "REQUIRED": "Multiple entry required",
+      "MIN": "Multiple entry minimum is 1"
+    },
+    "MIN_ODD": {
+      "REQUIRED": "Min Odd is required"
+    },
+    "MIN_AUTO_RATE": {
+      "REQUIRED": "Min Auto Rate is required",
+      "MIN": "Min Auto Rate cannot be less than 1.01"
+    },
+    "BETTING_PERIOD": {
+      "REQUIRED": "Betting Period is required",
+      "INTEGER": "Betting Period must be a number",
+      "BETWEEN": "Betting Period must be in range between 4 and 20"
+    },
+    "LANGUAGE_CODE": {
+      "REQUIRED": "Language code is required",
+      "UNIQUE": "Language code must be unique",
+      "PATTERN": "Language code must be in lowercase and has two letters"
+    },
+    "JSON_FILE": {
+      "REQUIRED": "Json File is required"
+    }
+  },
+  "FRONTEND": "Frontend",
+  "AUTH": "Auth",
+  "SENTENCES": {
+    "TRADER_PREFERENCE_EXIST": "Trader Id and Trader Preference combination already exist. Please try another Combination",
+    "ORGANIZATION_404": "No Organization Found",
+    "WARNING_LANGUAGE_JSON": "Important! Please don't translate the text between '{{}}', consider them as a variable number and keep the translation as short as possible",
+    "POINTER_DESCRIPTION": "Please point this domains to following ip address here domain.com referes to your domain",
+    "SDK_DESCRIPTION": "Please add the following script to you project",
+    "PACKAGES_INFO": "On clicking submit, selected EXPIRED packages will get ACTIVATED again",
+    "WARNING_HERO": "Important! The files should be in same format as of sample files and name of png file in json should be plane.png otherwise the game will not work.",
+    "WARNING_BG": "Important! The files should be in same format as of sample files and name of png file in json should be bg.png otherwise the game will not work.",
+    "TENANT_INACTIVE": "Your Tenant is In-Activated, Please contact with your Admin to activate your Tenant",
+    "SUBSCRIBER_INACTIVE": "Your Subscriber is In-Activated, Please contact with your Admin to activate your Subscriber",
+    "ADMIN_INACTIVE": "Your account is In-Activated, Please contact to Admin to Activated Account",
+    "CREDENTIAL_TENANT_ACTIVE": "Please Enter OPERATOR_DEBIT_API, OPERATOR_CREDIT_API to activate your Tenant",
+    "CREDENTIAL_SUBSCRIBER_ACTIVE": "Please Enter Debit, Credit, Auth, Rollback and Get Balance Apis to activate your Subscriber",
+    "THEME_PREVIEW": "Below Changes will not be applied until submitted. Kindly click Preview to see a demo page",
+    "CURRENCY_CONVERSION": "{{crn}} is primary currency. Any conversion from currency A to currency B will consider {{crn}} as base.",
+    "CURRENCY_EXAMPLE_1": "Currency A amount * Exchange Rate of Currency A = Primary Currency({{crn}}) amount",
+    "CURRENCY_EXAMPLE_2": "Currency A amount * (Exchange Rate of Currency A / Exchange Rate of Currency B) = Currency B amount",
+    "ADMIN_404": "No Admin Found",
+    "CURRENCY_404": "No Currency Found",
+    "TENANT_404": "No Tenant Found",
+    "THEME_404": "No Theme Found",
+    "AFFILIATE_404": "No Affiliate Found",
+    "CRM_404": "No Template Found",
+    "CMS_404": "No Page Found",
+    "CREDENTIALS_404": "No Credentials Found",
+    "USER_404": "No User Found",
+    "BONUS_404": "No Bonus Found",
+    "TRANSACTION_404": "No Transaction Found",
+    "ADVERTISEMENT_404": "No Advertisement Found",
+    "ADMIN_TREE_404": "No subadmins present for this admin",
+    "SETTING_404": "No Setting Found",
+    "DOCUMENT_404": "No Document Found",
+    "SLOT_404": "No Game Found",
+    "PACKAGE_404": "No Package Found",
+    "SYMBOLS_MASTER_404": "No Theme Master Symbols Found",
+    "LINE_MASTER_404": "Line Master 404",
+    "SPORT_404": "No Sport Found",
+    "COUNTRY_404": "No Country Found",
+    "TOURNAMENT_404": "No Tournament Found",
+    "MARKET_404": "No Market Found",
+    "MATCH_404": "No Match Found",
+    "STATS_404": "No Stats Found",
+    "PLAYER_404": "No Player Found",
+    "TEAM_404": "No Team Found",
+    "SPORT_SETTINGS_404": "No Sport Setting Found",
+    "BET_HISTORY_404": "No Bet History Found",
+    "SUBSCRIBER_404": "No Subscriber Found",
+    "LANGUAGE_404": "No Language Found",
+    "SELECT_LANGUAGE": "Select a Language",
+    "SELECT_ORGANIZATION": "Select an Organization",
+    "NUMBER_OF_MATCHES": "Number of Matches",
+    "JOINING_AND_REFER_BOUNS": "Joining and Refer a Friend Bonus",
+    "SELECT_MATCH_CONTEST": "Match list will be displayed here after selection of Sport, League & Dates",
+    "LOGIN_SUCCESS": "Login Successfully",
+    "UNAUTHORIZED": "unauthorized",
+    "LOGOUT_SUCCESS": "Logout Successfully",
+    "SESSION_EXPIRED": "Your session has expired. Please login again!",
+    "SELECT_IMAGE_HEIGHT_WIDTH": "Plaese select Image with height: {{ height }} and width: {{ width }}",
+    "CREATED_SUCCESS": "Created Successfully",
+    "UPDATED_SUCCESS": "Updated Successfully",
+    "DELETED_SUCCESS": "Deleted Successfully.",
+    "CREATED_FAIL": "Created Unsuccessfully",
+    "UPDATED_FAIL": "Updated Unsuccessfully",
+    "NOT_FOUND": "Not Found",
+    "CODE_EXIST": "Code already used. please try another code",
+    "EMAIL_EXIST": "Email Address already exist. Please try another Email Address",
+    "BONUS_KIND_EXIST": "Kind already used. please try another kind",
+    "STATUS_CHANGE": "Status Changed Successfully",
+    "ADMIN_TREE": "Tree for Admin",
+    "NO_PERMISSION_CREATE_ADMIN": "You do not have enough permissions to Create Admins",
+    "NO_PERMISSION_UPDATE_ADMIN": "You do not have enough permissions to Update Admins",
+    "NO_PERMISSION_CREATE_PAGE": "You do not have enough permissions to Create Pages",
+    "NO_PERMISSION_UPDATE_PAGE": "You do not have enough permissions to Update Pages",
+    "NO_PERMISSION_CREATE_TENANT": "You do not have enough permissions to Create Tenant",
+    "NO_PERMISSION_UPDATE_TENANT": "You do not have enough permissions to Update Tenant",
+    "NO_PERMISSION_CREATE_SUBSCRIBER": "You do not have enough permissions to Create Subscriber",
+    "NO_PERMISSION_UPDATE_SUBSCRIBER": "You do not have enough permissions to Update Subscriber",
+    "NO_PERMISSION_CREATE_CURRENCIES": "You do not have enough permissions to Create Currencies",
+    "NO_PERMISSION_UPDATE_CURRENCIES": "You do not have enough permissions to Update Currencies",
+    "NO_PERMISSION_UPDATE_SETTINGS": "You do not have enough permissions to Update Settings",
+    "NO_PERMISSION_CREATE_USER": "You do not have enough permissions to Create Users",
+    "NO_PERMISSION_UPDATE_USER": "You do not have enough permissions to Update Users",
+    "NO_PERMISSION_CREATE_BONUS": "You do not have enough permissions to Create Bonus",
+    "NO_PERMISSION_UPDATE_BONUS": "You do not have enough permissions to Update Bonus",
+    "SELECT_READ_PERMISSION": "Please select Read permission before selecting any other permissions for this module",
+    "CURRENCY_CANNOT_REMOVED": "Already added currencies cannot be removed",
+    "DOMAIN_EXIST": "Domain already exist. Please try another Domain",
+    "SELECT_SETTLEMENT": "Please select Settlement.",
+    "EMAIL_SEND_SUCCESS": "Emails Sent Successfully",
+    "CONTEST_NAME_REQUIRED": "Contest Name is requred",
+    "TEMPLATE_REQUIRED": "Template is requred",
+    "IMAGE_REQUIRED": "Image is requred",
+    "VIDEO_REQUIRED": "Video is requred",
+    "MAX_FILE_SIZE": "Max file size is {{ size }}",
+    "SELECT_WALLET_BALANCE": "Selected wallet does not have enough balance, kindly select another wallet",
+    "DOB_18": "Date of birth Age must be 18 years or above.",
+    "USE_VARS_CRM": "Below listed variables can be used in the above text area:",
+    "VAR_FIRST_NAME": "This variable will be replaced with First Name of the user in template",
+    "VAR_LAST_NAME": "This variable will be replaced with Last Name of the user in template",
+    "VAR_USERNAME": "This variable will be replaced with Username of the user in template",
+    "VAR_MATCH_NAME": "This variable will be replaced with Match Name i.e. Raiders VS 49ers of upcoming favourite match in template",
+    "VAR_START_DATE": "This variable will be replaced with Start Date of the upcoming favourite match in template",
+    "SEND_PROMO_NOTIFICATIONS": "Send Promotional Notifications",
+    "CONFIRMATION": {
+      "DOCUMENT_REJECT": "Are you sure you want to reject this document?"
+    },
+    "EXCHANGE_RATE": "Exchange Rate (with base currency {{primary_currency}})",
+    "COPYRIGHT": "All rights reserved",
+    "CONFIRM_ARE_YOU_SURE": "Are you sure?",
+    "CONFIRM_DELETE": "You want to Delete it!",
+    "CONFIRM_LEAVE_PAGE": "You want to leave this page!",
+    "CONFIRM_ACTIVE": "You want to Activate it!",
+    "CONFIRM_IN_ACTIVE": "You want to Deactivate it!",
+    "CONFIRM_TOP": "You want to Top it!",
+    "CONFIRM_BOTTOM": "You want to Bottom it!",
+    "CONFIRM_APPROVE": "You want to Approve it!",
+    "CONFIRM_EMAIL_SEND": "You want to Send it!",
+    "CONFIRM_YES": "Yes, Do it!",
+    "LOGIN": "Sign in to start your session",
+    "TENANT_SETTING_ALERT1": "Enter all the below numbers in Primary curreny",
+    "TENANT_SETTING_ALERT2": "of this tenant"
+  },
+  "PLACEHOLDERS": {
+    "ENTER_TRADER_ID": "Enter Trader Id",
+    "ENTER_TRADER_PREFERENCE": "Enter Trader Preference",
+    "ENTER_BET_AMOUNT": "Enter Bet Amount",
+    "ENTER_NO_OF_FREE_BETS": "Enter No. Of Free Bets",
+    "ENTER_PROMOTION_NAME": "Enter Promotion Name",
+    "ENTER_MINIMUM_MULTIPLIER": "Enter Minimum Multiplier",
+    "ENTER_EXPIRY_AFTER_CLAIM": "Enter Expiry After Claim",
+    "SEARCH_MIN_WINNING": "Search Min Winning",
+    "SEARCH_MAX_WINNING": "Search Max Winning",
+    "SEARCH_DATA_RANGE": "Search Data Range",
+    "SEARCH_BET_ID": "Search Bet Id",
+    "SEARCH_NAME_CODE": "Search By Name, Code",
+    "ENTER_PASSWORD_AGAIN": "Enter Password Again",
+    "ENTER_NAME": "Enter Name",
+    "ENTER_KEY": "Enter Key",
+    "SELECT_CURRENCIES": "Select Currencies",
+    "CHOOSE_FILE": "Choose File",
+    "BROWSE": "Browse",
+    "SEARCH_ADMIN": "Search Email, name",
+    "SEARCH_NAME_DOMAIN": "Search By Name, Domain",
+    "SEARCH_NAME": "Search By Name",
+    "ENTER_PHONE_NUMBER": "Enter Phone Number",
+    "ENTER_EMAIL": "Enter Email",
+    "ENTER_PASSWORD": "Enter Password",
+    "ENTER_FIRST_NAME": "Enter First Name",
+    "ENTER_LAST_NAME": "Enter Last Name",
+    "ENTER_CODE": "Enter Code",
+    "SELECT_ROLE": "Select Role",
+    "SELECT_ADMIN": "Select Admin",
+    "SELECT_SUPER_SENIOR": "Select Super Senior",
+    "SELECT_SENIOR_MASTER": "Select Senior Master",
+    "SELECT_MASTER_AGENT": "Select Master Agent",
+    "ENTER_UNIQUE_NAME": "Enter Unique Name",
+    "ENTER_PAYOUT_PERCENTAGE": "Enter Payout Percentage",
+    "SEARCH_CRM": "Search Subject, Content",
+    "SEARCH_CMS": "Search Title, Slug, Content",
+    "SEARCH_CAMPAIGN": "Search by Campaign period",
+    "ENTER_USERNAME": "Enter Username",
+    "ENTER_DOB": "Enter Date of birth",
+    "SELECT_CURRENCY": "Select a Currency",
+    "SELECT_TIME_PERIOD": "Select Time Period",
+    "SELECT_PRIMARY_CURRENCY": "Select Primary Currency",
+    "SEARCH": "Search",
+    "ENTER_AMOUNT": "Enter Amount",
+    "ENTER_COMMENTS": "Enter Comments",
+    "SEARCH_BONUS": "Search By Title/Code",
+    "SEARCH_BY_EMAIL": "Search By Email",
+    "ENTER_PER_CLICK_COST": "Enter Per Click Cost",
+    "SELECT_AD_PAGE": "Select Advertisement Page",
+    "SELECT_TENANT": "Select Tenant",
+    "SELECT_SUBSCRIBER": "Select Tenant",
+    "ENTER_VALUE": "Enter Value",
+    "ENTER_SUBJECT": "Enter Subject",
+    "SELECT_CATEGORY": "Select Category",
+    "SELECT_SCHEDULED_AT": "Select Scheduled At",
+    "ENTER_TITLE": "Enter Title",
+    "ENTER_DESCRIPTION": "Enter Description",
+    "ENTER_EVENT_LIABILITY": "Enter Event Liability",
+    "ENTER_DEPOSIT_LIMIT": "Enter Deposit Limit",
+    "ENTER_MAX_WIN_AMOUNT": "Enter Max Win Amount",
+    "ENTER_MAX_ODD": "Enter Max Odd",
+    "ENTER_MIN_WITHDRAWAL_AMOUNT": "Enter Min Withdrawal Amount",
+    "ENTER_MAX_SINGLE_BET": "Enter Max Single Bet",
+    "ENTER_MAX_BET_ON_EVENT": "Enter Max Bet On Event",
+    "ENTER_MIN_BET": "Enter Min Bet",
+    "ENTER_MAX_MULTIPLE_BET": "Enter Max Multiple Bet",
+    "ENTER_MAX_DAILY_BET_AMOUNT": "Enter Max Daily Bet Amount",
+    "ENTER_MAX_WEEKLY_BET_AMOUNT": "Enter Max Weekly Bet Amount",
+    "ENTER_MAX_MONTHLY_BET_AMOUNT": "Enter Max Monthly Bet Amount",
+    "ENTER_CASHOUT_PERCENTAGE": "Enter Cashout Percentage",
+    "ENTER_MAX_BONUS_WIN_AMOUNT": "Enter Max Bonus Win Amount",
+    "SELECT_TEMPLATE": "Select Template",
+    "ENTER_DURATION": "Enter Duration in days",
+    "SELECT_ACTION_TYPE": "Select Action Type",
+    "SELECT_SOURCE_CURRENCY": "Select Source Currency",
+    "ENTER_COMMENT": "Enter Comment",
+    "SELECT_KIND": "Select Kind",
+    "ENTER_FLAT": "Enter Flat",
+    "ENTER_PERCENTAGE": "Enter Pecentage",
+    "ENTER_USAGE_COUNT": "Enter Usage Count",
+    "ENTER_MINIMUM_THRESHOLD": "Enter Minimum Threshold",
+    "ENTER_MAXIMUM_THRESHOLD": "Enter Maximum Threshold",
+    "ENTER_VALID_PERIOD": "Enter Valid Period",
+    "SELECT_USERS": "Select Users",
+    "SELECT_ADVERTISEMENT_PAGE": "Select Advertisement Page",
+    "SELECT_BET_TYPE": "Select Bet Type",
+    "ENTER_CONTEST_NAME": "Enter Contest Name",
+    "ENTER_EXTRA_REWARDS": "Enter Extra Rewards",
+    "SELECT_PRIZE_PAYOUT": "Select Prize Payout",
+    "ENTER_FROM_DATE": "Entre From Date",
+    "ENTER_CONTEST_FEE": "Enter Contest Fee",
+    "ENTER_CONTEST_SIZE": "Enter Contest Size",
+    "ENTER_SITE_RAKE": "Enter Site Rake",
+    "ENTER_MULTIPLE_ENTRY": "Mulitple Entry",
+    "ENTER_IS_FEATURED_CONTEST": "Enter Is Features Contest",
+    "ENTER_IS_AUTO_REPEAT": "Enter Is Auto Repeat",
+    "ENTER_CURRENCY_CODE": "Enter Currency Code",
+    "ENTER_CURRENCY_SYMBOL": "Enter HTML Symbol Entitiy",
+    "ENTER_EXCHANGE_RATE": "Enter Exchange Rate",
+    "ENTER_MIN_ODD": "Enter Min Odd",
+    "ENTER_MIN_AUTO_RATE": "Enter Min Auto Rate"
+  },
+  "ROLES_DROPDOWN": {
+    "ADMIN": "Admin",
+    "SUPER_SENIOR": "Super Senior",
+    "SENIOR_MASTER": "Senior Master",
+    "MASTER_AGENT": "Master Agent",
+    "AGENT": "Agent",
+    "SUPER_ADMIN": "Super Admin",
+    "SUPPORT_STAFF": "Support Staff"
+  },
+  "ACTION_BUTTON": {
+    "DOWNLOAD_SOUND": "Download Current Sound",
+    "SET_DEFAULT": "Set Default",
+    "APPROVE": "Approve",
+    "REJECT": "Reject",
+    "CREATE": "Create",
+    "READ": "Read",
+    "EDIT": "Edit",
+    "UPDATE": "Update",
+    "DELETE": "Delete",
+    "DISABLE": "Disable",
+    "DISABLED": "Disabled",
+    "SEND_EMAILS": "Send Emails",
+    "RESET": "Reset",
+    "SUBMIT": "Submit",
+    "CANCEL": "Cancel",
+    "ACTIVE": "Active",
+    "IN_ACTIVE": "In-active",
+    "LOGOUT": "Logout",
+    "BULK_UPLOAD": "Bulk Upload",
+    "DOWNLOAD_XLSX": "Download Sample xlsx File",
+    "RESET_FILTER": "Reset Filters",
+    "MARK_PRIMARY": "Make Primary",
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+    "BET_SETTLEMENT": "Bet Settlement",
+    "TOP_SPORTS": "Top Sports",
+    "TOP": "Top",
+    "BOTTOM": "Bottom",
+    "ADMIN_TREE": "Admin Tree",
+    "SAVE": "Save",
+    "BACK": "Back",
+    "CLOSE": "Close",
+    "SEND": "Send",
+    "YES_DO_IT": "Yes, Do it",
+    "DOWNLOAD_ADMIN_JSON": "Download Admin Json",
+    "SEE_USER_JSON": "See User Json",
+    "UPLOAD_ADMIN_JSON": "Upload New Admin Json",
+    "UPLOAD_USER_JSON": "Upload New User Json",
+    "DOWNLOAD_HERO_JSON": "Download Hero Json",
+    "DOWNLOAD_HERO_IMG": "Download Hero Image",
+    "DOWNLOAD_BG_JSON": "Download Background Json",
+    "DOWNLOAD_BG_IMG": "Download Background Image",
+    "UPLOAD_USER_BACKEND_JSON": "Upload New User Backend Json",
+    "SEE_USER_BACKEND_JSON": "See User Backend Json",
+    "SET_ALL_DEFAULT": "Set All Default",
+    "EXPORT_REPORT": "Export Report",
+    "SEND_MAIL": "Send Mail",
+    "DOWNLOAD_CRASH_ANIM_IMG": "Download Crash Animation Image",
+    "DOWNLOAD_CRASH_ANIM_JSON": "Download Crash Animation Json",
+    "DOWNLOAD_START_ANIM_IMG": "Download Start Animation Image",
+    "DOWNLOAD_START_ANIM_JSON": "Download Start Animation Json"
+  },
+  "MANAGE_CONTEST": "Manage Contest",
+  "CREATE_CONTEST": "Create Contest",
+  "UPCOMING": "Upcoming",
+  "LIVE": "Live",
+  "PARTIAL": "Partial",
+  "COMPLETED": "Completed",
+  "GAME": "Game",
+  "ENTRANTS": "Entrants",
+  "SERVICE": "Service",
+  "FEE": "Fee",
+  "FEES": "Fees",
+  "MULTI_USER": "Mutli User",
+  "SITE_RAKE": "Site Rake",
+  "PRIZE_PAYOUT": "Prize Payout",
+  "IS_FEATURED_CONTEST": "Is Featured Contest",
+  "PRIZE_STRUCTRE": "Prize Structure",
+  "IS_AUTO_REPEAT": "Is Auto Repeat",
+  "PRIZING": "Prizing",
+  "CREATED_BY": "Created By",
+  "LINEUP": "Lineup",
+  "USER_CODE": "User Code",
+  "ALL_TIME": "All Time",
+  "TODAY": "Today",
+  "YESTERDAY": "Yesterday",
+  "THIS_WEEK": "This Week",
+  "LAST_WEEK": "Last Week",
+  "THIS_MONTH": "This Month",
+  "LAST_MONTH": "Last Month",
+  "SEARCH_TIME_PERIOD": "Search Time Period",
+  "TOTAL_OF_DEPOSITS": "TOTAL OF DEPOSITS",
+  "TOTAL_OF_WITHDRAWALS": "TOTAL OF WITHDRAWALS",
+  "PLAYERS_LOGGED_IN": "PLAYERS LOGGED IN",
+  "PLAYERS_REGISTERED": "PLAYERS REGISTERED",
+  "PLAYERS_BALANCE": "PLAYERS BALANCE",
+  "PLAYERS_MAKING_DEPOSIT": "PLAYERS MAKING DEPOSIT",
+  "PLAYERS_MAKING_WITHDRAWALS": "PLAYERS MAKING WITHDRAWALS",
+  "PROFIT": "Profit",
+  "BET_SPORT": "Bet Sport",
+  "WIN_SPORT": "Win Sport",
+  "BET_FANTASY": "Bet Fantasy",
+  "WIN_FANTASY": "Win Fantasy",
+  "PREMATCH": "Prematch",
+  "TOTAL": "Total",
+  "TURNOVER": "Turnover",
+  "WINNING": "Winning",
+  "OPEN_BETS_SINGLE":"Open Bets (Single)",
+  "OPEN_BETS_COMBO": "Open Bets (Combo)",
+  "NUMBER_OF_BETS_SINGLE": "Number of Bets (Single)",
+  "NUMBER_OF_BETS_COMBO": "Number of Bets (Combo)",
+  "AVERAGE_BET": "Average Bet",
+  "BET_PER_PLAYER": "Bet per Player",
+  "NUMBER_OF_PLAYERS": "Number of Players",
+  "PROFITABILITY": "Profitability",
+  "LIVE_CONTESTS": "Live Contests",
+  "OPEN_CONTESTS": "Open Contests",
+  "AVERAGE_ENTRY_FEES": "Average Entry Fees",
+  "ENTRY_FEES_PER_PLAYER": "Entry Fees per Player",
+  "TOP_5_SPORTS": "Top 5 Sports",
+  "BETS": "Bets",
+  "No_RECORDS_FOUND": "No Records Found",
+  "PLAYERS_PLAYING": "PLAYERS PLAYING",
+  "ADVANCED" : "Advanced",
+  "COMPONENT" : "Component",
+  "FULL_PAGE_VIEW" : "Full Page View",
+  "BET_SETTING": "Bet Setting",
+  "BET_CURRENCY_WISE_SETTING": "Bet Currency Wise Setting",
+  "MIN_ODD": "Min Odd",
+  "MIN_AUTO_RATE": "Min Auto Rate",
+  "MIN_BET_AMOUNT": "Min Bet Amount",
+  "MAX_BET_AMOUNT": "Max Bet Amount",
+  "MAX_PROFIT_AMOUNT": "Max Profit Amount",
+  "JSON_FILE": "JSON File"
+
+}

@@ -1,0 +1,62 @@
+{
+  "tenant": {
+    "pointers": {
+      "domains": [
+        {
+          "subDomain": "",
+          "ip": "13.228.178.212",
+          "type": "A",
+          "apitype": "FRONTEND",
+          "TTL": 0
+        },
+        {
+          "subDomain": "auth.",
+          "ip": "3.1.124.46",
+          "type": "A",
+          "apitype": "AUTH",
+          "TTL": 0
+        },
+        {
+          "subDomain": "sb.",
+          "ip": "3.1.124.46",
+          "type": "A",
+          "apitype": "SPORTS_BETTING",
+          "TTL": 0
+        },
+        {
+          "subDomain": "dfs.",
+          "ip": "13.213.211.161",
+          "type": "A",
+          "apitype": "DFS",
+          "TTL": 0
+        },
+        {
+          "subDomain": "admin.",
+          "ip": "3.1.230.33",
+          "type": "A",
+          "apitype": "ADMIN",
+          "TTL": 0
+        }
+      ],
+      "description": "SENTENCES.POINTER_DESCRIPTION"
+    }
+  },
+  "subscriber": {
+    "pointers": {
+      "domains": [
+        {
+          "subDomain": "admin.",
+          "ip": "3.1.230.33",
+          "type": "A",
+          "apitype": "ADMIN",
+          "TTL": 0
+        }
+      ],
+      "description": "SENTENCES.POINTER_DESCRIPTION"
+    },
+    "sdk": {
+      "script_path": "public/docs/subscriber-intigration.txt",
+      "description": "SENTENCES.SDK_DESCRIPTION"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.permission-group {
+  padding: 10px 0 20px 0;
+}
+
+.permission-cells{
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  background: grey;
+}
+
+.permission-cells.active {
+  background: springgreen;
+}
+
+
+.per-data {
+  display: flex;
+  align-items: center;
+  h5{
+   margin-right: 40px;
+   min-width: 350px;
+  }
+}

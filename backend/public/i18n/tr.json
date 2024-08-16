@@ -1,0 +1,1164 @@
+{
+  "TRADER_ID": "Tüccar kimliği",
+  "TRADER_PREFERENCE": "Tüccar tercihi",
+  "MINIMUM_MULTIPLIER": "Minimum Çarpan",
+  "EXPIRY_AFTER_CLAIM": "Talep Sonrası Süre Sonu (Saat Olarak)",
+  "PROMOTION_NAME": "Promosyon Adı",
+  "FREE_BET_RAIN": "Ücretsiz bahis yağmur",
+  "OLD_PASSWORD": "eski Şifre",
+  "END_TIME": "Bitiş zamanı",
+  "RAIN_START_TIME": "Yağmur Başlangıç ​​Zamanı",
+  "RAIN_END_TIME": "Yağmur bitiş zamanı",
+  "COMMISSION": "Komisyonu",
+  "FREEBETS": "Freebets",
+  "ACCOUNTS": "hesaplar",
+  "ACTIVITY": "aktivite",
+  "START_ANIMATION_JSON": "Animasyon JSON'u başlat",
+  "START_ANIMATION_PNG": "Animasyon PNG'yi başlat",
+  "CRASH_ANIMATION_JSON": "Crash Animation Json",
+  "CRASH_ANIMATION_PNG": "Crash Animation PNG",
+  "GRAPH_COLOUR": "Grafik rengi",
+  "LOADER_COLOUR": "Yükleyici rengi",
+  "START_ANIMATION": "Animasyona Başla",
+  "CRASH_ANIMATION": "Kaza Animasyonu",
+  "TOTAL_SUBSCRIBERS": "Toplam Aboneler",
+  "TOTAL_PLAYERS": "Toplam Oyuncular",
+  "RESET_PASSWORD": "Şifreyi yenile",
+  "BACK_TO_LOGIN": "Giriş yapmak için geri dön",
+  "FORGOT_PASSWORD": "Parolanızı mı unuttunuz",
+  "REPORTS": "Raporlar",
+  "BET_REPORT": "Bahis raporu",
+  "MIN_WIN_AMOUNT": "Min Win Tutarı",
+  "AUTO_BET": "Otomatik bahis",
+  "DATA_RANGE": "Veri aralığı",
+  "CONFIRM_PASSWORD": "Şifreyi Onayla",
+  "SOUND": "Ses",
+  "BG_SOUND": "Arka plan sesi",
+  "START_SOUND": "Sesle Başla",
+  "FLEW_AWAY_SOUND": "Sesle uçtu",
+  "AUTO_RATE": "Oto oranı",
+  "ESCAPE_RATE": "Kaçış oranı",
+  "GRAPH": "Grafik",
+  "CALLBACK_APIS": "Geri arama API'leri",
+  "ONLINE": "Çevrimiçi",
+  "AWAY": "Uzak",
+  "LAST_BET_PLACED": "Son Bahis Yerleştirildi",
+  "HAVE_FREEBETS": "Freebets var",
+  "HERO_IMG": "Kahraman görüntüsü",
+  "HERO_JSON": "Kahraman json dosyası",
+  "BG_IMG": "Arka plan görüntüsü",
+  "BG_JSON": "Arka plan json dosyası",
+  "AUTH_API": "Auth API",
+  "DEBIT_API": "Borç API",
+  "CREDIT_API": "Kredi API",
+  "ROLLBACK_API": "Geri Alma API",
+  "GET_BALANCE_API": "Denge API'sini Alın",
+  "ACE_GAMING": "Geri dönüş",
+  "DASHBOARD": "Gösterge Paneli",
+  "POWERED_BY": "Tarafından desteklenmektedir",
+  "TENANTS": "Kiracılar",
+  "TENANT": "Kiracı",
+  "THEMES": "Temalar",
+  "THEME": "Tema",
+  "USER_ID": "Kullanıcı kimliği",
+  "THEME_PREVIEW": "Tema Önizleme",
+  "CURRENCIES": "Para birimleri",
+  "CURRENCY": "Para birimi",
+  "FREE_BETS": "Ücretsiz Bahisler",
+  "FREE_BET": "Ücretsiz bahis",
+  "GRANT_FREE_BET": "Ücretsiz bahis hibe",
+  "BET_AMOUNT": "Bahis miktarı",
+  "NUMBER_OF_FREE_BETS": "Ücretsiz bahis sayısı",
+  "CONFIGURATIONS": "Konfigürasyonlar",
+  "CONFIGURATION": "Konfigürasyon",
+  "REVENUE": "Hasılat",
+  "GLOBAL_SETTINGS": "Genel Ayarlar",
+  "GAME_SETTINGS": "Oyun ayarları",
+  "BETTING_SETTINGS": "Bahis ayarları",
+  "ADMINS": "Yöneticiler",
+  "ADMIN": "Yönetici",
+  "SHOW_ALL_USERS": "Tüm kullanıcıları göster",
+  "PREVIEW_ROLE_TREE": "Önizleme Rol Ağacı",
+  "AFFILIATES": "Bağlı kuruluşlar",
+  "AFFILIATE": "Bağlı kuruluş",
+  "CMS": "İçerik yönetim sistemi",
+  "CRM": "Müşteri Tutma Yönetimi",
+  "USERS": "Kullanıcılar",
+  "USER": "Kullanıcı",
+  "TRANSACTIONS": "İşlemler Bankacılık",
+  "SPORT_TRANSACTIONS": "İşlemler",
+  "CURRENCY_CODE": "Para Kodu",
+  "NON_CASH_AMOUNT": "Nakit Olmayan Tutar",
+  "PAYMENT_FOR": "İçin ödeme",
+  "IS_PROCESSED": "İşlendi",
+  "TRANSACTION": "İşlem",
+  "ADVERTISEMENTS": "Reklamlar",
+  "ADVERTISEMENT": "Reklamcılık",
+  "SPORTS_BOOK": "Spor kitabı",
+  "SPORT_SETTINGS": "Spor Ayarları",
+  "DFS_MANAGEMENT": "DFS Yönetimi",
+  "BET_MANAGEMENT": "Bahis yönetimi",
+  "LANGUAGES": "Diller",
+  "LANGUAGE": "Dil",
+  "SIZE": "Boyut",
+  "NAME": "İsim",
+  "DOMAIN": "Alan adı",
+  "FILTERS": "Filtreler",
+  "FILTER": "Filtre",
+  "ID": "İD",
+  "STATUS": "Durum",
+  "ACTION": "Eylem",
+  "HOME": "Ev",
+  "ALLOWED_CURRENCIES": "İzin verilen para birimleri",
+  "LOGO": "Logo",
+  "PACKAGES": "Paketler",
+  "PACKAGE": "Paketi",
+  "DFS": "Günlük Fantezi Sporları",
+  "SLOT_GAMES": "Yuva Oyunları",
+  "SPORTS_BETTING": "Spor Bahisleri",
+  "DAILY": "Günlük",
+  "WEEKLY": "Haftalık",
+  "MONTHLY": "Aylık",
+  "YEARLY": "Yıllık",
+  "THEME_MODE": "Tema modu",
+  "CUSTOM": "Gelenek",
+  "DARK": "Karanlık",
+  "LIGHT": "Işık",
+  "PRIMARY_COLOR": "Ana renk",
+  "SECONDRY_COLOR": "İkinci Renk",
+  "FONT_FAMILY": "Font ailesi",
+  "DETAILS": "Detaylar",
+  "PARENT": "Ebeveyn",
+  "CODE": "Kodlamak",
+  "CODES": "Kodlar",
+  "EXCHANGE_RATE": "Döviz kuru",
+  "PRIMARY": "Öncelik",
+  "EXCHANGE_RATES": "Döviz kurları",
+  "NOTE": "Not",
+  "NOTES": "Notalar",
+  "ADMIN_CODE": "Yönetici kodu",
+  "CREDENTIALS": "Kimlik bilgileri",
+  "SEARCH": "Arama",
+  "FULL_NAME": "Ad Soyad",
+  "PHONE_NUMBER": "Telefon numarası",
+  "EMAIL": "E -posta",
+  "FIRST_NAME": "İlk adı",
+  "LAST_NAME": "Soy isim",
+  "PASSWORD": "Şifre",
+  "KEY": "Anahtar",
+  "VALUE": "Değer",
+  "SUB_ADMINS": "Alt Yönetmenler",
+  "COMMISSION_PERCENTAGE": "Komisyon Yüzdesi",
+  "ROLE": "Rol",
+  "ROLES": "Roller",
+  "DEPOSIT": "Depozito",
+  "WITHDRAWAL": "Para çekme",
+  "LOGIN": "Giriş yapmak",
+  "PREVIEW": "Ön izleme",
+  "BET_HISTORY": "Bahis tarihi",
+  "TENANT_CONFIGURATIONS": "Kiracı yapılandırmaları",
+  "TENANT_CREDENTIALS": "Kiracı kimlik bilgileri",
+  "TENANT_SETTINGS": "Kiracı Ayarları",
+  "TENANT_THEME_SETTINGS": "Kiracı Tema Ayarları",
+  "TENANT_PACKAGES": "Kiracı paketleri",
+  "THEME_SETTINGS": "Tema ayarları",
+  "SUBSCRIBER_SETTINGS": "Abone ayarları",
+  "SUBSCRIBER_PACKAGES": "Abone paketleri",
+  "SUBSCRIBER_CONFIGURATIONS": "Abone yapılandırmaları",
+  "SUBSCRIBER_CREDENTIALS": "Abone ayarları",
+  "SUBSCRIBER_THEME_SETTINGS": "Abone Tema Ayarları",
+  "SUBSCRIBERS": "Aboneler",
+  "SUBSCRIBER": "Abone",
+  "URL": "Url",
+  "USERNAME": "Kullanıcı adı",
+  "DATE_OF_BIRTH": "Doğum tarihi",
+  "UNIQUE_NAME": "Uniqe adı",
+  "PAYOUT_PERCENTAGE": "Ödeme yüzdesi",
+  "TEMPLATE": "Şablon",
+  "TEMPLATES": "Şablonlar",
+  "SUBJECT": "Ders",
+  "CATEGORY": "Kategori",
+  "SCHEDULED_AT": "Planlanmış",
+  "BANNER": "Afiş",
+  "BANNERS": "Afiş",
+  "PAGES": "Sayfa",
+  "PAGE": "Sayfa",
+  "TITLE": "Başlık",
+  "SLUG": "Sülük",
+  "SETTINGS": "Ayarlar",
+  "TOTAL_BALANCE": "Toplam bakiyesi",
+  "COUNTRY_CODE": "Ülke kodu",
+  "EMAIL_VERIFIED": "E-posta Doğrulandı",
+  "RETAILER": "Perakendeci",
+  "ACTION_TYPE": "Eylem Türü",
+  "TIME_PERIOD": "Zaman dilimi",
+  "CREATED_AT": "Yaratılmış",
+  "UPDATED_AT": "Güncellendi",
+  "START_DATE": "Başlangıç ​​tarihi",
+  "END_DATE": "Bitiş tarihi",
+  "WALLET": "Cüzdan",
+  "WALLETS": "Cüzdan",
+  "LAST_DEPOSITED_AMOUNT": "Son yatırılan miktar",
+  "AMOUNT": "Tutar",
+  "CURRENCY_RATE": "Döviz kuru",
+  "ACTION_BY": "Eylem Tarafından",
+  "COMMENTS": "Yorumlar",
+  "SOURCE_TYPE": "kaynak tipi",
+  "SOURCE_EMAIL": "Kaynak e -posta",
+  "TARGET_CURRENCY": "Hedef para birimi",
+  "BONUS": "Bonus",
+  "BONUSES": "Bonus",
+  "KIND": "Tür",
+  "ENABLED": "Etkinleştirilmiş",
+  "ENABLE": "Olanak vermek",
+  "EVENT_LIABLITY": "Olay canlılığı",
+  "FLAT": "Düz",
+  "PERCENTAGE": "Yüzde",
+  "VALID_FROM": "Kadar geçerli",
+  "VALID_UPTO": "Geçerli",
+  "VALID_PERIOD": "Geçerli dönem",
+  "IMAGE": "İmaj",
+  "TERMS_AND_CONDITIONS": "Şartlar ve koşullar",
+  "LOYALTY_BONUS_USERS": "Sadakat Bonus Kullanıcıları",
+  "WEB_IMAGE": "Web görüntüsü",
+  "MOBILE_IMAGE": "Mobil resim",
+  "TOTAL_INCOME": "Toplam gelir",
+  "VISITS": "Ziyaret",
+  "PER_CLICK_COST": "Tıklama başına maliyet",
+  "SPORT": "Spor",
+  "SPORTS": "Spor Dalları",
+  "COUNTRIES": "Ülkeler",
+  "PLAYER": "oyuncu",
+  "PLAYERS": "Oyuncu",
+  "TEAM": "Takım",
+  "TEAMS": "Takımlar",
+  "START": "Başlama",
+  "END": "Son",
+  "ALL": "Herşey",
+  "UNIQUE_ID": "Benzersiz kimlik",
+  "REWARDS": "Ödüller",
+  "FEATURED": "Öne çıkan",
+  "SELECT_ALL": "Hepsini seç",
+  "DATE": "Tarih",
+  "DATES": "Tarih",
+  "TYPE": "Tip",
+  "MULTIPLE_ENTRY": "Çoklu giriş",
+  "EXTRA_REWARDS": "Ekstra ödüller",
+  "COMMENT": "Yorum",
+  "AUTO_REPEAT": "Otomatik Tekrar",
+  "DESCRIPTION": "Tanım",
+  "RESULT": "Sonuç",
+  "RESULTS": "Sonuçlar",
+  "STATS": "İstatistikler",
+  "STATS_DETAILS": "İstatistikler detayları",
+  "OUTCOME": "Sonuç",
+  "SELECT": "Seçme",
+  "POSITION": "Durum",
+  "POSITIONS": "Pozisyonlar",
+  "PLAYER_NAME": "Oyuncu ismi",
+  "SALARY": "Aylık maaş",
+  "SINGLE_BET": "Tek bahis",
+  "MULTI_BET": "Çok bahis",
+  "GAME_HERO": "Oyun kahramanı",
+  "GAME_BACKGROUND": "Oyun arka planı",
+  "ODDS": "İhtimal",
+  "STAKE": "Kazıklamak",
+  "WIN_AMOUNT": "Kazanma Miktarı",
+  "BET_TYPE": "Bahis türü",
+  "PERMISSION": "İzin",
+  "PERMISSIONS": "İzin",
+  "KYC": "Müşterini tanı",
+  "RETRY": "Tekrarlamak",
+  "EVENT_LIABILITY": "Etkinlik Sorumluluğu",
+  "DEPOSIT_LIMIT": "Depozito sınırı",
+  "MAX_WIN_AMOUNT": "Maksimum Kazanma Miktarı",
+  "MAX_ODD": "Maksimum tuhaf",
+  "MIN_WITHDRAWAL_AMOUNT": "Min para çekme miktarı",
+  "MAX_SINGLE_BET": "Max Single Bet",
+  "MAX_BET_ON_EVENT": "Etkinlikte Max Bet",
+  "MIN_BET": "Min Bahis",
+  "MAX_MULTIPLE_BET": "Maksimum Çoklu Bahis",
+  "MAX_DAILY_BET_AMOUNT": "Max Daily Bet Miktarı",
+  "MAX_WEEKLY_BET_AMOUNT": "Max Weekly Bet Tutarı",
+  "MAX_MONTHLY_BET_AMOUNT": "Maksimum aylık bahis tutarı",
+  "CASHOUT_PERCENTAGE": "Passout Yüzdesi",
+  "MAX_BONUS_WIN_AMOUNT": "Maksimum Bonus Kazanma Miktarı",
+  "OVERVIEW": "Genel bakış",
+  "FINANCIAL": "Parasal",
+  "MINIMUM_THRESHOLD": "Asgari eşik",
+  "MAXIMUM_THRESHOLD": "Maksimum eşik",
+  "YES": "Evet",
+  "NO": "Numara",
+  "VIEW_HERE": "Buraya Görüntüle",
+  "LAST_LOGIN": "Son giriş",
+  "USER_SETTINGS": "Kullanıcı ayarları",
+  "DURATION": "Süre",
+  "USER_DOCUMENTS": "Kullanıcı belgeleri",
+  "VIEW": "görüş",
+  "VERIFIED": "Doğrulanmış",
+  "REASON": "Sebep",
+  "UPLOADED_AT": "Yüklendi",
+  "BET": "Bahis",
+  "WIN": "Kazanç",
+  "REFUND": "Geri ödeme",
+  "WITHDRAW": "Geri çekilmek",
+  "NON_CASH_GRANTED_BY_ADMIN": "Yönetici tarafından verilen nakit yok",
+  "NON_CASH_WITHDRAW_BY_ADMIN": "Yönetici tarafından nakit para çekme işlemi",
+  "TIP": "Uç",
+  "BET_NON_CASH": "Bahis Nakit Olmaz",
+  "EXPIRED": "Süresi doldu",
+  "USAGE_COUNT": "Kullanım sayısı",
+  "WIN_NON_CASH": "Nakit Olmayan Kazan",
+  "REFUND_NON_CASH": "Nakit Olmayan Geri Ödeme",
+  "NON_CASH_BONUS_CLAIM": "Nakit Olmayan Bonus İddiası",
+  "DEPOSIT_BONUS_CLAIM": "Nakit Olmayan Bonus İddiası",
+  "TIP_NON_CASH": "Nakit Olmayan İpucu",
+  "SINGLE": "Bekar",
+  "MULTI": "Çok",
+  "WITHDRAW_CANCEL": "Çekme İptal",
+  "CONVERSION_RATE": "Dönüşüm oranı",
+  "TOTAL_CLICKS": "Toplam Tıklanma",
+  "PER_VISITS": "Ziyaretler başına",
+  "GAME_NAME": "Oyun Adı",
+  "THEME_NAME": "Tema Adı",
+  "COLUMN_COUNT": "Sütun sayısı",
+  "ROW_COUNT": "Satır sayısı",
+  "SYMBOL": "Sembol",
+  "SYMBOLS": "Semboller",
+  "LINE": "Astar",
+  "LINES": "Çizgiler",
+  "GIF": "Gif",
+  "WILD": "Vahşi",
+  "MATRIX": "Matris",
+  "LINE_1": "Satır 1",
+  "LINE_2": "Hat 2",
+  "LINE_3": "Satır 3",
+  "LINE_4": "Satır 4",
+  "LINE_5": "Satır 5",
+  "LINE_6": "Satır 6",
+  "LINE_7": "Hat 7",
+  "LINE_8": "Satır 8",
+  "LINE_9": "Hat 9",
+  "ROW_1": "Sıra 1",
+  "ROW_2": "Sıra 2",
+  "ROW_3": "Sıra 3",
+  "REEL_1": "Makara 1",
+  "REEL_2": "Makara 2",
+  "REEL_3": "Makara 3",
+  "REEL_4": "Makara 4",
+  "REEL_5": "Makara 5",
+  "BOTTOM": "Alt",
+  "TOP": "Tepe",
+  "STATISTICS": "İstatistik",
+  "PUBLIC_KEY": "Genel anahtar",
+  "SECRET_KEY": "Gizli anahtar",
+  "WON": "Kazanmak",
+  "LOST": "Kayıp",
+  "CASHOUT": "Param bitti",
+  "NOT_STARTED": "Başlatılmadı",
+  "IN_PROGRESS": "Devam etmekte",
+  "FINISHED": "Bitmiş",
+  "CANCELLED": "İptal edildi",
+  "POSTPONED": "Ertelenen",
+  "INTERRUPTED": "Kesilmiş",
+  "ABANDONED": "Terk edilmiş",
+  "START_TIME": "Başlangıç ​​saati",
+  "EVENT_STATUS": "Olay durumu",
+  "MATCH_TYPE": "Eşleşme türü",
+  "REG": "Düzenli",
+  "ABBRIVIATION": "Bölünme",
+  "PRIMARY_CURRENCY": "Birincil para birimi",
+  "SPORT_BETTING": "Spor bahisleri",
+  "COPYRIGHT": "Telif hakkı",
+  "VERSION": "Versiyon",
+  "REMEMBER_ME": "Beni hatırla",
+  "ORGANIZATION": "Organizasyon",
+  "ORGANIZATIONS": "Kuruluşlar",
+  "CANCELS":"İptaller",
+  "NET_SALES":"Net Sales",
+  "VALIDATION_MSGS": {
+    "TRADER_ID": {
+      "REQUIRED": "Tüccar Kimliği gereklidir"
+    },
+    "TRADER_PREFERENCE": {
+      "REQUIRED": "Tüccar tercihi gerekli"
+    },
+    "START_TIME": {
+      "REQUIRED": "Başlangıç ​​zamanı gerekli"
+    },
+    "END_TIME": {
+      "REQUIRED": "Bitiş zamanı gerekli",
+      "MORE_THAN": "Başlangıç ​​zamanından daha fazlası olmalı"
+    },
+    "RAIN_START_TIME": {
+      "REQUIRED": "Yağmur başlangıç ​​zamanı gerekli",
+      "IN_BETWEEN": "Başlangıç ​​Zamanı ile Bitiş Zamanı arasında olmalıdır"
+    },
+    "RAIN_END_TIME": {
+      "REQUIRED": "Yağmur bitiş zamanı gerekli",
+      "MORE_THAN": "Yağmur başlangıç ​​zamanından daha fazlası olmalı",
+      "LESS_THAN": "Bitiş zamanından daha az olmalı"
+    },
+    "VIP_LEVEL": {
+      "REQUIRED": "VIP seviyesi gereklidir"
+    },
+    "DATE_OF_BIRTH": {
+      "REQUIRED": "Doğum tarihi gerekli"
+    },
+    "USER_ID": {
+      "REQUIRED": "Kullanıcı kimliği gereklidir"
+    },
+    "OPTIONS": {
+      "REQUIRED": "Seçenekler gerekli"
+    },
+    "EXCHAANGE_RATE": {
+      "REQUIRED": "Döviz kuru gerekli"
+    },
+    "MATCHES": {
+      "REQUIRED": "Maçlar gerekli"
+    },
+    "SLUG": {
+      "REQUIRED": "Slug gereklidir"
+    },
+    "THEME": {
+      "REQUIRED": "Tema gerekli"
+    },
+    "VALID_FROM": {
+      "REQUIRED": "Gereken geçerli"
+    },
+    "VALID_UPTO": {
+      "REQUIRED": "Geçerli olmak gerekir"
+    },
+    "MIN_THRESHOLD": {
+      "REQUIRED": "Min eşiği gereklidir"
+    },
+    "MAX_THRESHOLD": {
+      "REQUIRED": "Maksimum eşik gereklidir"
+    },
+    "BANNER": {
+      "REQUIRED": "Banner gerekli"
+    },
+    "START_DATE": {
+      "REQUIRED": "Başlangıç ​​tarihi gerekli"
+    },
+    "END_DATE": {
+      "REQUIRED": "Bitiş tarihi gerekli"
+    },
+    "ADVERTISEMENT_PAGE_ID": {
+      "REQUIRED": "Kimlik gereklidir",
+      "EXISTS": "İd zaten var"
+    },
+    "WEB_AD_IMAGE": {
+      "REQUIRED": "Web reklamı resmi gerekli"
+    },
+    "MOBILE_AD_IMAGE": {
+      "REQUIRED": "Mobil reklam görüntüsü gerekli"
+    },
+    "PHONE_VERIFIED": {
+      "REQUIRED": "Telefon Doğrulandı gereklidir"
+    },
+    "ADMIN_ID": {
+      "REQUIRED": "Yönetici Kimliği gereklidir"
+    },
+    "TENANT_ID": {
+      "REQUIRED": "Kiracı kimliği gereklidir"
+    },
+    "SUBSCRIBER_ID": {
+      "REQUIRED": "Abone kimliği gerekli"
+    },
+    "ID": {
+      "REQUIRED": "Kimlik gereklidir"
+    },
+    "PACKAGE": {
+      "REQUIRED": "Paket gerekli"
+    },
+    "TYPE": {
+      "REQUIRED": "Tür gerekli"
+    },
+    "STATUS": {
+      "REQUIRED": "Durum gerekli"
+    },
+    "LANGUAGE": {
+      "REQUIRED": "Dil gereklidir"
+    },
+    "EMAIL": {
+      "REQUIRED": "Email gereklidir",
+      "VALID": "E -posta geçerli olmalı",
+      "UNIQUE": "E -posta benzersiz olmalı"
+    },
+    "PASSWORD": {
+      "REQUIRED": "Şifre gereklidir",
+      "VALID": "Parola 1 büyük harf, 1 küçük harf ve 1 özel karakter min 8 char olmalı"
+    },
+    "FIRST_NAME": {
+      "REQUIRED": "Adı gerekli"
+    },
+    "LAST_NAME": {
+      "REQUIRED": "Soyadı gerekli"
+    },
+    "ADMIN_CODE": {
+      "REQUIRED": "Yönetici kodu gerekli"
+    },
+    "CODE": {
+      "REQUIRED": "Kod gerekli",
+      "UNIQUE": "Kod benzersiz olmalı",
+      "ALPHA_NUM": "Kod alfa sayısal olmalı"
+    },
+    "PHONE_NUMBER": {
+      "REQUIRED": "Telefon numarası gerekli",
+      "VALID": "Telefon geçerli olmalı",
+      "MIN_LENGTH": "Telefon numarası 5 basamaktan daha büyük olmalı"
+    },
+    "UNIQUE_NAME": {
+      "REQUIRED": "Benzersiz isim gereklidir",
+      "VALID": "Alfabe ile başlamalıdır, alt çizgi dışında herhangi bir karakter içermez"
+    },
+    "USERNAME_NAME": {
+      "REQUIRED": "Kullanıcı adı gerekli",
+      "VALID": "Alfabe ile başlamalıdır, alt çizgi dışında herhangi bir karakter içermez",
+      "UNIQUE": "benzersiz isim zaten alındı"
+    },
+    "ROLE": {
+      "REQUIRED": "Rol gereklidir"
+    },
+    "ADMIN": {
+      "REQUIRED": "Yönetici gereklidir"
+    },
+    "SUPER_SENIOR": {
+      "REQUIRED": "Süper kıdemli gereklidir"
+    },
+    "SENIOR_MASTER": {
+      "REQUIRED": "Kıdemli Üstat gereksinim"
+    },
+    "MASTER_AGENT": {
+      "REQUIRED": "Master Ajan gereklidir"
+    },
+    "CURRENCY": {
+      "REQUIRED": "Para birimi gerekli"
+    },
+    "NUMBER_OF_FREE_BETS": {
+      "REQUIRED": "Ücretsiz bahis sayısı gereklidir",
+      "MIN": "Ücretsiz bahis sayısı 1'den az olamaz"
+    },
+    "BET_AMOUNT": {
+      "REQUIRED": "Bahis miktarı gereklidir",
+      "MIN": "Bahis miktarı 1'den az olamaz"
+    },
+    "PERMISSION": {
+      "REQUIRED": "Lütfen en az 1 izni seçin",
+      "READ_REQUIRED": "Lütfen bu modül için başka izinler seçmeden önce izni okuyun"
+    },
+    "KEY": {
+      "REQUIRED": "Anahtar gerekli"
+    },
+    "VALUE": {
+      "REQUIRED": "Değer gerekli",
+      "BETWEEN": "Değer 1 ila 100 arasında olmalıdır",
+      "MIN": "Değer 1'den az olamaz",
+      "VALID_URL": "Değer geçerli URL olmalı"
+    },
+    "DURATION": {
+      "REQUIRED": "Süre gerekli",
+      "MIN": "Süre 1'den az olamaz"
+    },
+    "PAYOUT_PERCENTAGE": {
+      "REQUIRED": "Ödeme yüzdesi gereklidir",
+      "BETWEEN": "Ödeme yüzdesi 0 ila 100 arasında olmalıdır",
+      "VALID": "Ödeme Yüzdesi Yalnızca Numaralar Girin"
+    },
+    "FILE": {
+      "REQUIRED": "Dosya gerekli",
+      "IMAGE_TYPE": "Dosya bir resim olmalı"
+    },
+    "SUBJECT": {
+      "REQUIRED": "Konu gerekli"
+    },
+    "CATEGORY": {
+      "REQUIRED": "Kategori gerekli"
+    },
+    "CONTENT": {
+      "REQUIRED": "İçerik gerekli"
+    },
+    "TITLE": {
+      "REQUIRED": "Başlık gerekli"
+    },
+    "DESCRIPTION": {
+      "REQUIRED": "Açıklama gerekli"
+    },
+    "EVENT_LIABILITY": {
+      "REQUIRED": "Etkinlik Sorumluluğu Gerekiyor"
+    },
+    "DEPOSIT_LIMIT": {
+      "REQUIRED": "Depozito sınırı gereklidir"
+    },
+    "MAX_WIN_AMOUNT": {
+      "REQUIRED": "Maksimum Win Tutarı gereklidir"
+    },
+    "MAX_ODD": {
+      "REQUIRED": "Max Odd gereklidir",
+      "MIN": "Max Odd 1.01'den az olamaz"
+    },
+    "MIN_WITHDRAWAL_AMOUNT": {
+      "REQUIRED": "Min para çekme miktarı gereklidir"
+    },
+    "MAX_SINGLE_BET": {
+      "REQUIRED": "Max Single Bet gereklidir"
+    },
+    "MAX_BET_ON_EVENT": {
+      "REQUIRED": "Etkinlikte Max Bet gereklidir"
+    },
+    "MIN_BET": {
+      "REQUIRED": "Min Bet gereklidir"
+    },
+    "MAX_MULTIPLE_BET": {
+      "REQUIRED": "Maksimum birden fazla bahis gereklidir"
+    },
+    "MAX_DAILY_BET_AMOUNT": {
+      "REQUIRED": "Max Daily Bet Tutarı gereklidir"
+    },
+    "MAX_WEEKLY_BET_AMOUNT": {
+      "REQUIRED": "Max Weekly Bet Tutarı gereklidir"
+    },
+    "MAX_MONTHLY_BET_AMOUNT": {
+      "REQUIRED": "Maksimum aylık bahis tutarı gereklidir"
+    },
+    "CASHOUT_PERCENTAGE": {
+      "REQUIRED": "Cashout yüzdesi gereklidir"
+    },
+    "MAX_BONUS_WIN_AMOUNT": {
+      "REQUIRED": "Maksimum bonus kazanma tutarı gerekli"
+    },
+    "DOB": {
+      "REQUIRED": "Doğum tarihi gerekli"
+    },
+    "COUNTRY_CODE": {
+      "REQUIRED": "Ülke kodu gerekli"
+    },
+    "REASON": {
+      "REQUIRED": "Sebep gerekli"
+    },
+    "TARGET_TYPE": {
+      "REQUIRED": "Hedef tip gereklidir"
+    },
+    "SOURCE_TYPE": {
+      "REQUIRED": "Kaynak türü gerekli"
+    },
+    "TARGET_EMAIL": {
+      "REQUIRED": "Hedef e -posta gerekli"
+    },
+    "SOURCE_EMAIL": {
+      "REQUIRED": "Hedef e -posta gerekli"
+    },
+    "TARGET_CURRENCY": {
+      "REQUIRED": "Hedef para birimi gerekli"
+    },
+    "AMOUNT": {
+      "REQUIRED": "Tutar gerekli",
+      "MIN": "Miktar 1'den az olamaz"
+    },
+    "SOURCE_CURRENCY": {
+      "REQUIRED": "Kaynak para birimi gerekli",
+      "SOURCE_TARGET_SAME": "Kaynak cüzdan ve hedef cüzdan aynı olamaz"
+    },
+    "COMMENT": {
+      "REQUIRED": "Yorum gerekli",
+      "MAX": "Maksimum 50 Karakter İzin Ver"
+    },
+    "FLAT": {
+      "REQUIRED": "Düz miktar gerekli",
+      "MIN": "Sabit miktar 1'den az olamaz"
+    },
+    "KIND": {
+      "REQUIRED": "Tür gerekli"
+    },
+    "PERCENTAGE": {
+      "REQUIRED": "Yüzde Gerekli",
+      "MIN": "Yüzde 1'den az olamaz"
+    },
+    "USAGE_COUNT": {
+      "REQUIRED": "Kullanım sayısı gerekli",
+      "MIN": "Kullanım sayısı 1'den az olamaz"
+    },
+    "USERS": {
+      "REQUIRED": "Kullanıcılar gereklidir"
+    },
+    "URL": {
+      "REQUIRED": "URL gerekli",
+      "VALID": "URL geçerli olmalı"
+    },
+    "VALID_PERIOD": {
+      "REQUIRED": "Geçerli dönem gerekli"
+    },
+    "ADVERTISEMENT_PAGE": {
+      "REQUIRED": "Reklam sayfası gerekli"
+    },
+    "NAME": {
+      "REQUIRED": "İsim gerekli",
+      "VALID": "İsim geçerli olmalı",
+      "MIN": "İsim 3 karakterden büyük olmalı"
+    },
+    "DOMAIN": {
+      "REQUIRED": "Etki alanı gerekli",
+      "VALID": "Etki alanı eski https://www.example.com veya https://example.com için geçerli olmalıdır.",
+      "UNIQUE": "Etki alanı benzersiz olmalı"
+    },
+    "PRIMARY_CURRENCY": {
+      "REQUIRED": "Birincil para birimi gerekli"
+    },
+    "MINIMUM_THRESHOLD": {
+      "REQUIRED": "Minimum eşik gerekli",
+      "MIN": "Minimum eşik 1'den az olamaz",
+      "VALID": "Geçersiz minimum eşik"
+    },
+    "MAXIMUM_THRESHOLD": {
+      "REQUIRED": "Gerekli maksimum eşik",
+      "MIN": "Maksimum eşik 1'den az olamaz",
+      "VALID": "Geçersiz maksimum eşik"
+    },
+    "TERMS_AND_CONDITIONS": {
+      "REQUIRED": "Gerekli şartlar ve koşullar",
+      "MAX": "Şartlar ve Koşullar Kelimeler 300'den az olmalı"
+    },
+    "PER_CLICK_COST": {
+      "REQUIRED": "Gereken tıklama maliyeti",
+      "MIN": "Tıklama başına maliyet Greter O zaman 0 olmalıdır"
+    },
+    "CURRENCY_CODE": {
+      "REQUIRED": "Para birimi kodu gerekli",
+      "VALID": "Alansız büyük harfler girin, sadece alt çizgi _ kullanılabilir"
+    },
+    "CURRENCY_SYMBOL": {
+      "REQUIRED": "Para birimi sembolü gerekli"
+    },
+    "EXCHANGE_RATE": {
+      "REQUIRED": "Döviz kuru gerekli",
+      "MIN": "Döviz kuru 0'dan daha büyük olmalı"
+    },
+    "CONTEST_MATCHES": {
+      "RESOURCES": "Maçları almak için spor, lig ve tarihleri ​​seçin"
+    },
+    "CONTEST_PRIZE_PAYOUT": {
+      "REQUIRED": "Ödül ödemesi gereklidir"
+    },
+    "CONTEST_MULTI_ENTRY": {
+      "MAX": "Birden fazla giriş yarışma boyutunu aşamaz"
+    },
+    "CONTEST_NAME": {
+      "REQUIRED": "Yarışma adı gerekli",
+      "MAX": "Maksimum uzunluk yarışma adı 50'dir"
+    },
+    "SPORT": {
+      "REQUIRED": "Spor gerekli"
+    },
+    "LEAGUE": {
+      "REQUIRED": "Lig gereklidir"
+    },
+    "DATES": {
+      "REQUIRED": "Tarihler gereklidir"
+    },
+    "SALARY_CAP": {
+      "REQUIRED": "Maaş sınırı gerekli"
+    },
+    "CONTEST_TYPE": {
+      "REQUIRED": "Yarışma türü gerekli"
+    },
+    "CONTEST_FEE": {
+      "REQUIRED": "Yarışma ücreti gerekli",
+      "RANGE": "Yarışma ücreti 0 ile 5000 arasında değişir"
+    },
+    "CONTEST_SIZE": {
+      "REQUIRED": "Yarışma boyutu gerekli",
+      "RANGE": "Yarışma boyutu 2 ile 10000 arasında değişir",
+      "PATTERN": "Yarışmanın büyüklüğü sadece sayıyı kabul eder"
+    },
+    "SITE_RAKE": {
+      "REQUIRED": "Site Tırmağı Gerekli",
+      "RANGE": "Site Tırmağı 0 ile 100 arasında değişir"
+    },
+    "PRIZE_PAYOUT": {
+      "REQUIRED": "Ödül Ödemesi Gerekli"
+    },
+    "MULTIPLE_ENTRY": {
+      "REQUIRED": "Çoklu Giriş Gerekli",
+      "MIN": "Minimum çoklu giriş 1"
+    },
+    "MIN_ODD": {
+      "REQUIRED": "Min Odd gereklidir"
+    },
+    "MIN_AUTO_RATE": {
+      "REQUIRED": "Min otomatik oranı gereklidir",
+      "MIN": "Min otomatik oranı 1.01'den az olamaz"
+    },
+    "BETTING_PERIOD": {
+      "REQUIRED": "Betting Period is required",
+      "INTEGER": "Betting Period must be a number",
+      "BETWEEN": "Betting Period must be in range between 4 and 20"
+    },
+    "LANGUAGE_CODE": {
+      "REQUIRED": "Dil kodu gerekli",
+      "UNIQUE": "Dil kodu benzersiz olmalı",
+      "PATTERN": "Dil kodu küçük harfli olmalı ve iki harfe sahip olmalı"
+    },
+    "JSON_FILE": {
+      "REQUIRED": "Json dosyası gerekli"
+    }
+  },
+  "FRONTEND": "Başlangıç ​​aşaması",
+  "AUTH": "Kimlik belgesi",
+  "SENTENCES": {
+    "TRADER_PREFERENCE_EXIST": "Tüccar kimliği ve tüccar tercih kombinasyonu zaten var. Lütfen başka bir kombinasyon deneyin",
+    "ORGANIZATION_404": "Organizasyon bulunamadı",
+    "WARNING_LANGUAGE_JSON": "Önemli! Lütfen metni '{{}}' arasında çevirmeyin, bunları değişken bir numara olarak düşünün ve çeviriyi olabildiğince kısa tutun",
+    "POINTER_DESCRIPTION": "Lütfen bu alan adlarını burada aşağıdaki IP adresine yönlendirin Domain.com Alan adınıza atıfta bulunur",
+    "SDK_DESCRIPTION": "Lütfen Projeye Aşağıdaki Komut dosyasını ekleyin",
+    "PACKAGES_INFO": "Gönder'i tıkladıktan sonra, seçilen süresi dolmuş paketler tekrar etkinleştirilir",
+    "WARNING_HERO": "Önemli! Dosyalar örnek dosyalarla aynı formatta olmalıdır ve JSON'daki PNG dosyasının adı düzlemli plane.png Aksi takdirde oyun çalışmaz.",
+    "WARNING_BG": "Önemli! Dosyalar örnek dosyalarla aynı formatta olmalıdır ve JSON'daki PNG dosyasının adı bg.png olmalıdır, aksi takdirde oyun çalışmaz.",
+    "TENANT_INACTIVE": "Kiracınız etkinleştirildi, kiracınızı etkinleştirmek için lütfen yöneticinizle iletişime geçin",
+    "SUBSCRIBER_INACTIVE": "Aboneniz aktifleştirildi, abonenizi etkinleştirmek için lütfen yöneticinizle iletişime geçin",
+    "ADMIN_INACTIVE": "Hesabınız etkinleştirildi, lütfen etkinleştirilmiş hesaba admin ile iletişime geçin",
+    "CREDENTIAL_TENANT_ACTIVE": "Kiracınızı etkinleştirmek için lütfen operatör_debit_api, operator_credit_api girin",
+    "CREDENTIAL_SUBSCRIBER_ACTIVE": "Abone'nuzu etkinleştirmek için lütfen operatör_debit_api, operatör_credit_api, operatör_profile_api, operatör_success_api girin",
+    "THEME_PREVIEW": "Aşağıdaki değişiklikler gönderilinceye kadar uygulanmayacaktır. Bir demo sayfasını görmek için lütfen önizlemeyi tıklayın",
+    "CURRENCY_CONVERSION": "{{crn}} birincil para birimidir. A para biriminden B para birimine dönüşüm {{crn}} 'ı temel olarak kabul edecektir.",
+    "CURRENCY_EXAMPLE_1": "Para Birimi Bir miktar * Döviz kuru para birimi a = birincil para birimi ({{crn}}) Tutar",
+    "CURRENCY_EXAMPLE_2": "Para birimi bir miktar * (döviz kuru para birimi a / döviz kuru para birimi b) = para birimi b Tutar",
+    "ADMIN_404": "Yönetici bulunamadı",
+    "CURRENCY_404": "Para birimi bulunamadı",
+    "TENANT_404": "Kiracı bulunmadı",
+    "THEME_404": "Tema bulunamadı",
+    "AFFILIATE_404": "Bağlı kuruluş bulunamadı",
+    "CRM_404": "Şablon bulunamadı",
+    "CMS_404": "Sayfa bulunamadı",
+    "CREDENTIALS_404": "Kimlik bilgisi bulunamadı",
+    "USER_404": "Kullanıcı bulunamadı",
+    "BONUS_404": "Bonus bulunamadı",
+    "TRANSACTION_404": "İşlem bulunamadı",
+    "ADVERTISEMENT_404": "Reklam bulunamadı",
+    "ADMIN_TREE_404": "Bu yönetici için hiçbir subadmin mevcut",
+    "SETTING_404": "Ayar bulunamadı",
+    "DOCUMENT_404": "Belge bulunamadı",
+    "SLOT_404": "Oyun bulunamadı",
+    "PACKAGE_404": "Paket bulunamadı",
+    "SYMBOLS_MASTER_404": "Tema Master Sembolü bulunamadı",
+    "LINE_MASTER_404": "Line Master 404",
+    "SPORT_404": "Spor bulunamadı",
+    "COUNTRY_404": "Ülke bulunamadı",
+    "TOURNAMENT_404": "Turnuva bulunamadı",
+    "MARKET_404": "Pazar bulunamadı",
+    "MATCH_404": "Maç bulunamadı",
+    "STATS_404": "İstatistik bulunamadı",
+    "PLAYER_404": "Oyuncu bulunamadı",
+    "TEAM_404": "Takım bulunamadı",
+    "SPORT_SETTINGS_404": "Spor ayarı bulunamadı",
+    "BET_HISTORY_404": "Bahis tarihi bulunamadı",
+    "SUBSCRIBER_404": "Abone bulunamadı",
+    "LANGUAGE_404": "Dil bulunamadı",
+    "SELECT_LANGUAGE": "Bir dil seç",
+    "SELECT_ORGANIZATION": "Bir Organizasyon Seçin",
+    "NUMBER_OF_MATCHES": "Maç sayısı",
+    "JOINING_AND_REFER_BOUNS": "Bir arkadaş bonusuna katılmak ve yönlendirmek",
+    "SELECT_MATCH_CONTEST": "Maç Listesi Spor, Lig ve Tarihler Seçimi'nden sonra görüntülenecek",
+    "LOGIN_SUCCESS": "Giriş başarılı",
+    "UNAUTHORIZED": "yetkisiz",
+    "LOGOUT_SUCCESS": "Başarılı bir şekilde oturum açın",
+    "SESSION_EXPIRED": "Oturumunuz sona erdi. Lütfen tekrar giriş yapın!",
+    "SELECT_IMAGE_HEIGHT_WIDTH": "Plaese yüksekliğe sahip görüntü seçin: {{yükseklik}} ve genişlik: {{width}}",
+    "CREATED_SUCCESS": "Başarıyla yaratıldı",
+    "UPDATED_SUCCESS": "başarıyla güncellendi",
+    "DELETED_SUCCESS": "Başarıyla silindi.",
+    "CREATED_FAIL": "Başarısız bir şekilde yaratıldı",
+    "UPDATED_FAIL": "Başarısız bir şekilde güncellendi",
+    "NOT_FOUND": "Bulunamadı",
+    "CODE_EXIST": "Kod zaten kullanılıyor. Lütfen başka bir kod deneyin",
+    "EMAIL_EXIST": "E -posta adresi zaten var. Lütfen başka bir e -posta adresi deneyin",
+    "BONUS_KIND_EXIST": "Zaten kullanılmış tür. Lütfen başka bir tür deneyin",
+    "STATUS_CHANGE": "Durum başarıyla değişti",
+    "ADMIN_TREE": "Yönetici için ağaç",
+    "NO_PERMISSION_CREATE_ADMIN": "Yöneticiler oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_ADMIN": "Yöneticileri güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_PAGE": "Sayfa oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_PAGE": "Sayfaları güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_TENANT": "Kiracı oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_TENANT": "Kiracı güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_SUBSCRIBER": "Abone oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_SUBSCRIBER": "Abone'yu güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_CURRENCIES": "Para birimleri oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_CURRENCIES": "Para birimlerini güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_SETTINGS": "Ayarları güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_USER": "Kullanıcı oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_USER": "Kullanıcıları güncellemek için yeterli izininiz yok",
+    "NO_PERMISSION_CREATE_BONUS": "Bonus oluşturmak için yeterli izininiz yok",
+    "NO_PERMISSION_UPDATE_BONUS": "Bonusu güncellemek için yeterli izininiz yok",
+    "SELECT_READ_PERMISSION": "Lütfen bu modül için başka izinler seçmeden önce izni okuyun",
+    "CURRENCY_CANNOT_REMOVED": "Zaten eklenen para birimleri kaldırılamıyor",
+    "DOMAIN_EXIST": "Alan adı zaten var. Lütfen başka bir etki alanı deneyin",
+    "SELECT_SETTLEMENT": "Lütfen Yerleşim'i seçin.",
+    "EMAIL_SEND_SUCCESS": "E -postalar başarıyla gönderildi",
+    "CONTEST_NAME_REQUIRED": "Yarışma Adı yeniden tesadüfen",
+    "TEMPLATE_REQUIRED": "Şablon yeniden tesadüfen",
+    "IMAGE_REQUIRED": "Resim yeniden qured",
+    "VIDEO_REQUIRED": "Video yeniden qured",
+    "MAX_FILE_SIZE": "Maksimum dosya boyutu {{boyut}}",
+    "SELECT_WALLET_BALANCE": "Seçilen cüzdanın yeterli dengesi yok, lütfen başka bir cüzdan seçin",
+    "DOB_18": "Doğum tarihi 18 yaş ve üstü olmalıdır.",
+    "USE_VARS_CRM": "Aşağıda listelenen değişkenler yukarıdaki metin alanında kullanılabilir:",
+    "VAR_FIRST_NAME": "Bu değişken, şablondaki kullanıcının ilk adı ile değiştirilecektir.",
+    "VAR_LAST_NAME": "Bu değişken, şablondaki kullanıcının soyadı ile değiştirilecektir",
+    "VAR_USERNAME": "Bu değişken, şablondaki kullanıcının kullanıcı adı ile değiştirilecektir.",
+    "VAR_MATCH_NAME": "Bu değişken, Maç adı, yani Raiders vs 49ers ile Şablonda Yaklaşan Favori Maçı ile değiştirilecek",
+    "VAR_START_DATE": "Bu değişken, şablonda gelecek favori maçın başlangıç ​​tarihi ile değiştirilecek",
+    "SEND_PROMO_NOTIFICATIONS": "Promosyon Bildirimleri Gönder",
+    "CONFIRMATION": {
+      "DOCUMENT_REJECT": "Bu belgeyi reddetmek istediğinizden emin misiniz?"
+    },
+    "EXCHANGE_RATE": "Döviz kuru (temel para ile {{primer_currency}})",
+    "COPYRIGHT": "Tüm hakları Saklıdır",
+    "CONFIRM_ARE_YOU_SURE": "Emin misin?",
+    "CONFIRM_DELETE": "Silinmek istiyorsun!",
+    "CONFIRM_LEAVE_PAGE": "Bu sayfayı terk etmek istiyorsunuz!",
+    "CONFIRM_ACTIVE": "Etkinleştirmek istiyorsun!",
+    "CONFIRM_IN_ACTIVE": "Onu devre dışı bırakmak istiyorsun!",
+    "CONFIRM_TOP": "Üstesinden gelmek istiyorsun!",
+    "CONFIRM_BOTTOM": "Bırakmak istiyorsun!",
+    "CONFIRM_APPROVE": "Onaylamak istiyorsun!",
+    "CONFIRM_EMAIL_SEND": "Göndermek istiyorsun!",
+    "CONFIRM_YES": "Evet yap!",
+    "LOGIN": "Oturumunuzu başlatmak için oturum açın",
+    "TENANT_SETTING_ALERT1": "Birincil Curreny'de aşağıdaki tüm sayıları girin",
+    "TENANT_SETTING_ALERT2": "Bu kiracının"
+  },
+  "PLACEHOLDERS": {
+    "ENTER_TRADER_ID": "Trader Kimliğini Girin",
+    "ENTER_TRADER_PREFERENCE": "Tüccar tercihini girin",
+    "SEARCH_MIN_WINNING": "Arama min Wining",
+    "SEARCH_MAX_WINNING": "Ara Max Kazanma",
+    "SEARCH_DATA_RANGE": "Arama Veri Aralığı",
+    "SEARCH_BET_ID": "Bahis Kimliği Arama",
+    "SEARCH_NAME_CODE": "İsme göre arama, kod",
+    "ENTER_PASSWORD_AGAIN": "Parolayı tekrar girin",
+    "ENTER_NAME": "İsim giriniz",
+    "ENTER_KEY": "Giriş anahtarı",
+    "SELECT_CURRENCIES": "Para birimlerini seçin",
+    "CHOOSE_FILE": "Dosya seçin",
+    "BROWSE": "Araştır",
+    "SEARCH_ADMIN": "E -postayı arama, isim",
+    "SEARCH_NAME_DOMAIN": "İsme göre arama, etki alanı",
+    "SEARCH_NAME": "İsme göre arama",
+    "ENTER_PHONE_NUMBER": "Telefon Numarasını Girin",
+    "ENTER_EMAIL": "E -posta girin",
+    "ENTER_PASSWORD": "Şifre girin",
+    "ENTER_FIRST_NAME": "Adı girin",
+    "ENTER_LAST_NAME": "Soy adını gir",
+    "ENTER_CODE": "Kodu girin",
+    "SELECT_ROLE": "Rol Seçin",
+    "SELECT_ADMIN": "Yönetici seçin",
+    "SELECT_SUPER_SENIOR": "Süper Kıdemli Seçin",
+    "SELECT_SENIOR_MASTER": "Kıdemli Master'ı seçin",
+    "SELECT_MASTER_AGENT": "Ana Ajan'ı seçin",
+    "ENTER_UNIQUE_NAME": "Benzersiz ad girin",
+    "ENTER_PAYOUT_PERCENTAGE": "Ödeme yüzdesine girin",
+    "SEARCH_CRM": "Arama Konusu, İçerik",
+    "SEARCH_CMS": "Arama başlığı, sümüklü, içerik",
+    "SEARCH_CAMPAIGN": "Kampanya Dönemine Göre Arayın",
+    "ENTER_USERNAME": "Kullanıcı adı girin",
+    "ENTER_DOB": "Doğum tarihinizi giriniz",
+    "SELECT_CURRENCY": "Bir para birimi seçin",
+    "SELECT_TIME_PERIOD": "Zaman Dönemi Seçin",
+    "SELECT_PRIMARY_CURRENCY": "Birincil para birimini seçin",
+    "SEARCH": "Arama",
+    "ENTER_AMOUNT": "Miktarı girin",
+    "ENTER_COMMENTS": "Yorumları girin",
+    "SEARCH_BONUS": "Başlık/Kodu Arayın",
+    "SEARCH_BY_EMAIL": "E -postayla arama",
+    "ENTER_PER_CLICK_COST": "Tıklama Maliyeti Başına Gir",
+    "SELECT_AD_PAGE": "Reklam sayfasını seçin",
+    "SELECT_TENANT": "Kiracı seçin",
+    "SELECT_SUBSCRIBER": "Kiracı seçin",
+    "ENTER_VALUE": "Değer Girin",
+    "ENTER_SUBJECT": "Konu girin",
+    "SELECT_CATEGORY": "Kategori seç",
+    "SELECT_SCHEDULED_AT": "Planlanan seçeneğini seçin",
+    "ENTER_TITLE": "Başlığı girin",
+    "ENTER_DESCRIPTION": "Açıklama girin",
+    "ENTER_EVENT_LIABILITY": "Etkinlik Sorumluluğu Girin",
+    "ENTER_DEPOSIT_LIMIT": "Depozito limitini girin",
+    "ENTER_MAX_WIN_AMOUNT": "Max Win Miktarına Girin",
+    "ENTER_MAX_ODD": "Max Odd'a girin",
+    "ENTER_MIN_WITHDRAWAL_AMOUNT": "Min Para Çekme Miktarına girin",
+    "ENTER_MAX_SINGLE_BET": "Max Single Bet'e girin",
+    "ENTER_MAX_BET_ON_EVENT": "Etkinliğe Max Bet'i girin",
+    "ENTER_MIN_BET": "Min Bet'i girin",
+    "ENTER_MAX_MULTIPLE_BET": "MAX Çoklu BET GİRİN",
+    "ENTER_MAX_DAILY_BET_AMOUNT": "Max Daily Bet Miktarına girin",
+    "ENTER_MAX_WEEKLY_BET_AMOUNT": "Max Weekly Bet Miktarına girin",
+    "ENTER_MAX_MONTHLY_BET_AMOUNT": "Max Monthly Bet Miktarına girin",
+    "ENTER_CASHOUT_PERCENTAGE": "Cashout yüzdesini girin",
+    "ENTER_MAX_BONUS_WIN_AMOUNT": "Max Bonus Win Miktarına girin",
+    "SELECT_TEMPLATE": "Şablonu seçin",
+    "ENTER_DURATION": "Günler içinde süreyi girin",
+    "SELECT_ACTION_TYPE": "Eylem Türünü Seçin",
+    "SELECT_SOURCE_CURRENCY": "Kaynak Para Birimi'ni seçin",
+    "ENTER_COMMENT": "Yorum girin",
+    "SELECT_KIND": "Tür seçin",
+    "ENTER_FLAT": "Dair'e girin",
+    "ENTER_PERCENTAGE": "GEÇER GİRİŞ",
+    "ENTER_USAGE_COUNT": "Kullanım sayısını girin",
+    "ENTER_MINIMUM_THRESHOLD": "Minimum eşiği girin",
+    "ENTER_MAXIMUM_THRESHOLD": "Maksimum eşiği girin",
+    "ENTER_VALID_PERIOD": "Geçerli döneme girin",
+    "SELECT_USERS": "Kullanıcıları seçin",
+    "SELECT_ADVERTISEMENT_PAGE": "Reklam sayfasını seçin",
+    "SELECT_BET_TYPE": "BET Türünü Seçin",
+    "ENTER_CONTEST_NAME": "Yarışma Adı Girin",
+    "ENTER_EXTRA_REWARDS": "Ekstra ödüller girin",
+    "SELECT_PRIZE_PAYOUT": "Ödül Ödeme Seçin",
+    "ENTER_FROM_DATE": "Tarihten itibaren",
+    "ENTER_CONTEST_FEE": "Yarışma Ücreti Girin",
+    "ENTER_CONTEST_SIZE": "Yarışma boyutuna girin",
+    "ENTER_SITE_RAKE": "Site Tırmağı girin",
+    "ENTER_MULTIPLE_ENTRY": "Mulitple girişi",
+    "ENTER_IS_FEATURED_CONTEST": "Enter özellik yarışması",
+    "ENTER_IS_AUTO_REPEAT": "Enter otomatik tekrar",
+    "ENTER_CURRENCY_CODE": "Para Kodunu Girin",
+    "ENTER_CURRENCY_SYMBOL": "HTML sembolü giriş",
+    "ENTER_EXCHANGE_RATE": "Döviz Kurul",
+    "ENTER_MIN_ODD": "Min Odd'ı girin",
+    "ENTER_MIN_AUTO_RATE": "Min Otomatik Oranına Girin"
+  },
+  "ROLES_DROPDOWN": {
+    "ADMIN": "Yönetici",
+    "SUPER_SENIOR": "Üst düzey",
+    "SENIOR_MASTER": "Kıdemli usta",
+    "MASTER_AGENT": "Ana ajan",
+    "AGENT": "Ajan",
+    "SUPER_ADMIN": "Süper yönetici",
+    "SUPPORT_STAFF": "Destek personeli"
+  },
+  "ACTION_BUTTON": {
+    "DOWNLOAD_SOUND": "Geçerli Sesi İndir",
+    "SET_DEFAULT": "Varsayılana ayarla",
+    "APPROVE": "Onaylamak",
+    "REJECT": "Reddetmek",
+    "CREATE": "Oluşturmak",
+    "READ": "Okumak",
+    "EDIT": "Düzenlemek",
+    "UPDATE": "Güncelleme",
+    "DELETE": "Silmek",
+    "DISABLE": "Devre dışı bırakmak",
+    "DISABLED": "Engelli",
+    "SEND_EMAILS": "Mailleri gönder",
+    "RESET": "Sıfırla",
+    "SUBMIT": "Göndermek",
+    "CANCEL": "İptal",
+    "ACTIVE": "Aktif",
+    "IN_ACTIVE": "Aktif",
+    "LOGOUT": "Çıkış Yap",
+    "BULK_UPLOAD": "Toplu Yükleme",
+    "DOWNLOAD_XLSX": "Örnek XLSX dosyasını indir",
+    "RESET_FILTER": "Filtreleri sıfırla",
+    "MARK_PRIMARY": "Birincil yap",
+    "PREVIOUS": "Öncesi",
+    "NEXT": "Sonraki",
+    "BET_SETTLEMENT": "Bahis Uzlaşması",
+    "TOP_SPORTS": "En iyi spor",
+    "TOP": "Tepe",
+    "BOTTOM": "Alt",
+    "ADMIN_TREE": "Yönetici ağacı",
+    "SAVE": "Kaydetmek",
+    "BACK": "Geri",
+    "CLOSE": "Kapat",
+    "SEND": "Göndermek",
+    "YES_DO_IT": "Evet yap",
+    "DOWNLOAD_ADMIN_JSON": "Yönetici JSON'u indir",
+    "SEE_USER_JSON": "Kullanıcı Json'a bakın",
+    "UPLOAD_ADMIN_JSON": "Yeni Yönetici Yükle JSON",
+    "UPLOAD_USER_JSON": "Yeni Kullanıcı Yükle Json",
+    "DOWNLOAD_HERO_JSON": "Kahraman json'u indir",
+    "DOWNLOAD_HERO_IMG": "Kahraman Resimini İndir",
+    "DOWNLOAD_BG_JSON": "Arka Plan Json'u indir",
+    "DOWNLOAD_BG_IMG": "Arka plan görüntüsünü indir",
+    "UPLOAD_USER_BACKEND_JSON": "Yeni kullanıcı arka uç json yükleyin",
+    "SEE_USER_BACKEND_JSON": "Kullanıcı arka uç json'a bakın",
+    "SET_ALL_DEFAULT": "Tüm varsayılanları ayarlayın",
+    "EXPORT_REPORT": "İhracat raporu",
+    "SEND_MAIL": "Posta göndermek",
+    "DOWNLOAD_CRASH_ANIM_IMG": "Crash animation resmini indir",
+    "DOWNLOAD_CRASH_ANIM_JSON": "Crash animation json'u indir",
+    "DOWNLOAD_START_ANIM_IMG": "Başlat animasyon resmini indir",
+    "DOWNLOAD_START_ANIM_JSON": "Başlat animasyon json'u indir"
+  },
+  "MANAGE_CONTEST": "Yarışmayı Yönetin",
+  "CREATE_CONTEST": "Yarışma Oluşturma",
+  "UPCOMING": "Yaklaşan",
+  "LIVE": "Canlı",
+  "PARTIAL": "Kısmi",
+  "COMPLETED": "Tamamlanmış",
+  "GAME": "Oyun",
+  "ENTRANTS": "Katkılar",
+  "SERVICE": "Hizmet",
+  "FEE": "Ücret",
+  "FEES": "Ücret",
+  "MULTI_USER": "Mutli kullanıcısı",
+  "SITE_RAKE": "Site tırmığı",
+  "PRIZE_PAYOUT": "Ödül Ödeme",
+  "IS_FEATURED_CONTEST": "Öne çıkan yarışma",
+  "PRIZE_STRUCTRE": "Ödül yapısı",
+  "IS_AUTO_REPEAT": "Otomatik tekrar mı",
+  "PRIZING": "Ödüllendirme",
+  "CREATED_BY": "Tarafından yaratıldı",
+  "LINEUP": "Sıralanmak",
+  "USER_CODE": "Kullanıcı kodu",
+  "ALL_TIME": "Her zaman",
+  "TODAY": "Bugün",
+  "YESTERDAY": "Dün",
+  "THIS_WEEK": "Bu hafta",
+  "LAST_WEEK": "Geçen hafta",
+  "THIS_MONTH": "Bu ay",
+  "LAST_MONTH": "Geçen ay",
+  "SEARCH_TIME_PERIOD": "Arama Süresi Dönemi",
+  "TOTAL_OF_DEPOSITS": "Toplam mevduat",
+  "TOTAL_OF_WITHDRAWALS": "Toplam para çekme",
+  "PLAYERS_LOGGED_IN": "Oyuncular giriş yaptı",
+  "PLAYERS_REGISTERED": "Kayıtlı Oyuncular",
+  "PLAYERS_BALANCE": "Oyuncular dengesi",
+  "PLAYERS_MAKING_DEPOSIT": "Depozito yapan oyuncular",
+  "PLAYERS_MAKING_WITHDRAWALS": "Para çekme yapan oyuncular",
+  "PROFIT": "Kâr",
+  "BET_SPORT": "Bahis sporu",
+  "WIN_SPORT": "Spor Kazan",
+  "BET_FANTASY": "Bet Fantasy",
+  "WIN_FANTASY": "Fantezi Kazanın",
+  "PREMATCH": "Prematch",
+  "TOTAL": "Toplam",
+  "TURNOVER": "Devir",
+  "WINNING": "Kazanan",
+  "OPEN_BETS_SINGLE":"Open Bets (Single)",
+  "OPEN_BETS_COMBO": "Açık Bahisler (Combo)",
+  "NUMBER_OF_BETS_SINGLE": "Bahis Sayısı (Bekar)",
+  "NUMBER_OF_BETS_COMBO": "Bahis Sayısı (Combo)",
+  "AVERAGE_BET": "Ortalama bahis",
+  "BET_PER_PLAYER": "Oyuncu başına bahis",
+  "NUMBER_OF_PLAYERS": "Oyuncu sayısı",
+  "PROFITABILITY": "Karlılık",
+  "LIVE_CONTESTS": "Canlı Yarışmalar",
+  "OPEN_CONTESTS": "Açık Yarışmalar",
+  "AVERAGE_ENTRY_FEES": "Ortalama giriş ücretleri",
+  "ENTRY_FEES_PER_PLAYER": "Oyuncu başına giriş ücretleri",
+  "TOP_5_SPORTS": "İlk 5 Spor",
+  "BETS": "Bahisler",
+  "No_RECORDS_FOUND": "Kayıt bulunamadı",
+  "PLAYERS_PLAYING": "Oyuncu Oyuncular",
+  "ADVANCED" : "Gelişmiş",
+  "COMPONENT" : "Bileşen",
+  "FULL_PAGE_VIEW" : "Tam Sayfa Görünümü",
+  "BET_SETTING": "Bahis ayarı",
+  "BET_CURRENCY_WISE_SETTING": "Bahis Para Birimi Akıllı Ayarı",
+  "MIN_ODD": "Min Odd",
+  "MIN_AUTO_RATE": "Min Otomatik Oran",
+  "MIN_BET_AMOUNT": "Min Bet Miktarı",
+  "MAX_BET_AMOUNT": "Maksimum bahis miktarı",
+  "MAX_PROFIT_AMOUNT": "Maksimum kar tutarı",
+  "JSON_FILE": "Json dosyası"
+
+}

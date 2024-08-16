@@ -1,0 +1,104 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'CURRENCIES' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="status"> {{'SEARCH' | translate}} </label>
+                    <input type="text" class="form-control" id="search" (keyup)="filter($event)"
+                      [(ngModel)]="params.search" placeholder="{{'PLACEHOLDERS.SEARCH_NAME_CODE' | translate}}" />
+                  </div>
+                </div>
+
+                <div class="col-md-1">
+                  <div class="form-group">
+                    <label for="status"> {{'SIZE' | translate}} </label>
+                    <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="params.size">
+                      <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="col-md-2">
+                  <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                    | translate}} </button>
+                </div>
+                
+                <div class="col-md-6" *ngIf="canCreate">
+                  <a class="mgt btn btn-success f-right" routerLink="/super-admin/currencies/0"> {{'ACTION_BUTTON.CREATE'
+                    |
+                    translate}} </a>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'NAME' | translate}}</th>
+                    <th>{{'CODE' | translate}}</th>
+                    <th>{{'EXCHANGE_RATE' | translate}}</th>
+                    <th>{{'PRIMARY' | translate}}</th>
+                    <th *ngIf="canEdit">{{'ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let currency of currencies | paginate:  { itemsPerPage: params.size, currentPage: p, totalItems: total }">
+
+                    <td> {{ currency.name }} </td>
+                    <td> {{ currency.code }} </td>
+                    <td> {{ currency.exchange_rate }} </td>
+                    <td> {{ (currency.primary ? 'YES' : 'NO') | translate}} </td>
+
+                    <td *ngIf="canEdit">
+                      <!-- <a class="fnt-12 btn btn-info" (click)="markPrimary(currency)"
+                        *ngIf="canMarkPrimary && !currency.primary"> Mark
+                        Primary </a>&nbsp; -->
+                      <a *ngIf="canEdit" [routerLink]="['/super-admin/currencies', currency.id]"
+                        class="fnt-12 btn btn-warning"> {{'ACTION_BUTTON.EDIT' | translate}}
+                      </a>
+                      <!-- <button type="button" (click)="delete(currency)" class="fnt-12 btn btn-danger"> Delete </button> -->
+                    </td>
+                  </tr>
+
+                  <tr *ngIf="currencies && currencies.length === 0">
+                    <td [attr.colspan]="canEdit ? 5 : 4" class="tnodata"> {{'SENTENCES.CURRENCY_404' | translate}} </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event"></pagination-controls>
+            <!-- <div class="card-body">
+              <strong>NOTE - {{primary.code}} is primary currency. Any conversion from currency A to currency B will
+                consider {{primary.code}} as
+                base.</strong><br />
+              e.g. Currency A amount * Exchange Rate of Currency A = Primary Currency({{primary.code}}) amount<br />
+              e.g. Currency A amount * (Exchange Rate of Currency A / Exchange Rate of Currency B) = Currency B amount
+            </div> -->
+          </div>
+          <!-- /.card -->
+
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

@@ -1,0 +1,39 @@
+<script>
+  (function () {
+    var linkObj = document
+      .getElementById('premier-topnav')
+      .getElementsByTagName('a');
+    for (i = 0; i < linkObj.length; i++) {
+      if (document.location.href.indexOf(linkObj[i].href) >= 0) {
+        linkObj[i].classList.add('active');
+      }
+    }
+  })();
+
+  const host = 'http://35.169.53.68:3000';
+
+  const renderMicroFrontend = () => {
+    window[renderSDK](document.getElementById('sdk-container'), {
+      apiKey:
+        'Insert Api Key Here',
+    });
+  };
+
+  const scriptId = micro-frontend-script-SDK;
+  fetch(${host}/asset-manifest.json)
+    .then((res) => res.json())
+    .then((manifest) => {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.crossOrigin = '';
+      script.src = ${host}${manifest.files['main.js']};
+      script.onload = () => {
+        renderMicroFrontend();
+      };
+      document.head.appendChild(script);
+    });
+</script>
+
+<div style="padding-left: 16px; margin-top: 10px">
+  <main id="sdk-container"></main>
+</div>

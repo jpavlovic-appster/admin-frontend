@@ -1,0 +1,305 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="Subscribers" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Subscribers</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th  >ID</th>
+                    <th>Name</th>
+                    <th>Domain URL</th>
+                    <th>Public Key</th>
+                    <th>Status</th>
+                    <th style="width: 40px">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ subscriber?.id }}</td>
+                    <td> {{ subscriber?.subscriber_name }} </td>
+                    <td><a [href]="subscriber?.domain" target="_blank"> {{ subscriber?.domain }} </a></td>
+                    <td> {{ subscriber?.public_key }} </td>
+                    <td>
+                      <ng-container [ngSwitch]="subscriber?.status">
+                        
+                        <ng-container *ngSwitchCase="'0'">
+                          <span class="text-danger"> In Active </span>
+                        </ng-container>
+                        
+                        <ng-container *ngSwitchCase="'1'">
+                          <span class="text-success"> Active </span>
+                        </ng-container>
+                        
+                        <ng-container *ngSwitchCase="'2'">
+                          <span class="text-warning"> Expired </span>
+                        </ng-container>
+                        
+                        <ng-container *ngSwitchDefault> 
+                          <span class="text-danger"> In Active </span>
+                        </ng-container>
+
+                      </ng-container>
+                    </td>
+                    <td *ngIf="canEditSubscriber"><a class="btn btn-warning fnt-12"
+                        [routerLink]="['/super-admin/subscribers', subscriber?.id]"> Edit </a>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Configurations </h3>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Allowed Currencies</td>
+                    <td>
+                      <ng-container *ngFor="let conf of configurationsCurrencies"> {{ conf.name }}, </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12" *ngIf="canReadCredentials">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Credentials</h3>
+              <a *ngIf="remainingCredentials && remainingCredentials.length > 0"
+                [routerLink]="['/settings/subscribers/credentials', 0]" [state]="{ tenant: subscriber, remcreds: remainingCredentials }"
+                class="fnt-12 f-right btn btn-success">Create New</a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th  >ID</th>
+                    <th>Key</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                    <th style="width: 40px">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let credential of credentials">
+                    <td>{{ credential.id }}</td>
+                    <td>{{ credential.key }}</td>
+                    <td>{{ credential.value }}</td>
+                    <td>{{ credential.description }}</td>
+                    <td *ngIf="canEditCredentials"><a class="btn btn-warning fnt-12"
+                        [routerLink]="['/settings/subscribers/credentials', credential.id]"
+                        [state]="{credential: credential, tenant: subscriber, remcreds: remainingCredentials }"> Edit </a>
+                    </td>
+                  </tr>
+
+                  <tr *ngIf="credentials && credentials.length === 0">
+                    <td colspan="5" class="tnodata"> No Credentials Found </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+        <div *ngIf="canReadPackages" class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> Packages </h3>
+              <a *ngIf="canEditPackages" [routerLink]="['/settings/subscribers/packages', id]" class="fnt-12 f-right btn btn-warning"> <i class="fa fa-edit"></i> Edit </a>
+            </div>
+            
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let package of packages;">
+                    <td> {{ package.name }}</td>
+                    <td> {{ package.start_date | date: 'yyyy-MM-dd' }} </td>
+                    <td> {{ package.end_date| date: 'yyyy-MM-dd' }} </td>
+                    <td>
+                      
+                      <ng-container [ngSwitch]="package.status">
+                        
+                          <ng-container *ngSwitchCase="'0'">
+                            <span class="text-danger"> In Active </span>
+                          </ng-container>
+                          
+                          <ng-container *ngSwitchCase="'1'">
+                            <span class="text-success"> Active </span>
+                          </ng-container>
+                          
+                          <ng-container *ngSwitchCase="'2'">
+                            <span class="text-warning"> Expired </span>
+                          </ng-container>
+                          
+                          <ng-container *ngSwitchDefault> 
+                            <span class="text-danger"> In Active </span>
+                          </ng-container>
+
+                        </ng-container>
+                      
+                    </td>
+                  </tr>
+                  <tr *ngIf="packages.length === 0">
+                    <td colspan="4" class="tnodata"> No Packages Found </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+
+        <div *ngIf="canReadSportSettings" class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Sports Setting </h3>
+            </div>
+            
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Event Liability</th>
+                    <th>Max Single_bet</th>
+                    <th>Min Bet</th>
+                    <th>Max Multiple Bet</th>
+                    <th>Max Bet On Event</th>
+                    <th>Deposit Limit</th>
+                    <th>Max Win Amount</th>
+                    <th>Max Odd</th>
+                    <th>Disabled</th>
+                    <th *ngIf="canEditSportSettings">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="sportsSetting?.id">
+                    <td>{{ sportsSetting?.event_liability | number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.max_single_bet| number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.min_bet| number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.max_multiple_bet | number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.max_bet_on_event | number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.deposit_limit | number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.max_win_amount | number : '1.2-2' }}</td>
+                    <td>{{ sportsSetting?.max_odd | number : '1.2-2' }}</td>
+                    <td>
+                      <span [ngClass]="sportsSetting?.bet_disabled ? 'text-danger' : 'text-success'">
+                        {{sportsSetting?.bet_disabled ? 'Disabled' : 'Enabled'}}
+                      </span>
+                    </td>
+                    <td *ngIf="canEditSportSettings"><a
+                        [routerLink]="['/settings/subscribers/sport-settings', id, sportsSetting?.id]"
+                        class="fnt-12 btn btn-warning"> <i class="fa fa-edit"></i> Edit </a></td>
+                  </tr>
+                  <tr *ngIf="!sportsSetting?.id">
+                    <td [attr.colspan]="canEditSportSettings ? 10 : 9" class="tnodata"> No Sports Setting Found </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Admins</h3>
+              <a *ngIf="canEditSubscriber" [routerLink]="['/agents/subscriber', id, 0]"
+                class="fnt-12 f-right btn btn-success"> Create New </a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th  >ID</th>
+                    <th>Email</th>
+                    <th>Agent Code</th>
+                    <th>Full name</th>
+                    <th>Phone number</th>
+                    <th>Status</th>
+                    <th *ngIf="canEditSubscriber">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <td> {{ user.id }} </td>
+                    <td>{{ user.email }} </td>
+                    <td>{{ user.agent_name }}</td>
+                    <td>{{ user.first_name + ' ' + user.last_name }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>
+                      <span [ngClass]="user.active ? 'text-success' : 'text-danger'"> {{ user.active ? 'Active' : 'In-Active' }} </span>
+                    </td>
+
+                    <td *ngIf="canEditSubscriber">
+                      <a class="btn btn-warning fnt-12" [routerLink]="['/agents/subscriber', id, user.id]"> <i class="fa fa-edit"></i> Edit </a>
+                    </td>
+                  </tr>
+
+                  <tr *ngIf="users && users.length === 0">
+                    <td [attr.colspan]="canEditSubscriber ? 7 : 6" class="tnodata"> No Admins Found </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+</div>

@@ -1,0 +1,475 @@
+{
+  "frames": {
+    "crashAnim (14)": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 235,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 143,
+        "y": 34,
+        "w": 235,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (12)": {
+      "frame": {
+        "x": 235,
+        "y": 0,
+        "w": 234,
+        "h": 220
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 142,
+        "y": 34,
+        "w": 234,
+        "h": 220
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (13)": {
+      "frame": {
+        "x": 0,
+        "y": 218,
+        "w": 234,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 143,
+        "y": 34,
+        "w": 234,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (11)": {
+      "frame": {
+        "x": 469,
+        "y": 0,
+        "w": 232,
+        "h": 217
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 35,
+        "w": 232,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (15)": {
+      "frame": {
+        "x": 701,
+        "y": 0,
+        "w": 232,
+        "h": 205
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 145,
+        "y": 48,
+        "w": 232,
+        "h": 205
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (3)": {
+      "frame": {
+        "x": 933,
+        "y": 0,
+        "w": 61,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 222,
+        "y": 114,
+        "w": 61,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (18)": {
+      "frame": {
+        "x": 933,
+        "y": 60,
+        "w": 129,
+        "h": 52
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 128,
+        "w": 129,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (19)": {
+      "frame": {
+        "x": 933,
+        "y": 189,
+        "w": 129,
+        "h": 52
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 128,
+        "w": 129,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (10)": {
+      "frame": {
+        "x": 701,
+        "y": 205,
+        "w": 228,
+        "h": 214
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 38,
+        "w": 228,
+        "h": 214
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (9)": {
+      "frame": {
+        "x": 469,
+        "y": 217,
+        "w": 224,
+        "h": 207
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 141,
+        "y": 42,
+        "w": 224,
+        "h": 207
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (8)": {
+      "frame": {
+        "x": 234,
+        "y": 220,
+        "w": 214,
+        "h": 196
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 146,
+        "y": 46,
+        "w": 214,
+        "h": 196
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (16)": {
+      "frame": {
+        "x": 234,
+        "y": 416,
+        "w": 175,
+        "h": 205
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 48,
+        "w": 175,
+        "h": 205
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (17)": {
+      "frame": {
+        "x": 0,
+        "y": 436,
+        "w": 174,
+        "h": 205
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 48,
+        "w": 174,
+        "h": 205
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (1)": {
+      "frame": {
+        "x": 929,
+        "y": 318,
+        "w": 36,
+        "h": 33
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 237,
+        "y": 131,
+        "w": 36,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (2)": {
+      "frame": {
+        "x": 965,
+        "y": 318,
+        "w": 36,
+        "h": 33
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 237,
+        "y": 131,
+        "w": 36,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (7)": {
+      "frame": {
+        "x": 693,
+        "y": 419,
+        "w": 188,
+        "h": 167
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 158,
+        "y": 61,
+        "w": 188,
+        "h": 167
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (4)": {
+      "frame": {
+        "x": 881,
+        "y": 419,
+        "w": 130,
+        "h": 116
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 185,
+        "y": 85,
+        "w": 130,
+        "h": 116
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (6)": {
+      "frame": {
+        "x": 439,
+        "y": 424,
+        "w": 171,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 166,
+        "y": 68,
+        "w": 171,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (5)": {
+      "frame": {
+        "x": 439,
+        "y": 575,
+        "w": 149,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 177,
+        "y": 77,
+        "w": 149,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (20)": {
+      "frame": {
+        "x": 933,
+        "y": 189,
+        "w": 129,
+        "h": 52
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 128,
+        "w": 129,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (21)": {
+      "frame": {
+        "x": 933,
+        "y": 189,
+        "w": 129,
+        "h": 52
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 128,
+        "w": 129,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 288
+      }
+    },
+    "crashAnim (22)": {
+      "frame": {
+        "x": 0,
+        "y": 750,
+        "w": 100,
+        "h": 100
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 750,
+        "w": 100,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 100
+      }
+    },
+    "crashAnim (23)": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "sourceSize": {
+        "w": 0,
+        "h": 0
+      }
+    }
+  },
+  "meta": {
+    "app": "",
+    "version": "0.6.7",
+    "image": "crashAnim.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1000,
+      "h": 1000
+    },
+    "scale": 1
+  }
+}

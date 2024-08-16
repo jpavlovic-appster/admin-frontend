@@ -1,0 +1,256 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="{{'FREE_BET_RAIN' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+    <form [formGroup]="freeBetFrom" (ngSubmit)="onSubmit()">
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title"> {{'FREE_BET_RAIN' | translate}}</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="promotion_name">Promotion Name<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" formControlName="promotion_name" class="form-control"
+                                                id="promotion_name"
+                                                placeholder="{{'PLACEHOLDERS.ENTER_PROMOTION_NAME' | translate}}" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.promotion_name.errors">
+                                                <div *ngIf="f.promotion_name.errors.required">
+                                                    {{'VALIDATION_MSGS.PROMOTION_NAME.REQUIRED' | translate}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="currency">{{'CURRENCY_CODE' | translate}}<span
+                                                    class="text-danger">*</span></label>
+
+                                            <select class="form-control" formControlName="currency" id="currency">
+                                                <option value="">
+                                                    {{'PLACEHOLDERS.SELECT_CURRENCY' | translate}}
+                                                <option *ngFor="let currency of currencies" [value]="currency.code">
+                                                    {{ currency.code }}
+                                                </option>
+                                            </select>
+                                            <div class="invalid-feedback" *ngIf="submitted && f.currency.errors">
+                                                <div *ngIf="f.currency.errors.required">
+                                                    {{'VALIDATION_MSGS.CURRENCY.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="start_time"> {{'START_TIME' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="datetime-local" formControlName="start_time"
+                                                class="form-control" id="site-rake" (blur)="checkDate($event)"
+                                                pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}"
+                                                placeholder="Enter Start Time" [min]="today" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.start_time.errors">
+                                                <div *ngIf="f.start_time.errors.required">
+                                                    {{'VALIDATION_MSGS.START_TIME.REQUIRED' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="end_time"> {{'END_TIME' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="datetime-local" formControlName="end_time" class="form-control"
+                                                id="site-rake" (blur)="checkDate($event)"
+                                                placeholder="Enter End Time" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.end_time.errors">
+                                                <div *ngIf="f.end_time.errors.required">
+                                                    {{'VALIDATION_MSGS.END_TIME.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.end_time.errors.lessThan">
+                                                    {{'VALIDATION_MSGS.END_TIME.MORE_THAN' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="rain_start_time">{{'RAIN_START_TIME' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="datetime-local" formControlName="rain_start_time"
+                                                class="form-control" id="site-rake" (blur)="checkDate($event)"
+                                                placeholder="Enter Start Time" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.rain_start_time.errors">
+                                                <div *ngIf="f.rain_start_time.errors.required">
+                                                    {{'VALIDATION_MSGS.RAIN_START_TIME.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.rain_start_time.errors.inBetween">
+                                                    {{'VALIDATION_MSGS.RAIN_START_TIME.IN_BETWEEN' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="rain_end_time"> {{'RAIN_END_TIME' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="datetime-local" formControlName="rain_end_time"
+                                                class="form-control" id="site-rake" (blur)="checkDate($event)"
+                                                placeholder="Enter End Time" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.rain_end_time.errors">
+                                                <div *ngIf="f.rain_end_time.errors.required">
+                                                    {{'VALIDATION_MSGS.RAIN_END_TIME.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.rain_end_time.errors.lessThan">
+                                                    {{'VALIDATION_MSGS.RAIN_END_TIME.LESS_THAN' | translate}}</div>
+                                                <div *ngIf="f.rain_end_time.errors.inBetween">
+                                                    {{'VALIDATION_MSGS.RAIN_END_TIME.MORE_THAN' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="bet_amount">{{'BET_AMOUNT' | translate}}<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="bet_amount" class="form-control"
+                                                id="bet_amount"
+                                                placeholder=" {{'PLACEHOLDERS.ENTER_BET_AMOUNT' | translate}}"
+                                                onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.bet_amount.errors">
+
+                                                <div *ngIf="f.bet_amount.errors.required">
+                                                    {{'VALIDATION_MSGS.BET_AMOUNT.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.bet_amount.errors.min">{{'VALIDATION_MSGS.BET_AMOUNT.MIN'
+                                                    | translate}}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="num_free_bets">{{'NUMBER_OF_FREE_BETS' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="num_free_bets" class="form-control"
+                                                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                id="num_free_bets"
+                                                placeholder=" {{'PLACEHOLDERS.ENTER_NO_OF_FREE_BETS' | translate}}" />
+                                            <div class="invalid-feedback" *ngIf="submitted && f.num_free_bets.errors">
+                                                <div *ngIf="f.num_free_bets.errors.required">
+                                                    {{'VALIDATION_MSGS.NUMBER_OF_FREE_BETS.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.num_free_bets.errors.min">
+                                                    {{'VALIDATION_MSGS.NUMBER_OF_FREE_BETS.MIN' | translate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="minimum_multiplier"> {{'MINIMUM_MULTIPLIER' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="minimum_multiplier"
+                                                class="form-control" id="minimum_multiplier"
+                                                placeholder="{{'PLACEHOLDERS.ENTER_MINIMUM_MULTIPLIER' | translate}}"
+                                                onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+                                            <div class="invalid-feedback"
+                                                *ngIf="submitted && f.minimum_multiplier.errors">
+                                                <div *ngIf="f.minimum_multiplier.errors.required">
+                                                    {{'VALIDATION_MSGS.MINIMUM_MULTIPLIER.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.minimum_multiplier.errors.min">
+                                                    {{'VALIDATION_MSGS.MINIMUM_MULTIPLIER.MIN' | translate}}</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="expiry_free_bet_rain">{{'EXPIRY_AFTER_CLAIM' | translate}} <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number" formControlName="expiry_after_claim"
+                                                class="form-control" id="expiry_after_claim"
+                                                placeholder="{{'PLACEHOLDERS.ENTER_EXPIRY_AFTER_CLAIM' | translate}}"
+                                                onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                                            <div class="invalid-feedback"
+                                                *ngIf="submitted && f.expiry_after_claim.errors">
+                                                <div *ngIf="f.expiry_after_claim.errors.required">
+                                                    {{'VALIDATION_MSGS.EXPIRY_AFTER_CLAIM.REQUIRED' | translate}}</div>
+                                                <div *ngIf="f.expiry_after_claim.errors.min">
+                                                    {{'VALIDATION_MSGS.EXPIRY_AFTER_CLAIM.MIN' | translate}}</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="check_bet_amount_before_claim"> Minimum Bet Amount to claim free
+                                                bet rain<span class="text-danger">*</span></label>
+                                            <input type="number" formControlName="check_bet_amount_before_claim"
+                                                class="form-control" id="check_bet_amount_before_claim"
+                                                placeholder="Enter Minimum Bet Amount"
+                                                onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+                                            <div class="invalid-feedback"
+                                                *ngIf="submitted && f.check_bet_amount_before_claim.errors">
+                                                <div *ngIf="f.check_bet_amount_before_claim.errors.required">Minimum bet
+                                                    Amount is required</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label for="check_bet_time_before_claim">Time in which the bet amount should lie<span
+                                              class="text-danger">*</span></label>
+                                          <input type="number" formControlName="check_bet_time_before_claim" class="form-control"
+                                            id="check_bet_time_before_claim" placeholder="Enter Time"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                                          <div class="invalid-feedback" *ngIf="submitted && f.check_bet_time_before_claim.errors">
+                                            <div *ngIf="f.check_bet_time_before_claim.errors.required">Time is Required</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                    
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" [disabled]="adminLoader" class="btn btn-primary"> <span
+                                        *ngIf="adminLoader" class="spinner-border spinner-border-sm" role="status"
+                                        aria-hidden="true"></span> {{'ACTION_BUTTON.SUBMIT' | translate}}</button>
+                                &nbsp;
+                                <a class="btn btn-warning"
+                                    [routerLink]=" authService.adminTypeValue === adminType.Super ? ['/super-admin/subscribers/details', subscriberId] : ['/crash-game/free-bet-rain']">
+                                    {{'ACTION_BUTTON.CANCEL' | translate}} </a>
+                            </div>
+
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+        </section>
+    </form>
+
+</div>

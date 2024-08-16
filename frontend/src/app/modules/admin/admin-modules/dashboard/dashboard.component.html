@@ -1,0 +1,291 @@
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb [title]="'DASHBOARD' | translate" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+
+  <!-- <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">{{'DASHBOARD' | translate}}</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- <div class="col-12 col-sm-12 col-md-12"> -->
+
+      <!-- <div class="card"> -->
+
+      <!-- /.card-header -->
+
+      <!-- <div class="card-body">
+                <div class="row">
+  
+                  <ng-container
+                    *ngIf="superAdminAuthService.superAdminTokenValue && superAdminAuthService.superAdminTokenValue.length > 0;">
+  
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label for="tenant_id">{{ 'SUBSCRIBERS' | translate }}</label>
+                        <select class="form-control" select2 id="tenant_id" (onSelect)="getSubscriberCurrencies($event)">
+                          <option *ngFor="let subscriber of subscribers" [value]="subscriber.id">{{
+                            subscriber.subscriber_name }}</option>
+                        </select>
+                      </div>
+                    </div>
+  
+                  </ng-container>
+  
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label for="agent_id">{{'CURRENCY' | translate}}</label>
+                      <select class="form-control" id="currency_code" (change)="currencyFilter($event)"
+                        [(ngModel)]="params.currency_code">
+                        <option *ngFor="let currency of currencies" [value]="currency.code"> {{ currency.code }} </option>
+                      </select>
+                    </div>
+                  </div>
+  
+                  <div class="mgt col-md-6">
+                    <button (click)="setTimePeriod('all_time')" class="btn"
+                      [ngClass]="time_period == 'all_time' ? 'btn-success':'btn-default'" type="button"> {{'ALL_TIME' |
+                      translate}}
+                    </button> &nbsp;
+                    <button (click)="setTimePeriod('today')" class="btn"
+                      [ngClass]="time_period == 'today' ? 'btn-success':'btn-default'" type="button"> {{'TODAY' |
+                      translate}} </button>
+                    &nbsp;
+                    <button (click)="setTimePeriod('yesterday')" class="btn"
+                      [ngClass]="time_period == 'yesterday' ? 'btn-success':'btn-default'" type="button"> {{'YESTERDAY' |
+                      translate}}
+                    </button> &nbsp;
+                    <button (click)="setTimePeriod('weekly')" class="btn"
+                      [ngClass]="time_period == 'weekly' ? 'btn-success':'btn-default'" type="button"> {{'THIS_WEEK' |
+                      translate}} </button>
+                    &nbsp;
+                    <button (click)="setTimePeriod('last_week')" class="btn"
+                      [ngClass]="time_period == 'last_week' ? 'btn-success':'btn-default'" type="button"> {{'LAST_WEEK' |
+                      translate}}
+                    </button> &nbsp;
+                    <button (click)="setTimePeriod('monthly')" class="btn"
+                      [ngClass]="time_period == 'monthly' ? 'btn-success':'btn-default'" type="button"> {{'THIS_MONTH' |
+                      translate}}
+                    </button> &nbsp;
+                    <button (click)="setTimePeriod('last_month')" class="btn"
+                      [ngClass]="time_period == 'last_month' ? 'btn-success':'btn-default'" type="button"> {{'LAST_MONTH'
+                      | translate}}
+                    </button> &nbsp;
+                  </div> -->
+
+
+
+      <!--</div>
+              </div> -->
+
+      <!-- </div> -->
+
+
+      <!-- </div> -->
+
+
+
+      <div class="card">
+
+        <div class="card-body">
+          <div class="row">
+            <!-- <div class="col-md-3">
+                <div class="form-group">
+                  <label for="status"> {{'SUBSCRIBER' | translate}} {{'STATUS' | translate}} </label>
+                  <select class="form-control" id="status" (change)="filter($event)" [(ngModel)]="params.status">
+                    <option value=""> {{'ALL' | translate}}</option>
+                    <option value="Yes"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                    <option value="No"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                  </select>
+                </div>
+              </div> -->
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="player_status">{{'PLAYER' | translate}} {{'STATUS' | translate}}</label>
+                <select class="form-control" id="player_status" (change)="filter($event)"
+                  [(ngModel)]="params.player_status">
+                  <option value=""> {{'ALL' | translate}}</option>
+                  <option value="Yes"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                  <option value="No"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="time_period">{{'TIME_PERIOD' | translate}}</label>
+                <input autocomplete="off" type="text" class="form-control" id="time_period" [format]="format"
+                  daterange_picker (onSelect)="selectDateRange($event)"
+                  placeholder="{{'SEARCH_TIME_PERIOD' | translate}}" />
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="agent_id"> {{'CURRENCY' | translate}}</label>
+                <select class="form-control" id="currency" (change)="currencyFilter($event)"
+                  [(ngModel)]="params.currency">
+                  <option *ngFor="let currency of currencies" [value]="currency.code"> {{ currency.code }} </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                | translate}} </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'TOTAL_PLAYERS' | translate}}
+                </span>
+                <span class="info-box-number">{{totalPlayers}} </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'GGR' | translate}}
+                </span>
+                <span class="info-box-number">{{profit | number}} </span>
+              </div>
+            </div>
+          </div> -->
+         
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-coins"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'BETS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.bets | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'CANCELS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.cancels | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'NET_SALES' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.net_sales | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'WINS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.wins | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'GGR' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.ggr | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'RTP' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.rtp | number : '1.2-2' }} </span>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+
+
+      </div>
+
+    </div>
+    <!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12" *ngIf="isSbActive && isDfsActive">
+          <div class="card">
+
+            <div class="card-header">
+              <h3 class="card-title">{{ 'PROFIT' | translate }}</h3>
+            </div>
+
+            <!-- /.card-header -->
+
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+
+
+</div>
+
+<ng-template #chartLoader>
+  <img class="loader" src="./assets/dist/gif/loader.gif" />
+</ng-template>

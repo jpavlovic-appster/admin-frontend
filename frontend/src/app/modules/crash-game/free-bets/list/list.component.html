@@ -1,0 +1,155 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="Free Bets" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <a [routerLink]="['/crash-game/free-bets/create', 0]" class="btn btn-success fnt-12">
+                {{'ACTION_BUTTON.CREATE' |
+                translate}} </a>
+              <a class="btn f-right btn-primary fnt-12" download="filename" target="_blank"
+                href="/assets/dist/sample.xlsx">
+                {{'ACTION_BUTTON.DOWNLOAD_XLSX' | translate}}
+              </a>
+              <div class="f-right d-flex"> <input #bulk class="form-control fnt-12" style="width: 70%" type="file"
+                  accept=".xlsx" (change)="onChange($event)">
+                <button type="button" class="btn btn-success  fnt-12" (click)="onUpload()">
+                  {{'ACTION_BUTTON.BULK_UPLOAD' | translate}}
+                </button>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <div class="row">
+
+                <div class="col-md-2"
+                  *ngIf="superAdminAuthService.superAdminTokenValue && superAdminAuthService.superAdminTokenValue.length > 0;">
+                  <label for="tenant_id">{{'TENANT' | translate}}</label>
+                  <select class="form-control" style="width: 100%;" select2 id="tenant_id"
+                    (onSelect)="changeTenant($event)">
+                    <option *ngFor="let tenant of tenants" [value]="tenant.id">{{ tenant.name }}</option>
+                  </select>
+                </div>
+
+                <div class="col-md-2" *ngIf="!this.subscriberAuthService.subscriberAdminTokenValue">
+                  <div class="form-group">
+                    <label for="search2">{{'SEARCH' | translate}}</label>
+                    <input type="text" class="form-control" id="search2" (keyup)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.search" placeholder="{{'PLACEHOLDERS.SEARCH_ADMIN' |
+                        translate}}" />
+                  </div>
+                </div>
+
+                <div class="col-md-2" *ngIf="!this.subscriberAuthService.subscriberAdminTokenValue">
+                  <div class="form-group">
+                    <label for="status">{{'STATUS' | translate}}</label>
+                    <select class="form-control" id="status" (change)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.status">
+                      <option value="">{{'ALL' | translate}}</option>
+                      <option value="true">{{'ACTION_BUTTON.ACTIVE' | translate}}</option>
+                      <option value="false">{{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="size2">{{'SIZE' | translate}}</label>
+                    <select class="form-control" id="size2" (change)="filterPlayers($event)"
+                      [(ngModel)]="playerParams.size">
+                      <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">{{pageSize.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <button type="button" class="mgt btn btn-warning fnt-12" (click)="playerResetFilter()">
+                    {{'ACTION_BUTTON.RESET_FILTER' | translate}}
+                  </button>
+                </div>
+
+              </div>
+
+              &nbsp;
+
+              <table class="table table-bordered">
+                <thead
+                  *ngIf="this.subscriberAuthService.subscriberAdminTokenValue && this.subscriberAuthService.subscriberAdminTokenValue.length > 0">
+                  <tr>
+                    <th *ngIf="canEdit">
+                    </th>
+
+                    <th>{{'USER_ID' | translate}}</th>
+
+                    <th>{{'CURRENCY_CODE' | translate}}</th>
+                    <th class="sort-column" [ngClass]="playerParams.sort_by=='bet_amount' ? playerParams.order :''"
+                    (click)="setOrder('bet_amount')">{{'BET_AMOUNT' | translate}}</th>
+                    <th class="sort-column" [ngClass]="playerParams.sort_by=='num_of_free_bets' ? playerParams.order :''"
+                    (click)="setOrder('num_of_free_bets')">{{'NUMBER_OF_FREE_BETS' | translate}}</th>
+                    <th class="sort-column" [ngClass]="playerParams.sort_by=='end_date' ? playerParams.order :''"
+                    (click)="setOrder('end_date')">Expiry Time</th>
+                    <th>{{'ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody
+                  *ngIf="this.subscriberAuthService.subscriberAdminTokenValue && this.subscriberAuthService.subscriberAdminTokenValue.length > 0">
+                  <tr
+                    *ngFor="let free of freeBets | paginate: { itemsPerPage: playerParams.size, currentPage: playerP, totalItems: playerTotal, id: 'playerpid' }">
+                    <ng-container *ngIf="free">
+                      <td> {{ free.user_id }} </td>
+                      <td>{{
+                        free.currency_code }}</td>
+                      <td>{{ free.bet_amount }}</td>
+                      <td>{{ free.num_of_free_bets }}</td>
+                      <td>{{ free.end_date }}</td>
+                      <td>
+                        <a class="btn btn-warning fnt-12" title="{{ 'ACTION_BUTTON.EDIT'  | translate }}"
+                          [routerLink]="['/crash-game/free-bets/create', free.id]"> <i class="fa fa-edit"></i>
+                        </a>
+                        &nbsp;
+                        <!-- <a class="btn btn-info fnt-12" [routerLink]="['/users/details', free.id]"
+                          [queryParams]="{ tenant_id: free.tenant_id }"> <i class="fa fa-eye"></i> </a> -->
+                        &nbsp;
+                        <ng-container>
+                          <ng-container>
+                            <button type="button" title="{{ 'ACTION_BUTTON.DELETE'  | translate }}"
+                              (click)="deleteEntry(free.id)" class="btn btn-danger fnt-12"> <i class="fa fa-remove"></i>
+                            </button>
+                          </ng-container>
+                          <!-- <ng-template #activeUser>
+                            <button type="button" (click)="updatePlayerStatus(free, 1)" class="btn btn-success fnt-12"> <i
+                                class="fa fa-check"></i> </button>
+                          </ng-template> -->
+                        </ng-container>
+                      </td>
+                    </ng-container>
+                  </tr>
+                  <tr *ngIf="freeBets.free_bet && freeBets.free_bet.length === 0">
+                    <td [attr.colspan]=9 class="tnodata"> No data found </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <pagination-controls id="playerpid" (pageChange)="playerPageChanged($event)"
+              (pageChange)="playerP = $event"></pagination-controls>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+
+</div>

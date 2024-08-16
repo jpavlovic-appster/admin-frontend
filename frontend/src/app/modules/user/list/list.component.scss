@@ -1,0 +1,25 @@
+.sort-column{
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px!important;
+    &::after{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8px;
+        display: block;
+        font-family: 'Glyphicons Halflings';
+    }
+    &::after{
+        opacity: 0.2;
+        content: "\e150"
+    }
+    &.asc::after,&.ASC::after{
+        content: "\e155";
+        opacity: 0.5;
+    }
+    &.desc::after,&.DESC::after{
+        content: "\e156";
+        opacity: 0.5;
+    }
+}

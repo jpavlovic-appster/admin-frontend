@@ -1,0 +1,59 @@
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <!-- <div class="col-md-2">
+                <h3 class="card-title">{{headerTitle}}</h3>
+              </div> -->
+              <div class="col-md-10">
+
+                <button (click)="setAdminType(adminType.Subscriber)" [disabled]="type == adminType.Subscriber"
+                  class="btn mgl-10 f-right" [ngClass]="type == adminType.Subscriber ? 'btn-success':'btn-default'"
+                  type="button">
+                  {{'SUBSCRIBER' | translate}}
+                </button>
+
+                <button (click)="setAdminType(adminType.Tenant)" [disabled]="type == adminType.Tenant"
+                  class="btn f-right" [ngClass]="type == adminType.Tenant ? 'btn-success':'btn-default'" type="button">
+                  {{'TENANT' | translate}}
+                </button>
+
+              </div>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+
+              <div class="col-md-2" *ngIf="type == adminType.Tenant">
+                <label for="currency">{{'TENANTS' | translate}}</label>
+                <select class="form-control" style="width: 100%;" select2 id="tenant_id"
+                  (onSelect)="changeTenant($event)">
+                  <option *ngFor="let tenant of tenants" [value]="tenant.id">{{ tenant.name }}</option>
+                </select>
+              </div>
+
+              <div class="col-md-2" *ngIf="type == adminType.Subscriber">
+                <label for="currency">{{'SUBSCRIBERS' | translate}}</label>
+                <select class="form-control" style="width: 100%;" select2 id="subscriber_id"
+                  (onSelect)="changeSubscriber($event)">
+                  <option *ngFor="let subscriber of subscribers" [value]="subscriber.id">{{ subscriber.subscriber_name
+                    }}
+                  </option>
+                </select>
+              </div>
+              <ng-content></ng-content>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </div>
+  </div>
+</section>

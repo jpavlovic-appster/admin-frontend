@@ -1,0 +1,127 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="{{'LANGUAGE' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+
+    <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"> {{ title | translate }} </h3>
+                <span style="float: right;">
+
+                <!-- <button class="btn btn-success fnt-left" (click)="download()">Download Sample json</button> -->
+
+                </span></div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form [formGroup]="languageForm" (ngSubmit)="onSubmit()">
+                <div class="card-body">
+
+                  <div class="form-group" *ngIf="id==0">
+                    <label for="name">{{'NAME' | translate}} <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="name" class="form-control" id="name"
+                      placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                      <div *ngIf="f.name.errors.required">{{'VALIDATION_MSGS.NAME.REQUIRED' | translate}}</div>
+                    </div>
+                  </div>
+                  <div class="form-group" *ngIf="id>0">
+                    <label for="name">{{'NAME' | translate}} <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="name" class="form-control" id="name" [readonly] = true
+                      placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                      <div *ngIf="f.name.errors.required">{{'VALIDATION_MSGS.NAME.REQUIRED' | translate}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group" *ngIf="id==0">
+                    <label for="code">{{'CODE' | translate}} <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="code" class="form-control" id="code"
+                      placeholder="{{'PLACEHOLDERS.ENTER_CODE' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.code.errors">
+                      <div *ngIf="f.code.errors.required">{{'VALIDATION_MSGS.LANGUAGE_CODE.REQUIRED' | translate}}</div>
+                      <div *ngIf="f.code.errors.pattern">{{'VALIDATION_MSGS.LANGUAGE_CODE.PATTERN' | translate}}</div>
+                    </div>
+                  </div>
+                  <div class="form-group" *ngIf="id>0">
+                    <label for="code">{{'CODE' | translate}} <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="code" class="form-control" id="code" [readonly] = true
+                      placeholder="{{'PLACEHOLDERS.ENTER_CODE' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.code.errors">
+                      <div *ngIf="f.code.errors.required">{{'VALIDATION_MSGS.LANGUAGE_CODE.REQUIRED' | translate}}</div>
+                      <div *ngIf="f.code.errors.pattern">{{'VALIDATION_MSGS.LANGUAGE_CODE.PATTERN' | translate}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group" *ngIf="dId==1 || dId==2">
+                    <label for="jsonFile">Admin Json File <span class="text-danger">*</span></label>
+                    <input type="file" (change)="selectFile(file.files)" #file formControlName="jsonFile" accept=".json" class="form-control" id="jsonFile"
+                      placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.jsonFile.errors">
+                      <div *ngIf="f.jsonFile.errors.required">{{'VALIDATION_MSGS.JSON_FILE.REQUIRED' | translate}}</div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group" *ngIf="dId==0 || dId==2">
+                    <label for="userJsonFile">User Json File <span class="text-danger">*</span></label>
+                    <input type="file" (change)="selectFile2(file1.files)" #file1 formControlName="userJsonFile" accept=".json" class="form-control" id="userJsonFile"
+                      placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.userJsonFile.errors">
+                      <div *ngIf="f.userJsonFile.errors.required">{{'VALIDATION_MSGS.JSON_FILE.REQUIRED' | translate}}</div>
+                    </div>
+                    &nbsp;
+                    <div
+                    class="alert alert-warning">
+                    {{'SENTENCES.WARNING_LANGUAGE_JSON' | translate}} </div>
+                  </div>
+
+                  <div class="form-group" *ngIf="dId==3 || dId==2">
+                    <label for="userBackendJsonFile">User Backend Json File <span class="text-danger">*</span></label>
+                    <input type="file" (change)="selectFile3(file2.files)" #file2 formControlName="userBackendJsonFile" accept=".json" class="form-control" id="userBackendJsonFile"
+                      placeholder="{{'PLACEHOLDERS.ENTER_NAME' | translate}}" />
+                    <div class="invalid-feedback" *ngIf="submitted && f.userBackendJsonFile.errors">
+                      <div *ngIf="f.userBackendJsonFile.errors.required">{{'VALIDATION_MSGS.JSON_FILE.REQUIRED' | translate}}</div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <div class="alert alert-danger" *ngIf="(id == 0 && !canCreate)">
+                    {{'SENTENCES.NO_PERMISSION_CREATE_CURRENCIES' | translate}}</div>
+
+                  <div class="alert alert-danger" *ngIf="(id > 0 && !canEdit)">
+                    {{'SENTENCES.NO_PERMISSION_UPDATE_CURRENCIES' | translate}}</div>
+
+                  <ng-container *ngIf="(id == 0 && canCreate) || (id > 0 && canEdit)">
+                    <button type="submit" [disabled]="currencyLoader" class="btn btn-primary"> <span
+                        *ngIf="currencyLoader" class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span> {{'ACTION_BUTTON.SUBMIT' | translate}} </button>
+                    &nbsp;
+                  </ng-container>
+                  <a routerLink="/super-admin/languages" class="btn btn-warning"> {{'ACTION_BUTTON.CANCEL' | translate}}
+                  </a>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+  </div>
+

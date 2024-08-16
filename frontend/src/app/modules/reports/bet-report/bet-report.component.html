@@ -1,0 +1,381 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb title="{{'BET_REPORT' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+  <!-- /.content-header -->
+
+  <!-- <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="pull-left mt-2">
+                  <h3 class="card-title">Bet Report Filter</h3>
+                </div>
+                <div class="pull-right" title="Click then Filter Record">
+                  <button  (click)="setBetType('not_combo')" class="btn" [ngClass]="params.bet_type == 'not_combo' ? 'btn-success':'btn-default'" type="button"> Single </button> &nbsp;
+                  <button (click)="setBetType('multibets')" class="btn" [ngClass]="params.bet_type == 'multibets' ? 'btn-success':'btn-default'" type="button"> Multibet </button> &nbsp;
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+
+              <form #f="ngForm" novalidate>
+
+                <div class="row">
+
+
+                  <div class="col-md-4"
+                  *ngIf="superAdminAuthService.superAdminTokenValue && superAdminAuthService.superAdminTokenValue.length > 0">
+                    <div class="form-group">
+                      <label for="organization">{{'ORGANIZATION' | translate}}</label>
+                      <select class="form-control" name="organization" id="organization" select2
+                        (onSelect)="orgFilter($event)" [(ngModel)]="params.organization"
+                        data-placeholder="Select Organization">
+                        <!-- <option value="">All</option> -->
+                        <option *ngFor="let organization of organizations" [value]="organization.id">{{organization.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4"
+                    *ngIf="superAdminAuthService.superAdminTokenValue && superAdminAuthService.superAdminTokenValue.length > 0">
+                    <div class="form-group">
+                      <label for="tenant_id">{{'SUBSCRIBER' | translate}}</label>
+                      <select class="form-control" name="tenant_id" id="tenant_id" select2
+                        (onSelect)="tenantFilter($event)"  multiple="multiple"
+                        data-placeholder="Select Subscriber">
+                        <option value="-1" >All</option>
+                        <option *ngFor="let tenant of allTenants" [value]="tenant.id">{{tenant.subscriber_name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="filter_date"> {{'DATA_RANGE' | translate}}</label>
+                      <input type="text" name="filter_date" id="filter_date" autocomplete="off" [timePicker]="true"
+                        [format]="format" daterange_picker (onSelect)="selectDateRange($event)"
+                        placeholder="{{'PLACEHOLDERS.SEARCH_DATA_RANGE' | translate}}" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="search"> {{'PLACEHOLDERS.SEARCH_BET_ID' | translate}}</label>
+                      <input type="number" name="search" class="form-control" id="search" (keyup)="filter($event)" (keydown)="checkIfNumber($event)"
+                        [(ngModel)]="params.search" placeholder="{{'PLACEHOLDERS.SEARCH_BET_ID' | translate}}" />
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-md-2">
+                    <label for="currency_code"> {{'RESULT' | translate}} </label>
+                    <select class="form-control" id="result" (change)="filter($event)" [(ngModel)]="params.result">
+                      <option value="" selected>{{'ALL' | translate}}</option>
+                      <option value="win"> {{'WIN' | translate}} </option>
+                      <option value="loose"> {{'LOST' | translate}} </option>
+                    </select>
+                  </div> -->
+
+                 
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="winning_min_amt">{{'MIN_WIN_AMOUNT' | translate}}</label>
+                      <input type="number" id="winning_min_amt" placeholder="{{'PLACEHOLDERS.SEARCH_MIN_WINNING' | translate}}" class="form-control"
+                        min="1" [max]="winning_max_amt.value" name="winning_min_amt" (keyup)="formValidFilter($event)" (keydown)="checkIfNumber($event,true)"
+                        #winning_min_amt="ngModel" [(ngModel)]="params.winning_min_amt" />
+                      <div class="invalid-feedback" *ngIf="winning_min_amt.invalid"> Min Win Amount must be less then or
+                        equal Max Win Amount</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="winning_max_amt">{{'MAX_WIN_AMOUNT' | translate}}</label>
+                      <input type="number" id="winning_max_amt" placeholder="{{'PLACEHOLDERS.SEARCH_MAX_WINNING' | translate}}" class="form-control"
+                        [min]="winning_min_amt.value || 1" name="winning_max_amt" (keyup)="formValidFilter($event)" (keydown)="checkIfNumber($event,true)"
+                        #winning_max_amt="ngModel" [(ngModel)]="params.winning_max_amt" />
+                      <div class="invalid-feedback" *ngIf="winning_max_amt.invalid"> Max Win Amount must be greater than
+                        or equal Min Win Amount</div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-md-2">
+                    <label for="result"> {{'RESULT' | translate}} </label>
+                    <select class="form-control" id="result" (change)="filter($event)" [(ngModel)]="params.result">
+                      <option value="">{{'ALL' | translate}}</option>
+                      <option value="win"> {{'WIN' | translate}} </option>
+                      <option value="loose"> {{'LOST' | translate}} </option>
+                    </select>
+                  </div> -->
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="size">{{'SIZE' | translate}}</label>
+                      <select class="form-control" id="size" name="size" (change)="filter($event)"
+                        [(ngModel)]="params.size">
+                        <option *ngFor="let pageSize of pageSizes" [value]="pageSize.name">{{pageSize.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-1">
+                    <button type="button" class="mgt btn btn-warning fnt-12" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                      | translate}}
+                    </button>
+                  </div>
+
+                  <div class="col-md-2">
+                    <button type="button" class="mgt btn btn-warning fnt-12" (click)="exportAsXLSX()">{{ 'ACTION_BUTTON.EXPORT_REPORT' | translate }}
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="dtable" class="table table-bordered">
+                  <thead>
+                    <tr>
+
+                      <!-- <th>Bet ID <app-ordering-arrow [column]="'id'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow> </th>
+                      <th>Created At <app-ordering-arrow [column]="'created_at'" [params]="params" (changeOrder)="setOrder($event)"></app-ordering-arrow></th>
+                      <th>Email
+                        <app-ordering-arrow [column]="'email'" [params]="params" (changeOrder)="setOrder($event)"></app-ordering-arrow>
+                      </th>
+
+                      <th *ngIf="params.bet_type === 'not_combo'">Sport <app-ordering-arrow [column]="'sport'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Tournament <app-ordering-arrow [column]="'league'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Match <app-ordering-arrow [column]="'match'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Market name <app-ordering-arrow [column]="'market'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+
+                      <th *ngIf="params.bet_type === 'multibets'">Event date <app-ordering-arrow [column]="'event_date'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+                      <th *ngIf="params.bet_type === 'not_combo'">Outcome <app-ordering-arrow [column]="'outcome'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Schedule at <app-ordering-arrow [column]="'event_date'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th>Currency <app-ordering-arrow [column]="'currency_code'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+                      <th>Stake <app-ordering-arrow [column]="'stake'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+                      <th *ngIf="params.bet_type === 'not_combo'">Odds <app-ordering-arrow [column]="'odds'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Total Stake </th>
+                      <th *ngIf="params.bet_type === 'multibets'">Overall Odds <app-ordering-arrow [column]="'overall_odds'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+                      <th *ngIf="params.bet_type === 'not_combo'">Posible Win Amount </th>
+                      <th *ngIf="params.bet_type === 'not_combo'">Winning </th>
+
+                      <th>Status <app-ordering-arrow [column]="'status'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+
+                      <th *ngIf="params.bet_type === 'multibets'">Posible Win Amount </th>
+                      <th *ngIf="params.bet_type === 'multibets'">Won Amount <app-ordering-arrow [column]="'win_amount'" [params]="params" (changeOrder)="setOrder($event)" ></app-ordering-arrow></th>
+                      <th *ngIf="params.bet_type === 'multibets'">Action </th> -->
+
+                      <th class="sort-column" [ngClass]="params.sort_by=='id' ? params.order :''" (click)="setOrder('id')">{{'ID' | translate}}</th>
+                      <th>{{'ORGANIZATION' | translate}}</th>
+                      <th>{{'SUBSCRIBER' | translate}}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='created_at' ? params.order :''" (click)="setOrder('created_at')">  {{'CREATED_AT' | translate}} </th>
+  
+                      <!-- <th> {{ (params.type == adminType.Tenant ? 'EMAIL' : 'USER_CODE') | translate }} </th> -->
+  
+                      <th>{{'CURRENCY' | translate}}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='auto_rate' ? params.order :''" (click)="setOrder('auto_rate')">{{ 'AUTO_RATE' | translate }}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='escape_rate' ? params.order :''" (click)="setOrder('escape_rate')">{{ 'ESCAPE_RATE' | translate }}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='winning_amount' ? params.order :''" (click)="setOrder('winning_amount')">{{'WIN_AMOUNT' | translate}}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='bet_amount' ? params.order :''" (click)="setOrder('bet_amount')">{{ 'BET_AMOUNT' | translate }}</th>
+                      <th> {{ 'RESULT' | translate }}</th>
+                      <th> {{ 'FREE_BET' | translate }} </th>
+                      <th> {{ 'AUTO_BET' | translate }} </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let report of reports | paginate: { itemsPerPage: params.size, currentPage: p, totalItems: total }">
+
+                      <td> {{ report.id }} </td>
+                      <td> {{ report.organization_name }} </td>
+                      <td> {{ report.subscriber_name }} </td>
+                      <td> {{ report.created_at | date: 'Y-MM-dd hh:mm:ss' }} </td>
+                      <!-- <td>
+  
+                        <ng-container *ngIf="params.type == adminType.Tenant; else subscriberUserCode">
+  
+                          <ng-container *ngIf="canShowUsers; else linkUser">
+                            <a [routerLink]="['/users/details', betHistory.user_id]"
+                              [queryParams]="{ tenant_id: betHistory.tenant_id }"> {{ betHistory.email }} </a>
+                          </ng-container>
+                          <ng-template #linkUser>
+                            {{ betHistory.email }}
+                          </ng-template>
+  
+                        </ng-container>
+  
+                        <ng-template #subscriberUserCode>
+                          {{ betHistory.user_code }}
+                        </ng-template>
+  
+                      </td> -->
+                      <td> {{ report.currency_code }} </td>
+                      <td> {{ report.auto_rate }} </td>
+                      <td> {{ report.escape_rate }} </td>
+                      <td> {{ report.winning_amount | number}} </td>
+                      <td> {{ report.bet_amount | number }} </td>
+                      <td *ngIf="report.result=='won'"> {{  'WIN' | translate}} </td>
+                      <td *ngIf="report.result=='lost'"> {{  'LOST' | translate}} </td>
+                      <td *ngIf="report.result=='cancelled'"> {{  'CANCELLED' | translate}} </td>
+                      <td> {{ (report.is_free_bet==true ? 'YES' : 'NO' )| translate}} </td>
+                      <td> {{ (report.is_auto_bet==true ? 'YES' : 'NO' )| translate}} </td>
+                    </tr>
+
+                    <tr *ngIf="reports && reports.length === 0">
+                      <td [attr.colspan]="params.bet_type === 'not_combo' ? 16 : 11" class="tnodata"> No Bet Reports
+                        Found </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event"></pagination-controls>
+
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+
+
+<div class="modal fade bd-example-modal-xl" id="modal-details" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> Combination Information </h4>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <small class="ml-2 mt-2"> Created At - {{ report?.created_at | date: 'dd-MM-YYYY HH:mm' || 'NA' }} </small>
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card-body table-responsive">
+
+              <table class="table table-bordered">
+
+                <tr>
+                  <th>Bet Settlement Id</th>
+                  <td> {{ report?.betslip?.bet?.bet_id || 'NA' }} </td>
+                  <th>Win Amount</th>
+                  <td> {{ report?.betslip?.possible_win_amount || 'NA' }} </td>
+                </tr>
+
+                <tr>
+                  <th>Stake</th>
+                  <td> {{ report?.betslip?.stake || 'NA' }} </td>
+                  <th>Status</th>
+                  <td> {{ report?.betslip?.bet?.settlement_status }} </td>
+                </tr>
+
+                <tr>
+                  <th>Odds</th>
+                  <td> {{ report?.betslip?.multi_price || 'NA' }} </td>
+                  <th>Email</th>
+                  <td>
+                    <a data-dismiss="modal" [routerLink]="['/players/details', report?.user?.id]"
+                      [queryParams]="{ tab: 'sport-betting', bet_report: 'bet_report' }"> {{ report?.user?.email || 'NA'
+                      }} </a>
+                </tr>
+
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="text-center"><strong> Bet Details </strong></div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Bet ID</th>
+                    <th>Sport</th>
+                    <th>Tournament</th>
+                    <th>Match</th>
+                    <th>Event date</th>
+                    <th>Market</th>
+                    <th>Outcome</th>
+                    <th>Stake</th>
+                    <th>Odds</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="report && report.betslip && report.betslip.bets && report.betslip.bets.length > 0">
+                  <tr *ngFor="let bet of report.betslip.bets;">
+                    <td> {{ bet.bet_id || 'NA' }} </td>
+                    <td> {{ bet?.event?.sport?.name_en || 'NA' }} </td>
+                    <td> {{ bet?.event?.league?.name_en || 'NA' }} </td>
+                    <td> {{ bet?.match || 'NA' }} </td>
+                    <td> {{ bet?.start_date | date:'dd-MM-YYYY HH:mm' || 'NA' }} </td>
+                    <td> {{ bet?.market || 'NA' }} </td>
+                    <td> {{ bet?.name || 'NA' }} </td>
+                    <td> {{ report?.betslip?.stake || 'NA' }} </td>
+                    <td> {{ bet?.price || 'NA' }} </td>
+                    <td> {{ bet.settlement_status }} </td>
+                  </tr>
+                  <tr *ngIf="report.betslip.bets.length === 0">
+                    <td colspan="10" class="tnodata"> No Bets Found </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

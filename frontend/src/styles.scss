@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+a {
+    cursor: pointer;
+}
+
+.invalid-feedback{
+    display: block !important;
+}
+
+.f-right {
+    float: right;
+}
+
+.fnt-12 {
+    font-size: 12px;
+}
+
+.tnodata {
+    text-align: center;
+    color: red;
+}
+
+.mgt {
+    margin-top: 30px;
+}
+
+.imshow{
+    padding-top: 30px;
+    width: 80px;
+}
+
+.loader {
+    width: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+
+mwl-gauge {
+  width: 200px;
+  height: 120px;
+  display: block;
+  padding: 10px;
+}
+mwl-gauge > .gauge > .dial {
+  stroke: #eee;
+  stroke-width: 20;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value {
+  stroke: rgb(47, 227, 255);
+  stroke-width: 20;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value-text {
+  fill: rgb(47, 227, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+
+// sky
+mwl-gauge.sky > .gauge > .value {
+  stroke: rgb(60, 204, 221);
+}
+
+mwl-gauge.sky > .gauge > .value-text {
+  fill: rgb(60, 204, 221);
+}
+
+// red
+mwl-gauge.red > .gauge > .value {
+  stroke: rgb(248, 69, 76);
+}
+
+mwl-gauge.red > .gauge > .value-text {
+  fill: rgb(248, 69, 76);
+}
+
+// yellow
+mwl-gauge.yellow > .gauge > .value {
+  stroke: rgb(254, 202, 60);
+}
+
+mwl-gauge.yellow > .gauge > .value-text {
+  fill: rgb(254, 202, 60);
+}
+
+// cader_green
+mwl-gauge.cader_green > .gauge > .value {
+  stroke: rgb(185, 205, 37);
+}
+
+mwl-gauge.cader_green > .gauge > .value-text {
+  fill: rgb(185, 205, 37);
+}
+
+// green
+mwl-gauge.green > .gauge > .value {
+  stroke: rgb(71, 180, 80);
+}
+
+mwl-gauge.green > .gauge > .value-text {
+  fill: rgb(71, 180, 80);
+}
+
+
+.table-responsive>.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('./assets/fonts/glyphicons-halflings-regular.eot');
+  src: url('./assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('./assets/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('./assets/fonts/glyphicons-halflings-regular.woff') format('woff'), url('./assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('./assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}

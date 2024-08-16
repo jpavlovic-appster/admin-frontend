@@ -1,0 +1,293 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <app-breadcrumb title="{{'BET_HISTORY' | translate}}" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <!-- /.content-header -->
+    <div class="card-header">
+      <div class="card">
+        <div class="card-header">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="search2">{{'USER_ID' | translate}}</label>
+            <input type="text" class="form-control" id="search2" [readonly] = true
+            [(ngModel)]="user.id" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="search2">{{'USER' | translate}}</label>
+            <input type="text" class="form-control" id="search2" [readonly] = true
+            [(ngModel)]="user.name" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="search2">{{'USER_CODE' | translate}}</label>
+            <input type="text" class="form-control" id="search2" [readonly] = true
+            [(ngModel)]="user.user_code" />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label for="currency_code"> {{'RESULT' | translate}} </label>
+          <select class="form-control" id="result" (change)="filter($event)" [(ngModel)]="params.result">
+            <option value="">{{'ALL' | translate}}</option>
+            <option value="win"> {{'WIN' | translate}} </option>
+            <option value="loose"> {{'LOST' | translate}} </option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="currency_code"> {{'FREE_BET' | translate}} </label>
+          <select class="form-control" id="result" (change)="filter($event)" [(ngModel)]="params.freebet">
+            <option value="">{{'ALL' | translate}}</option>
+            <option value="Yes"> {{'YES' | translate}} </option>
+            <option value="No"> {{'NO' | translate}} </option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="autobet"> {{'AUTO_BET' | translate}} </label>
+          <select class="form-control" id="autobet" (change)="filter($event)" [(ngModel)]="params.autobet">
+            <option value=""> {{'ALL' | translate}}</option>
+            <option value="Yes"> {{'YES' | translate}} </option>
+            <option value="No"> {{'NO' | translate}} </option>
+          </select>
+        </div>
+       
+        <div class="col-md-2">
+          <label for="time_period"> {{'TIME_PERIOD' | translate}} </label>
+          <input autocomplete="off" type="text" class="form-control float-right" id="time_period" [format]="format"
+            daterange_picker (onSelect)="selectDateRange($event)"
+            placeholder="{{'PLACEHOLDERS.SELECT_TIME_PERIOD' | translate}}" />
+        </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <label for="time_period"> {{'SIZE' | translate}} </label>
+            <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="params.size">
+              <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+            | translate}} </button>
+        </div>
+
+        <!-- <div class="col-md-6" *ngIf="canCreate">
+          <a class="btn btn-success f-right" routerLink="/super-admin/subscribers/0"> {{'ACTION_BUTTON.CREATE' |
+            translate}} </a>
+        </div> -->
+
+      </div>
+    </div>
+
+   
+  </div>
+    <ng-container >
+  
+      <!-- <app-admin-type-filter> -->
+  
+        <!-- <ng-template> -->
+  
+      <!-- <div class="col-md-2">
+        <label for="currency_code"> {{'CURRENCY' | translate}} </label>
+        <select class="form-control" id="currency_code" (change)="filter($event)" [(ngModel)]="params.currency_code">
+          <option value=""> {{'PLACEHOLDERS.SELECT_CURRENCY' | translate}} </option>
+          <option *ngFor="let currency of currencies" [value]="currency.code"> {{ currency.code }} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-2" *ngIf="params.type === adminType.Tenant">
+        <label for="search"> {{'SEARCH' | translate}} </label>
+        <input type="text" class="form-control" id="search" (keyup)="filter($event)" [(ngModel)]="params.search"
+          placeholder="{{'PLACEHOLDERS.SEARCH_BY_EMAIL' | translate}}" />
+      </div>  -->
+  
+      
+  
+      <!-- <div class="col-md-1">
+        <label for="bet_type"> {{'BET_TYPE' | translate}} </label>
+        <select class="form-control" id="bet_type" (change)="filter($event)" [(ngModel)]="params.bet_type">
+          <option value=""> {{'PLACEHOLDERS.SELECT_BET_TYPE' | translate}} </option>
+          <option value="1"> {{'SINGLE' | translate}} </option>
+          <option value="2"> {{'MULTI' | translate}} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-1">
+        <label for="size"> {{'SIZE' | translate}} </label>
+        <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="params.size">
+          <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-2">
+        <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER' |
+          translate}} </button>
+      </div> -->
+  
+    <!-- </ng-template> -->
+        <!-- </ng-container> -->
+  
+  
+    </ng-container>
+  
+    <!-- <ng-template #betFilters> -->
+  
+      <!-- <div class="col-md-2" *ngIf="params.type === adminType.Tenant">
+        <label for="currency_code"> {{'CURRENCY' | translate}} </label>
+        <select class="form-control" id="currency_code" (change)="filter($event)" [(ngModel)]="params.currency_code">
+          <option value=""> {{'PLACEHOLDERS.SELECT_CURRENCY' | translate}} </option>
+          <option *ngFor="let currency of currencies" [value]="currency.code"> {{ currency.code }} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-2" *ngIf="params.type === adminType.Tenant">
+        <label for="search"> {{'SEARCH' | translate}} </label>
+        <input type="text" class="form-control" id="search" (keyup)="filter($event)" [(ngModel)]="params.search"
+          placeholder="{{'PLACEHOLDERS.SEARCH_BY_EMAIL' | translate}}" />
+      </div>
+  
+      <div class="col-md-2">
+        <label for="time_period"> {{'TIME_PERIOD' | translate}} </label>
+        <input autocomplete="off" type="text" class="form-control float-right" id="time_period" [format]="format"
+          daterange_picker (onSelect)="selectDateRange($event)"
+          placeholder="{{'PLACEHOLDERS.SELECT_TIME_PERIOD' | translate}}" />
+      </div> -->
+  
+      <!-- <div class="col-md-1">
+        <label for="bet_type"> {{'BET_TYPE' | translate}} </label>
+        <select class="form-control" id="bet_type" (change)="filter($event)" [(ngModel)]="params.bet_type">
+          <option value=""> {{'PLACEHOLDERS.SELECT_BET_TYPE' | translate}} </option>
+          <option value="1"> {{'SINGLE' | translate}} </option>
+          <option value="2"> {{'MULTI' | translate}} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-1">
+        <label for="size"> {{'SIZE' | translate}} </label>
+        <select class="form-control" id="size" (change)="filter($event)" [(ngModel)]="params.size">
+          <option *ngFor="let size of pageSizes" [value]="size.name"> {{ size.name }} </option>
+        </select>
+      </div> -->
+  
+      <!-- <div class="col-md-2">
+        <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER' |
+          translate}} </button>
+      </div> -->
+  
+    <!-- </ng-template> -->
+  
+    <!-- <ng-template #tsFilters>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+  
+                <div class="card-body">
+                  <div class="row">
+                    <ng-container *ngTemplateOutlet="betFilters"></ng-container>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </ng-template>
+   -->
+    <section class="content">
+      <div class="container-fluid">
+  
+        <div class="row">
+  
+          <div class="col-md-12">
+            <div class="card">
+              <!-- /.card-header -->
+              <div class="card-body table-responsive">
+  
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="sort-column" [ngClass]="params.sort_by=='id' ? params.order :''" (click)="setOrder('id')"><a (click)="setOrder('id')"> {{'ID' | translate}} </a></th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='created_at' ? params.order :''" (click)="setOrder('created_at')"> <a (click)="setOrder('created_at')"> {{'CREATED_AT' | translate}}</a> </th>
+  
+                      <!-- <th> {{ (params.type == adminType.Tenant ? 'EMAIL' : 'USER_CODE') | translate }} </th> -->
+  
+                      <th>{{'CURRENCY' | translate}}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='auto_rate' ? params.order :''" (click)="setOrder('auto_rate')">{{ 'AUTO_RATE' | translate }}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='escape_rate' ? params.order :''" (click)="setOrder('escape_rate')">{{ 'ESCAPE_RATE' | translate }}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='winning_amount' ? params.order :''" (click)="setOrder('winning_amount')">{{'WIN_AMOUNT' | translate}}</th>
+                      <th class="sort-column" [ngClass]="params.sort_by=='bet_amount' ? params.order :''" (click)="setOrder('bet_amount')">{{ 'BET_AMOUNT' | translate }}</th>
+                      <th> {{ 'RESULT' | translate }}</th>
+                      <th> {{ 'FREE_BET' | translate }} </th>
+                      <th> {{ 'AUTO_BET' | translate }} </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+  
+                    <tr
+                      *ngFor="let betHistory of betHistories | paginate: { itemsPerPage: params.size, currentPage: p, totalItems: total }">
+                      <td> {{ betHistory.id }} </td>
+                      <td> {{ betHistory.created_at | date: 'Y-MM-dd hh:mm:ss' }} </td>
+                      <!-- <td>
+  
+                        <ng-container *ngIf="params.type == adminType.Tenant; else subscriberUserCode">
+  
+                          <ng-container *ngIf="canShowUsers; else linkUser">
+                            <a [routerLink]="['/users/details', betHistory.user_id]"
+                              [queryParams]="{ tenant_id: betHistory.tenant_id }"> {{ betHistory.email }} </a>
+                          </ng-container>
+                          <ng-template #linkUser>
+                            {{ betHistory.email }}
+                          </ng-template>
+  
+                        </ng-container>
+  
+                        <ng-template #subscriberUserCode>
+                          {{ betHistory.user_code }}
+                        </ng-template>
+  
+                      </td> -->
+                      <td> {{ betHistory.currency_code }} </td>
+                      <td> {{ betHistory.auto_rate }} </td>
+                      <td> {{ betHistory.escape_rate }} </td>
+                      <td> {{ betHistory.winning_amount | number }} </td>
+                      <td> {{ betHistory.bet_amount | number }} </td>
+                      <td *ngIf="betHistory.result=='won'"> {{  'WIN' | translate}} </td>
+                      <td *ngIf="betHistory.result=='lost'"> {{  'LOST' | translate}} </td>
+                      <td *ngIf="betHistory.result=='cancelled'"> {{  'CANCELLED' | translate}} </td>
+                      <td> {{ (betHistory.is_free_bet==true ? 'YES' : 'NO' )| translate}} </td>
+                      <td> {{ (betHistory.is_auto_bet==true ? 'YES' : 'NO' )| translate}} </td>
+                      <!-- <td> <a class="btn btn-info" [routerLink]="['/bets/bet-history', params.type, betHistory.id]"> <i
+                            class="fa fa-eye"></i> </a> </td> -->
+                    </tr>
+  
+                    <tr *ngIf="betHistories && betHistories.length === 0">
+                      <td [attr.colspan]="params.type == adminType.Tenant ? 10 : 9" class="tnodata">
+                        {{'SENTENCES.BET_HISTORY_404' | translate}}
+                      </td>
+                    </tr>
+  
+                  </tbody>
+                </table>
+              </div>
+  
+              <pagination-controls (pageChange)="pageChanged($event)" (pageChange)="p = $event"></pagination-controls>
+  
+            </div>
+            <!-- /.card -->
+  
+          </div>
+  
+        </div>
+  
+      </div><!-- /.container-fluid -->
+    </section>
+  
+  </div>
+  

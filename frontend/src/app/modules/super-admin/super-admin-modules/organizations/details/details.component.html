@@ -1,0 +1,208 @@
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <app-breadcrumb [title]="'ORGANIZATION' | translate" [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- <div class="col-12 col-sm-12 col-md-12"> -->
+
+      <!-- <div class="card"> -->
+
+      <!-- /.card-header -->
+
+      <!-- <div class="card-body">
+    -->
+
+
+
+
+
+
+      <div class="card">
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="status"> {{'SUBSCRIBER' | translate}} {{'STATUS' | translate}} </label>
+                <select class="form-control" id="status" (change)="filter($event)" [(ngModel)]="params.status">
+                  <option value=""> {{'ALL' | translate}}</option>
+                  <option value="Yes"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                  <option value="No"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="player_status">{{'PLAYER' | translate}} {{'STATUS' | translate}}</label>
+                <select class="form-control" id="player_status" (change)="filter($event)"
+                  [(ngModel)]="params.player_status">
+                  <option value=""> {{'ALL' | translate}}</option>
+                  <option value="Yes"> {{'ACTION_BUTTON.ACTIVE' | translate}} </option>
+                  <option value="No"> {{'ACTION_BUTTON.IN_ACTIVE' | translate}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="time_period"> {{'TIME_PERIOD' | translate}} </label>
+                <input autocomplete="off" type="text" class="form-control" id="time_period" [format]="format"
+                  daterange_picker (onSelect)="selectDateRange($event)"
+                  placeholder="{{'SEARCH_TIME_PERIOD' | translate}}" />
+              </div>
+            </div>
+          
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="agent_id">{{'CURRENCY' | translate}} </label>
+                <select class="form-control" id="currency" (change)="currencyFilter($event)"
+                  [(ngModel)]="params.currency">
+                  <option *ngFor="let currency of currencies" [value]="currency.code"> {{ currency.code }} </option>
+                </select>
+              </div>
+            </div>
+           
+            <div class="col-md-2">
+              <button type="button" class="mgt btn btn-warning" (click)="resetFilter()"> {{'ACTION_BUTTON.RESET_FILTER'
+                | translate}} </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'TOTAL_SUBSCRIBERS' | translate}} 
+                </span>
+                <span class="info-box-number">{{totalSubscribers}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'TOTAL_PLAYERS' | translate}} 
+                </span>
+                <span class="info-box-number">{{totalPlayers}} </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'GGR' | translate}} 
+                </span>
+                <span class="info-box-number">{{profit | number}} </span>
+              </div>
+            </div>
+          </div> -->
+         
+         
+        </div>
+        <div class="row"> 
+          <!-- <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'COMMISSION' | translate}} 
+                </span>
+                <span class="info-box-number">{{org_commission | number}} </span>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-coins"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'BETS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.bets | number : '1.2-2'}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">{{'CANCELS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.cancels | number : '1.2-2'}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'NET_SALES' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.net_sales | number : '1.2-2'}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'WINS' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.wins | number : '1.2-2'}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'GGR' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.ggr | number : '1.2-2'}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> {{'RTP' | translate}}
+                </span>
+                <span class="info-box-number">{{betStats?.rtp | number : '1.2-2'}}% </span>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+    <!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+
+ 
+
+
+</div>
+
+<ng-template #chartLoader>
+  <img class="loader" src="./assets/dist/gif/loader.gif" />
+</ng-template>

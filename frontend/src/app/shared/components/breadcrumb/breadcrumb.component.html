@@ -1,0 +1,38 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+
+        <div class="col-sm-12">
+          <div *ngIf="authService.adminTypeValue == adminTypes.Tenant && tenantService.remCredentials.length > 0" class="alert alert-warning"> {{ 'SENTENCES.MISSING_TENANT_CREDENTIALS' | translate}} </div>
+          <!-- <div *ngIf="authService.adminTypeValue == adminTypes.Subscriber && tenantService.remCredentials.length > 0" class="alert alert-warning"> {{ 'SENTENCES.MISSING_SUBSCRIBER_CREDENTIALS' | translate}} </div> -->
+        </div>
+
+        <div class="col-sm-6">
+          <h1 class="m-0">{{ title }}</h1>
+        </div><!-- /.col -title }}</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+
+            <li class="back">
+              <a class="btn back-btn" href="javascript:void(0)" (click)="goBack()" [title]="'ACTION_BUTTON.BACK' | translate">
+                <i class="fas fa-arrow-circle-left"></i>
+              </a>
+            </li>
+
+            <li *ngFor="let breadcrumb of breadcrumbs; let i = index;" class="breadcrumb-item" [ngClass]="{ 'active' : breadcrumbs.length - 1 === i }">
+
+                <ng-container *ngIf="breadcrumbs.length - 1 === i; else noLinkTemp">
+                    {{ breadcrumb?.title || 'NA' }}
+                </ng-container>
+
+                <ng-template #noLinkTemp>
+                    <a [routerLink]="breadcrumb?.path || '/'"> {{ breadcrumb?.title || 'NA' }} </a>
+                </ng-template>
+
+            </li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
