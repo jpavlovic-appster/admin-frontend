@@ -1,22 +1,9 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false,
-  API_URL: 'https://vecihi-admin-backend-stg.appstersolutions.com/api/',
-  STATIC_URL: 'https://vecihi-admin-backend-stg.appstersolutions.com/',
-  SUPER_URL: 'admin-frontend-stg.appstersolutions.com',
-  SUB_URL: 'subscriber-frontend-stg.appstersolutions.com',
-  DEV_URL: '',
-  DOCUMENTATION_FILE: "documentation.json"
+    production: false,
+    API_URL: 'https://stag-adminapi.codezania.com/api/',
+    STATIC_URL: 'https://stag-adminapi.codezania.com/',
+    SUPER_URL: 'https://admin.vecihi.fun',
+    SUB_URL: 'https://subscriber.vecihi.fun',
+    DEV_URL: '',
+    DOCUMENTATION_FILE: "documentation.json"
   };
-
-  /*
-   * For easier debugging in development mode, you can import the following file
-   * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
-   *
-   * This import should be commented out in production mode because it will have a negative impact
-   * on performance if an error is thrown.
-   */
-  // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
